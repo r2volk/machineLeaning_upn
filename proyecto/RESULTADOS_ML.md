@@ -32,7 +32,10 @@ Los identificadores de tienda y artículo se trataron como categorías mediante 
 
 La separación respeta el orden temporal. Se evaluaron tres bloques consecutivos de 90 días —del 6 de abril al 4 de julio, del 5 de julio al 2 de octubre y del 3 de octubre al 31 de diciembre de 2017—. Para cada bloque, el entrenamiento utilizó fechas anteriores al inicio de la validación.
 
-La evaluación simula predicciones diarias: para cada fecha validada, las ventas observadas en fechas anteriores pueden formar parte del historial. En cambio, la generación de predicciones para `test.csv` es recursiva: las ventas futuras observadas no están disponibles y se usan predicciones previas como historial. Estas dos situaciones no son idénticas; se debe considerar esta diferencia al interpretar los resultados.
+Se aplicaron dos protocolos:
+
+1. **Predicción diaria con historial observado:** en cada fecha se conocen las ventas ocurridas hasta el día anterior. Es útil para un sistema que emite un pronóstico cada día y recibe ventas nuevas.
+2. **Predicción recursiva de 90 días:** al comenzar cada bloque solo se usan ventas anteriores al bloque. Las ventas pronosticadas se agregan al historial para calcular el día siguiente. Este protocolo se aproxima mejor a generar un horizonte futuro sin observar sus ventas.
 
 ## Métricas y resultados
 
@@ -44,7 +47,24 @@ El **MAE** es el error absoluto promedio, expresado en unidades vendidas por reg
 | Regresión lineal | 7.2411 | 9.4621 |
 | Random Forest | **6.7248** | **8.7661** |
 
-En los tres bloques, Random Forest obtuvo menor MAE y RMSE que los otros dos métodos. En el bloque final (3 de octubre a 31 de diciembre de 2017), sus métricas fueron MAE **6.5308** y RMSE **8.6227**. Esto lo identifica como el candidato de menor error en las evaluaciones realizadas; no demuestra rendimiento en las ventas reales de Kapaq.
+En los tres bloques, Random Forest obtuvo menor MAE y RMSE que los otros dos métodos. En el bloque final (3 de octubre a 31 de diciembre de 2017), sus métricas fueron MAE **6.5308** y RMSE **8.6227**. Esto lo identifica como el candidato de menor error en esa evaluación diaria; no demuestra rendimiento en las ventas reales de Kapaq.
+
+### Evaluación recursiva de 90 días
+
+En la prueba recursiva, Random Forest y la referencia semanal usan sus propias predicciones como historial durante cada período de validación. El promedio en los tres bloques fue:
+
+| Método recursivo | MAE promedio | RMSE promedio |
+|---|---:|---:|
+| Referencia semanal recursiva | 11.7130 | 15.4075 |
+| Random Forest recursivo | **8.0865** | **10.5055** |
+
+Random Forest obtuvo menores errores que la referencia en cada bloque recursivo. Sus errores son mayores que en la evaluación diaria con historial observado, lo cual es esperable porque en el pronóstico de varios días se usan predicciones anteriores en vez de ventas reales. Esta evaluación ofrece una estimación más pertinente para un horizonte futuro de 90 días.
+
+| Bloque | MAE referencia | RMSE referencia | MAE Random Forest | RMSE Random Forest |
+|---|---:|---:|---:|---:|
+| 2017-04-06 a 2017-07-04 | 11.8985 | 15.6304 | 7.3885 | 9.9257 |
+| 2017-07-05 a 2017-10-02 | 11.5917 | 15.1791 | 9.5382 | 12.0678 |
+| 2017-10-03 a 2017-12-31 | 11.6487 | 15.4132 | 7.3329 | 9.5230 |
 
 ## Análisis adicional
 
@@ -61,6 +81,7 @@ Se generaron 45 000 predicciones en `resultados/predicciones_kaggle.csv`, con la
 - El dataset es externo y no representa necesariamente la operación, catálogo o clientela de Kapaq.
 - Las tiendas y artículos de Kaggle no tienen una correspondencia establecida con los identificadores del minimarket.
 - En una predicción recursiva de varios días, los errores pueden acumularse al usar predicciones previas como historial.
+- El backtest recursivo se realizó con tres períodos de Kaggle; su desempeño no garantiza los mismos errores en otras fechas ni en Kapaq.
 - Para desarrollar y evaluar un pronóstico real de Kapaq se necesita reunir un historial suficiente de ventas reales por producto y fecha, y validar el modelo cronológicamente con esos datos.
 - Cualquier demostración web basada en este dataset debe identificarse claramente como una demostración con datos externos, no como recomendación real de inventario.
 

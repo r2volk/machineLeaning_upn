@@ -10,6 +10,7 @@ MachineLearning/
 ├── proyecto/
 │   ├── src/pronostico/         # módulos de datos, variables, modelos y evaluación
 │   ├── resultados/             # predicciones, métricas y gráficos generados
+│   ├── AVANCE_PARA_CLASE.md    # resumen corto del avance
 │   ├── RESULTADOS_ML.md        # síntesis académica de los experimentos
 │   └── regresion_lineal.py     # primer experimento introductorio
 ├── requirements.txt
@@ -47,23 +48,23 @@ venv/bin/python proyecto/src/pronostico/referencias.py
 venv/bin/python proyecto/src/pronostico/variables.py
 venv/bin/python proyecto/src/pronostico/entrenar.py
 venv/bin/python proyecto/src/pronostico/validacion_temporal.py
+venv/bin/python proyecto/src/pronostico/validacion_recursiva.py
 venv/bin/python proyecto/src/pronostico/analizar_validacion.py
 venv/bin/python proyecto/src/pronostico/graficar_validacion.py
 venv/bin/python proyecto/src/pronostico/importancia_variables.py
 venv/bin/python proyecto/src/pronostico/predecir_test.py
 ```
 
-Para entrenar y comparar la referencia semanal, la regresión lineal y Random Forest en la validación cronológica, ejecutar `entrenar.py`. `validacion_temporal.py` repite la comparación en tres períodos de 90 días. `predecir_test.py` genera `proyecto/resultados/predicciones_kaggle.csv` con el formato `id,sales`.
+Para entrenar y comparar la referencia semanal, la regresión lineal y Random Forest en la validación cronológica, ejecutar `entrenar.py`. `validacion_temporal.py` repite la comparación en tres períodos de 90 días con ventas previas observadas; `validacion_recursiva.py` imita un horizonte de 90 días usando predicciones anteriores como historial. `predecir_test.py` genera `proyecto/resultados/predicciones_kaggle.csv` con el formato `id,sales`.
 
 ## Resultados existentes
 
-Los CSV y gráficos actualmente incluidos en `proyecto/resultados/` documentan los experimentos realizados. El promedio de validación en tres períodos fue:
+Los CSV y gráficos actualmente incluidos en `proyecto/resultados/` documentan los experimentos realizados. Promedio de la validación recursiva en tres períodos:
 
-| Método | MAE | RMSE |
+| Método | MAE recursivo | RMSE recursivo |
 |---|---:|---:|
-| Referencia: ventas de hace 7 días | 9.1883 | 12.0233 |
-| Regresión lineal | 7.2411 | 9.4621 |
-| Random Forest | 6.7248 | 8.7661 |
+| Referencia: ventas de hace 7 días | 11.7130 | 15.4075 |
+| Random Forest | 8.0865 | 10.5055 |
 
 MAE y RMSE se miden en unidades de venta por fila evaluada. Las métricas son únicamente del dataset de Kaggle; no deben interpretarse como precisión sobre Kapaq ni como recomendaciones reales de inventario.
 
