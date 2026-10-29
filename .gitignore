@@ -1,26 +1,13 @@
-# Entorno virtual - NO subir
-.venv/
+# Entornos virtuales locales
 venv/
-ENV/
-env/
+.venv/
 
-# Python
+# Archivos temporales de Python y macOS
 __pycache__/
 *.py[cod]
-*$py.class
-*.egg-info/
-dist/
-build/
-
-# Jupyter
-.ipynb_checkpoints/
-*.ipynb_checkpoints
-
-# VS Code - se sube settings.json, se ignoran cosas locales
-.vscode/* 
-!.vscode/settings.json
-!.vscode/extensions.json
-
-# Sistema
 .DS_Store
-Thumbs.db
+
+# Variables locales y modelos binarios que se generen en el futuro
+.env
+*.joblib
+*.pkl
