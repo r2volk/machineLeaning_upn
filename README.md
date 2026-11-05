@@ -10,7 +10,8 @@ MachineLearning/
 ├── proyecto/
 │   ├── src/pronostico/         # módulos de datos, variables, modelos y evaluación
 │   ├── resultados/             # predicciones, métricas y gráficos generados
-│   ├── AVANCE_PARA_CLASE.md    # resumen corto del avance
+│   ├── sql/                    # auditoría de ventas de Kapaq, solo lectura
+│   ├── GUIA_PARA_EXPLICAR_EL_PROYECTO.md # explicación paso a paso y guion para clase
 │   ├── RESULTADOS_ML.md        # síntesis académica de los experimentos
 │   └── regresion_lineal.py     # primer experimento introductorio
 ├── requirements.txt
@@ -53,9 +54,10 @@ venv/bin/python proyecto/src/pronostico/analizar_validacion.py
 venv/bin/python proyecto/src/pronostico/graficar_validacion.py
 venv/bin/python proyecto/src/pronostico/importancia_variables.py
 venv/bin/python proyecto/src/pronostico/predecir_test.py
+venv/bin/python proyecto/src/pronostico/preparar_demo_web.py
 ```
 
-Para entrenar y comparar la referencia semanal, la regresión lineal y Random Forest en la validación cronológica, ejecutar `entrenar.py`. `validacion_temporal.py` repite la comparación en tres períodos de 90 días con ventas previas observadas; `validacion_recursiva.py` imita un horizonte de 90 días usando predicciones anteriores como historial. `predecir_test.py` genera `proyecto/resultados/predicciones_kaggle.csv` con el formato `id,sales`.
+Para entrenar y comparar la referencia semanal, la regresión lineal y Random Forest en la validación cronológica, ejecutar `entrenar.py`. `validacion_temporal.py` repite la comparación en tres períodos de 90 días con ventas previas observadas; `validacion_recursiva.py` imita un horizonte de 90 días usando predicciones anteriores como historial. `predecir_test.py` genera `proyecto/resultados/predicciones_kaggle.csv` con el formato `id,sales`. Para preparar la demostración del panel web, ejecutar después `preparar_demo_web.py`; este paso no reentrena el modelo y crea un JSON a partir de ese CSV y el `test.csv` de Kaggle.
 
 ## Resultados existentes
 
@@ -64,10 +66,13 @@ Los CSV y gráficos actualmente incluidos en `proyecto/resultados/` documentan l
 | Método | MAE recursivo | RMSE recursivo |
 |---|---:|---:|
 | Referencia: ventas de hace 7 días | 11.7130 | 15.4075 |
-| Random Forest | 8.0865 | 10.5055 |
+| Regresión lineal | 8.8747 | 11.7129 |
+| Random Forest | **8.0865** | **10.5055** |
 
-MAE y RMSE se miden en unidades de venta por fila evaluada. Las métricas son únicamente del dataset de Kaggle; no deben interpretarse como precisión sobre Kapaq ni como recomendaciones reales de inventario.
+Random Forest tuvo el mejor promedio, pero la regresión lineal fue mejor en el segundo período; no hubo un ganador en todos los bloques. MAE y RMSE se miden en unidades de venta por fila evaluada. Las métricas son únicamente del dataset de Kaggle; no deben interpretarse como precisión sobre Kapaq ni como recomendaciones reales de inventario. El detalle y las fuentes están en `proyecto/RESULTADOS_ML.md`.
 
 ## Datos
 
-Los archivos CSV presentes en `datasets/` son datos externos descargados de Kaggle. El archivo `test.csv` no contiene ventas reales, por lo que las predicciones generadas para él no tienen métricas observables en este proyecto. La integración con el sistema web de Kapaq no está incluida en esta versión.
+Los archivos CSV presentes en `datasets/` son datos externos descargados de Kaggle. El archivo `test.csv` no contiene ventas reales, por lo que las predicciones generadas para él no tienen métricas observables en este proyecto. El panel administrativo incluye una pantalla de demostración separada, con identificadores Kaggle y una advertencia explícita: no se conecta al inventario ni representa ventas reales de Kapaq.
+
+Para revisar si existe historial propio suficiente, `proyecto/sql/auditoria_ventas_kapaq.sql` contiene consultas agregadas de solo lectura; no modifican la base de datos ni consultan datos personales.

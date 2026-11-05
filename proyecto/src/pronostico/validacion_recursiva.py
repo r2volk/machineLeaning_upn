@@ -15,17 +15,8 @@ NUM_BLOQUES = 3
 CARPETA_RESULTADOS = Path(__file__).resolve().parents[2] / "resultados"
 
 
-def calcular_errores(ventas_reales, predicciones):
-    return {
-        "MAE": mean_absolute_error(ventas_reales, predicciones),
-        "RMSE": np.sqrt(
-            mean_squared_error(ventas_reales, predicciones)
-        ),
-    }
-
-
 def crear_historial(datos_anteriores):
-    """Crea el historial real inicial por tienda y artículo."""
+    """Crea el historial inicial de ventas por tienda y artículo."""
     historial = {}
 
     for (tienda, articulo), grupo in datos_anteriores.groupby(
@@ -38,19 +29,87 @@ def crear_historial(datos_anteriores):
     return historial
 
 
-# Cargar datos y construir variables que solo usan fechas pasadas
-datos_originales = cargar_train()
-datos_con_variables = agregar_variables_historicas(datos_originales)
+def pronosticar_recursivamente(
+    datos_validacion,
+    historial_inicial,
+    pares,
+    fecha_base,
+    modelo=None,
+):
+    """
+    Pronostica día a día. Usa las predicciones de cada día como historial
+    para el siguiente, nunca las ventas reales del período de validación.
+    Si modelo=None, aplica la referencia de ventas de hace 7 días.
+    """
+    historial = {
+        clave: valores.copy()
+        for clave, valores in historial_inicial.items()
+    }
 
-datos_modelo = datos_con_variables.dropna(
+    ventas_reales = []
+    predicciones = []
+
+    for fecha, ventas_dia in datos_validacion.groupby("date", sort=True):
+        ventas_dia = ventas_dia.sort_values(["store", "item"])
+
+        filas = []
+
+        for tienda, articulo in pares:
+            ventas_previas = historial[(tienda, articulo)]
+
+            filas.append({
+                "store": tienda,
+                "item": articulo,
+                "day_index": (fecha - fecha_base).days,
+                "day_of_week": fecha.dayofweek,
+                "month": fecha.month,
+                "lag_7": ventas_previas[-7],
+                "lag_14": ventas_previas[-14],
+                "media_7_dias": np.mean(ventas_previas[-7:]),
+                "media_28_dias": np.mean(ventas_previas[-28:]),
+            })
+
+        X_dia = pd.DataFrame(filas, columns=COLUMNAS_ENTRADA)
+
+        if modelo is None:
+            predicciones_dia = X_dia["lag_7"].to_numpy()
+        else:
+            predicciones_dia = modelo.predict(X_dia)
+
+        predicciones_dia = np.maximum(predicciones_dia, 0)
+        reales_dia = ventas_dia["sales"].to_numpy()
+
+        ventas_reales.extend(reales_dia)
+        predicciones.extend(predicciones_dia)
+
+        # Guardar en el historial las predicciones, no las ventas reales.
+        for (tienda, articulo), prediccion in zip(pares, predicciones_dia):
+            historial[(tienda, articulo)].append(float(prediccion))
+
+    return np.array(ventas_reales), np.array(predicciones)
+
+
+# Cargar Kaggle y construir variables históricas.
+datos_originales = cargar_train()
+datos = agregar_variables_historicas(datos_originales)
+
+datos_modelo = datos.dropna(
     subset=["lag_7", "lag_14", "media_7_dias", "media_28_dias"]
 ).copy()
 
+# Preparar las entradas una vez para conservar la misma escala de fechas.
 X_completo = preparar_variables(datos_modelo)
 fecha_base = datos_modelo["date"].min()
 fecha_final = datos_originales["date"].max()
 
-# Últimos 270 días, separados en 3 bloques consecutivos de 90 días
+pares = sorted({
+    (int(fila.store), int(fila.item))
+    for fila in datos_originales[
+        ["store", "item"]
+    ].drop_duplicates().itertuples(index=False)
+})
+
+# Últimos 270 días: tres bloques cronológicos de 90 días.
 dias_totales = DIAS_POR_BLOQUE * NUM_BLOQUES
 primer_inicio = fecha_final - pd.Timedelta(days=dias_totales - 1)
 
@@ -68,110 +127,69 @@ for numero_bloque in range(NUM_BLOQUES):
         & (datos_originales["date"] <= fin)
     ].copy()
 
+    if entrenamiento.empty or validacion.empty:
+        raise ValueError(f"El bloque {numero_bloque + 1} está vacío.")
+
     X_entrenamiento = X_completo.loc[entrenamiento.index]
     y_entrenamiento = entrenamiento["sales"]
 
-    modelo = crear_modelos()["Random Forest"]
-
-    print(
-        f"Bloque {numero_bloque + 1}/{NUM_BLOQUES}: "
-        f"{inicio:%Y-%m-%d} a {fin:%Y-%m-%d}"
-    )
-    print("  Entrenando Random Forest...")
-    modelo.fit(X_entrenamiento, y_entrenamiento)
-
-    # Ambos métodos comienzan con las ventas reales previas al bloque.
-    fechas_previas = datos_originales[
+    datos_anteriores = datos_originales[
         datos_originales["date"] < inicio
     ]
-    historial_rf = crear_historial(fechas_previas)
-    historial_referencia = crear_historial(fechas_previas)
+    historial_inicial = crear_historial(datos_anteriores)
 
-    reales_bloque = []
-    pred_rf_bloque = []
-    pred_referencia_bloque = []
+    if any(len(historial_inicial[par]) < 28 for par in pares):
+        raise ValueError("Faltan 28 días de historial para algún producto.")
 
-    # Se predice día por día. Después de cada día, cada método agrega
-    # sus propias predicciones al historial para pronosticar el siguiente.
-    for fecha, ventas_del_dia in validacion.groupby("date", sort=True):
-        ventas_del_dia = ventas_del_dia.sort_values(
-            ["store", "item"]
+    print(
+        f"\nBloque {numero_bloque + 1}/{NUM_BLOQUES}: "
+        f"{inicio:%Y-%m-%d} a {fin:%Y-%m-%d}"
+    )
+
+    # Primero probamos la referencia semanal.
+    reales, predichas = pronosticar_recursivamente(
+        datos_validacion=validacion,
+        historial_inicial=historial_inicial,
+        pares=pares,
+        fecha_base=fecha_base,
+        modelo=None,
+    )
+
+    resultados.append({
+        "Bloque": numero_bloque + 1,
+        "Inicio": inicio.date(),
+        "Fin": fin.date(),
+        "Método": "Referencia semanal recursiva",
+        "MAE": mean_absolute_error(reales, predichas),
+        "RMSE": np.sqrt(mean_squared_error(reales, predichas)),
+    })
+
+    # Entrenar y evaluar regresión lineal y Random Forest.
+    for nombre, modelo in crear_modelos().items():
+        print(f"  Entrenando {nombre}...")
+        modelo.fit(X_entrenamiento, y_entrenamiento)
+
+        reales, predichas = pronosticar_recursivamente(
+            datos_validacion=validacion,
+            historial_inicial=historial_inicial,
+            pares=pares,
+            fecha_base=fecha_base,
+            modelo=modelo,
         )
-
-        filas_features_rf = []
-        predicciones_referencia_dia = []
-
-        for fila in ventas_del_dia.itertuples():
-            clave = (int(fila.store), int(fila.item))
-            historial_rf_producto = historial_rf[clave]
-            historial_ref_producto = historial_referencia[clave]
-
-            filas_features_rf.append({
-                "store": int(fila.store),
-                "item": int(fila.item),
-                "day_index": (fecha - fecha_base).days,
-                "day_of_week": fecha.dayofweek,
-                "month": fecha.month,
-                "lag_7": historial_rf_producto[-7],
-                "lag_14": historial_rf_producto[-14],
-                "media_7_dias": np.mean(historial_rf_producto[-7:]),
-                "media_28_dias": np.mean(historial_rf_producto[-28:]),
-            })
-
-            # Referencia semanal recursiva: repite lo estimado hace 7 días.
-            predicciones_referencia_dia.append(
-                historial_ref_producto[-7]
-            )
-
-        X_dia = pd.DataFrame(
-            filas_features_rf,
-            columns=COLUMNAS_ENTRADA,
-        )
-
-        predicciones_rf_dia = np.maximum(
-            modelo.predict(X_dia),
-            0,
-        )
-        predicciones_referencia_dia = np.maximum(
-            np.array(predicciones_referencia_dia),
-            0,
-        )
-
-        reales_dia = ventas_del_dia["sales"].to_numpy()
-        reales_bloque.extend(reales_dia)
-        pred_rf_bloque.extend(predicciones_rf_dia)
-        pred_referencia_bloque.extend(predicciones_referencia_dia)
-
-        # Se agregan las predicciones, no las ventas reales, al historial.
-        for fila, pred_rf, pred_ref in zip(
-            ventas_del_dia.itertuples(),
-            predicciones_rf_dia,
-            predicciones_referencia_dia,
-        ):
-            clave = (int(fila.store), int(fila.item))
-            historial_rf[clave].append(float(pred_rf))
-            historial_referencia[clave].append(float(pred_ref))
-
-    # Registrar resultados del bloque
-    for nombre, predicciones in [
-        ("Referencia semanal recursiva", pred_referencia_bloque),
-        ("Random Forest recursivo", pred_rf_bloque),
-    ]:
-        errores = calcular_errores(reales_bloque, predicciones)
 
         resultados.append({
             "Bloque": numero_bloque + 1,
             "Inicio": inicio.date(),
             "Fin": fin.date(),
-            "Método": nombre,
-            **errores,
+            "Método": f"{nombre} recursivo",
+            "MAE": mean_absolute_error(reales, predichas),
+            "RMSE": np.sqrt(mean_squared_error(reales, predichas)),
         })
 
 
-# Mostrar resultados por bloque y promedio
 tabla = pd.DataFrame(resultados)
 
-print("\nRESULTADOS POR BLOQUE")
+print("\nRESULTADOS RECURSIVOS POR BLOQUE")
 print(tabla.to_string(
     index=False,
     formatters={
@@ -195,9 +213,7 @@ print(promedios.to_string(
 ))
 
 CARPETA_RESULTADOS.mkdir(parents=True, exist_ok=True)
-archivo_salida = (
-    CARPETA_RESULTADOS / "validacion_recursiva_random_forest.csv"
-)
+archivo_salida = CARPETA_RESULTADOS / "comparacion_recursiva_90_dias.csv"
 tabla.to_csv(archivo_salida, index=False)
 
 print(f"\nResultados guardados en: {archivo_salida}")
