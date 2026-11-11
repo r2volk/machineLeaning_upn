@@ -1,0 +1,63 @@
+{
+  "fecha_utc": "2026-11-11T10:46:35.142537+00:00",
+  "direccion": "http://127.0.0.1:5000",
+  "http": {
+    "/": {
+      "status": 200,
+      "bytes": 37191,
+      "tipo": "text/html; charset=utf-8"
+    },
+    "/api/health": {
+      "status": 200,
+      "bytes": 41,
+      "tipo": "application/json"
+    },
+    "/api/resultados": {
+      "status": 200,
+      "bytes": 10042,
+      "tipo": "application/json"
+    },
+    "/documentos/informe": {
+      "status": 200,
+      "bytes": 13099,
+      "tipo": "text/markdown; charset=utf-8"
+    },
+    "/documentos/guia": {
+      "status": 200,
+      "bytes": 27546,
+      "tipo": "text/markdown; charset=utf-8"
+    },
+    "/documentos/protocolo": {
+      "status": 200,
+      "bytes": 3364,
+      "tipo": "text/markdown; charset=utf-8"
+    },
+    "normal": {
+      "status": 200,
+      "safety": false,
+      "etiqueta": "alegria"
+    },
+    "incierto": {
+      "status": 200,
+      "safety": false,
+      "etiqueta": "incierto"
+    },
+    "precaucion": {
+      "status": 200,
+      "safety": true,
+      "etiqueta": null
+    },
+    "variante": {
+      "status": 200,
+      "safety": true,
+      "etiqueta": null
+    }
+  },
+  "evidencia_intacta_tras_todo": true,
+  "sha256": {
+    "entrenamiento/resultados/seleccion.json": "a5319d3836788cb9a9b85824a3c5b6a18da0dc01e24c99a594d5827d29374e0e",
+    "entrenamiento/resultados/test_final.json": "cb2de4ccb5b9c2068d48222b27a8b9872313984243a8a58d9f1491e2a6fdfe1c",
+    "entrenamiento/resultados/test_reservado.json": "5dd2d36795304dbb03b5733dc0f8546791eeb13c76a0efa8752c6adc7d65fb54"
+  },
+  "salida_todo": "Etapa todo completada. Resultados: entrenamiento/resultados/"
+}

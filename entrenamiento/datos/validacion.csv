@@ -1,0 +1,81 @@
+id,grupo,texto,etiqueta,origen,particion
+alegria_001_1,alegria_001,Estoy feliz porque aprobé el examen,alegria,sintetico_asistido_IA,validacion
+alegria_001_2,alegria_001,Pasé la evaluación y estoy muy contenta,alegria,sintetico_asistido_IA,validacion
+alegria_003_1,alegria_003,Hoy me siento alegre sin una razón especial,alegria,sintetico_asistido_IA,validacion
+alegria_003_2,alegria_003,Amanecí de buen humor y con ganas de sonreír,alegria,sintetico_asistido_IA,validacion
+alegria_004_1,alegria_004,Me encantó pasar la tarde con mi familia,alegria,sintetico_asistido_IA,validacion
+alegria_004_2,alegria_004,Compartir con los míos me llenó de alegría,alegria,sintetico_asistido_IA,validacion
+alegria_010_1,alegria_010,Disfruté muchísimo el concierto,alegria,sintetico_asistido_IA,validacion
+alegria_010_2,alegria_010,La música de anoche me dejó feliz,alegria,sintetico_asistido_IA,validacion
+alegria_020_1,alegria_020,Estoy contenta con los pequeños avances,alegria,sintetico_asistido_IA,validacion
+alegria_020_2,alegria_020,Mis progresos me llenan de satisfacción,alegria,sintetico_asistido_IA,validacion
+alegria_029_1,alegria_029,Estoy feliz con mi nuevo departamento,alegria,sintetico_asistido_IA,validacion
+alegria_029_2,alegria_029,Mudarnos a nuestra casa me emociona,alegria,sintetico_asistido_IA,validacion
+alegria_034_1,alegria_034,Estoy recontra feliz con mi nota,alegria,sintetico_asistido_IA,validacion
+alegria_034_2,alegria_034,"Qué bacán, saqué buena nota y estoy contenta",alegria,sintetico_asistido_IA,validacion
+alegria_040_1,alegria_040,Estoy feliz de haber pedido ayuda,alegria,sintetico_asistido_IA,validacion
+alegria_040_2,alegria_040,Me siento esperanzada después de hablar con alguien,alegria,sintetico_asistido_IA,validacion
+tristeza_005_1,tristeza_005,Terminé con mi pareja y tengo mucha pena,tristeza,sintetico_asistido_IA,validacion
+tristeza_005_2,tristeza_005,La separación me dejó muy triste,tristeza,sintetico_asistido_IA,validacion
+tristeza_010_1,tristeza_010,Tengo ganas de llorar y no sé por qué,tristeza,sintetico_asistido_IA,validacion
+tristeza_010_2,tristeza_010,Hoy ando sensible y con mucha pena,tristeza,sintetico_asistido_IA,validacion
+tristeza_011_1,tristeza_011,Estoy bajoneado desde ayer,tristeza,sintetico_asistido_IA,validacion
+tristeza_011_2,tristeza_011,Ando con el ánimo por el suelo,tristeza,sintetico_asistido_IA,validacion
+tristeza_017_1,tristeza_017,Estoy triste por la enfermedad de mi abuelo,tristeza,sintetico_asistido_IA,validacion
+tristeza_017_2,tristeza_017,Me duele verlo pasar por un momento difícil,tristeza,sintetico_asistido_IA,validacion
+tristeza_026_1,tristeza_026,Estoy triste por haber perdido mi trabajo,tristeza,sintetico_asistido_IA,validacion
+tristeza_026_2,tristeza_026,Quedarme sin empleo me dejó desanimada,tristeza,sintetico_asistido_IA,validacion
+tristeza_029_1,tristeza_029,Tengo el corazón apachurrado,tristeza,sintetico_asistido_IA,validacion
+tristeza_029_2,tristeza_029,Siento una pena que no puedo quitarme,tristeza,sintetico_asistido_IA,validacion
+tristeza_030_1,tristeza_030,Estoy llorando por la discusión con mi mamá,tristeza,sintetico_asistido_IA,validacion
+tristeza_030_2,tristeza_030,Después de pelear con ella me quedé triste,tristeza,sintetico_asistido_IA,validacion
+tristeza_040_1,tristeza_040,Estoy triste aunque hoy haya salido el sol,tristeza,sintetico_asistido_IA,validacion
+tristeza_040_2,tristeza_040,Por dentro me siento gris y sin ganas,tristeza,sintetico_asistido_IA,validacion
+enojo_001_1,enojo_001,Estoy enojado porque no respetaron mi trabajo,enojo,sintetico_asistido_IA,validacion
+enojo_001_2,enojo_001,Me da rabia que ignoren mi esfuerzo,enojo,sintetico_asistido_IA,validacion
+enojo_002_1,enojo_002,Me molesta que me interrumpan cuando hablo,enojo,sintetico_asistido_IA,validacion
+enojo_002_2,enojo_002,Me irrita que no me dejen terminar,enojo,sintetico_asistido_IA,validacion
+enojo_007_1,enojo_007,Estoy frustrado con esta tarea que no sale,enojo,sintetico_asistido_IA,validacion
+enojo_007_2,enojo_007,Me da rabia no poder resolver el ejercicio,enojo,sintetico_asistido_IA,validacion
+enojo_009_1,enojo_009,Estoy harto de esperar sin una respuesta,enojo,sintetico_asistido_IA,validacion
+enojo_009_2,enojo_009,La demora me tiene de mal humor,enojo,sintetico_asistido_IA,validacion
+enojo_010_1,enojo_010,Me da cólera que se colen en la fila,enojo,sintetico_asistido_IA,validacion
+enojo_010_2,enojo_010,Me indigna que no respeten el turno,enojo,sintetico_asistido_IA,validacion
+enojo_014_1,enojo_014,Tengo rabia por el cobro incorrecto,enojo,sintetico_asistido_IA,validacion
+enojo_014_2,enojo_014,Me enoja que me quieran cobrar de más,enojo,sintetico_asistido_IA,validacion
+enojo_027_1,enojo_027,Me da bronca que se lleven el crédito,enojo,sintetico_asistido_IA,validacion
+enojo_027_2,enojo_027,Me enoja que presenten mi idea como suya,enojo,sintetico_asistido_IA,validacion
+enojo_037_1,enojo_037,Me da rabia que me hablen con desprecio,enojo,sintetico_asistido_IA,validacion
+enojo_037_2,enojo_037,Estoy indignada por ese tono humillante,enojo,sintetico_asistido_IA,validacion
+ansiedad_004_1,ansiedad_004,Estoy preocupada por el resultado médico,ansiedad,sintetico_asistido_IA,validacion
+ansiedad_004_2,ansiedad_004,La espera de los resultados me tiene inquieta,ansiedad,sintetico_asistido_IA,validacion
+ansiedad_014_1,ansiedad_014,Me angustia perder mi trabajo,ansiedad,sintetico_asistido_IA,validacion
+ansiedad_014_2,ansiedad_014,Estoy con miedo de que me despidan,ansiedad,sintetico_asistido_IA,validacion
+ansiedad_016_1,ansiedad_016,Me preocupa que mi proyecto salga mal,ansiedad,sintetico_asistido_IA,validacion
+ansiedad_016_2,ansiedad_016,Siento mucha presión por entregar algo perfecto,ansiedad,sintetico_asistido_IA,validacion
+ansiedad_017_1,ansiedad_017,Estoy inquieto por la reunión con mi jefe,ansiedad,sintetico_asistido_IA,validacion
+ansiedad_017_2,ansiedad_017,Pensar en esa conversación me pone nervioso,ansiedad,sintetico_asistido_IA,validacion
+ansiedad_018_1,ansiedad_018,Me da miedo hablar por teléfono,ansiedad,sintetico_asistido_IA,validacion
+ansiedad_018_2,ansiedad_018,Hacer esa llamada me genera mucha ansiedad,ansiedad,sintetico_asistido_IA,validacion
+ansiedad_019_1,ansiedad_019,Siento que tengo demasiadas cosas pendientes,ansiedad,sintetico_asistido_IA,validacion
+ansiedad_019_2,ansiedad_019,La lista de responsabilidades me agobia,ansiedad,sintetico_asistido_IA,validacion
+ansiedad_026_1,ansiedad_026,Estoy tenso por la competencia,ansiedad,sintetico_asistido_IA,validacion
+ansiedad_026_2,ansiedad_026,Siento nervios antes de participar,ansiedad,sintetico_asistido_IA,validacion
+ansiedad_029_1,ansiedad_029,Siento nervios cuando entro a un lugar lleno,ansiedad,sintetico_asistido_IA,validacion
+ansiedad_029_2,ansiedad_029,La multitud me pone muy inquieta,ansiedad,sintetico_asistido_IA,validacion
+neutral_004_1,neutral_004,Estoy tomando un vaso de agua,neutral,sintetico_asistido_IA,validacion
+neutral_004_2,neutral_004,Ahora estoy bebiendo agua,neutral,sintetico_asistido_IA,validacion
+neutral_007_1,neutral_007,Estoy esperando el autobús,neutral,sintetico_asistido_IA,validacion
+neutral_007_2,neutral_007,Me encuentro en el paradero,neutral,sintetico_asistido_IA,validacion
+neutral_014_1,neutral_014,Hoy caminé hasta la biblioteca,neutral,sintetico_asistido_IA,validacion
+neutral_014_2,neutral_014,Fui a devolver un libro,neutral,sintetico_asistido_IA,validacion
+neutral_015_1,neutral_015,Estoy sentado en la sala,neutral,sintetico_asistido_IA,validacion
+neutral_015_2,neutral_015,Me encuentro en casa en este momento,neutral,sintetico_asistido_IA,validacion
+neutral_024_1,neutral_024,Voy a cambiar de ropa,neutral,sintetico_asistido_IA,validacion
+neutral_024_2,neutral_024,Me preparo para salir de casa,neutral,sintetico_asistido_IA,validacion
+neutral_032_1,neutral_032,La computadora está encendida,neutral,sintetico_asistido_IA,validacion
+neutral_032_2,neutral_032,El equipo sigue funcionando,neutral,sintetico_asistido_IA,validacion
+neutral_034_1,neutral_034,Estoy escuchando la explicación,neutral,sintetico_asistido_IA,validacion
+neutral_034_2,neutral_034,Presto atención a lo que dice el profesor,neutral,sintetico_asistido_IA,validacion
+neutral_037_1,neutral_037,La puerta del salón está abierta,neutral,sintetico_asistido_IA,validacion
+neutral_037_2,neutral_037,El aula todavía está disponible,neutral,sintetico_asistido_IA,validacion

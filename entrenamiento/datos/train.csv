@@ -1,0 +1,241 @@
+id,grupo,texto,etiqueta,origen,particion
+alegria_002_1,alegria_002,Me emociona empezar mis prácticas,alegria,sintetico_asistido_IA,train
+alegria_002_2,alegria_002,Tengo mucha ilusión por mi primer trabajo,alegria,sintetico_asistido_IA,train
+alegria_005_1,alegria_005,Estoy orgulloso del proyecto que terminé,alegria,sintetico_asistido_IA,train
+alegria_005_2,alegria_005,Me da satisfacción ver mi trabajo completo,alegria,sintetico_asistido_IA,train
+alegria_006_1,alegria_006,Qué felicidad volver a ver a mis amigos,alegria,sintetico_asistido_IA,train
+alegria_006_2,alegria_006,El reencuentro con mis patas me alegró el día,alegria,sintetico_asistido_IA,train
+alegria_009_1,alegria_009,Estoy entusiasmado con lo que viene,alegria,sintetico_asistido_IA,train
+alegria_009_2,alegria_009,El futuro me ilusiona y me da energía,alegria,sintetico_asistido_IA,train
+alegria_011_1,alegria_011,Mi mascota volvió a casa y estoy feliz,alegria,sintetico_asistido_IA,train
+alegria_011_2,alegria_011,Qué alegría haber encontrado a mi perrito,alegria,sintetico_asistido_IA,train
+alegria_012_1,alegria_012,"Me salió bien la exposición, estoy contenta",alegria,sintetico_asistido_IA,train
+alegria_012_2,alegria_012,Pude presentar mi trabajo y me siento orgullosa,alegria,sintetico_asistido_IA,train
+alegria_013_1,alegria_013,Me siento en paz después de resolver el problema,alegria,sintetico_asistido_IA,train
+alegria_013_2,alegria_013,Estoy aliviado y contento porque todo salió bien,alegria,sintetico_asistido_IA,train
+alegria_014_1,alegria_014,La sorpresa de cumpleaños me emocionó,alegria,sintetico_asistido_IA,train
+alegria_014_2,alegria_014,Me hicieron sentir muy querido en mi cumpleaños,alegria,sintetico_asistido_IA,train
+alegria_016_1,alegria_016,Me alegra haber ayudado a mi compañero,alegria,sintetico_asistido_IA,train
+alegria_016_2,alegria_016,Apoyar a alguien me hizo sentir muy bien,alegria,sintetico_asistido_IA,train
+alegria_017_1,alegria_017,Estoy motivada para seguir aprendiendo,alegria,sintetico_asistido_IA,train
+alegria_017_2,alegria_017,Aprender algo nuevo me entusiasma mucho,alegria,sintetico_asistido_IA,train
+alegria_018_1,alegria_018,"Me aceptaron en la universidad, qué felicidad",alegria,sintetico_asistido_IA,train
+alegria_018_2,alegria_018,Logré ingresar y estoy saltando de alegría,alegria,sintetico_asistido_IA,train
+alegria_019_1,alegria_019,Hoy reí mucho con mis hermanos,alegria,sintetico_asistido_IA,train
+alegria_019_2,alegria_019,La pasé genial riéndome con mi familia,alegria,sintetico_asistido_IA,train
+alegria_022_1,alegria_022,Mi equipo ganó y estoy emocionado,alegria,sintetico_asistido_IA,train
+alegria_022_2,alegria_022,Celebré la victoria con mucha alegría,alegria,sintetico_asistido_IA,train
+alegria_023_1,alegria_023,Estoy feliz por la buena noticia de mi hermana,alegria,sintetico_asistido_IA,train
+alegria_023_2,alegria_023,La noticia de mi familia me llenó de emoción,alegria,sintetico_asistido_IA,train
+alegria_024_1,alegria_024,Me siento querido y acompañado,alegria,sintetico_asistido_IA,train
+alegria_024_2,alegria_024,Saber que cuento con mis amigos me hace feliz,alegria,sintetico_asistido_IA,train
+alegria_025_1,alegria_025,Estoy disfrutando mucho mis vacaciones,alegria,sintetico_asistido_IA,train
+alegria_025_2,alegria_025,Estos días de descanso me tienen contenta,alegria,sintetico_asistido_IA,train
+alegria_026_1,alegria_026,Me hizo ilusión recibir tu mensaje,alegria,sintetico_asistido_IA,train
+alegria_026_2,alegria_026,Leer ese saludo me alegró muchísimo,alegria,sintetico_asistido_IA,train
+alegria_028_1,alegria_028,Me siento optimista y animada,alegria,sintetico_asistido_IA,train
+alegria_028_2,alegria_028,Hoy veo las cosas con esperanza y entusiasmo,alegria,sintetico_asistido_IA,train
+alegria_030_1,alegria_030,"La comida salió deliciosa, estoy contento",alegria,sintetico_asistido_IA,train
+alegria_030_2,alegria_030,Me alegró que todos disfrutaran lo que cociné,alegria,sintetico_asistido_IA,train
+alegria_031_1,alegria_031,"No estoy triste, hoy estoy contenta",alegria,sintetico_asistido_IA,train
+alegria_031_2,alegria_031,"Ya no siento pena, ahora tengo alegría",alegria,sintetico_asistido_IA,train
+alegria_035_1,alegria_035,Me devolvieron mi celular y siento alivio,alegria,sintetico_asistido_IA,train
+alegria_035_2,alegria_035,Recuperar lo perdido me dio mucha felicidad,alegria,sintetico_asistido_IA,train
+alegria_036_1,alegria_036,Me encanta lo que estoy haciendo,alegria,sintetico_asistido_IA,train
+alegria_036_2,alegria_036,Disfruto mi actividad y eso me anima,alegria,sintetico_asistido_IA,train
+alegria_037_1,alegria_037,Hoy pude descansar y me siento renovado,alegria,sintetico_asistido_IA,train
+alegria_037_2,alegria_037,Estoy de buen ánimo después de dormir bien,alegria,sintetico_asistido_IA,train
+alegria_039_1,alegria_039,Terminé de pagar mi deuda y estoy aliviada,alegria,sintetico_asistido_IA,train
+alegria_039_2,alegria_039,Me quité ese peso y me siento contento,alegria,sintetico_asistido_IA,train
+tristeza_001_1,tristeza_001,Estoy triste porque desaprobé el examen,tristeza,sintetico_asistido_IA,train
+tristeza_001_2,tristeza_001,Me da mucha pena no haber aprobado,tristeza,sintetico_asistido_IA,train
+tristeza_002_1,tristeza_002,Extraño mucho a mi familia,tristeza,sintetico_asistido_IA,train
+tristeza_002_2,tristeza_002,Estar lejos de casa me pone melancólica,tristeza,sintetico_asistido_IA,train
+tristeza_003_1,tristeza_003,Hoy me siento solo aunque haya gente cerca,tristeza,sintetico_asistido_IA,train
+tristeza_003_2,tristeza_003,Siento soledad incluso rodeada de personas,tristeza,sintetico_asistido_IA,train
+tristeza_004_1,tristeza_004,"No tengo ganas de hacer nada, estoy desanimado",tristeza,sintetico_asistido_IA,train
+tristeza_004_2,tristeza_004,Me siento apagada y sin motivación,tristeza,sintetico_asistido_IA,train
+tristeza_007_1,tristeza_007,Hoy lloré al recordar a mi abuela,tristeza,sintetico_asistido_IA,train
+tristeza_007_2,tristeza_007,Los recuerdos de quien perdí me llenan de tristeza,tristeza,sintetico_asistido_IA,train
+tristeza_008_1,tristeza_008,Siento un vacío después de la despedida,tristeza,sintetico_asistido_IA,train
+tristeza_008_2,tristeza_008,Decir adiós me dejó el corazón triste,tristeza,sintetico_asistido_IA,train
+tristeza_012_1,tristeza_012,Me siento triste al ver mis planes frustrados,tristeza,sintetico_asistido_IA,train
+tristeza_012_2,tristeza_012,Que no salieran mis planes me desilusionó,tristeza,sintetico_asistido_IA,train
+tristeza_013_1,tristeza_013,Me da pena haber perdido esa amistad,tristeza,sintetico_asistido_IA,train
+tristeza_013_2,tristeza_013,Extraño a mi amigo y estoy triste,tristeza,sintetico_asistido_IA,train
+tristeza_014_1,tristeza_014,No disfruté nada de la reunión,tristeza,sintetico_asistido_IA,train
+tristeza_014_2,tristeza_014,Volví de la reunión sintiéndome vacía,tristeza,sintetico_asistido_IA,train
+tristeza_016_1,tristeza_016,Me siento poco valorada por mi familia,tristeza,sintetico_asistido_IA,train
+tristeza_016_2,tristeza_016,Me entristece que no reconozcan mi esfuerzo,tristeza,sintetico_asistido_IA,train
+tristeza_018_1,tristeza_018,Siento nostalgia de cuando era niño,tristeza,sintetico_asistido_IA,train
+tristeza_018_2,tristeza_018,Recordar esos años me pone melancólico,tristeza,sintetico_asistido_IA,train
+tristeza_020_1,tristeza_020,Me pesa estar lejos de mis hijos,tristeza,sintetico_asistido_IA,train
+tristeza_020_2,tristeza_020,Extrañarlos me hace llorar,tristeza,sintetico_asistido_IA,train
+tristeza_021_1,tristeza_021,"No estoy feliz, siento mucha tristeza",tristeza,sintetico_asistido_IA,train
+tristeza_021_2,tristeza_021,Aunque sonría por fuera estoy triste,tristeza,sintetico_asistido_IA,train
+tristeza_022_1,tristeza_022,Me siento mal porque decepcioné a mi amigo,tristeza,sintetico_asistido_IA,train
+tristeza_022_2,tristeza_022,Me da pena haberle fallado,tristeza,sintetico_asistido_IA,train
+tristeza_023_1,tristeza_023,Hoy nada me anima,tristeza,sintetico_asistido_IA,train
+tristeza_023_2,tristeza_023,Estoy sin ilusión y con el ánimo bajo,tristeza,sintetico_asistido_IA,train
+tristeza_024_1,tristeza_024,Me entristeció la noticia que recibí,tristeza,sintetico_asistido_IA,train
+tristeza_024_2,tristeza_024,Esa noticia me dejó llorando,tristeza,sintetico_asistido_IA,train
+tristeza_025_1,tristeza_025,Me siento abandonado desde que se fueron,tristeza,sintetico_asistido_IA,train
+tristeza_025_2,tristeza_025,La casa vacía me hace sentir solo,tristeza,sintetico_asistido_IA,train
+tristeza_028_1,tristeza_028,Me duele que ya no hablemos,tristeza,sintetico_asistido_IA,train
+tristeza_028_2,tristeza_028,El silencio entre nosotros me pone triste,tristeza,sintetico_asistido_IA,train
+tristeza_032_1,tristeza_032,Qué pena que hayan cancelado el viaje,tristeza,sintetico_asistido_IA,train
+tristeza_032_2,tristeza_032,Tenía ilusión y ahora estoy desanimada,tristeza,sintetico_asistido_IA,train
+tristeza_034_1,tristeza_034,Me hace falta alguien con quien conversar,tristeza,sintetico_asistido_IA,train
+tristeza_034_2,tristeza_034,La soledad de las noches me pone triste,tristeza,sintetico_asistido_IA,train
+tristeza_036_1,tristeza_036,Me quedé con tristeza después de la película,tristeza,sintetico_asistido_IA,train
+tristeza_036_2,tristeza_036,La historia me hizo llorar,tristeza,sintetico_asistido_IA,train
+tristeza_037_1,tristeza_037,Siento que mi esfuerzo no sirvió de nada,tristeza,sintetico_asistido_IA,train
+tristeza_037_2,tristeza_037,Me desanima no ver resultados,tristeza,sintetico_asistido_IA,train
+tristeza_038_1,tristeza_038,Me siento apagado desde la despedida de mi hermano,tristeza,sintetico_asistido_IA,train
+tristeza_038_2,tristeza_038,Extraño a mi hermano y ando triste,tristeza,sintetico_asistido_IA,train
+tristeza_039_1,tristeza_039,Me da pena no poder acompañarlos,tristeza,sintetico_asistido_IA,train
+tristeza_039_2,tristeza_039,Me entristece perderme ese momento familiar,tristeza,sintetico_asistido_IA,train
+enojo_003_1,enojo_003,Estoy furiosa con la injusticia que vi,enojo,sintetico_asistido_IA,train
+enojo_003_2,enojo_003,Ese trato injusto me llena de indignación,enojo,sintetico_asistido_IA,train
+enojo_004_1,enojo_004,Qué cólera que cancelen a último minuto,enojo,sintetico_asistido_IA,train
+enojo_004_2,enojo_004,Me fastidia mucho ese cambio sin avisar,enojo,sintetico_asistido_IA,train
+enojo_005_1,enojo_005,Me enfurece que me hayan mentido,enojo,sintetico_asistido_IA,train
+enojo_005_2,enojo_005,Estoy molesto porque me engañaron,enojo,sintetico_asistido_IA,train
+enojo_006_1,enojo_006,No soporto el ruido de mis vecinos,enojo,sintetico_asistido_IA,train
+enojo_006_2,enojo_006,Ese ruido me tiene irritada,enojo,sintetico_asistido_IA,train
+enojo_008_1,enojo_008,Me molesta que se burlen de mí,enojo,sintetico_asistido_IA,train
+enojo_008_2,enojo_008,Sus burlas me hicieron enojar,enojo,sintetico_asistido_IA,train
+enojo_011_1,enojo_011,Estoy irritada porque no me escuchan,enojo,sintetico_asistido_IA,train
+enojo_011_2,enojo_011,Me enfada tener que repetir lo mismo,enojo,sintetico_asistido_IA,train
+enojo_012_1,enojo_012,Me molesta que usen mis cosas sin permiso,enojo,sintetico_asistido_IA,train
+enojo_012_2,enojo_012,Estoy enojado porque tomaron mi cuaderno,enojo,sintetico_asistido_IA,train
+enojo_013_1,enojo_013,Me fastidia que no cumplan su promesa,enojo,sintetico_asistido_IA,train
+enojo_013_2,enojo_013,Estoy furiosa porque no hicieron lo acordado,enojo,sintetico_asistido_IA,train
+enojo_015_1,enojo_015,Qué frustración que se borrara mi archivo,enojo,sintetico_asistido_IA,train
+enojo_015_2,enojo_015,Perder mi trabajo me puso de pésimo humor,enojo,sintetico_asistido_IA,train
+enojo_016_1,enojo_016,Me siento indignado por ese comentario,enojo,sintetico_asistido_IA,train
+enojo_016_2,enojo_016,Lo que dijeron me parece ofensivo y me enoja,enojo,sintetico_asistido_IA,train
+enojo_018_1,enojo_018,Me irrita que me comparen con otros,enojo,sintetico_asistido_IA,train
+enojo_018_2,enojo_018,Esas comparaciones me hacen enojar,enojo,sintetico_asistido_IA,train
+enojo_019_1,enojo_019,Estoy harto del tráfico y de las bocinas,enojo,sintetico_asistido_IA,train
+enojo_019_2,enojo_019,La congestión me tiene fastidiado,enojo,sintetico_asistido_IA,train
+enojo_021_1,enojo_021,"No estoy triste, estoy furioso",enojo,sintetico_asistido_IA,train
+enojo_021_2,enojo_021,Lo que siento es rabia y no pena,enojo,sintetico_asistido_IA,train
+enojo_022_1,enojo_022,Me da cólera que el internet falle siempre,enojo,sintetico_asistido_IA,train
+enojo_022_2,enojo_022,La conexión se cae y me irrita muchísimo,enojo,sintetico_asistido_IA,train
+enojo_023_1,enojo_023,Estoy frustrada con el trámite interminable,enojo,sintetico_asistido_IA,train
+enojo_023_2,enojo_023,Tantas vueltas para el trámite me hacen enojar,enojo,sintetico_asistido_IA,train
+enojo_024_1,enojo_024,Me molesta esa falta de respeto,enojo,sintetico_asistido_IA,train
+enojo_024_2,enojo_024,Estoy indignado por cómo me hablaron,enojo,sintetico_asistido_IA,train
+enojo_025_1,enojo_025,Me enfada que cambien las reglas a cada rato,enojo,sintetico_asistido_IA,train
+enojo_025_2,enojo_025,Estoy harto de que nunca mantengan el acuerdo,enojo,sintetico_asistido_IA,train
+enojo_028_1,enojo_028,Estoy furioso porque dañaron mi bicicleta,enojo,sintetico_asistido_IA,train
+enojo_028_2,enojo_028,Me da rabia que hayan roto algo mío,enojo,sintetico_asistido_IA,train
+enojo_029_1,enojo_029,Me irrita que me presionen sin razón,enojo,sintetico_asistido_IA,train
+enojo_029_2,enojo_029,Esa exigencia constante me pone de mal humor,enojo,sintetico_asistido_IA,train
+enojo_030_1,enojo_030,Estoy molesta por el mal servicio,enojo,sintetico_asistido_IA,train
+enojo_030_2,enojo_030,Me da cólera cómo me atendieron,enojo,sintetico_asistido_IA,train
+enojo_032_1,enojo_032,Estoy enfadada porque publicaron mi foto sin permiso,enojo,sintetico_asistido_IA,train
+enojo_032_2,enojo_032,Que invadan mi privacidad me molesta,enojo,sintetico_asistido_IA,train
+enojo_034_1,enojo_034,Tengo una cólera terrible por la estafa,enojo,sintetico_asistido_IA,train
+enojo_034_2,enojo_034,Me engañaron y estoy furiosa,enojo,sintetico_asistido_IA,train
+enojo_038_1,enojo_038,Estoy harto de sus excusas,enojo,sintetico_asistido_IA,train
+enojo_038_2,enojo_038,Me fastidia que siempre invente una justificación,enojo,sintetico_asistido_IA,train
+enojo_039_1,enojo_039,Me molestó que nadie limpiara,enojo,sintetico_asistido_IA,train
+enojo_039_2,enojo_039,Estoy de mal humor por el desorden que dejaron,enojo,sintetico_asistido_IA,train
+ansiedad_001_1,ansiedad_001,Estoy nervioso por el examen de mañana,ansiedad,sintetico_asistido_IA,train
+ansiedad_001_2,ansiedad_001,La evaluación me preocupa y no puedo relajarme,ansiedad,sintetico_asistido_IA,train
+ansiedad_003_1,ansiedad_003,No puedo dejar de pensar en lo que puede salir mal,ansiedad,sintetico_asistido_IA,train
+ansiedad_003_2,ansiedad_003,Le doy vueltas a todos los problemas posibles,ansiedad,sintetico_asistido_IA,train
+ansiedad_005_1,ansiedad_005,Siento muchos nervios antes de la entrevista,ansiedad,sintetico_asistido_IA,train
+ansiedad_005_2,ansiedad_005,Me angustia la entrevista de trabajo,ansiedad,sintetico_asistido_IA,train
+ansiedad_007_1,ansiedad_007,Estoy estresado con tantas entregas,ansiedad,sintetico_asistido_IA,train
+ansiedad_007_2,ansiedad_007,Se me acumularon las tareas y siento mucha presión,ansiedad,sintetico_asistido_IA,train
+ansiedad_008_1,ansiedad_008,No puedo dormir pensando en mañana,ansiedad,sintetico_asistido_IA,train
+ansiedad_008_2,ansiedad_008,La preocupación por el día siguiente me mantiene despierta,ansiedad,sintetico_asistido_IA,train
+ansiedad_009_1,ansiedad_009,Me inquieta no saber qué va a pasar,ansiedad,sintetico_asistido_IA,train
+ansiedad_009_2,ansiedad_009,La incertidumbre me tiene con ansiedad,ansiedad,sintetico_asistido_IA,train
+ansiedad_010_1,ansiedad_010,Estoy asustada por lo que viene,ansiedad,sintetico_asistido_IA,train
+ansiedad_010_2,ansiedad_010,Tengo miedo del futuro,ansiedad,sintetico_asistido_IA,train
+ansiedad_011_1,ansiedad_011,Siento tensión cuando debo tomar decisiones,ansiedad,sintetico_asistido_IA,train
+ansiedad_011_2,ansiedad_011,Me angustia elegir y después arrepentirme,ansiedad,sintetico_asistido_IA,train
+ansiedad_012_1,ansiedad_012,Estoy preocupado porque mi familia no responde,ansiedad,sintetico_asistido_IA,train
+ansiedad_012_2,ansiedad_012,No saber dónde están me pone nervioso,ansiedad,sintetico_asistido_IA,train
+ansiedad_013_1,ansiedad_013,Me cuesta relajarme antes de viajar,ansiedad,sintetico_asistido_IA,train
+ansiedad_013_2,ansiedad_013,El viaje me da nervios y me inquieta,ansiedad,sintetico_asistido_IA,train
+ansiedad_015_1,ansiedad_015,Tengo nervios por mi primer día de clases,ansiedad,sintetico_asistido_IA,train
+ansiedad_015_2,ansiedad_015,Empezar en un lugar nuevo me pone ansiosa,ansiedad,sintetico_asistido_IA,train
+ansiedad_021_1,ansiedad_021,"No estoy tranquila, sigo con nervios",ansiedad,sintetico_asistido_IA,train
+ansiedad_021_2,ansiedad_021,Aunque parezca calmada estoy ansiosa,ansiedad,sintetico_asistido_IA,train
+ansiedad_022_1,ansiedad_022,Me pone nervioso llegar tarde,ansiedad,sintetico_asistido_IA,train
+ansiedad_022_2,ansiedad_022,Mirar el reloj me genera más preocupación,ansiedad,sintetico_asistido_IA,train
+ansiedad_023_1,ansiedad_023,Estoy angustiada por la salud de mi mamá,ansiedad,sintetico_asistido_IA,train
+ansiedad_023_2,ansiedad_023,Me preocupa mucho que le pase algo,ansiedad,sintetico_asistido_IA,train
+ansiedad_025_1,ansiedad_025,Tengo miedo de que me rechacen,ansiedad,sintetico_asistido_IA,train
+ansiedad_025_2,ansiedad_025,Me preocupa no ser aceptado por el grupo,ansiedad,sintetico_asistido_IA,train
+ansiedad_027_1,ansiedad_027,Me agobia tener que hacerlo todo hoy,ansiedad,sintetico_asistido_IA,train
+ansiedad_027_2,ansiedad_027,La falta de tiempo me tiene estresada,ansiedad,sintetico_asistido_IA,train
+ansiedad_031_1,ansiedad_031,Estoy con ansiedad por la mudanza,ansiedad,sintetico_asistido_IA,train
+ansiedad_031_2,ansiedad_031,El cambio de casa me tiene nervioso,ansiedad,sintetico_asistido_IA,train
+ansiedad_032_1,ansiedad_032,Me da miedo no estar preparado,ansiedad,sintetico_asistido_IA,train
+ansiedad_032_2,ansiedad_032,Dudo de mi preparación y siento angustia,ansiedad,sintetico_asistido_IA,train
+ansiedad_033_1,ansiedad_033,Tengo la cabeza llena de preocupaciones,ansiedad,sintetico_asistido_IA,train
+ansiedad_033_2,ansiedad_033,No logro parar los pensamientos sobre problemas,ansiedad,sintetico_asistido_IA,train
+ansiedad_034_1,ansiedad_034,Me siento sobrepasada por las responsabilidades,ansiedad,sintetico_asistido_IA,train
+ansiedad_034_2,ansiedad_034,Tanta presión me tiene angustiada,ansiedad,sintetico_asistido_IA,train
+ansiedad_035_1,ansiedad_035,Estoy nervioso por conocer a su familia,ansiedad,sintetico_asistido_IA,train
+ansiedad_035_2,ansiedad_035,Me preocupa causar una mala impresión,ansiedad,sintetico_asistido_IA,train
+ansiedad_036_1,ansiedad_036,Me angustia no saber si aprobé,ansiedad,sintetico_asistido_IA,train
+ansiedad_036_2,ansiedad_036,La espera de las notas me pone ansiosa,ansiedad,sintetico_asistido_IA,train
+ansiedad_038_1,ansiedad_038,Estoy estresado porque no termino a tiempo,ansiedad,sintetico_asistido_IA,train
+ansiedad_038_2,ansiedad_038,El plazo de entrega me tiene en tensión,ansiedad,sintetico_asistido_IA,train
+ansiedad_039_1,ansiedad_039,Me preocupa que se repita lo que pasó,ansiedad,sintetico_asistido_IA,train
+ansiedad_039_2,ansiedad_039,Tengo miedo de vivir otra vez esa situación,ansiedad,sintetico_asistido_IA,train
+neutral_001_1,neutral_001,Hoy fui a clases y regresé a casa,neutral,sintetico_asistido_IA,train
+neutral_001_2,neutral_001,Asistí al curso y luego volví,neutral,sintetico_asistido_IA,train
+neutral_002_1,neutral_002,Estoy organizando mis apuntes,neutral,sintetico_asistido_IA,train
+neutral_002_2,neutral_002,Voy a ordenar las hojas del cuaderno,neutral,sintetico_asistido_IA,train
+neutral_003_1,neutral_003,Mi reunión es a las tres,neutral,sintetico_asistido_IA,train
+neutral_003_2,neutral_003,Tengo una cita programada por la tarde,neutral,sintetico_asistido_IA,train
+neutral_006_1,neutral_006,Hoy es un día como cualquier otro,neutral,sintetico_asistido_IA,train
+neutral_006_2,neutral_006,Mi día transcurre sin novedades,neutral,sintetico_asistido_IA,train
+neutral_008_1,neutral_008,Voy a preparar el almuerzo,neutral,sintetico_asistido_IA,train
+neutral_008_2,neutral_008,Es hora de cocinar algo para comer,neutral,sintetico_asistido_IA,train
+neutral_009_1,neutral_009,Acabo de leer un artículo,neutral,sintetico_asistido_IA,train
+neutral_009_2,neutral_009,Terminé de revisar un texto,neutral,sintetico_asistido_IA,train
+neutral_010_1,neutral_010,Tengo dos cursos este semestre,neutral,sintetico_asistido_IA,train
+neutral_010_2,neutral_010,Este ciclo llevo dos asignaturas,neutral,sintetico_asistido_IA,train
+neutral_011_1,neutral_011,Mi celular está cargando,neutral,sintetico_asistido_IA,train
+neutral_011_2,neutral_011,Dejé el teléfono conectado al cargador,neutral,sintetico_asistido_IA,train
+neutral_013_1,neutral_013,Mañana debo entregar un documento,neutral,sintetico_asistido_IA,train
+neutral_013_2,neutral_013,Tengo un trámite pendiente para mañana,neutral,sintetico_asistido_IA,train
+neutral_016_1,neutral_016,La clase empieza en diez minutos,neutral,sintetico_asistido_IA,train
+neutral_016_2,neutral_016,Falta poco para que empiece el curso,neutral,sintetico_asistido_IA,train
+neutral_019_1,neutral_019,El archivo está en mi computadora,neutral,sintetico_asistido_IA,train
+neutral_019_2,neutral_019,Guardé el documento en la carpeta,neutral,sintetico_asistido_IA,train
+neutral_020_1,neutral_020,Mi hermano está en el colegio,neutral,sintetico_asistido_IA,train
+neutral_020_2,neutral_020,Él está estudiando a esta hora,neutral,sintetico_asistido_IA,train
+neutral_021_1,neutral_021,Hoy no pasó nada especial,neutral,sintetico_asistido_IA,train
+neutral_021_2,neutral_021,Fue una jornada normal,neutral,sintetico_asistido_IA,train
+neutral_022_1,neutral_022,Estoy limpiando mi escritorio,neutral,sintetico_asistido_IA,train
+neutral_022_2,neutral_022,Ordeno el espacio donde estudio,neutral,sintetico_asistido_IA,train
+neutral_023_1,neutral_023,Son las ocho de la mañana,neutral,sintetico_asistido_IA,train
+neutral_023_2,neutral_023,Acabo de mirar la hora,neutral,sintetico_asistido_IA,train
+neutral_025_1,neutral_025,Tengo una botella en la mochila,neutral,sintetico_asistido_IA,train
+neutral_025_2,neutral_025,Llevo mis cosas en el bolso,neutral,sintetico_asistido_IA,train
+neutral_026_1,neutral_026,Estoy leyendo las instrucciones,neutral,sintetico_asistido_IA,train
+neutral_026_2,neutral_026,Reviso los pasos del ejercicio,neutral,sintetico_asistido_IA,train
+neutral_027_1,neutral_027,Mi grupo tiene cuatro integrantes,neutral,sintetico_asistido_IA,train
+neutral_027_2,neutral_027,Somos cuatro personas en el equipo,neutral,sintetico_asistido_IA,train
+neutral_030_1,neutral_030,Voy a buscar el recibo,neutral,sintetico_asistido_IA,train
+neutral_030_2,neutral_030,Necesito ubicar un comprobante,neutral,sintetico_asistido_IA,train
+neutral_035_1,neutral_035,El bus pasa por la avenida,neutral,sintetico_asistido_IA,train
+neutral_035_2,neutral_035,Esa es la ruta del transporte,neutral,sintetico_asistido_IA,train
+neutral_036_1,neutral_036,Voy a descargar el material del curso,neutral,sintetico_asistido_IA,train
+neutral_036_2,neutral_036,Necesito guardar los apuntes de clase,neutral,sintetico_asistido_IA,train
+neutral_038_1,neutral_038,Estoy escribiendo la fecha en mi cuaderno,neutral,sintetico_asistido_IA,train
+neutral_038_2,neutral_038,Anoto el día en la primera página,neutral,sintetico_asistido_IA,train
+neutral_039_1,neutral_039,Mi mochila es de color azul,neutral,sintetico_asistido_IA,train
+neutral_039_2,neutral_039,Ese es el color del bolso que uso,neutral,sintetico_asistido_IA,train
+neutral_040_1,neutral_040,Ahora estoy haciendo una pausa,neutral,sintetico_asistido_IA,train
+neutral_040_2,neutral_040,Interrumpí mi actividad un momento,neutral,sintetico_asistido_IA,train

@@ -1,0 +1,16 @@
+# Protocolo fijado antes de entrenar
+
+Hipótesis: una representación de palabras con regresión logística supera a predecir siempre la clase más frecuente en este corpus sintético. No se estudia diagnóstico ni estado mental real.
+
+1. Fuente fija: `datos/escenarios.txt`, textos y etiquetas redactados con asistencia de IA. Dos paráfrasis por escenario. No son testimonios ni observaciones humanas. No se afirman dos meses de trabajo real ni una validación clínica.
+2. Cinco clases: alegría, ansiedad (preocupación textual, no trastorno), enojo, neutral (descripción sin emoción explícita), tristeza. No hay clase clínica ni clase de riesgo en ML. Cada escenario expresa una emoción dominante.
+3. Semilla 2026. Reparto por escenario, estratificado por clase: 60% train, 20% validación, 20% test. Detectar duplicados tras normalización antes del reparto. Guardar CSV y hashes. Una paráfrasis nunca cruza particiones.
+4. Minúsculas, tildes y tokenización sencilla. Conservar `no`, `sin`, `nunca`. No lematización ni recursos descargados. Solo el texto es X; etiqueta es y. No se utilizan id, grupo ni partición como predictores.
+5. Candidatos en orden de desempate: TF-IDF unigramas + logística; conteos + logística; TF-IDF unigramas/bigramas + logística; TF-IDF + Naive Bayes; referencia de clase más frecuente. Logística C=4, max_iter=2000; NB alpha=1. Sin búsqueda adicional de hiperparámetros. Cada vectorizador se ajusta exclusivamente a train.
+6. Elegir por macro-F1 de validación (sin redondear). Accuracy, métricas por clase, vocabulario, tiempo y brecha train-validación complementan el análisis. La referencia también es elegible: si gana, se informa el fracaso del aprendizaje.
+7. Abstención: score máximo >= umbral, diferencia entre primeras clases >= .10, vector no vacío. Umbrales [.30,.40,.50,.60,.70]. Seleccionar el de mayor cobertura con accuracy selectiva >= .80 y cobertura >= .50; empates al menor umbral. Si ninguno cumple, .50. Estas metas son decisiones de diseño, no cifras de rendimiento ni garantías de seguridad. Scores sin calibración.
+8. Curva de aprendizaje del ganador con .25/.50/.75/1 de grupos train, subconjuntos anidados estratificados y validación fija. Análisis exploratorio; no nueva selección por la curva.
+9. Congelar selección, código y artefacto ANTES de test. No reajustar con validación: así se evalúa exactamente el modelo servido. Abrir test una sola vez con reserva exclusiva; generar un único lote de scores. Guardar todas las predicciones. Bootstrap por grupos sobre esas predicciones, 1000 réplicas, intervalo percentil exploratorio 95% para macro-F1. No es otra inferencia ni otra selección.
+10. Análisis posterior de errores y gráficos a partir de resultados guardados. Sin correcciones del modelo o datos después del test. Los tests de software usan casos de desarrollo, nunca el conjunto estadístico de test. La batería de seguridad verifica reglas por separado y no estima sensibilidad clínica.
+
+Los hashes y la reserva protegen contra cambios accidentales, no contra una persona que edite deliberadamente los archivos. El autor del corpus conoce su contenido: este test no equivale a una evaluación externa ciega. Los escenarios mantienen vocabulario y estilo del mismo proceso de autoría; las cifras pueden ser optimistas incluso sin fuga técnica.

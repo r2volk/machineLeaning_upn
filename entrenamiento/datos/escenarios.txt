@@ -1,0 +1,207 @@
+# Corpus sintético redactado con asistencia de IA para este proyecto.
+# Una línea = un escenario. Dos paráfrasis separadas por | permanecen juntas.
+[alegria]
+Estoy feliz porque aprobé el examen | Pasé la evaluación y estoy muy contenta
+Me emociona empezar mis prácticas | Tengo mucha ilusión por mi primer trabajo
+Hoy me siento alegre sin una razón especial | Amanecí de buen humor y con ganas de sonreír
+Me encantó pasar la tarde con mi familia | Compartir con los míos me llenó de alegría
+Estoy orgulloso del proyecto que terminé | Me da satisfacción ver mi trabajo completo
+Qué felicidad volver a ver a mis amigos | El reencuentro con mis patas me alegró el día
+Me siento agradecida por el apoyo que recibí | Tengo mucha gratitud por quienes me acompañan
+Me dieron la beca y no paro de sonreír | Conseguí la beca que quería, estoy feliz
+Estoy entusiasmado con lo que viene | El futuro me ilusiona y me da energía
+Disfruté muchísimo el concierto | La música de anoche me dejó feliz
+Mi mascota volvió a casa y estoy feliz | Qué alegría haber encontrado a mi perrito
+Me salió bien la exposición, estoy contenta | Pude presentar mi trabajo y me siento orgullosa
+Me siento en paz después de resolver el problema | Estoy aliviado y contento porque todo salió bien
+La sorpresa de cumpleaños me emocionó | Me hicieron sentir muy querido en mi cumpleaños
+Qué bonito día, tengo ganas de celebrar | Estoy de un humor excelente y quiero festejar
+Me alegra haber ayudado a mi compañero | Apoyar a alguien me hizo sentir muy bien
+Estoy motivada para seguir aprendiendo | Aprender algo nuevo me entusiasma mucho
+Me aceptaron en la universidad, qué felicidad | Logré ingresar y estoy saltando de alegría
+Hoy reí mucho con mis hermanos | La pasé genial riéndome con mi familia
+Estoy contenta con los pequeños avances | Mis progresos me llenan de satisfacción
+Me encanta salir a caminar por el parque | El paseo de hoy me hizo sentir alegre
+Mi equipo ganó y estoy emocionado | Celebré la victoria con mucha alegría
+Estoy feliz por la buena noticia de mi hermana | La noticia de mi familia me llenó de emoción
+Me siento querido y acompañado | Saber que cuento con mis amigos me hace feliz
+Estoy disfrutando mucho mis vacaciones | Estos días de descanso me tienen contenta
+Me hizo ilusión recibir tu mensaje | Leer ese saludo me alegró muchísimo
+Qué orgullo haber vencido ese reto | Estoy satisfecho de haberlo conseguido
+Me siento optimista y animada | Hoy veo las cosas con esperanza y entusiasmo
+Estoy feliz con mi nuevo departamento | Mudarnos a nuestra casa me emociona
+La comida salió deliciosa, estoy contento | Me alegró que todos disfrutaran lo que cociné
+No estoy triste, hoy estoy contenta | Ya no siento pena, ahora tengo alegría
+Pensé que saldría mal pero estoy feliz | Al final todo resultó bonito y estoy aliviada
+Me siento alegre aunque esté cansado | Fue agotador pero disfruté mucho el día
+Estoy recontra feliz con mi nota | Qué bacán, saqué buena nota y estoy contenta
+Me devolvieron mi celular y siento alivio | Recuperar lo perdido me dio mucha felicidad
+Me encanta lo que estoy haciendo | Disfruto mi actividad y eso me anima
+Hoy pude descansar y me siento renovado | Estoy de buen ánimo después de dormir bien
+Mi amigo se recuperó y estoy feliz | Saber que está mejor me llenó de alegría
+Terminé de pagar mi deuda y estoy aliviada | Me quité ese peso y me siento contento
+Estoy feliz de haber pedido ayuda | Me siento esperanzada después de hablar con alguien
+[tristeza]
+Estoy triste porque desaprobé el examen | Me da mucha pena no haber aprobado
+Extraño mucho a mi familia | Estar lejos de casa me pone melancólica
+Hoy me siento solo aunque haya gente cerca | Siento soledad incluso rodeada de personas
+No tengo ganas de hacer nada, estoy desanimado | Me siento apagada y sin motivación
+Terminé con mi pareja y tengo mucha pena | La separación me dejó muy triste
+Me duele que mis amigos no me invitaran | Me sentí excluido y me bajó el ánimo
+Hoy lloré al recordar a mi abuela | Los recuerdos de quien perdí me llenan de tristeza
+Siento un vacío después de la despedida | Decir adiós me dejó el corazón triste
+Me decepciona no haber conseguido el trabajo | El rechazo de la entrevista me desanimó
+Tengo ganas de llorar y no sé por qué | Hoy ando sensible y con mucha pena
+Estoy bajoneado desde ayer | Ando con el ánimo por el suelo
+Me siento triste al ver mis planes frustrados | Que no salieran mis planes me desilusionó
+Me da pena haber perdido esa amistad | Extraño a mi amigo y estoy triste
+No disfruté nada de la reunión | Volví de la reunión sintiéndome vacía
+Mi mascota murió y la extraño mucho | Perder a mi gatito me dejó con una pena enorme
+Me siento poco valorada por mi familia | Me entristece que no reconozcan mi esfuerzo
+Estoy triste por la enfermedad de mi abuelo | Me duele verlo pasar por un momento difícil
+Siento nostalgia de cuando era niño | Recordar esos años me pone melancólico
+Me siento desilusionada con lo que pasó | Esperaba algo distinto y quedé muy triste
+Me pesa estar lejos de mis hijos | Extrañarlos me hace llorar
+No estoy feliz, siento mucha tristeza | Aunque sonría por fuera estoy triste
+Me siento mal porque decepcioné a mi amigo | Me da pena haberle fallado
+Hoy nada me anima | Estoy sin ilusión y con el ánimo bajo
+Me entristeció la noticia que recibí | Esa noticia me dejó llorando
+Me siento abandonado desde que se fueron | La casa vacía me hace sentir solo
+Estoy triste por haber perdido mi trabajo | Quedarme sin empleo me dejó desanimada
+Me siento derrotado tras tantos intentos | Fallar otra vez me quitó las ganas
+Me duele que ya no hablemos | El silencio entre nosotros me pone triste
+Tengo el corazón apachurrado | Siento una pena que no puedo quitarme
+Estoy llorando por la discusión con mi mamá | Después de pelear con ella me quedé triste
+Me siento decepcionado de mí mismo | No llegué a mi meta y me siento mal
+Qué pena que hayan cancelado el viaje | Tenía ilusión y ahora estoy desanimada
+Me siento triste al comparar mi vida con otras | Ver sus logros me hace sentir insuficiente
+Me hace falta alguien con quien conversar | La soledad de las noches me pone triste
+Estoy sin ánimos después de la mudanza | Dejar mi barrio me dio mucha nostalgia
+Me quedé con tristeza después de la película | La historia me hizo llorar
+Siento que mi esfuerzo no sirvió de nada | Me desanima no ver resultados
+Me siento apagado desde la despedida de mi hermano | Extraño a mi hermano y ando triste
+Me da pena no poder acompañarlos | Me entristece perderme ese momento familiar
+Estoy triste aunque hoy haya salido el sol | Por dentro me siento gris y sin ganas
+[enojo]
+Estoy enojado porque no respetaron mi trabajo | Me da rabia que ignoren mi esfuerzo
+Me molesta que me interrumpan cuando hablo | Me irrita que no me dejen terminar
+Estoy furiosa con la injusticia que vi | Ese trato injusto me llena de indignación
+Qué cólera que cancelen a último minuto | Me fastidia mucho ese cambio sin avisar
+Me enfurece que me hayan mentido | Estoy molesto porque me engañaron
+No soporto el ruido de mis vecinos | Ese ruido me tiene irritada
+Estoy frustrado con esta tarea que no sale | Me da rabia no poder resolver el ejercicio
+Me molesta que se burlen de mí | Sus burlas me hicieron enojar
+Estoy harto de esperar sin una respuesta | La demora me tiene de mal humor
+Me da cólera que se colen en la fila | Me indigna que no respeten el turno
+Estoy irritada porque no me escuchan | Me enfada tener que repetir lo mismo
+Me molesta que usen mis cosas sin permiso | Estoy enojado porque tomaron mi cuaderno
+Me fastidia que no cumplan su promesa | Estoy furiosa porque no hicieron lo acordado
+Tengo rabia por el cobro incorrecto | Me enoja que me quieran cobrar de más
+Qué frustración que se borrara mi archivo | Perder mi trabajo me puso de pésimo humor
+Me siento indignado por ese comentario | Lo que dijeron me parece ofensivo y me enoja
+Estoy molesta con mi compañero irresponsable | Me da rabia hacer todo el trabajo del grupo
+Me irrita que me comparen con otros | Esas comparaciones me hacen enojar
+Estoy harto del tráfico y de las bocinas | La congestión me tiene fastidiado
+Me enoja que no valoren mi tiempo | Estoy molesta por haber esperado en vano
+No estoy triste, estoy furioso | Lo que siento es rabia y no pena
+Me da cólera que el internet falle siempre | La conexión se cae y me irrita muchísimo
+Estoy frustrada con el trámite interminable | Tantas vueltas para el trámite me hacen enojar
+Me molesta esa falta de respeto | Estoy indignado por cómo me hablaron
+Me enfada que cambien las reglas a cada rato | Estoy harto de que nunca mantengan el acuerdo
+Estoy de mal humor por la discusión | La pelea me dejó con mucha rabia
+Me da bronca que se lleven el crédito | Me enoja que presenten mi idea como suya
+Estoy furioso porque dañaron mi bicicleta | Me da rabia que hayan roto algo mío
+Me irrita que me presionen sin razón | Esa exigencia constante me pone de mal humor
+Estoy molesta por el mal servicio | Me da cólera cómo me atendieron
+Me da rabia la corrupción | Estoy indignado con esas prácticas injustas
+Estoy enfadada porque publicaron mi foto sin permiso | Que invadan mi privacidad me molesta
+Me fastidia que me echen la culpa | Estoy enojado porque me acusaron sin pruebas
+Tengo una cólera terrible por la estafa | Me engañaron y estoy furiosa
+Estoy frustrado porque la impresora no funciona | Me irrita no poder imprimir cuando lo necesito
+Me enoja que no devuelvan lo prestado | Estoy molesta porque se quedaron con mi libro
+Me da rabia que me hablen con desprecio | Estoy indignada por ese tono humillante
+Estoy harto de sus excusas | Me fastidia que siempre invente una justificación
+Me molestó que nadie limpiara | Estoy de mal humor por el desorden que dejaron
+Estoy picón porque hicieron trampa | Perder por una trampa me da cólera
+[ansiedad]
+Estoy nervioso por el examen de mañana | La evaluación me preocupa y no puedo relajarme
+Me da miedo equivocarme en la exposición | Estoy ansiosa por hablar frente a todos
+No puedo dejar de pensar en lo que puede salir mal | Le doy vueltas a todos los problemas posibles
+Estoy preocupada por el resultado médico | La espera de los resultados me tiene inquieta
+Siento muchos nervios antes de la entrevista | Me angustia la entrevista de trabajo
+Me preocupa no llegar a fin de mes | Las cuentas pendientes me tienen ansioso
+Estoy estresado con tantas entregas | Se me acumularon las tareas y siento mucha presión
+No puedo dormir pensando en mañana | La preocupación por el día siguiente me mantiene despierta
+Me inquieta no saber qué va a pasar | La incertidumbre me tiene con ansiedad
+Estoy asustada por lo que viene | Tengo miedo del futuro
+Siento tensión cuando debo tomar decisiones | Me angustia elegir y después arrepentirme
+Estoy preocupado porque mi familia no responde | No saber dónde están me pone nervioso
+Me cuesta relajarme antes de viajar | El viaje me da nervios y me inquieta
+Me angustia perder mi trabajo | Estoy con miedo de que me despidan
+Tengo nervios por mi primer día de clases | Empezar en un lugar nuevo me pone ansiosa
+Me preocupa que mi proyecto salga mal | Siento mucha presión por entregar algo perfecto
+Estoy inquieto por la reunión con mi jefe | Pensar en esa conversación me pone nervioso
+Me da miedo hablar por teléfono | Hacer esa llamada me genera mucha ansiedad
+Siento que tengo demasiadas cosas pendientes | La lista de responsabilidades me agobia
+Me preocupa decepcionar a mis padres | Tengo miedo de no cumplir sus expectativas
+No estoy tranquila, sigo con nervios | Aunque parezca calmada estoy ansiosa
+Me pone nervioso llegar tarde | Mirar el reloj me genera más preocupación
+Estoy angustiada por la salud de mi mamá | Me preocupa mucho que le pase algo
+Me asusta quedarme sin dinero | Pensar en mis deudas me causa ansiedad
+Tengo miedo de que me rechacen | Me preocupa no ser aceptado por el grupo
+Estoy tenso por la competencia | Siento nervios antes de participar
+Me agobia tener que hacerlo todo hoy | La falta de tiempo me tiene estresada
+Me inquieta esperar una respuesta importante | Estoy ansioso mirando el correo cada rato
+Siento nervios cuando entro a un lugar lleno | La multitud me pone muy inquieta
+Me preocupa haber cometido un error | Repaso lo que hice con miedo a equivocarme
+Estoy con ansiedad por la mudanza | El cambio de casa me tiene nervioso
+Me da miedo no estar preparado | Dudo de mi preparación y siento angustia
+Tengo la cabeza llena de preocupaciones | No logro parar los pensamientos sobre problemas
+Me siento sobrepasada por las responsabilidades | Tanta presión me tiene angustiada
+Estoy nervioso por conocer a su familia | Me preocupa causar una mala impresión
+Me angustia no saber si aprobé | La espera de las notas me pone ansiosa
+Me asusta la idea de quedarme solo | Siento miedo cuando pienso en estar sin compañía
+Estoy estresado porque no termino a tiempo | El plazo de entrega me tiene en tensión
+Me preocupa que se repita lo que pasó | Tengo miedo de vivir otra vez esa situación
+Me pone ansiosa no tener el control | No poder prever las cosas me inquieta
+[neutral]
+Hoy fui a clases y regresé a casa | Asistí al curso y luego volví
+Estoy organizando mis apuntes | Voy a ordenar las hojas del cuaderno
+Mi reunión es a las tres | Tengo una cita programada por la tarde
+Estoy tomando un vaso de agua | Ahora estoy bebiendo agua
+Necesito comprar un cuaderno | Voy a la tienda por material de estudio
+Hoy es un día como cualquier otro | Mi día transcurre sin novedades
+Estoy esperando el autobús | Me encuentro en el paradero
+Voy a preparar el almuerzo | Es hora de cocinar algo para comer
+Acabo de leer un artículo | Terminé de revisar un texto
+Tengo dos cursos este semestre | Este ciclo llevo dos asignaturas
+Mi celular está cargando | Dejé el teléfono conectado al cargador
+Estoy revisando mi horario | Consulto a qué hora tengo clase
+Mañana debo entregar un documento | Tengo un trámite pendiente para mañana
+Hoy caminé hasta la biblioteca | Fui a devolver un libro
+Estoy sentado en la sala | Me encuentro en casa en este momento
+La clase empieza en diez minutos | Falta poco para que empiece el curso
+Tengo que enviar un correo | Voy a redactar un mensaje de trabajo
+Estoy haciendo una lista de compras | Anoto lo que falta en la casa
+El archivo está en mi computadora | Guardé el documento en la carpeta
+Mi hermano está en el colegio | Él está estudiando a esta hora
+Hoy no pasó nada especial | Fue una jornada normal
+Estoy limpiando mi escritorio | Ordeno el espacio donde estudio
+Son las ocho de la mañana | Acabo de mirar la hora
+Voy a cambiar de ropa | Me preparo para salir de casa
+Tengo una botella en la mochila | Llevo mis cosas en el bolso
+Estoy leyendo las instrucciones | Reviso los pasos del ejercicio
+Mi grupo tiene cuatro integrantes | Somos cuatro personas en el equipo
+La tarea consiste en hacer un resumen | Debemos sintetizar el contenido de la lectura
+Estoy en el segundo piso | Me encuentro arriba en el edificio
+Voy a buscar el recibo | Necesito ubicar un comprobante
+Hoy almorcé arroz con pollo | Eso fue lo que comí al mediodía
+La computadora está encendida | El equipo sigue funcionando
+Necesito saber dónde queda el aula | Busco el salón de la clase
+Estoy escuchando la explicación | Presto atención a lo que dice el profesor
+El bus pasa por la avenida | Esa es la ruta del transporte
+Voy a descargar el material del curso | Necesito guardar los apuntes de clase
+La puerta del salón está abierta | El aula todavía está disponible
+Estoy escribiendo la fecha en mi cuaderno | Anoto el día en la primera página
+Mi mochila es de color azul | Ese es el color del bolso que uso
+Ahora estoy haciendo una pausa | Interrumpí mi actividad un momento

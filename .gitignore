@@ -1,13 +1,13 @@
-# Entornos virtuales locales
-venv/
 .venv/
-
-# Archivos temporales de Python y macOS
 __pycache__/
-*.py[cod]
+.pytest_cache/
 .DS_Store
+*.pyc
 
-# Variables locales y modelos binarios que se generen en el futuro
-.env
-*.joblib
-*.pkl
+# Archivos personales y temporales de la entrega
+/Explicacion.md
+/GUIA_DEFENSA.md
+/ANIMO_ENTREGA.zip
+/.ppt-build/
+/.ppt-output/
+/.versiones/

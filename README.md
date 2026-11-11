@@ -1,78 +1,45 @@
-# Pronóstico de demanda — proyecto de Machine Learning
+# Ánimo
 
-Proyecto académico desarrollado localmente en Python para estimar las ventas diarias por tienda y artículo. Utiliza el dataset externo **Store Item Demand Forecasting** de Kaggle. Estos datos no representan las ventas reales del Minimarket Kapaq.
-
-## Estructura
-
-```text
-MachineLearning/
-├── datasets/                   # train.csv, test.csv y sample_submission.csv
-├── proyecto/
-│   ├── src/pronostico/         # módulos de datos, variables, modelos y evaluación
-│   ├── resultados/             # predicciones, métricas y gráficos generados
-│   ├── sql/                    # auditoría de ventas de Kapaq, solo lectura
-│   ├── GUIA_PARA_EXPLICAR_EL_PROYECTO.md # explicación paso a paso y guion para clase
-│   ├── RESULTADOS_ML.md        # síntesis académica de los experimentos
-│   └── regresion_lineal.py     # primer experimento introductorio
-├── requirements.txt
-└── README.md
-```
-
-El entorno virtual (`venv/`) no se versiona: se crea localmente con los comandos siguientes y las dependencias quedan descritas en `requirements.txt`.
-
-## Requisitos
-
-- Python 3.13 recomendado (el proyecto fue ejecutado con Python 3.13).
-- Visual Studio Code con la extensión de Python.
-
-## Preparación en macOS
-
-Desde la carpeta raíz del repositorio:
-
-```bash
-python3 -m venv venv
-source venv/bin/activate
-python -m pip install --upgrade pip
-python -m pip install -r requirements.txt
-```
-
-En VS Code, abre la carpeta raíz, selecciona `venv/bin/python` como intérprete y abre una terminal integrada.
+Chatbot académico en Python que clasifica señales de alegría, tristeza, enojo, ansiedad y neutralidad en textos breves en español. Interfaz completa en un único `index.html`: conversación, explicación de cada predicción, laboratorio con resultados reales y documentación descargable.
 
 ## Ejecutar
 
-Cada script puede ejecutarse con el intérprete del entorno virtual:
+Primero prepara el entorno y las dependencias siguiendo las instrucciones de [instalación](docs/REPRODUCIBILIDAD.md).
 
-```bash
-venv/bin/python proyecto/src/pronostico/datos.py
-venv/bin/python proyecto/src/pronostico/evaluacion.py
-venv/bin/python proyecto/src/pronostico/referencias.py
-venv/bin/python proyecto/src/pronostico/variables.py
-venv/bin/python proyecto/src/pronostico/entrenar.py
-venv/bin/python proyecto/src/pronostico/validacion_temporal.py
-venv/bin/python proyecto/src/pronostico/validacion_recursiva.py
-venv/bin/python proyecto/src/pronostico/analizar_validacion.py
-venv/bin/python proyecto/src/pronostico/graficar_validacion.py
-venv/bin/python proyecto/src/pronostico/importancia_variables.py
-venv/bin/python proyecto/src/pronostico/predecir_test.py
-venv/bin/python proyecto/src/pronostico/preparar_demo_web.py
-```
+1. Activa el entorno: `source .venv/bin/activate`
+2. Ejecuta: `python app.py`
+3. Abre la dirección exacta que imprime la terminal, normalmente **http://127.0.0.1:5000**. Si ese puerto está ocupado, el programa elige otro e imprime su dirección.
 
-Para entrenar y comparar la referencia semanal, la regresión lineal y Random Forest en la validación cronológica, ejecutar `entrenar.py`. `validacion_temporal.py` repite la comparación en tres períodos de 90 días con ventas previas observadas; `validacion_recursiva.py` imita un horizonte de 90 días usando predicciones anteriores como historial. `predecir_test.py` genera `proyecto/resultados/predicciones_kaggle.csv` con el formato `id,sales`. Para preparar la demostración del panel web, ejecutar después `preparar_demo_web.py`; este paso no reentrena el modelo y crea un JSON a partir de ese CSV y el `test.csv` de Kaggle.
+## Presentar en clase
 
-## Resultados existentes
+La interfaz tiene un diseño claro con colores sólidos y sin degradados. El dock inferior permite alternar entre Conversación y Laboratorio con un toque o arrastrando el indicador. Los mensajes del chat usan texto más grande para facilitar su lectura durante la exposición.
 
-Los CSV y gráficos actualmente incluidos en `proyecto/resultados/` documentan los experimentos realizados. Promedio de la validación recursiva en tres períodos:
+## Decisiones técnicas
 
-| Método | MAE recursivo | RMSE recursivo |
-|---|---:|---:|
-| Referencia: ventas de hace 7 días | 11.7130 | 15.4075 |
-| Regresión lineal | 8.8747 | 11.7129 |
-| Random Forest | **8.0865** | **10.5055** |
+| Decisión | Motivo |
+|---|---|
+| Flask + HTML/CSS/JavaScript en `index.html` | Una sola aplicación local, sin compiladores, CDN ni frontend separado. Flask sirve `/`; el navegador usa rutas relativas. |
+| Todo el ML en `entrenamiento/`, módulos `p00` a `p06` | Lectura progresiva: configuración → datos → modelos → comparación → test → inferencia → informe. `app.py` solo coordina HTTP. |
+| Bolsa de palabras, TF-IDF y modelos clásicos | Conexión directa con NLP y regresión logística de los apuntes. Sin modelos preentrenados, embeddings ni APIs externas. |
+| Elección por macro-F1 de validación | Compara cinco candidatos; el resultado determina el modelo servido. No se elige usando test. |
+| Escenarios sintéticos con dos paráfrasis agrupadas | Procedencia explícita, sin datos personales; limita fuertemente las conclusiones sobre usuarios reales. |
+| Particiones 60/20/20 por escenario y clase | Evita que las paráfrasis declaradas crucen particiones. Vocabulario e IDF solo aprenden de train. |
+| Reserva de test, hashes y predicciones guardadas | Test final una sola vez; repetir comandos reutiliza evidencia. No se reajusta el modelo tras evaluar. |
+| Abstención por score, margen y palabras conocidas | Permite pedir contexto. Scores sin calibrar: no son intensidad emocional ni probabilidad clínica. |
+| Explicación mediante aportes de palabras | Visible y comprobable con coeficientes; asociaciones, no explicaciones psicológicas. |
+| Reglas de seguridad antes de ML | Apoyo y Línea 113, opción 5 (Perú), sin etiquetar riesgo clínico. La alerta continúa en la sesión mediante un indicador local. |
+| Respuestas redactadas, sin memoria semántica | Comportamiento predecible y defendible. No finge comprensión ni aprendizaje durante la conversación. |
+| Sin persistencia de conversaciones | Los mensajes solo viven en memoria; exportar es una acción del usuario. Sin cuentas, analítica ni cookies. |
+| Servidor en loopback y depuración desactivada | Adecuado para demostración en el equipo; no se presenta como un servicio público de producción. |
 
-Random Forest tuvo el mejor promedio, pero la regresión lineal fue mejor en el segundo período; no hubo un ganador en todos los bloques. MAE y RMSE se miden en unidades de venta por fila evaluada. Las métricas son únicamente del dataset de Kaggle; no deben interpretarse como precisión sobre Kapaq ni como recomendaciones reales de inventario. El detalle y las fuentes están en `proyecto/RESULTADOS_ML.md`.
+La base académica está en los apuntes de las semanas 4, 7, 9, 11 y 12 del curso. TF-IDF, Pipeline, partición por grupos, abstención y bootstrap son ampliaciones justificadas en el [mapa del curso](docs/MAPA_CURSO.md). No se usa la lematización con modelos descargados de los apuntes para respetar la restricción.
 
-## Datos
+## Entrega
 
-Los archivos CSV presentes en `datasets/` son datos externos descargados de Kaggle. El archivo `test.csv` no contiene ventas reales, por lo que las predicciones generadas para él no tienen métricas observables en este proyecto. El panel administrativo incluye una pantalla de demostración separada, con identificadores Kaggle y una advertencia explícita: no se conecta al inventario ni representa ventas reales de Kapaq.
+- [Informe de resultados y limitaciones](INFORME_RESULTADOS.md): cifras generadas por código, matriz, curvas y todos los errores de test.
+- [Reproducibilidad e instalación en otro equipo](docs/REPRODUCIBILIDAD.md): preparación, experimentos y tests.
+- [Protocolo fijado antes de evaluar](entrenamiento/PROTOCOLO.md) y [ficha del corpus](entrenamiento/datos/FICHA_DATOS.md).
+- [Verificación de la entrega](docs/VERIFICACION.md): ejecución, pruebas y navegador.
+- [Mapa del curso](docs/MAPA_CURSO.md) y [guion de exposición](docs/DEMOSTRACION.md).
 
-Para revisar si existe historial propio suficiente, `proyecto/sql/auditoria_ventas_kapaq.sql` contiene consultas agregadas de solo lectura; no modifican la base de datos ni consultan datos personales.
+El corpus es **100% sintético, redactado con asistencia de IA**. También se utilizó asistencia de IA para desarrollar este proyecto. No se atribuye a cuatro personas ni se afirma una duración de trabajo que no ocurrió. El alcance se demuestra con los entregables y la evidencia. Es un prototipo académico, **no una herramienta clínica**; puede fallar al interpretar emociones y al reconocer mensajes de riesgo.

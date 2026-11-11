@@ -1,0 +1,28 @@
+id,grupo,texto,etiqueta,predicha,aceptada
+alegria_007_1,alegria_007,Me siento agradecida por el apoyo que recibí,alegria,tristeza,True
+alegria_007_2,alegria_007,Tengo mucha gratitud por quienes me acompañan,alegria,ansiedad,False
+alegria_008_1,alegria_008,Me dieron la beca y no paro de sonreír,alegria,ansiedad,False
+alegria_015_1,alegria_015,"Qué bonito día, tengo ganas de celebrar",alegria,tristeza,False
+alegria_015_2,alegria_015,Estoy de un humor excelente y quiero festejar,alegria,enojo,False
+alegria_021_1,alegria_021,Me encanta salir a caminar por el parque,alegria,ansiedad,True
+alegria_027_1,alegria_027,Qué orgullo haber vencido ese reto,alegria,enojo,True
+alegria_027_2,alegria_027,Estoy satisfecho de haberlo conseguido,alegria,enojo,False
+alegria_032_1,alegria_032,Pensé que saldría mal pero estoy feliz,alegria,enojo,False
+alegria_033_1,alegria_033,Me siento alegre aunque esté cansado,alegria,tristeza,True
+alegria_033_2,alegria_033,Fue agotador pero disfruté mucho el día,alegria,neutral,True
+alegria_038_1,alegria_038,Mi amigo se recuperó y estoy feliz,alegria,tristeza,False
+tristeza_009_2,tristeza_009,El rechazo de la entrevista me desanimó,tristeza,ansiedad,True
+tristeza_019_1,tristeza_019,Me siento desilusionada con lo que pasó,tristeza,alegria,True
+tristeza_027_2,tristeza_027,Fallar otra vez me quitó las ganas,tristeza,ansiedad,True
+tristeza_031_1,tristeza_031,Me siento decepcionado de mí mismo,tristeza,alegria,False
+tristeza_035_2,tristeza_035,Dejar mi barrio me dio mucha nostalgia,tristeza,alegria,True
+enojo_017_1,enojo_017,Estoy molesta con mi compañero irresponsable,enojo,alegria,True
+enojo_026_2,enojo_026,La pelea me dejó con mucha rabia,enojo,tristeza,False
+ansiedad_006_2,ansiedad_006,Las cuentas pendientes me tienen ansioso,ansiedad,alegria,True
+ansiedad_024_1,ansiedad_024,Me asusta quedarme sin dinero,ansiedad,enojo,True
+ansiedad_028_2,ansiedad_028,Estoy ansioso mirando el correo cada rato,ansiedad,enojo,True
+ansiedad_037_1,ansiedad_037,Me asusta la idea de quedarme solo,ansiedad,tristeza,True
+neutral_012_1,neutral_012,Estoy revisando mi horario,neutral,alegria,True
+neutral_028_2,neutral_028,Debemos sintetizar el contenido de la lectura,neutral,tristeza,False
+neutral_031_1,neutral_031,Hoy almorcé arroz con pollo,neutral,alegria,True
+neutral_031_2,neutral_031,Eso fue lo que comí al mediodía,neutral,alegria,False

@@ -1,0 +1,81 @@
+id,grupo,texto,etiqueta,origen,particion
+alegria_007_1,alegria_007,Me siento agradecida por el apoyo que recibí,alegria,sintetico_asistido_IA,test
+alegria_007_2,alegria_007,Tengo mucha gratitud por quienes me acompañan,alegria,sintetico_asistido_IA,test
+alegria_008_1,alegria_008,Me dieron la beca y no paro de sonreír,alegria,sintetico_asistido_IA,test
+alegria_008_2,alegria_008,"Conseguí la beca que quería, estoy feliz",alegria,sintetico_asistido_IA,test
+alegria_015_1,alegria_015,"Qué bonito día, tengo ganas de celebrar",alegria,sintetico_asistido_IA,test
+alegria_015_2,alegria_015,Estoy de un humor excelente y quiero festejar,alegria,sintetico_asistido_IA,test
+alegria_021_1,alegria_021,Me encanta salir a caminar por el parque,alegria,sintetico_asistido_IA,test
+alegria_021_2,alegria_021,El paseo de hoy me hizo sentir alegre,alegria,sintetico_asistido_IA,test
+alegria_027_1,alegria_027,Qué orgullo haber vencido ese reto,alegria,sintetico_asistido_IA,test
+alegria_027_2,alegria_027,Estoy satisfecho de haberlo conseguido,alegria,sintetico_asistido_IA,test
+alegria_032_1,alegria_032,Pensé que saldría mal pero estoy feliz,alegria,sintetico_asistido_IA,test
+alegria_032_2,alegria_032,Al final todo resultó bonito y estoy aliviada,alegria,sintetico_asistido_IA,test
+alegria_033_1,alegria_033,Me siento alegre aunque esté cansado,alegria,sintetico_asistido_IA,test
+alegria_033_2,alegria_033,Fue agotador pero disfruté mucho el día,alegria,sintetico_asistido_IA,test
+alegria_038_1,alegria_038,Mi amigo se recuperó y estoy feliz,alegria,sintetico_asistido_IA,test
+alegria_038_2,alegria_038,Saber que está mejor me llenó de alegría,alegria,sintetico_asistido_IA,test
+tristeza_006_1,tristeza_006,Me duele que mis amigos no me invitaran,tristeza,sintetico_asistido_IA,test
+tristeza_006_2,tristeza_006,Me sentí excluido y me bajó el ánimo,tristeza,sintetico_asistido_IA,test
+tristeza_009_1,tristeza_009,Me decepciona no haber conseguido el trabajo,tristeza,sintetico_asistido_IA,test
+tristeza_009_2,tristeza_009,El rechazo de la entrevista me desanimó,tristeza,sintetico_asistido_IA,test
+tristeza_015_1,tristeza_015,Mi mascota murió y la extraño mucho,tristeza,sintetico_asistido_IA,test
+tristeza_015_2,tristeza_015,Perder a mi gatito me dejó con una pena enorme,tristeza,sintetico_asistido_IA,test
+tristeza_019_1,tristeza_019,Me siento desilusionada con lo que pasó,tristeza,sintetico_asistido_IA,test
+tristeza_019_2,tristeza_019,Esperaba algo distinto y quedé muy triste,tristeza,sintetico_asistido_IA,test
+tristeza_027_1,tristeza_027,Me siento derrotado tras tantos intentos,tristeza,sintetico_asistido_IA,test
+tristeza_027_2,tristeza_027,Fallar otra vez me quitó las ganas,tristeza,sintetico_asistido_IA,test
+tristeza_031_1,tristeza_031,Me siento decepcionado de mí mismo,tristeza,sintetico_asistido_IA,test
+tristeza_031_2,tristeza_031,No llegué a mi meta y me siento mal,tristeza,sintetico_asistido_IA,test
+tristeza_033_1,tristeza_033,Me siento triste al comparar mi vida con otras,tristeza,sintetico_asistido_IA,test
+tristeza_033_2,tristeza_033,Ver sus logros me hace sentir insuficiente,tristeza,sintetico_asistido_IA,test
+tristeza_035_1,tristeza_035,Estoy sin ánimos después de la mudanza,tristeza,sintetico_asistido_IA,test
+tristeza_035_2,tristeza_035,Dejar mi barrio me dio mucha nostalgia,tristeza,sintetico_asistido_IA,test
+enojo_017_1,enojo_017,Estoy molesta con mi compañero irresponsable,enojo,sintetico_asistido_IA,test
+enojo_017_2,enojo_017,Me da rabia hacer todo el trabajo del grupo,enojo,sintetico_asistido_IA,test
+enojo_020_1,enojo_020,Me enoja que no valoren mi tiempo,enojo,sintetico_asistido_IA,test
+enojo_020_2,enojo_020,Estoy molesta por haber esperado en vano,enojo,sintetico_asistido_IA,test
+enojo_026_1,enojo_026,Estoy de mal humor por la discusión,enojo,sintetico_asistido_IA,test
+enojo_026_2,enojo_026,La pelea me dejó con mucha rabia,enojo,sintetico_asistido_IA,test
+enojo_031_1,enojo_031,Me da rabia la corrupción,enojo,sintetico_asistido_IA,test
+enojo_031_2,enojo_031,Estoy indignado con esas prácticas injustas,enojo,sintetico_asistido_IA,test
+enojo_033_1,enojo_033,Me fastidia que me echen la culpa,enojo,sintetico_asistido_IA,test
+enojo_033_2,enojo_033,Estoy enojado porque me acusaron sin pruebas,enojo,sintetico_asistido_IA,test
+enojo_035_1,enojo_035,Estoy frustrado porque la impresora no funciona,enojo,sintetico_asistido_IA,test
+enojo_035_2,enojo_035,Me irrita no poder imprimir cuando lo necesito,enojo,sintetico_asistido_IA,test
+enojo_036_1,enojo_036,Me enoja que no devuelvan lo prestado,enojo,sintetico_asistido_IA,test
+enojo_036_2,enojo_036,Estoy molesta porque se quedaron con mi libro,enojo,sintetico_asistido_IA,test
+enojo_040_1,enojo_040,Estoy picón porque hicieron trampa,enojo,sintetico_asistido_IA,test
+enojo_040_2,enojo_040,Perder por una trampa me da cólera,enojo,sintetico_asistido_IA,test
+ansiedad_002_1,ansiedad_002,Me da miedo equivocarme en la exposición,ansiedad,sintetico_asistido_IA,test
+ansiedad_002_2,ansiedad_002,Estoy ansiosa por hablar frente a todos,ansiedad,sintetico_asistido_IA,test
+ansiedad_006_1,ansiedad_006,Me preocupa no llegar a fin de mes,ansiedad,sintetico_asistido_IA,test
+ansiedad_006_2,ansiedad_006,Las cuentas pendientes me tienen ansioso,ansiedad,sintetico_asistido_IA,test
+ansiedad_020_1,ansiedad_020,Me preocupa decepcionar a mis padres,ansiedad,sintetico_asistido_IA,test
+ansiedad_020_2,ansiedad_020,Tengo miedo de no cumplir sus expectativas,ansiedad,sintetico_asistido_IA,test
+ansiedad_024_1,ansiedad_024,Me asusta quedarme sin dinero,ansiedad,sintetico_asistido_IA,test
+ansiedad_024_2,ansiedad_024,Pensar en mis deudas me causa ansiedad,ansiedad,sintetico_asistido_IA,test
+ansiedad_028_1,ansiedad_028,Me inquieta esperar una respuesta importante,ansiedad,sintetico_asistido_IA,test
+ansiedad_028_2,ansiedad_028,Estoy ansioso mirando el correo cada rato,ansiedad,sintetico_asistido_IA,test
+ansiedad_030_1,ansiedad_030,Me preocupa haber cometido un error,ansiedad,sintetico_asistido_IA,test
+ansiedad_030_2,ansiedad_030,Repaso lo que hice con miedo a equivocarme,ansiedad,sintetico_asistido_IA,test
+ansiedad_037_1,ansiedad_037,Me asusta la idea de quedarme solo,ansiedad,sintetico_asistido_IA,test
+ansiedad_037_2,ansiedad_037,Siento miedo cuando pienso en estar sin compañía,ansiedad,sintetico_asistido_IA,test
+ansiedad_040_1,ansiedad_040,Me pone ansiosa no tener el control,ansiedad,sintetico_asistido_IA,test
+ansiedad_040_2,ansiedad_040,No poder prever las cosas me inquieta,ansiedad,sintetico_asistido_IA,test
+neutral_005_1,neutral_005,Necesito comprar un cuaderno,neutral,sintetico_asistido_IA,test
+neutral_005_2,neutral_005,Voy a la tienda por material de estudio,neutral,sintetico_asistido_IA,test
+neutral_012_1,neutral_012,Estoy revisando mi horario,neutral,sintetico_asistido_IA,test
+neutral_012_2,neutral_012,Consulto a qué hora tengo clase,neutral,sintetico_asistido_IA,test
+neutral_017_1,neutral_017,Tengo que enviar un correo,neutral,sintetico_asistido_IA,test
+neutral_017_2,neutral_017,Voy a redactar un mensaje de trabajo,neutral,sintetico_asistido_IA,test
+neutral_018_1,neutral_018,Estoy haciendo una lista de compras,neutral,sintetico_asistido_IA,test
+neutral_018_2,neutral_018,Anoto lo que falta en la casa,neutral,sintetico_asistido_IA,test
+neutral_028_1,neutral_028,La tarea consiste en hacer un resumen,neutral,sintetico_asistido_IA,test
+neutral_028_2,neutral_028,Debemos sintetizar el contenido de la lectura,neutral,sintetico_asistido_IA,test
+neutral_029_1,neutral_029,Estoy en el segundo piso,neutral,sintetico_asistido_IA,test
+neutral_029_2,neutral_029,Me encuentro arriba en el edificio,neutral,sintetico_asistido_IA,test
+neutral_031_1,neutral_031,Hoy almorcé arroz con pollo,neutral,sintetico_asistido_IA,test
+neutral_031_2,neutral_031,Eso fue lo que comí al mediodía,neutral,sintetico_asistido_IA,test
+neutral_033_1,neutral_033,Necesito saber dónde queda el aula,neutral,sintetico_asistido_IA,test
+neutral_033_2,neutral_033,Busco el salón de la clase,neutral,sintetico_asistido_IA,test

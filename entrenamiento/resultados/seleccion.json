@@ -1,0 +1,1691 @@
+{
+  "ganador": "logistica_bigramas",
+  "umbral": 0.3,
+  "motivo_umbral": "Mayor cobertura entre umbrales con accuracy selectiva >= .80 y cobertura >= .50",
+  "umbrales": [
+    {
+      "umbral": 0.3,
+      "aceptados": 58,
+      "total": 80,
+      "cobertura": 0.725,
+      "accuracy_aceptados": 0.8448275862068966
+    },
+    {
+      "umbral": 0.4,
+      "aceptados": 47,
+      "total": 80,
+      "cobertura": 0.5875,
+      "accuracy_aceptados": 0.9574468085106383
+    },
+    {
+      "umbral": 0.5,
+      "aceptados": 33,
+      "total": 80,
+      "cobertura": 0.4125,
+      "accuracy_aceptados": 0.9393939393939394
+    },
+    {
+      "umbral": 0.6,
+      "aceptados": 14,
+      "total": 80,
+      "cobertura": 0.175,
+      "accuracy_aceptados": 1.0
+    },
+    {
+      "umbral": 0.7,
+      "aceptados": 3,
+      "total": 80,
+      "cobertura": 0.0375,
+      "accuracy_aceptados": 1.0
+    }
+  ],
+  "candidatos": [
+    {
+      "nombre": "logistica_tfidf",
+      "segundos_ajuste": 0.022590457999285718,
+      "train": {
+        "accuracy": 1.0,
+        "macro_f1": 1.0,
+        "por_clase": {
+          "alegria": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 48.0
+          },
+          "ansiedad": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 48.0
+          },
+          "enojo": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 48.0
+          },
+          "neutral": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 48.0
+          },
+          "tristeza": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 48.0
+          },
+          "accuracy": 1.0,
+          "macro avg": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 240.0
+          },
+          "weighted avg": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 240.0
+          }
+        },
+        "matriz": [
+          [
+            48,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            48,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            48,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            48,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            48
+          ]
+        ]
+      },
+      "validacion": {
+        "accuracy": 0.775,
+        "macro_f1": 0.7728473676860774,
+        "por_clase": {
+          "alegria": {
+            "precision": 0.6470588235294118,
+            "recall": 0.6875,
+            "f1-score": 0.6666666666666666,
+            "support": 16.0
+          },
+          "ansiedad": {
+            "precision": 0.7368421052631579,
+            "recall": 0.875,
+            "f1-score": 0.8,
+            "support": 16.0
+          },
+          "enojo": {
+            "precision": 0.8823529411764706,
+            "recall": 0.9375,
+            "f1-score": 0.9090909090909091,
+            "support": 16.0
+          },
+          "neutral": {
+            "precision": 0.8,
+            "recall": 0.75,
+            "f1-score": 0.7741935483870968,
+            "support": 16.0
+          },
+          "tristeza": {
+            "precision": 0.8333333333333334,
+            "recall": 0.625,
+            "f1-score": 0.7142857142857143,
+            "support": 16.0
+          },
+          "accuracy": 0.775,
+          "macro avg": {
+            "precision": 0.7799174406604747,
+            "recall": 0.775,
+            "f1-score": 0.7728473676860774,
+            "support": 80.0
+          },
+          "weighted avg": {
+            "precision": 0.7799174406604747,
+            "recall": 0.775,
+            "f1-score": 0.7728473676860774,
+            "support": 80.0
+          }
+        },
+        "matriz": [
+          [
+            11,
+            0,
+            1,
+            2,
+            2
+          ],
+          [
+            2,
+            14,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            15,
+            0,
+            0
+          ],
+          [
+            2,
+            1,
+            1,
+            12,
+            0
+          ],
+          [
+            2,
+            3,
+            0,
+            1,
+            10
+          ]
+        ]
+      },
+      "vocabulario": 587
+    },
+    {
+      "nombre": "logistica_conteos",
+      "segundos_ajuste": 0.011282417000074929,
+      "train": {
+        "accuracy": 1.0,
+        "macro_f1": 1.0,
+        "por_clase": {
+          "alegria": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 48.0
+          },
+          "ansiedad": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 48.0
+          },
+          "enojo": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 48.0
+          },
+          "neutral": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 48.0
+          },
+          "tristeza": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 48.0
+          },
+          "accuracy": 1.0,
+          "macro avg": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 240.0
+          },
+          "weighted avg": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 240.0
+          }
+        },
+        "matriz": [
+          [
+            48,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            48,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            48,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            48,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            48
+          ]
+        ]
+      },
+      "validacion": {
+        "accuracy": 0.75,
+        "macro_f1": 0.7451190476190476,
+        "por_clase": {
+          "alegria": {
+            "precision": 0.6470588235294118,
+            "recall": 0.6875,
+            "f1-score": 0.6666666666666666,
+            "support": 16.0
+          },
+          "ansiedad": {
+            "precision": 0.75,
+            "recall": 0.75,
+            "f1-score": 0.75,
+            "support": 16.0
+          },
+          "enojo": {
+            "precision": 0.9375,
+            "recall": 0.9375,
+            "f1-score": 0.9375,
+            "support": 16.0
+          },
+          "neutral": {
+            "precision": 0.7368421052631579,
+            "recall": 0.875,
+            "f1-score": 0.8,
+            "support": 16.0
+          },
+          "tristeza": {
+            "precision": 0.6666666666666666,
+            "recall": 0.5,
+            "f1-score": 0.5714285714285714,
+            "support": 16.0
+          },
+          "accuracy": 0.75,
+          "macro avg": {
+            "precision": 0.7476135190918473,
+            "recall": 0.75,
+            "f1-score": 0.7451190476190476,
+            "support": 80.0
+          },
+          "weighted avg": {
+            "precision": 0.7476135190918473,
+            "recall": 0.75,
+            "f1-score": 0.7451190476190476,
+            "support": 80.0
+          }
+        },
+        "matriz": [
+          [
+            11,
+            0,
+            1,
+            1,
+            3
+          ],
+          [
+            3,
+            12,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            15,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0,
+            14,
+            0
+          ],
+          [
+            2,
+            3,
+            0,
+            3,
+            8
+          ]
+        ]
+      },
+      "vocabulario": 587
+    },
+    {
+      "nombre": "logistica_bigramas",
+      "segundos_ajuste": 0.01709570899947721,
+      "train": {
+        "accuracy": 1.0,
+        "macro_f1": 1.0,
+        "por_clase": {
+          "alegria": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 48.0
+          },
+          "ansiedad": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 48.0
+          },
+          "enojo": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 48.0
+          },
+          "neutral": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 48.0
+          },
+          "tristeza": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 48.0
+          },
+          "accuracy": 1.0,
+          "macro avg": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 240.0
+          },
+          "weighted avg": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 240.0
+          }
+        },
+        "matriz": [
+          [
+            48,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            48,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            48,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            48,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            48
+          ]
+        ]
+      },
+      "validacion": {
+        "accuracy": 0.7875,
+        "macro_f1": 0.7866324535679374,
+        "por_clase": {
+          "alegria": {
+            "precision": 0.7333333333333333,
+            "recall": 0.6875,
+            "f1-score": 0.7096774193548387,
+            "support": 16.0
+          },
+          "ansiedad": {
+            "precision": 0.8235294117647058,
+            "recall": 0.875,
+            "f1-score": 0.8484848484848485,
+            "support": 16.0
+          },
+          "enojo": {
+            "precision": 0.9375,
+            "recall": 0.9375,
+            "f1-score": 0.9375,
+            "support": 16.0
+          },
+          "neutral": {
+            "precision": 0.8125,
+            "recall": 0.8125,
+            "f1-score": 0.8125,
+            "support": 16.0
+          },
+          "tristeza": {
+            "precision": 0.625,
+            "recall": 0.625,
+            "f1-score": 0.625,
+            "support": 16.0
+          },
+          "accuracy": 0.7875,
+          "macro avg": {
+            "precision": 0.7863725490196078,
+            "recall": 0.7875,
+            "f1-score": 0.7866324535679374,
+            "support": 80.0
+          },
+          "weighted avg": {
+            "precision": 0.7863725490196078,
+            "recall": 0.7875,
+            "f1-score": 0.7866324535679374,
+            "support": 80.0
+          }
+        },
+        "matriz": [
+          [
+            11,
+            0,
+            0,
+            1,
+            4
+          ],
+          [
+            1,
+            14,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            1,
+            15,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            1,
+            13,
+            1
+          ],
+          [
+            2,
+            2,
+            0,
+            2,
+            10
+          ]
+        ]
+      },
+      "vocabulario": 1651
+    },
+    {
+      "nombre": "naive_bayes",
+      "segundos_ajuste": 0.002659707999555394,
+      "train": {
+        "accuracy": 0.9916666666666667,
+        "macro_f1": 0.9917078410311493,
+        "por_clase": {
+          "alegria": {
+            "precision": 1.0,
+            "recall": 0.9791666666666666,
+            "f1-score": 0.9894736842105263,
+            "support": 48.0
+          },
+          "ansiedad": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 48.0
+          },
+          "enojo": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 48.0
+          },
+          "neutral": {
+            "precision": 1.0,
+            "recall": 0.9791666666666666,
+            "f1-score": 0.9894736842105263,
+            "support": 48.0
+          },
+          "tristeza": {
+            "precision": 0.96,
+            "recall": 1.0,
+            "f1-score": 0.9795918367346939,
+            "support": 48.0
+          },
+          "accuracy": 0.9916666666666667,
+          "macro avg": {
+            "precision": 0.992,
+            "recall": 0.9916666666666666,
+            "f1-score": 0.9917078410311493,
+            "support": 240.0
+          },
+          "weighted avg": {
+            "precision": 0.9919999999999999,
+            "recall": 0.9916666666666667,
+            "f1-score": 0.9917078410311492,
+            "support": 240.0
+          }
+        },
+        "matriz": [
+          [
+            47,
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            48,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            48,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            47,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            48
+          ]
+        ]
+      },
+      "validacion": {
+        "accuracy": 0.7,
+        "macro_f1": 0.6984259259259258,
+        "por_clase": {
+          "alegria": {
+            "precision": 0.5625,
+            "recall": 0.5625,
+            "f1-score": 0.5625,
+            "support": 16.0
+          },
+          "ansiedad": {
+            "precision": 0.65,
+            "recall": 0.8125,
+            "f1-score": 0.7222222222222222,
+            "support": 16.0
+          },
+          "enojo": {
+            "precision": 0.7368421052631579,
+            "recall": 0.875,
+            "f1-score": 0.8,
+            "support": 16.0
+          },
+          "neutral": {
+            "precision": 0.9090909090909091,
+            "recall": 0.625,
+            "f1-score": 0.7407407407407407,
+            "support": 16.0
+          },
+          "tristeza": {
+            "precision": 0.7142857142857143,
+            "recall": 0.625,
+            "f1-score": 0.6666666666666666,
+            "support": 16.0
+          },
+          "accuracy": 0.7,
+          "macro avg": {
+            "precision": 0.7145437457279563,
+            "recall": 0.7,
+            "f1-score": 0.6984259259259258,
+            "support": 80.0
+          },
+          "weighted avg": {
+            "precision": 0.7145437457279563,
+            "recall": 0.7,
+            "f1-score": 0.6984259259259258,
+            "support": 80.0
+          }
+        },
+        "matriz": [
+          [
+            9,
+            2,
+            2,
+            0,
+            3
+          ],
+          [
+            2,
+            13,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            14,
+            0,
+            1
+          ],
+          [
+            3,
+            1,
+            2,
+            10,
+            0
+          ],
+          [
+            2,
+            3,
+            0,
+            1,
+            10
+          ]
+        ]
+      },
+      "vocabulario": 587
+    },
+    {
+      "nombre": "referencia",
+      "segundos_ajuste": 0.0023306250004679896,
+      "train": {
+        "accuracy": 0.2,
+        "macro_f1": 0.06666666666666667,
+        "por_clase": {
+          "alegria": {
+            "precision": 0.2,
+            "recall": 1.0,
+            "f1-score": 0.3333333333333333,
+            "support": 48.0
+          },
+          "ansiedad": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 48.0
+          },
+          "enojo": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 48.0
+          },
+          "neutral": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 48.0
+          },
+          "tristeza": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 48.0
+          },
+          "accuracy": 0.2,
+          "macro avg": {
+            "precision": 0.04,
+            "recall": 0.2,
+            "f1-score": 0.06666666666666667,
+            "support": 240.0
+          },
+          "weighted avg": {
+            "precision": 0.04000000000000001,
+            "recall": 0.2,
+            "f1-score": 0.06666666666666667,
+            "support": 240.0
+          }
+        },
+        "matriz": [
+          [
+            48,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            48,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            48,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            48,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            48,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      "validacion": {
+        "accuracy": 0.2,
+        "macro_f1": 0.06666666666666667,
+        "por_clase": {
+          "alegria": {
+            "precision": 0.2,
+            "recall": 1.0,
+            "f1-score": 0.3333333333333333,
+            "support": 16.0
+          },
+          "ansiedad": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 16.0
+          },
+          "enojo": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 16.0
+          },
+          "neutral": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 16.0
+          },
+          "tristeza": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 16.0
+          },
+          "accuracy": 0.2,
+          "macro avg": {
+            "precision": 0.04,
+            "recall": 0.2,
+            "f1-score": 0.06666666666666667,
+            "support": 80.0
+          },
+          "weighted avg": {
+            "precision": 0.04,
+            "recall": 0.2,
+            "f1-score": 0.06666666666666667,
+            "support": 80.0
+          }
+        },
+        "matriz": [
+          [
+            16,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            16,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            16,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            16,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            16,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      "vocabulario": 587
+    }
+  ],
+  "curva": [
+    {
+      "fraccion": 0.25,
+      "filas": 60,
+      "grupos": 30,
+      "macro_f1": 0.45659090909090905
+    },
+    {
+      "fraccion": 0.5,
+      "filas": 120,
+      "grupos": 60,
+      "macro_f1": 0.6169632925472748
+    },
+    {
+      "fraccion": 0.75,
+      "filas": 180,
+      "grupos": 90,
+      "macro_f1": 0.7366218637992833
+    },
+    {
+      "fraccion": 1.0,
+      "filas": 240,
+      "grupos": 120,
+      "macro_f1": 0.7866324535679374
+    }
+  ],
+  "semilla": 2026,
+  "python": "3.14.2",
+  "sklearn": "1.7.2",
+  "creado_utc": "2026-11-11T06:20:58.180358+00:00",
+  "modelo_sha256": "8c3b9faffadeff318d4e601a646ed10f344ad0bc30291a5edff91843ae38ca91",
+  "manifiesto_sha256": "d11e9643e2bb4fbeb84dc58ef04e2c0b1992e8ad09fd51c405c18457258188e4",
+  "codigo_sha256": {
+    "p00_configuracion.py": "1e215435e1d58f10908a3cd625903e76fd79604ea633214771c15dbc7a48609a",
+    "p01_datos.py": "81c39a5af9b77ab4e39b76bf4c38e1b1522f8e183fb398990a606c727400dc8e",
+    "p02_modelos.py": "57b30ff38ae615d6db5844ea40c1dbc3f2badd4bb6e31a3a17228939217437a2",
+    "p03_comparacion.py": "c86014126de6b43d2e786897862b29612494b92664e4fa10239075c3d9445dbe",
+    "p04_evaluacion.py": "6f4e3889ba30833318e03e38d162962657e3e8bfd905fface9f983a02b474b8e",
+    "p05_inferencia.py": "30194b77b7ba5d94205831a2d59102262c421539e39ac36a1204892a3489eb9d"
+  },
+  "predicciones_validacion": [
+    {
+      "id": "alegria_001_1",
+      "grupo": "alegria_001",
+      "texto": "Estoy feliz porque aprobé el examen",
+      "etiqueta": "alegria",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "tristeza"
+    },
+    {
+      "id": "alegria_001_2",
+      "grupo": "alegria_001",
+      "texto": "Pasé la evaluación y estoy muy contenta",
+      "etiqueta": "alegria",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "alegria"
+    },
+    {
+      "id": "alegria_003_1",
+      "grupo": "alegria_003",
+      "texto": "Hoy me siento alegre sin una razón especial",
+      "etiqueta": "alegria",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "tristeza"
+    },
+    {
+      "id": "alegria_003_2",
+      "grupo": "alegria_003",
+      "texto": "Amanecí de buen humor y con ganas de sonreír",
+      "etiqueta": "alegria",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "alegria"
+    },
+    {
+      "id": "alegria_004_1",
+      "grupo": "alegria_004",
+      "texto": "Me encantó pasar la tarde con mi familia",
+      "etiqueta": "alegria",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "alegria"
+    },
+    {
+      "id": "alegria_004_2",
+      "grupo": "alegria_004",
+      "texto": "Compartir con los míos me llenó de alegría",
+      "etiqueta": "alegria",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "alegria"
+    },
+    {
+      "id": "alegria_010_1",
+      "grupo": "alegria_010",
+      "texto": "Disfruté muchísimo el concierto",
+      "etiqueta": "alegria",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "neutral"
+    },
+    {
+      "id": "alegria_010_2",
+      "grupo": "alegria_010",
+      "texto": "La música de anoche me dejó feliz",
+      "etiqueta": "alegria",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "tristeza"
+    },
+    {
+      "id": "alegria_020_1",
+      "grupo": "alegria_020",
+      "texto": "Estoy contenta con los pequeños avances",
+      "etiqueta": "alegria",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "alegria"
+    },
+    {
+      "id": "alegria_020_2",
+      "grupo": "alegria_020",
+      "texto": "Mis progresos me llenan de satisfacción",
+      "etiqueta": "alegria",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "tristeza"
+    },
+    {
+      "id": "alegria_029_1",
+      "grupo": "alegria_029",
+      "texto": "Estoy feliz con mi nuevo departamento",
+      "etiqueta": "alegria",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "alegria"
+    },
+    {
+      "id": "alegria_029_2",
+      "grupo": "alegria_029",
+      "texto": "Mudarnos a nuestra casa me emociona",
+      "etiqueta": "alegria",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "alegria"
+    },
+    {
+      "id": "alegria_034_1",
+      "grupo": "alegria_034",
+      "texto": "Estoy recontra feliz con mi nota",
+      "etiqueta": "alegria",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "alegria"
+    },
+    {
+      "id": "alegria_034_2",
+      "grupo": "alegria_034",
+      "texto": "Qué bacán, saqué buena nota y estoy contenta",
+      "etiqueta": "alegria",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "alegria"
+    },
+    {
+      "id": "alegria_040_1",
+      "grupo": "alegria_040",
+      "texto": "Estoy feliz de haber pedido ayuda",
+      "etiqueta": "alegria",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "alegria"
+    },
+    {
+      "id": "alegria_040_2",
+      "grupo": "alegria_040",
+      "texto": "Me siento esperanzada después de hablar con alguien",
+      "etiqueta": "alegria",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "alegria"
+    },
+    {
+      "id": "tristeza_005_1",
+      "grupo": "tristeza_005",
+      "texto": "Terminé con mi pareja y tengo mucha pena",
+      "etiqueta": "tristeza",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "alegria"
+    },
+    {
+      "id": "tristeza_005_2",
+      "grupo": "tristeza_005",
+      "texto": "La separación me dejó muy triste",
+      "etiqueta": "tristeza",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "tristeza"
+    },
+    {
+      "id": "tristeza_010_1",
+      "grupo": "tristeza_010",
+      "texto": "Tengo ganas de llorar y no sé por qué",
+      "etiqueta": "tristeza",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "tristeza"
+    },
+    {
+      "id": "tristeza_010_2",
+      "grupo": "tristeza_010",
+      "texto": "Hoy ando sensible y con mucha pena",
+      "etiqueta": "tristeza",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "tristeza"
+    },
+    {
+      "id": "tristeza_011_1",
+      "grupo": "tristeza_011",
+      "texto": "Estoy bajoneado desde ayer",
+      "etiqueta": "tristeza",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "tristeza"
+    },
+    {
+      "id": "tristeza_011_2",
+      "grupo": "tristeza_011",
+      "texto": "Ando con el ánimo por el suelo",
+      "etiqueta": "tristeza",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "ansiedad"
+    },
+    {
+      "id": "tristeza_017_1",
+      "grupo": "tristeza_017",
+      "texto": "Estoy triste por la enfermedad de mi abuelo",
+      "etiqueta": "tristeza",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "tristeza"
+    },
+    {
+      "id": "tristeza_017_2",
+      "grupo": "tristeza_017",
+      "texto": "Me duele verlo pasar por un momento difícil",
+      "etiqueta": "tristeza",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "neutral"
+    },
+    {
+      "id": "tristeza_026_1",
+      "grupo": "tristeza_026",
+      "texto": "Estoy triste por haber perdido mi trabajo",
+      "etiqueta": "tristeza",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "alegria"
+    },
+    {
+      "id": "tristeza_026_2",
+      "grupo": "tristeza_026",
+      "texto": "Quedarme sin empleo me dejó desanimada",
+      "etiqueta": "tristeza",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "tristeza"
+    },
+    {
+      "id": "tristeza_029_1",
+      "grupo": "tristeza_029",
+      "texto": "Tengo el corazón apachurrado",
+      "etiqueta": "tristeza",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "neutral"
+    },
+    {
+      "id": "tristeza_029_2",
+      "grupo": "tristeza_029",
+      "texto": "Siento una pena que no puedo quitarme",
+      "etiqueta": "tristeza",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "tristeza"
+    },
+    {
+      "id": "tristeza_030_1",
+      "grupo": "tristeza_030",
+      "texto": "Estoy llorando por la discusión con mi mamá",
+      "etiqueta": "tristeza",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "ansiedad"
+    },
+    {
+      "id": "tristeza_030_2",
+      "grupo": "tristeza_030",
+      "texto": "Después de pelear con ella me quedé triste",
+      "etiqueta": "tristeza",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "tristeza"
+    },
+    {
+      "id": "tristeza_040_1",
+      "grupo": "tristeza_040",
+      "texto": "Estoy triste aunque hoy haya salido el sol",
+      "etiqueta": "tristeza",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "tristeza"
+    },
+    {
+      "id": "tristeza_040_2",
+      "grupo": "tristeza_040",
+      "texto": "Por dentro me siento gris y sin ganas",
+      "etiqueta": "tristeza",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "tristeza"
+    },
+    {
+      "id": "enojo_001_1",
+      "grupo": "enojo_001",
+      "texto": "Estoy enojado porque no respetaron mi trabajo",
+      "etiqueta": "enojo",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "enojo"
+    },
+    {
+      "id": "enojo_001_2",
+      "grupo": "enojo_001",
+      "texto": "Me da rabia que ignoren mi esfuerzo",
+      "etiqueta": "enojo",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "enojo"
+    },
+    {
+      "id": "enojo_002_1",
+      "grupo": "enojo_002",
+      "texto": "Me molesta que me interrumpan cuando hablo",
+      "etiqueta": "enojo",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "enojo"
+    },
+    {
+      "id": "enojo_002_2",
+      "grupo": "enojo_002",
+      "texto": "Me irrita que no me dejen terminar",
+      "etiqueta": "enojo",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "enojo"
+    },
+    {
+      "id": "enojo_007_1",
+      "grupo": "enojo_007",
+      "texto": "Estoy frustrado con esta tarea que no sale",
+      "etiqueta": "enojo",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "enojo"
+    },
+    {
+      "id": "enojo_007_2",
+      "grupo": "enojo_007",
+      "texto": "Me da rabia no poder resolver el ejercicio",
+      "etiqueta": "enojo",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "enojo"
+    },
+    {
+      "id": "enojo_009_1",
+      "grupo": "enojo_009",
+      "texto": "Estoy harto de esperar sin una respuesta",
+      "etiqueta": "enojo",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "enojo"
+    },
+    {
+      "id": "enojo_009_2",
+      "grupo": "enojo_009",
+      "texto": "La demora me tiene de mal humor",
+      "etiqueta": "enojo",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "enojo"
+    },
+    {
+      "id": "enojo_010_1",
+      "grupo": "enojo_010",
+      "texto": "Me da cólera que se colen en la fila",
+      "etiqueta": "enojo",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "enojo"
+    },
+    {
+      "id": "enojo_010_2",
+      "grupo": "enojo_010",
+      "texto": "Me indigna que no respeten el turno",
+      "etiqueta": "enojo",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "enojo"
+    },
+    {
+      "id": "enojo_014_1",
+      "grupo": "enojo_014",
+      "texto": "Tengo rabia por el cobro incorrecto",
+      "etiqueta": "enojo",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "ansiedad"
+    },
+    {
+      "id": "enojo_014_2",
+      "grupo": "enojo_014",
+      "texto": "Me enoja que me quieran cobrar de más",
+      "etiqueta": "enojo",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "enojo"
+    },
+    {
+      "id": "enojo_027_1",
+      "grupo": "enojo_027",
+      "texto": "Me da bronca que se lleven el crédito",
+      "etiqueta": "enojo",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "enojo"
+    },
+    {
+      "id": "enojo_027_2",
+      "grupo": "enojo_027",
+      "texto": "Me enoja que presenten mi idea como suya",
+      "etiqueta": "enojo",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "enojo"
+    },
+    {
+      "id": "enojo_037_1",
+      "grupo": "enojo_037",
+      "texto": "Me da rabia que me hablen con desprecio",
+      "etiqueta": "enojo",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "enojo"
+    },
+    {
+      "id": "enojo_037_2",
+      "grupo": "enojo_037",
+      "texto": "Estoy indignada por ese tono humillante",
+      "etiqueta": "enojo",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "enojo"
+    },
+    {
+      "id": "ansiedad_004_1",
+      "grupo": "ansiedad_004",
+      "texto": "Estoy preocupada por el resultado médico",
+      "etiqueta": "ansiedad",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "ansiedad"
+    },
+    {
+      "id": "ansiedad_004_2",
+      "grupo": "ansiedad_004",
+      "texto": "La espera de los resultados me tiene inquieta",
+      "etiqueta": "ansiedad",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "ansiedad"
+    },
+    {
+      "id": "ansiedad_014_1",
+      "grupo": "ansiedad_014",
+      "texto": "Me angustia perder mi trabajo",
+      "etiqueta": "ansiedad",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "ansiedad"
+    },
+    {
+      "id": "ansiedad_014_2",
+      "grupo": "ansiedad_014",
+      "texto": "Estoy con miedo de que me despidan",
+      "etiqueta": "ansiedad",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "ansiedad"
+    },
+    {
+      "id": "ansiedad_016_1",
+      "grupo": "ansiedad_016",
+      "texto": "Me preocupa que mi proyecto salga mal",
+      "etiqueta": "ansiedad",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "ansiedad"
+    },
+    {
+      "id": "ansiedad_016_2",
+      "grupo": "ansiedad_016",
+      "texto": "Siento mucha presión por entregar algo perfecto",
+      "etiqueta": "ansiedad",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "ansiedad"
+    },
+    {
+      "id": "ansiedad_017_1",
+      "grupo": "ansiedad_017",
+      "texto": "Estoy inquieto por la reunión con mi jefe",
+      "etiqueta": "ansiedad",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "alegria"
+    },
+    {
+      "id": "ansiedad_017_2",
+      "grupo": "ansiedad_017",
+      "texto": "Pensar en esa conversación me pone nervioso",
+      "etiqueta": "ansiedad",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "ansiedad"
+    },
+    {
+      "id": "ansiedad_018_1",
+      "grupo": "ansiedad_018",
+      "texto": "Me da miedo hablar por teléfono",
+      "etiqueta": "ansiedad",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "ansiedad"
+    },
+    {
+      "id": "ansiedad_018_2",
+      "grupo": "ansiedad_018",
+      "texto": "Hacer esa llamada me genera mucha ansiedad",
+      "etiqueta": "ansiedad",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "ansiedad"
+    },
+    {
+      "id": "ansiedad_019_1",
+      "grupo": "ansiedad_019",
+      "texto": "Siento que tengo demasiadas cosas pendientes",
+      "etiqueta": "ansiedad",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "tristeza"
+    },
+    {
+      "id": "ansiedad_019_2",
+      "grupo": "ansiedad_019",
+      "texto": "La lista de responsabilidades me agobia",
+      "etiqueta": "ansiedad",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "ansiedad"
+    },
+    {
+      "id": "ansiedad_026_1",
+      "grupo": "ansiedad_026",
+      "texto": "Estoy tenso por la competencia",
+      "etiqueta": "ansiedad",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "ansiedad"
+    },
+    {
+      "id": "ansiedad_026_2",
+      "grupo": "ansiedad_026",
+      "texto": "Siento nervios antes de participar",
+      "etiqueta": "ansiedad",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "ansiedad"
+    },
+    {
+      "id": "ansiedad_029_1",
+      "grupo": "ansiedad_029",
+      "texto": "Siento nervios cuando entro a un lugar lleno",
+      "etiqueta": "ansiedad",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "ansiedad"
+    },
+    {
+      "id": "ansiedad_029_2",
+      "grupo": "ansiedad_029",
+      "texto": "La multitud me pone muy inquieta",
+      "etiqueta": "ansiedad",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "ansiedad"
+    },
+    {
+      "id": "neutral_004_1",
+      "grupo": "neutral_004",
+      "texto": "Estoy tomando un vaso de agua",
+      "etiqueta": "neutral",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "neutral"
+    },
+    {
+      "id": "neutral_004_2",
+      "grupo": "neutral_004",
+      "texto": "Ahora estoy bebiendo agua",
+      "etiqueta": "neutral",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "neutral"
+    },
+    {
+      "id": "neutral_007_1",
+      "grupo": "neutral_007",
+      "texto": "Estoy esperando el autobús",
+      "etiqueta": "neutral",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "neutral"
+    },
+    {
+      "id": "neutral_007_2",
+      "grupo": "neutral_007",
+      "texto": "Me encuentro en el paradero",
+      "etiqueta": "neutral",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "neutral"
+    },
+    {
+      "id": "neutral_014_1",
+      "grupo": "neutral_014",
+      "texto": "Hoy caminé hasta la biblioteca",
+      "etiqueta": "neutral",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "neutral"
+    },
+    {
+      "id": "neutral_014_2",
+      "grupo": "neutral_014",
+      "texto": "Fui a devolver un libro",
+      "etiqueta": "neutral",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "neutral"
+    },
+    {
+      "id": "neutral_015_1",
+      "grupo": "neutral_015",
+      "texto": "Estoy sentado en la sala",
+      "etiqueta": "neutral",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "neutral"
+    },
+    {
+      "id": "neutral_015_2",
+      "grupo": "neutral_015",
+      "texto": "Me encuentro en casa en este momento",
+      "etiqueta": "neutral",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "neutral"
+    },
+    {
+      "id": "neutral_024_1",
+      "grupo": "neutral_024",
+      "texto": "Voy a cambiar de ropa",
+      "etiqueta": "neutral",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "neutral"
+    },
+    {
+      "id": "neutral_024_2",
+      "grupo": "neutral_024",
+      "texto": "Me preparo para salir de casa",
+      "etiqueta": "neutral",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "tristeza"
+    },
+    {
+      "id": "neutral_032_1",
+      "grupo": "neutral_032",
+      "texto": "La computadora está encendida",
+      "etiqueta": "neutral",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "neutral"
+    },
+    {
+      "id": "neutral_032_2",
+      "grupo": "neutral_032",
+      "texto": "El equipo sigue funcionando",
+      "etiqueta": "neutral",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "neutral"
+    },
+    {
+      "id": "neutral_034_1",
+      "grupo": "neutral_034",
+      "texto": "Estoy escuchando la explicación",
+      "etiqueta": "neutral",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "alegria"
+    },
+    {
+      "id": "neutral_034_2",
+      "grupo": "neutral_034",
+      "texto": "Presto atención a lo que dice el profesor",
+      "etiqueta": "neutral",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "enojo"
+    },
+    {
+      "id": "neutral_037_1",
+      "grupo": "neutral_037",
+      "texto": "La puerta del salón está abierta",
+      "etiqueta": "neutral",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "neutral"
+    },
+    {
+      "id": "neutral_037_2",
+      "grupo": "neutral_037",
+      "texto": "El aula todavía está disponible",
+      "etiqueta": "neutral",
+      "origen": "sintetico_asistido_IA",
+      "particion": "validacion",
+      "predicha": "neutral"
+    }
+  ]
+}

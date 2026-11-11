@@ -1,0 +1,1467 @@
+{
+  "modelo": "logistica_bigramas",
+  "n": 80,
+  "fecha_utc": "2026-11-11T06:31:09.725664+00:00",
+  "metricas": {
+    "accuracy": 0.6625,
+    "macro_f1": 0.6530819642381508,
+    "por_clase": {
+      "alegria": {
+        "precision": 0.3333333333333333,
+        "recall": 0.25,
+        "f1-score": 0.2857142857142857,
+        "support": 16.0
+      },
+      "ansiedad": {
+        "precision": 0.7058823529411765,
+        "recall": 0.75,
+        "f1-score": 0.7272727272727273,
+        "support": 16.0
+      },
+      "enojo": {
+        "precision": 0.7,
+        "recall": 0.875,
+        "f1-score": 0.7777777777777778,
+        "support": 16.0
+      },
+      "neutral": {
+        "precision": 0.9230769230769231,
+        "recall": 0.75,
+        "f1-score": 0.8275862068965517,
+        "support": 16.0
+      },
+      "tristeza": {
+        "precision": 0.6111111111111112,
+        "recall": 0.6875,
+        "f1-score": 0.6470588235294118,
+        "support": 16.0
+      },
+      "accuracy": 0.6625,
+      "macro avg": {
+        "precision": 0.6546807440925089,
+        "recall": 0.6625,
+        "f1-score": 0.6530819642381508,
+        "support": 80.0
+      },
+      "weighted avg": {
+        "precision": 0.6546807440925089,
+        "recall": 0.6625,
+        "f1-score": 0.6530819642381508,
+        "support": 80.0
+      }
+    },
+    "matriz": [
+      [
+        4,
+        3,
+        4,
+        1,
+        4
+      ],
+      [
+        1,
+        12,
+        2,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        14,
+        0,
+        1
+      ],
+      [
+        3,
+        0,
+        0,
+        12,
+        1
+      ],
+      [
+        3,
+        2,
+        0,
+        0,
+        11
+      ]
+    ]
+  },
+  "selectivas": {
+    "aceptados": 60,
+    "total": 80,
+    "cobertura": 0.75,
+    "accuracy_aceptados": 0.7333333333333333
+  },
+  "intervalo_macro_f1": {
+    "inferior": 0.5434580172149832,
+    "superior": 0.7271325022958655,
+    "repeticiones": 1000,
+    "metodo": "Percentil 95%, bootstrap por escenario; exploratorio"
+  },
+  "predicciones": [
+    {
+      "id": "alegria_007_1",
+      "grupo": "alegria_007",
+      "texto": "Me siento agradecida por el apoyo que recibí",
+      "etiqueta": "alegria",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "tristeza",
+      "aceptada": true,
+      "scores": [
+        0.13863784018442674,
+        0.20832185569557354,
+        0.209660462845548,
+        0.049802235860364294,
+        0.39357760541408754
+      ]
+    },
+    {
+      "id": "alegria_007_2",
+      "grupo": "alegria_007",
+      "texto": "Tengo mucha gratitud por quienes me acompañan",
+      "etiqueta": "alegria",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "ansiedad",
+      "aceptada": false,
+      "scores": [
+        0.2809636701185293,
+        0.3464540339920076,
+        0.14438219590481882,
+        0.08240438478860061,
+        0.14579571519604384
+      ]
+    },
+    {
+      "id": "alegria_008_1",
+      "grupo": "alegria_008",
+      "texto": "Me dieron la beca y no paro de sonreír",
+      "etiqueta": "alegria",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "ansiedad",
+      "aceptada": false,
+      "scores": [
+        0.07042271470939607,
+        0.4199760905751335,
+        0.12679383484985188,
+        0.024234882004494578,
+        0.358572477861124
+      ]
+    },
+    {
+      "id": "alegria_008_2",
+      "grupo": "alegria_008",
+      "texto": "Conseguí la beca que quería, estoy feliz",
+      "etiqueta": "alegria",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "alegria",
+      "aceptada": true,
+      "scores": [
+        0.4463680682901166,
+        0.09154622405705623,
+        0.2139850131235323,
+        0.07771875674341523,
+        0.1703819377858797
+      ]
+    },
+    {
+      "id": "alegria_015_1",
+      "grupo": "alegria_015",
+      "texto": "Qué bonito día, tengo ganas de celebrar",
+      "etiqueta": "alegria",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "tristeza",
+      "aceptada": false,
+      "scores": [
+        0.14545789350399435,
+        0.23406984151063373,
+        0.17485921427883655,
+        0.18094572080754442,
+        0.264667329898991
+      ]
+    },
+    {
+      "id": "alegria_015_2",
+      "grupo": "alegria_015",
+      "texto": "Estoy de un humor excelente y quiero festejar",
+      "etiqueta": "alegria",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "enojo",
+      "aceptada": false,
+      "scores": [
+        0.16159848839991134,
+        0.1292406586481251,
+        0.3392934903091033,
+        0.2659436444986411,
+        0.10392371814421916
+      ]
+    },
+    {
+      "id": "alegria_021_1",
+      "grupo": "alegria_021",
+      "texto": "Me encanta salir a caminar por el parque",
+      "etiqueta": "alegria",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "ansiedad",
+      "aceptada": true,
+      "scores": [
+        0.19905717404491616,
+        0.34819924927351453,
+        0.19462964764906437,
+        0.13483336863527157,
+        0.1232805603972334
+      ]
+    },
+    {
+      "id": "alegria_021_2",
+      "grupo": "alegria_021",
+      "texto": "El paseo de hoy me hizo sentir alegre",
+      "etiqueta": "alegria",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "alegria",
+      "aceptada": false,
+      "scores": [
+        0.376900656648746,
+        0.11539206143825528,
+        0.0973743014162346,
+        0.13319522439529716,
+        0.277137756101467
+      ]
+    },
+    {
+      "id": "alegria_027_1",
+      "grupo": "alegria_027",
+      "texto": "Qué orgullo haber vencido ese reto",
+      "etiqueta": "alegria",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "enojo",
+      "aceptada": true,
+      "scores": [
+        0.23277615369292146,
+        0.07083655092795903,
+        0.44483658862309955,
+        0.08341386318966487,
+        0.16813684356635505
+      ]
+    },
+    {
+      "id": "alegria_027_2",
+      "grupo": "alegria_027",
+      "texto": "Estoy satisfecho de haberlo conseguido",
+      "etiqueta": "alegria",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "enojo",
+      "aceptada": false,
+      "scores": [
+        0.273020354747297,
+        0.2340478468520956,
+        0.3143061476025795,
+        0.05954901130677231,
+        0.11907663949125559
+      ]
+    },
+    {
+      "id": "alegria_032_1",
+      "grupo": "alegria_032",
+      "texto": "Pensé que saldría mal pero estoy feliz",
+      "etiqueta": "alegria",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "enojo",
+      "aceptada": false,
+      "scores": [
+        0.33337589747799407,
+        0.08320465148807375,
+        0.3657194781656764,
+        0.06226550131730699,
+        0.15543447155094886
+      ]
+    },
+    {
+      "id": "alegria_032_2",
+      "grupo": "alegria_032",
+      "texto": "Al final todo resultó bonito y estoy aliviada",
+      "etiqueta": "alegria",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "alegria",
+      "aceptada": true,
+      "scores": [
+        0.33989223281754083,
+        0.16834377241484397,
+        0.1504180060088507,
+        0.19050034136829805,
+        0.15084564739046655
+      ]
+    },
+    {
+      "id": "alegria_033_1",
+      "grupo": "alegria_033",
+      "texto": "Me siento alegre aunque esté cansado",
+      "etiqueta": "alegria",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "tristeza",
+      "aceptada": true,
+      "scores": [
+        0.2283710821747242,
+        0.12140026544528097,
+        0.07871732519508767,
+        0.06617599348562947,
+        0.5053353336992777
+      ]
+    },
+    {
+      "id": "alegria_033_2",
+      "grupo": "alegria_033",
+      "texto": "Fue agotador pero disfruté mucho el día",
+      "etiqueta": "alegria",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "neutral",
+      "aceptada": true,
+      "scores": [
+        0.174664108320326,
+        0.16453579859911116,
+        0.1023458160193414,
+        0.4162269380482566,
+        0.1422273390129649
+      ]
+    },
+    {
+      "id": "alegria_038_1",
+      "grupo": "alegria_038",
+      "texto": "Mi amigo se recuperó y estoy feliz",
+      "etiqueta": "alegria",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "tristeza",
+      "aceptada": false,
+      "scores": [
+        0.3101605206939069,
+        0.09634487631537897,
+        0.1430552195828073,
+        0.1167879004011585,
+        0.3336514830067482
+      ]
+    },
+    {
+      "id": "alegria_038_2",
+      "grupo": "alegria_038",
+      "texto": "Saber que está mejor me llenó de alegría",
+      "etiqueta": "alegria",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "alegria",
+      "aceptada": true,
+      "scores": [
+        0.4964016673091226,
+        0.15983197529908663,
+        0.14360851480711792,
+        0.11190072341222324,
+        0.08825711917244951
+      ]
+    },
+    {
+      "id": "tristeza_006_1",
+      "grupo": "tristeza_006",
+      "texto": "Me duele que mis amigos no me invitaran",
+      "etiqueta": "tristeza",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "tristeza",
+      "aceptada": false,
+      "scores": [
+        0.2595565787712253,
+        0.12144796812638535,
+        0.22984292932193176,
+        0.05873353936258925,
+        0.3304189844178683
+      ]
+    },
+    {
+      "id": "tristeza_006_2",
+      "grupo": "tristeza_006",
+      "texto": "Me sentí excluido y me bajó el ánimo",
+      "etiqueta": "tristeza",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "tristeza",
+      "aceptada": true,
+      "scores": [
+        0.16123236392097726,
+        0.14114024276025927,
+        0.16364694640283609,
+        0.11007988677091159,
+        0.42390056014501587
+      ]
+    },
+    {
+      "id": "tristeza_009_1",
+      "grupo": "tristeza_009",
+      "texto": "Me decepciona no haber conseguido el trabajo",
+      "etiqueta": "tristeza",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "tristeza",
+      "aceptada": false,
+      "scores": [
+        0.21956321718173064,
+        0.206181772064389,
+        0.1681999929638837,
+        0.10934205311574591,
+        0.29671296467425073
+      ]
+    },
+    {
+      "id": "tristeza_009_2",
+      "grupo": "tristeza_009",
+      "texto": "El rechazo de la entrevista me desanimó",
+      "etiqueta": "tristeza",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "ansiedad",
+      "aceptada": true,
+      "scores": [
+        0.09132077553869503,
+        0.4050380340189995,
+        0.109024637308467,
+        0.14337644013490702,
+        0.2512401129989314
+      ]
+    },
+    {
+      "id": "tristeza_015_1",
+      "grupo": "tristeza_015",
+      "texto": "Mi mascota murió y la extraño mucho",
+      "etiqueta": "tristeza",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "tristeza",
+      "aceptada": false,
+      "scores": [
+        0.2961249200668191,
+        0.10017665938820093,
+        0.08919763830708188,
+        0.15386306206563422,
+        0.36063772017226375
+      ]
+    },
+    {
+      "id": "tristeza_015_2",
+      "grupo": "tristeza_015",
+      "texto": "Perder a mi gatito me dejó con una pena enorme",
+      "etiqueta": "tristeza",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "tristeza",
+      "aceptada": true,
+      "scores": [
+        0.17133166136527936,
+        0.09176333930947334,
+        0.2115821214212496,
+        0.11624234983260773,
+        0.40908052807138995
+      ]
+    },
+    {
+      "id": "tristeza_019_1",
+      "grupo": "tristeza_019",
+      "texto": "Me siento desilusionada con lo que pasó",
+      "etiqueta": "tristeza",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "alegria",
+      "aceptada": true,
+      "scores": [
+        0.4907437818382443,
+        0.1901503414831702,
+        0.1354322796840853,
+        0.03446135413835231,
+        0.14921224285614784
+      ]
+    },
+    {
+      "id": "tristeza_019_2",
+      "grupo": "tristeza_019",
+      "texto": "Esperaba algo distinto y quedé muy triste",
+      "etiqueta": "tristeza",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "tristeza",
+      "aceptada": true,
+      "scores": [
+        0.23444923093280215,
+        0.11545608919030576,
+        0.13480182453692724,
+        0.16139166454388074,
+        0.3539011907960841
+      ]
+    },
+    {
+      "id": "tristeza_027_1",
+      "grupo": "tristeza_027",
+      "texto": "Me siento derrotado tras tantos intentos",
+      "etiqueta": "tristeza",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "tristeza",
+      "aceptada": true,
+      "scores": [
+        0.33865925832744886,
+        0.06418104232555856,
+        0.05364585282820872,
+        0.010667644239645262,
+        0.5328462022791387
+      ]
+    },
+    {
+      "id": "tristeza_027_2",
+      "grupo": "tristeza_027",
+      "texto": "Fallar otra vez me quitó las ganas",
+      "etiqueta": "tristeza",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "ansiedad",
+      "aceptada": true,
+      "scores": [
+        0.15743073697292495,
+        0.31607659564524065,
+        0.17185560810714032,
+        0.16891503561000584,
+        0.1857220236646882
+      ]
+    },
+    {
+      "id": "tristeza_031_1",
+      "grupo": "tristeza_031",
+      "texto": "Me siento decepcionado de mí mismo",
+      "etiqueta": "tristeza",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "alegria",
+      "aceptada": false,
+      "scores": [
+        0.3901470773698128,
+        0.12102055071622175,
+        0.1145120953359084,
+        0.03733212363814132,
+        0.33698815293991574
+      ]
+    },
+    {
+      "id": "tristeza_031_2",
+      "grupo": "tristeza_031",
+      "texto": "No llegué a mi meta y me siento mal",
+      "etiqueta": "tristeza",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "tristeza",
+      "aceptada": true,
+      "scores": [
+        0.19421862306258544,
+        0.10754174538266373,
+        0.1188807172958782,
+        0.03239154256171537,
+        0.5469673716971574
+      ]
+    },
+    {
+      "id": "tristeza_033_1",
+      "grupo": "tristeza_033",
+      "texto": "Me siento triste al comparar mi vida con otras",
+      "etiqueta": "tristeza",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "tristeza",
+      "aceptada": true,
+      "scores": [
+        0.21069985582803985,
+        0.05287254291751871,
+        0.05647944694791933,
+        0.03782261553838619,
+        0.6421255387681359
+      ]
+    },
+    {
+      "id": "tristeza_033_2",
+      "grupo": "tristeza_033",
+      "texto": "Ver sus logros me hace sentir insuficiente",
+      "etiqueta": "tristeza",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "tristeza",
+      "aceptada": true,
+      "scores": [
+        0.20487493736075232,
+        0.08458513888661813,
+        0.14039286388516248,
+        0.07396681070090765,
+        0.4961802491665594
+      ]
+    },
+    {
+      "id": "tristeza_035_1",
+      "grupo": "tristeza_035",
+      "texto": "Estoy sin ánimos después de la mudanza",
+      "etiqueta": "tristeza",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "tristeza",
+      "aceptada": true,
+      "scores": [
+        0.15729642893532442,
+        0.1988723557022261,
+        0.12913365250986034,
+        0.1181000083150592,
+        0.39659755453753004
+      ]
+    },
+    {
+      "id": "tristeza_035_2",
+      "grupo": "tristeza_035",
+      "texto": "Dejar mi barrio me dio mucha nostalgia",
+      "etiqueta": "tristeza",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "alegria",
+      "aceptada": true,
+      "scores": [
+        0.42411847348045584,
+        0.12937894668062022,
+        0.11771614180762677,
+        0.11825533614695918,
+        0.21053110188433802
+      ]
+    },
+    {
+      "id": "enojo_017_1",
+      "grupo": "enojo_017",
+      "texto": "Estoy molesta con mi compañero irresponsable",
+      "etiqueta": "enojo",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "alegria",
+      "aceptada": true,
+      "scores": [
+        0.4513780007103368,
+        0.08854219616750722,
+        0.27761531460658967,
+        0.09663644501388052,
+        0.08582804350168578
+      ]
+    },
+    {
+      "id": "enojo_017_2",
+      "grupo": "enojo_017",
+      "texto": "Me da rabia hacer todo el trabajo del grupo",
+      "etiqueta": "enojo",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "enojo",
+      "aceptada": false,
+      "scores": [
+        0.1963854979208441,
+        0.18540728873722667,
+        0.2677555814365885,
+        0.19227601107171494,
+        0.15817562083362569
+      ]
+    },
+    {
+      "id": "enojo_020_1",
+      "grupo": "enojo_020",
+      "texto": "Me enoja que no valoren mi tiempo",
+      "etiqueta": "enojo",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "enojo",
+      "aceptada": true,
+      "scores": [
+        0.12827852736713796,
+        0.19852217845152986,
+        0.36680936240773754,
+        0.06918428271694238,
+        0.2372056490566522
+      ]
+    },
+    {
+      "id": "enojo_020_2",
+      "grupo": "enojo_020",
+      "texto": "Estoy molesta por haber esperado en vano",
+      "etiqueta": "enojo",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "enojo",
+      "aceptada": true,
+      "scores": [
+        0.1676908826885774,
+        0.16723944212016964,
+        0.41701568850087295,
+        0.15988069820749864,
+        0.08817328848288128
+      ]
+    },
+    {
+      "id": "enojo_026_1",
+      "grupo": "enojo_026",
+      "texto": "Estoy de mal humor por la discusión",
+      "etiqueta": "enojo",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "enojo",
+      "aceptada": true,
+      "scores": [
+        0.10539705316744419,
+        0.15417567818735073,
+        0.5650362840992965,
+        0.09805020332409747,
+        0.07734078122181096
+      ]
+    },
+    {
+      "id": "enojo_026_2",
+      "grupo": "enojo_026",
+      "texto": "La pelea me dejó con mucha rabia",
+      "etiqueta": "enojo",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "tristeza",
+      "aceptada": false,
+      "scores": [
+        0.27709574197554354,
+        0.1339217087375849,
+        0.15177882853055089,
+        0.0747962552369168,
+        0.3624074655194039
+      ]
+    },
+    {
+      "id": "enojo_031_1",
+      "grupo": "enojo_031",
+      "texto": "Me da rabia la corrupción",
+      "etiqueta": "enojo",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "enojo",
+      "aceptada": true,
+      "scores": [
+        0.16086501851737786,
+        0.15805182454332928,
+        0.36961754207147846,
+        0.08227581624500331,
+        0.22918979862281114
+      ]
+    },
+    {
+      "id": "enojo_031_2",
+      "grupo": "enojo_031",
+      "texto": "Estoy indignado con esas prácticas injustas",
+      "etiqueta": "enojo",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "enojo",
+      "aceptada": false,
+      "scores": [
+        0.2856710424385809,
+        0.12998615400221825,
+        0.3771479493338116,
+        0.10508389334887722,
+        0.10211096087651202
+      ]
+    },
+    {
+      "id": "enojo_033_1",
+      "grupo": "enojo_033",
+      "texto": "Me fastidia que me echen la culpa",
+      "etiqueta": "enojo",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "enojo",
+      "aceptada": true,
+      "scores": [
+        0.06790987197478125,
+        0.07298216206172582,
+        0.7591503152339848,
+        0.029265591036885145,
+        0.07069205969262297
+      ]
+    },
+    {
+      "id": "enojo_033_2",
+      "grupo": "enojo_033",
+      "texto": "Estoy enojado porque me acusaron sin pruebas",
+      "etiqueta": "enojo",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "enojo",
+      "aceptada": true,
+      "scores": [
+        0.08498589482660387,
+        0.08417792102181051,
+        0.6724495909352969,
+        0.05302955860226471,
+        0.10535703461402403
+      ]
+    },
+    {
+      "id": "enojo_035_1",
+      "grupo": "enojo_035",
+      "texto": "Estoy frustrado porque la impresora no funciona",
+      "etiqueta": "enojo",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "enojo",
+      "aceptada": false,
+      "scores": [
+        0.09364447711397365,
+        0.2842721262276339,
+        0.37750415540619653,
+        0.05945900833160907,
+        0.18512023292058682
+      ]
+    },
+    {
+      "id": "enojo_035_2",
+      "grupo": "enojo_035",
+      "texto": "Me irrita no poder imprimir cuando lo necesito",
+      "etiqueta": "enojo",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "enojo",
+      "aceptada": true,
+      "scores": [
+        0.12548037056861075,
+        0.1971222239346342,
+        0.3467035086820459,
+        0.11123491227470243,
+        0.21945898454000679
+      ]
+    },
+    {
+      "id": "enojo_036_1",
+      "grupo": "enojo_036",
+      "texto": "Me enoja que no devuelvan lo prestado",
+      "etiqueta": "enojo",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "enojo",
+      "aceptada": true,
+      "scores": [
+        0.11651263688955157,
+        0.16104743728969043,
+        0.49577497292579725,
+        0.04431095450679651,
+        0.18235399838816435
+      ]
+    },
+    {
+      "id": "enojo_036_2",
+      "grupo": "enojo_036",
+      "texto": "Estoy molesta porque se quedaron con mi libro",
+      "etiqueta": "enojo",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "enojo",
+      "aceptada": true,
+      "scores": [
+        0.19957274229522637,
+        0.09717398388168248,
+        0.5578384807673064,
+        0.062456688286601225,
+        0.08295810476918354
+      ]
+    },
+    {
+      "id": "enojo_040_1",
+      "grupo": "enojo_040",
+      "texto": "Estoy picón porque hicieron trampa",
+      "etiqueta": "enojo",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "enojo",
+      "aceptada": true,
+      "scores": [
+        0.15276175730798633,
+        0.10510779770561234,
+        0.5925618200092768,
+        0.06630629274473497,
+        0.08326233223238956
+      ]
+    },
+    {
+      "id": "enojo_040_2",
+      "grupo": "enojo_040",
+      "texto": "Perder por una trampa me da cólera",
+      "etiqueta": "enojo",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "enojo",
+      "aceptada": true,
+      "scores": [
+        0.07556481764959186,
+        0.14608931656128604,
+        0.5938824792627501,
+        0.07624888543359785,
+        0.1082145010927741
+      ]
+    },
+    {
+      "id": "ansiedad_002_1",
+      "grupo": "ansiedad_002",
+      "texto": "Me da miedo equivocarme en la exposición",
+      "etiqueta": "ansiedad",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "ansiedad",
+      "aceptada": true,
+      "scores": [
+        0.22154397264945783,
+        0.3501997857058561,
+        0.10264177706342047,
+        0.184211495683787,
+        0.14140296889747864
+      ]
+    },
+    {
+      "id": "ansiedad_002_2",
+      "grupo": "ansiedad_002",
+      "texto": "Estoy ansiosa por hablar frente a todos",
+      "etiqueta": "ansiedad",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "ansiedad",
+      "aceptada": true,
+      "scores": [
+        0.12869550502494911,
+        0.5854242986095224,
+        0.13441154339466674,
+        0.08369805037512404,
+        0.06777060259573768
+      ]
+    },
+    {
+      "id": "ansiedad_006_1",
+      "grupo": "ansiedad_006",
+      "texto": "Me preocupa no llegar a fin de mes",
+      "etiqueta": "ansiedad",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "ansiedad",
+      "aceptada": true,
+      "scores": [
+        0.044048847219654894,
+        0.7915680092020221,
+        0.05650449254383719,
+        0.02874315189279206,
+        0.07913549914169359
+      ]
+    },
+    {
+      "id": "ansiedad_006_2",
+      "grupo": "ansiedad_006",
+      "texto": "Las cuentas pendientes me tienen ansioso",
+      "etiqueta": "ansiedad",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "alegria",
+      "aceptada": true,
+      "scores": [
+        0.3049950883523532,
+        0.19403008555605625,
+        0.18565631191269769,
+        0.17018298008346494,
+        0.14513553409542782
+      ]
+    },
+    {
+      "id": "ansiedad_020_1",
+      "grupo": "ansiedad_020",
+      "texto": "Me preocupa decepcionar a mis padres",
+      "etiqueta": "ansiedad",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "ansiedad",
+      "aceptada": true,
+      "scores": [
+        0.17334766264454393,
+        0.5748130592101774,
+        0.08535179805801298,
+        0.05949177442579328,
+        0.10699570566147235
+      ]
+    },
+    {
+      "id": "ansiedad_020_2",
+      "grupo": "ansiedad_020",
+      "texto": "Tengo miedo de no cumplir sus expectativas",
+      "etiqueta": "ansiedad",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "ansiedad",
+      "aceptada": true,
+      "scores": [
+        0.044120492725511225,
+        0.7578431785518599,
+        0.0751113744639812,
+        0.05558827128995324,
+        0.06733668296869434
+      ]
+    },
+    {
+      "id": "ansiedad_024_1",
+      "grupo": "ansiedad_024",
+      "texto": "Me asusta quedarme sin dinero",
+      "etiqueta": "ansiedad",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "enojo",
+      "aceptada": true,
+      "scores": [
+        0.1064160395236777,
+        0.10578319276924215,
+        0.4340047761585382,
+        0.06081860257532166,
+        0.29297738897322034
+      ]
+    },
+    {
+      "id": "ansiedad_024_2",
+      "grupo": "ansiedad_024",
+      "texto": "Pensar en mis deudas me causa ansiedad",
+      "etiqueta": "ansiedad",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "ansiedad",
+      "aceptada": false,
+      "scores": [
+        0.23925322482005731,
+        0.3239067378652789,
+        0.11422479412811189,
+        0.19307600591278123,
+        0.1295392372737707
+      ]
+    },
+    {
+      "id": "ansiedad_028_1",
+      "grupo": "ansiedad_028",
+      "texto": "Me inquieta esperar una respuesta importante",
+      "etiqueta": "ansiedad",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "ansiedad",
+      "aceptada": true,
+      "scores": [
+        0.11925572122026667,
+        0.4180318500971584,
+        0.1753238381036451,
+        0.17459100410267375,
+        0.11279758647625607
+      ]
+    },
+    {
+      "id": "ansiedad_028_2",
+      "grupo": "ansiedad_028",
+      "texto": "Estoy ansioso mirando el correo cada rato",
+      "etiqueta": "ansiedad",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "enojo",
+      "aceptada": true,
+      "scores": [
+        0.15710005109504102,
+        0.1350559183525552,
+        0.3654341828352653,
+        0.23203923260128917,
+        0.11037061511584927
+      ]
+    },
+    {
+      "id": "ansiedad_030_1",
+      "grupo": "ansiedad_030",
+      "texto": "Me preocupa haber cometido un error",
+      "etiqueta": "ansiedad",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "ansiedad",
+      "aceptada": true,
+      "scores": [
+        0.11596676691588426,
+        0.5183227894498602,
+        0.0718933758805053,
+        0.15718048713101482,
+        0.13663658062273543
+      ]
+    },
+    {
+      "id": "ansiedad_030_2",
+      "grupo": "ansiedad_030",
+      "texto": "Repaso lo que hice con miedo a equivocarme",
+      "etiqueta": "ansiedad",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "ansiedad",
+      "aceptada": true,
+      "scores": [
+        0.28131061042020605,
+        0.42868912333111614,
+        0.19976540883080204,
+        0.036592454956599345,
+        0.05364240246127662
+      ]
+    },
+    {
+      "id": "ansiedad_037_1",
+      "grupo": "ansiedad_037",
+      "texto": "Me asusta la idea de quedarme solo",
+      "etiqueta": "ansiedad",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "tristeza",
+      "aceptada": true,
+      "scores": [
+        0.1427961069170847,
+        0.2062893178783463,
+        0.13948172769932085,
+        0.07274689486000328,
+        0.43868595264524496
+      ]
+    },
+    {
+      "id": "ansiedad_037_2",
+      "grupo": "ansiedad_037",
+      "texto": "Siento miedo cuando pienso en estar sin compañía",
+      "etiqueta": "ansiedad",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "ansiedad",
+      "aceptada": true,
+      "scores": [
+        0.10661027203069941,
+        0.37426694830169965,
+        0.08379279972600731,
+        0.16496055935067738,
+        0.27036942059091645
+      ]
+    },
+    {
+      "id": "ansiedad_040_1",
+      "grupo": "ansiedad_040",
+      "texto": "Me pone ansiosa no tener el control",
+      "etiqueta": "ansiedad",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "ansiedad",
+      "aceptada": true,
+      "scores": [
+        0.038897592268831105,
+        0.6561747395387737,
+        0.0964615604980002,
+        0.04969285340513986,
+        0.1587732542892551
+      ]
+    },
+    {
+      "id": "ansiedad_040_2",
+      "grupo": "ansiedad_040",
+      "texto": "No poder prever las cosas me inquieta",
+      "etiqueta": "ansiedad",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "ansiedad",
+      "aceptada": true,
+      "scores": [
+        0.14813861789889565,
+        0.37462493895082855,
+        0.14715591921470209,
+        0.13568139943885704,
+        0.19439912449671676
+      ]
+    },
+    {
+      "id": "neutral_005_1",
+      "grupo": "neutral_005",
+      "texto": "Necesito comprar un cuaderno",
+      "etiqueta": "neutral",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "neutral",
+      "aceptada": true,
+      "scores": [
+        0.05408351796262502,
+        0.06390812146059728,
+        0.07503481186496189,
+        0.740944770786616,
+        0.0660287779251998
+      ]
+    },
+    {
+      "id": "neutral_005_2",
+      "grupo": "neutral_005",
+      "texto": "Voy a la tienda por material de estudio",
+      "etiqueta": "neutral",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "neutral",
+      "aceptada": true,
+      "scores": [
+        0.09640122363578643,
+        0.23358717017258954,
+        0.10971323193237402,
+        0.4349993892524506,
+        0.12529898500679956
+      ]
+    },
+    {
+      "id": "neutral_012_1",
+      "grupo": "neutral_012",
+      "texto": "Estoy revisando mi horario",
+      "etiqueta": "neutral",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "alegria",
+      "aceptada": true,
+      "scores": [
+        0.5616664766828864,
+        0.058222828355564867,
+        0.19215259591326997,
+        0.11421352603076526,
+        0.07374457301751348
+      ]
+    },
+    {
+      "id": "neutral_012_2",
+      "grupo": "neutral_012",
+      "texto": "Consulto a qué hora tengo clase",
+      "etiqueta": "neutral",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "neutral",
+      "aceptada": true,
+      "scores": [
+        0.12243879492933671,
+        0.15328643200109196,
+        0.18574553539900515,
+        0.443313630105337,
+        0.09521560756522904
+      ]
+    },
+    {
+      "id": "neutral_017_1",
+      "grupo": "neutral_017",
+      "texto": "Tengo que enviar un correo",
+      "etiqueta": "neutral",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "neutral",
+      "aceptada": true,
+      "scores": [
+        0.09119635112694151,
+        0.1768553295232841,
+        0.1859431903050957,
+        0.4565855359566164,
+        0.08941959308806233
+      ]
+    },
+    {
+      "id": "neutral_017_2",
+      "grupo": "neutral_017",
+      "texto": "Voy a redactar un mensaje de trabajo",
+      "etiqueta": "neutral",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "neutral",
+      "aceptada": true,
+      "scores": [
+        0.17663958161578822,
+        0.16150312703936673,
+        0.09587659469828717,
+        0.4691261374054455,
+        0.09685455924111232
+      ]
+    },
+    {
+      "id": "neutral_018_1",
+      "grupo": "neutral_018",
+      "texto": "Estoy haciendo una lista de compras",
+      "etiqueta": "neutral",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "neutral",
+      "aceptada": true,
+      "scores": [
+        0.19675490956116604,
+        0.12235560635560805,
+        0.14277253498643047,
+        0.44819961598081426,
+        0.08991733311598109
+      ]
+    },
+    {
+      "id": "neutral_018_2",
+      "grupo": "neutral_018",
+      "texto": "Anoto lo que falta en la casa",
+      "etiqueta": "neutral",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "neutral",
+      "aceptada": false,
+      "scores": [
+        0.22211347341466098,
+        0.18845119770327085,
+        0.1497609381211736,
+        0.32014250237816305,
+        0.11953188838273147
+      ]
+    },
+    {
+      "id": "neutral_028_1",
+      "grupo": "neutral_028",
+      "texto": "La tarea consiste en hacer un resumen",
+      "etiqueta": "neutral",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "neutral",
+      "aceptada": true,
+      "scores": [
+        0.07222845102374079,
+        0.09988689582578257,
+        0.040067653039228504,
+        0.6933677691828088,
+        0.0944492309284392
+      ]
+    },
+    {
+      "id": "neutral_028_2",
+      "grupo": "neutral_028",
+      "texto": "Debemos sintetizar el contenido de la lectura",
+      "etiqueta": "neutral",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "tristeza",
+      "aceptada": false,
+      "scores": [
+        0.0714182252251922,
+        0.17165565857156198,
+        0.07769541853277705,
+        0.32589549165236786,
+        0.3533352060181008
+      ]
+    },
+    {
+      "id": "neutral_029_1",
+      "grupo": "neutral_029",
+      "texto": "Estoy en el segundo piso",
+      "etiqueta": "neutral",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "neutral",
+      "aceptada": true,
+      "scores": [
+        0.09699227052670052,
+        0.09625171272006953,
+        0.08107255429277853,
+        0.6861627360098248,
+        0.039520726450626646
+      ]
+    },
+    {
+      "id": "neutral_029_2",
+      "grupo": "neutral_029",
+      "texto": "Me encuentro arriba en el edificio",
+      "etiqueta": "neutral",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "neutral",
+      "aceptada": true,
+      "scores": [
+        0.10025872434724262,
+        0.13564030576292738,
+        0.09382267879185545,
+        0.5930443796559755,
+        0.07723391144199912
+      ]
+    },
+    {
+      "id": "neutral_031_1",
+      "grupo": "neutral_031",
+      "texto": "Hoy almorcé arroz con pollo",
+      "etiqueta": "neutral",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "alegria",
+      "aceptada": true,
+      "scores": [
+        0.4938350045958453,
+        0.13755230867948764,
+        0.07185974254341518,
+        0.12844648646758897,
+        0.16830645771366287
+      ]
+    },
+    {
+      "id": "neutral_031_2",
+      "grupo": "neutral_031",
+      "texto": "Eso fue lo que comí al mediodía",
+      "etiqueta": "neutral",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "alegria",
+      "aceptada": false,
+      "scores": [
+        0.2941911001665052,
+        0.1695719962611441,
+        0.24168146523860504,
+        0.1772535660991832,
+        0.11730187223456244
+      ]
+    },
+    {
+      "id": "neutral_033_1",
+      "grupo": "neutral_033",
+      "texto": "Necesito saber dónde queda el aula",
+      "etiqueta": "neutral",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "neutral",
+      "aceptada": true,
+      "scores": [
+        0.11247814245897782,
+        0.2369200253896691,
+        0.09853047375436941,
+        0.46152355316606936,
+        0.0905478052309144
+      ]
+    },
+    {
+      "id": "neutral_033_2",
+      "grupo": "neutral_033",
+      "texto": "Busco el salón de la clase",
+      "etiqueta": "neutral",
+      "origen": "sintetico_asistido_IA",
+      "particion": "test",
+      "predicha": "neutral",
+      "aceptada": true,
+      "scores": [
+        0.07962067009690764,
+        0.1340869693794598,
+        0.08283679311665244,
+        0.48668303411613595,
+        0.21677253329084423
+      ]
+    }
+  ],
+  "modelo_sha256": "8c3b9faffadeff318d4e601a646ed10f344ad0bc30291a5edff91843ae38ca91",
+  "seleccion_sha256": "a5319d3836788cb9a9b85824a3c5b6a18da0dc01e24c99a594d5827d29374e0e"
+}
