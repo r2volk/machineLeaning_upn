@@ -41,5 +41,3 @@ La base académica está en los apuntes de las semanas 4, 7, 9, 11 y 12 del curs
 - [Protocolo fijado antes de evaluar](entrenamiento/PROTOCOLO.md) y [ficha del corpus](entrenamiento/datos/FICHA_DATOS.md).
 - [Verificación de la entrega](docs/VERIFICACION.md): ejecución, pruebas y navegador.
 - [Mapa del curso](docs/MAPA_CURSO.md) y [guion de exposición](docs/DEMOSTRACION.md).
-
-El corpus es **100% sintético, redactado con asistencia de IA**. También se utilizó asistencia de IA para desarrollar este proyecto. No se atribuye a cuatro personas ni se afirma una duración de trabajo que no ocurrió. El alcance se demuestra con los entregables y la evidencia. Es un prototipo académico, **no una herramienta clínica**; puede fallar al interpretar emociones y al reconocer mensajes de riesgo.
