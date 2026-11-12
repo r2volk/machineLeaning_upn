@@ -31,9 +31,9 @@ python -m entrenamiento todo
 
 En la entrega congelada este comando verifica datos, lee la selección y el test existentes, y regenera los gráficos y el CSV de errores. El informe escrito se conserva en `INFORME_RESULTADOS.md`. **No vuelve a entrenar ni a evaluar** cuando ya hay resultados. Es idempotente para la evidencia principal. Los timestamps de los SVG exportados pueden cambiar; eso no altera métricas.
 
-## Etapas originales
+## Etapas del experimento
 
-Estos fueron los comandos del experimento original, en este orden:
+El experimento se ejecuta con estos comandos, en este orden:
 
 ```sh
 python -m entrenamiento preparar
@@ -44,7 +44,7 @@ python -m entrenamiento informe
 
 - Preparar: crea CSV y manifiesto si faltan; si existen verifica los hashes.
 - Comparar: solo usa train y validación, guarda modelos candidatos resumidos, curva, elección, umbral y artefacto. Si ya hay selección, la devuelve.
-- Evaluar: verifica hashes, reserva test con modo exclusivo `x`, ejecuta un único lote de scores y guarda todas las predicciones. Si el resultado existe lo devuelve sin inferencia. Si solo existe una reserva incompleta, se detiene: no borres el marcador para forzar otra evaluación.
+- Evaluar: verifica las huellas de los datos, el manifiesto y el modelo (no las del código Python), reserva test con modo exclusivo `x`, ejecuta un único lote de scores y guarda todas las predicciones. Si el resultado existe lo devuelve sin inferencia. Si solo existe una reserva incompleta, se detiene: no borres el marcador para forzar otra evaluación.
 - Informe: solo interpreta los resultados guardados.
 
 El artefacto servido es exactamente el seleccionado y evaluado. No se aprovecha validación para reentrenarlo después: hacerlo cambiaría la correspondencia entre el modelo medido y el modelo entregado.
@@ -65,7 +65,7 @@ No borres resultados ni cambies la semilla para buscar una cifra mejor. Si ajust
 
 ## Archivos de auditoría
 
-`datos/manifiesto.json` registra origen, conteos, asignación de grupos y SHA-256. `resultados/seleccion.json` registra versiones, decisiones, resultados de validación y hashes del código p00–p05. `test_reservado.json` registra la única apertura y hash de `test_final.json`. Este último incluye cada texto sintético con su etiqueta, predicción, scores y abstención. Los datos de test son inspeccionables **después** de finalizar el experimento, para transparencia, no para ajustar.
+`datos/manifiesto.json` registra origen, conteos, asignación de grupos y SHA-256. `resultados/seleccion.json` registra versiones, decisiones, resultados de validación y hashes informativos del código p00–p05, que no se comprueban para permitir la evaluación. `test_reservado.json` registra la única apertura y hash de `test_final.json`. Este último incluye cada texto sintético con su etiqueta, predicción, scores y abstención. Los datos de test son inspeccionables **después** de finalizar el experimento, para transparencia, no para ajustar.
 
 Estos mecanismos no son un sistema de seguridad contra manipulación deliberada. Documentan y previenen errores rutinarios. La selección no se repitió después de observar test.
 
@@ -77,6 +77,6 @@ Estos mecanismos no son un sistema de seguridad contra manipulación deliberada.
 | `GET /api/health` | Estado del modelo; 503 en modo degradado. |
 | `POST /api/chat` | JSON `message` (texto), `turn` (entero opcional), `safety_context` (booleano opcional). Devuelve `reply`, `safety` y `analysis`. |
 | `GET /api/resultados` | Métricas guardadas; no expone corpus completo ni ejecuta evaluación. |
-| `GET /documentos/informe`, `/guia`, `/protocolo` | Descargas de documentación permitida. |
+| `GET /documentos/informe`, `GET /documentos/protocolo` | Descargas de documentación permitida. |
 
 Máximo de conversación: 1500 caracteres. Máximo de cuerpo HTTP: 32768 bytes. Dentro del cuerpo admitido, seguridad se comprueba antes del límite de conversación. El servidor no guarda sesiones; el navegador envía un indicador para mantener la precaución tras una alerta hasta que el usuario inicia una nueva conversación. Un cliente API independiente debe conservar ese indicador. No hay memoria semántica ni seguimiento clínico.

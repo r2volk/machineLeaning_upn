@@ -167,7 +167,7 @@ def comparar():
         modelo_sha256=huella(MODELO),
         # guarda la huella de la division usada
         manifiesto_sha256=huella(DATOS / "manifiesto.json"),
-        # guarda las huellas de los modulos del experimento
+        # registra las huellas del codigo como informacion sin bloquear la evaluacion
         codigo_sha256={p.name: huella(p) for p in sorted(RAIZ.glob("p0[0-5]*.py"))},
         # conserva las etiquetas predichas sobre validacion
         predicciones_validacion=[

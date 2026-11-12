@@ -142,7 +142,7 @@ Una siguiente fase responsable requiere consentimiento, minimización de datos, 
 
 ## 10. Relación con los apuntes y reproducibilidad
 
-Semanas 4 (flujo del proyecto), 7 y 9 (reglas y NLP), 11 (datasets, sesgo, logística y métricas), 12 (logística multinomial, validación/test y matriz de confusión). Se amplían TF-IDF, Pipeline, agrupación de paráfrasis, abstención y bootstrap, explicados en `GUIA_DEFENSA.md` y `docs/MAPA_CURSO.md`. No se usa la lematización preentrenada del laboratorio de semana 9 por la restricción del proyecto.
+Semanas 4 (flujo del proyecto), 7 y 9 (reglas y NLP), 11 (datasets, sesgo, logística y métricas), 12 (logística multinomial, validación/test y matriz de confusión). Se amplían TF-IDF, Pipeline, agrupación de paráfrasis, abstención y bootstrap, explicados en `guia-para-defender-animo.md` y `docs/MAPA_CURSO.md`. No se usa la lematización preentrenada del laboratorio de semana 9 por la restricción del proyecto.
 
 Entorno de ejecución: Python 3.14.2, scikit-learn 1.7.2. Dependencias completas en `requirements-lock.txt`. Instrucciones experimentales en `docs/REPRODUCIBILIDAD.md`. Evidencia numérica: `seleccion.json`, `test_final.json`, `errores_test.csv`, figuras y hashes. Los números de este informe se reproducen a partir de esos archivos; volver a presentar el informe no constituye un nuevo test.
 

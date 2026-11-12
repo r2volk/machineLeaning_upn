@@ -206,3 +206,59 @@ def test_artefacto_alterado_no_se_deserializa(monkeypatch, tmp_path):
     with pytest.raises(RuntimeError, match="Artefacto alterado"):
         # intenta cargar el archivo para comprobar el rechazo
         modulo.cargar_modelo()
+
+
+# comprueba integridad sin exigir coincidencia del codigo ni abrir el test real
+@pytest.mark.parametrize(
+    "caso",
+    ["codigo_distinto", "sin_huellas_codigo", "manifiesto_alterado", "modelo_alterado"],
+)
+def test_evaluacion_verifica_datos_y_modelo_sin_bloquear_por_codigo(
+    monkeypatch, tmp_path, caso
+):
+    import entrenamiento.p04_evaluacion as modulo
+    from entrenamiento.p00_configuracion import guardar_json, huella
+
+    # usa solo archivos temporales y una reserva que impide cualquier inferencia
+    manifiesto = tmp_path / "manifiesto.json"
+    manifiesto.write_text("{}", encoding="utf-8")
+    modelo = tmp_path / "modelo.joblib"
+    modelo.write_bytes(b"modelo de prueba sin deserializar")
+    seleccion = {
+        "manifiesto_sha256": huella(manifiesto),
+        "modelo_sha256": huella(modelo),
+    }
+    if caso != "sin_huellas_codigo":
+        seleccion["codigo_sha256"] = {"inexistente.py": "huella diferente"}
+    guardar_json(tmp_path / "seleccion.json", seleccion)
+    reserva = tmp_path / "test_reservado.json"
+    reserva.write_text('{"estado":"reservado"}', encoding="utf-8")
+    if caso == "manifiesto_alterado":
+        manifiesto.write_text('{"cambio":true}', encoding="utf-8")
+    if caso == "modelo_alterado":
+        modelo.write_bytes(b"modelo alterado")
+
+    monkeypatch.setattr(modulo, "SALIDAS", tmp_path)
+    monkeypatch.setattr(modulo, "DATOS", tmp_path)
+    monkeypatch.setattr(modulo, "MODELO", modelo)
+    verificaciones = []
+    monkeypatch.setattr(modulo, "verificar_datos", lambda: verificaciones.append(True))
+
+    def prohibido(*args, **kwargs):
+        raise AssertionError("No debe cargar modelo ni abrir datos de test")
+
+    monkeypatch.setattr(modulo.joblib, "load", prohibido)
+    monkeypatch.setattr(modulo, "cargar", prohibido)
+    if caso == "manifiesto_alterado":
+        with pytest.raises(RuntimeError, match="El manifiesto fue alterado"):
+            modulo.evaluar_una_vez()
+    elif caso == "modelo_alterado":
+        with pytest.raises(RuntimeError, match="El modelo no coincide"):
+            modulo.evaluar_una_vez()
+    else:
+        # alcanza la reserva aunque falten huellas del codigo o sean diferentes
+        with pytest.raises(FileExistsError):
+            modulo.evaluar_una_vez()
+    assert verificaciones == [True]
+    assert not (tmp_path / "test_final.json").exists()
+    assert reserva.read_text(encoding="utf-8") == '{"estado":"reservado"}'

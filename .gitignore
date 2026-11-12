@@ -5,9 +5,6 @@ __pycache__/
 *.pyc
 
 # Archivos personales y temporales de la entrega
-/Explicacion.md
-/GUIA_DEFENSA.md
-/ANIMO_ENTREGA.zip
 /.ppt-build/
 /.ppt-output/
 /.versiones/

@@ -6,11 +6,13 @@ Verificación realizada el 2026-11-11T10:46:35.142537+00:00 (UTC), en macOS ARM 
 
 Se ejecutó `python app.py` con `.venv` activo y se abrió en Chrome la dirección impresa: **http://127.0.0.1:5000**. Flask sirvió la página correctamente.
 
-Las rutas `/`, `/api/health`, `/api/resultados` y las tres descargas de documentación respondieron HTTP 200. Se probaron por HTTP una clasificación normal, abstención, señal explícita de precaución y una variante con una letra omitida. Evidencia legible por máquina: [http_verificacion.json](http_verificacion.json).
+Las rutas de servicio son `/`, `/api/health` y `/api/resultados`. Las descargas permitidas son `/documentos/informe` y `/documentos/protocolo`.
+
+Se probaron por HTTP una clasificación normal, abstención, señal explícita de precaución y una variante con una letra omitida.
 
 ## Pruebas automatizadas
 
-Resultado final: **57 pruebas aprobadas**, **0 fallos**, **0 errores**, **0 omitidas**. Registro: [pruebas.xml](pruebas.xml).
+Pruebas automatizadas ejecutadas el 2026-11-12: **61 pruebas aprobadas**, **0 fallos**, **0 errores**, **0 omitidas**. Registro: [pruebas.xml](pruebas.xml).
 
 Cubren validación de JSON, texto vacío, longitud, tipos, cuerpo excesivo, estado degradado, prioridad de seguridad sin modelo, continuidad de precaución, menciones explícitas/negadas/informativas, acceso a documentos, Host, cabeceras, ausencia de cookies, respuesta normal, palabras desconocidas, conservación de negaciones, grupos, ausencia de ajuste sobre validación, métricas con ejemplos calculables, cobertura, no repetición de test, recuperación del modelo desde train y rechazo de un artefacto alterado.
 
@@ -27,8 +29,3 @@ Durante las pruebas se detectó la variante «dao» y se añadió a las reglas y
 Después de ejecutar `python -m entrenamiento todo` sobre la entrega, los SHA-256 de `seleccion.json`, `test_final.json` y `test_reservado.json` permanecieron idénticos. La operación reutiliza la evidencia; no reabre el test. El registro HTTP contiene las huellas verificadas. El resultado final mantiene una sola apertura registrada.
 
 Las pruebas de software y mensajes de demostración son de desarrollo; no son nuevas muestras para elevar las cifras del informe. Las cifras de rendimiento proceden exclusivamente del experimento congelado.
-
-
-## Ajustes de interfaz
-
-Se mejoraron la legibilidad y la navegación entre Conversación y Laboratorio, verificadas en Chrome y emulación móvil. La copia previa del diseño está en `.versiones/antes_dock_20261111_180800/`. Estos ajustes no cambian el entrenamiento.

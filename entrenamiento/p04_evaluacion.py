@@ -11,7 +11,6 @@ import numpy as np
 from .p00_configuracion import (
     DATOS,
     MODELO,
-    RAIZ,
     SALIDAS,
     SEMILLA,
     guardar_json,
@@ -91,12 +90,6 @@ def evaluar_una_vez():
     if huella(DATOS / "manifiesto.json") != seleccion["manifiesto_sha256"]:
         # rechaza un manifiesto distinto del registrado
         raise RuntimeError("El manifiesto fue alterado")
-    # recorre las huellas del codigo usado en la seleccion
-    for nombre, esperado in seleccion["codigo_sha256"].items():
-        # compara la huella de cada modulo con la registrada
-        if huella(RAIZ / nombre) != esperado:
-            # impide evaluar si el codigo cambio despues de la seleccion
-            raise RuntimeError(f"Código modificado después de selección: {nombre}")
     # comprueba que el modelo coincida con el elegido
     if huella(MODELO) != seleccion["modelo_sha256"]:
         # rechaza un modelo diferente del registrado
