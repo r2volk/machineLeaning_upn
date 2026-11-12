@@ -1,0 +1,82 @@
+[
+  {
+    "slide": "ppt/slides/slide1.xml",
+    "transition": "fade",
+    "entrances": 2
+  },
+  {
+    "slide": "ppt/slides/slide2.xml",
+    "transition": "fade",
+    "entrances": 2
+  },
+  {
+    "slide": "ppt/slides/slide3.xml",
+    "transition": "fade",
+    "entrances": 4
+  },
+  {
+    "slide": "ppt/slides/slide4.xml",
+    "transition": "fade",
+    "entrances": 4
+  },
+  {
+    "slide": "ppt/slides/slide5.xml",
+    "transition": "fade",
+    "entrances": 6
+  },
+  {
+    "slide": "ppt/slides/slide6.xml",
+    "transition": "fade",
+    "entrances": 9
+  },
+  {
+    "slide": "ppt/slides/slide7.xml",
+    "transition": "fade",
+    "entrances": 8
+  },
+  {
+    "slide": "ppt/slides/slide8.xml",
+    "transition": "fade",
+    "entrances": 11
+  },
+  {
+    "slide": "ppt/slides/slide9.xml",
+    "transition": "fade",
+    "entrances": 8
+  },
+  {
+    "slide": "ppt/slides/slide10.xml",
+    "transition": "fade",
+    "entrances": 1
+  },
+  {
+    "slide": "ppt/slides/slide11.xml",
+    "transition": "fade",
+    "entrances": 5
+  },
+  {
+    "slide": "ppt/slides/slide12.xml",
+    "transition": "fade",
+    "entrances": 3
+  },
+  {
+    "slide": "ppt/slides/slide13.xml",
+    "transition": "fade",
+    "entrances": 8
+  },
+  {
+    "slide": "ppt/slides/slide14.xml",
+    "transition": "fade",
+    "entrances": 6
+  },
+  {
+    "slide": "ppt/slides/slide15.xml",
+    "transition": "fade",
+    "entrances": 5
+  },
+  {
+    "slide": "ppt/slides/slide16.xml",
+    "transition": "fade",
+    "entrances": 4
+  }
+]

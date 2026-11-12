@@ -1,6 +1,6 @@
 # Ánimo
 
-Chatbot académico en Python que clasifica señales de alegría, tristeza, enojo, ansiedad y neutralidad en textos breves en español. Interfaz completa en un único `index.html`: conversación, explicación de cada predicción, laboratorio con resultados reales y documentación descargable.
+Chatbot académico en Python que clasifica señales de alegría, tristeza, enojo, ansiedad y neutralidad en textos breves en español. Su interfaz permite conversar e inspeccionar predicciones y resultados.
 
 ## Ejecutar
 
@@ -12,14 +12,14 @@ Primero prepara el entorno y las dependencias siguiendo las instrucciones de [in
 
 ## Presentar en clase
 
-La interfaz tiene un diseño claro con colores sólidos y sin degradados. El dock inferior permite alternar entre Conversación y Laboratorio con un toque o arrastrando el indicador. Los mensajes del chat usan texto más grande para facilitar su lectura durante la exposición.
+Conversación permite probar mensajes y Laboratorio consultar resultados. Ambas vistas se abren desde la dirección impresa por Flask.
 
 ## Decisiones técnicas
 
 | Decisión | Motivo |
 |---|---|
-| Flask + HTML/CSS/JavaScript en `index.html` | Una sola aplicación local, sin compiladores, CDN ni frontend separado. Flask sirve `/`; el navegador usa rutas relativas. |
-| Todo el ML en `entrenamiento/`, módulos `p00` a `p06` | Lectura progresiva: configuración → datos → modelos → comparación → test → inferencia → informe. `app.py` solo coordina HTTP. |
+| Flask + un único `index.html` | Sirve página y API localmente; JavaScript envía mensajes y muestra resultados. |
+| Todo el ML en `entrenamiento/`, módulos `p00` a `p06` | Lectura progresiva: configuración → datos → modelos → comparación → test → inferencia → informe. El informe escrito se conserva en `INFORME_RESULTADOS.md`. `app.py` solo coordina HTTP. |
 | Bolsa de palabras, TF-IDF y modelos clásicos | Conexión directa con NLP y regresión logística de los apuntes. Sin modelos preentrenados, embeddings ni APIs externas. |
 | Elección por macro-F1 de validación | Compara cinco candidatos; el resultado determina el modelo servido. No se elige usando test. |
 | Escenarios sintéticos con dos paráfrasis agrupadas | Procedencia explícita, sin datos personales; limita fuertemente las conclusiones sobre usuarios reales. |

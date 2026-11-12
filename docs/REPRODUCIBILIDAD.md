@@ -14,7 +14,7 @@ python -m pip install -r requirements.txt
 
 `requirements.txt` fija dependencias directas. `requirements-lock.txt` conserva todas las versiones del entorno verificado; puede instalarse con `python -m pip install -r requirements-lock.txt` para replicar ese entorno. En Windows la activación es `.venv\Scripts\Activate.ps1`; el resto de comandos usa `python`.
 
-Después sigue los tres pasos de ejecución del README. No abrir `index.html` como archivo: depende de Flask, de su nonce de seguridad y de las rutas API.
+Después sigue el README y abre la dirección de Flask; no abras `index.html` directamente.
 
 ## Leer y regenerar evidencia
 
@@ -23,13 +23,13 @@ python -m entrenamiento informe
 python -m pytest
 ```
 
-El primer comando produce el informe, los gráficos y el CSV de errores **leyendo resultados existentes**. El segundo ejecuta pruebas de software con mensajes de desarrollo y datos de juguete. Ninguno vuelve a inferir sobre el test estadístico. No confundir `pytest` con el conjunto de prueba del modelo.
+El primer comando regenera los gráficos y el CSV de errores **leyendo resultados existentes**. El segundo ejecuta pruebas de software con mensajes de desarrollo y datos de juguete. Ninguno vuelve a inferir sobre el test estadístico. No confundir `pytest` con el conjunto de prueba del modelo.
 
 ```sh
 python -m entrenamiento todo
 ```
 
-En la entrega congelada este comando verifica datos, lee la selección y el test existentes, y regenera el informe. **No vuelve a entrenar ni a evaluar** cuando ya hay resultados. Es idempotente para la evidencia principal. Los timestamps de los SVG exportados pueden cambiar; eso no altera métricas.
+En la entrega congelada este comando verifica datos, lee la selección y el test existentes, y regenera los gráficos y el CSV de errores. El informe escrito se conserva en `INFORME_RESULTADOS.md`. **No vuelve a entrenar ni a evaluar** cuando ya hay resultados. Es idempotente para la evidencia principal. Los timestamps de los SVG exportados pueden cambiar; eso no altera métricas.
 
 ## Etapas originales
 
@@ -73,7 +73,7 @@ Estos mecanismos no son un sistema de seguridad contra manipulación deliberada.
 
 | Ruta | Contrato |
 |---|---|
-| `GET /` | HTML servido por Flask con CSS y JS incluidos. |
+| `GET /` | Página de la aplicación. |
 | `GET /api/health` | Estado del modelo; 503 en modo degradado. |
 | `POST /api/chat` | JSON `message` (texto), `turn` (entero opcional), `safety_context` (booleano opcional). Devuelve `reply`, `safety` y `analysis`. |
 | `GET /api/resultados` | Métricas guardadas; no expone corpus completo ni ejecuta evaluación. |

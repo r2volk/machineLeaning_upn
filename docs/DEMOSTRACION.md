@@ -9,7 +9,7 @@ La siguiente distribución es una **propuesta de exposición para cuatro integra
 
 ## Recorrido de una frase
 
-`index.html → POST /api/chat → validación → detectar_riesgo → predecir → vectorizador.transform → predict_proba → abstención y aportes → responder → JSON → textContent en el navegador`.
+`mensaje → API → precaución → vectorización → predicción → abstención y aportes → respuesta`.
 
 El riesgo corta el camino antes de ML. La bandera local conserva la respuesta de precaución para mensajes siguientes hasta iniciar una nueva conversación. No hay memoria semántica, diagnóstico ni contacto automático a servicios.
 

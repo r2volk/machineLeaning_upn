@@ -25,7 +25,7 @@ Los apuntes de señales e imágenes no justifican incorporar procesamiento de au
 | Abstención | Si las puntuaciones son cercanas o débiles, se pide contexto. Cobertura informa cuántos mensajes sí se etiquetan. No es un mecanismo clínico. |
 | Explicación contrastiva | Para dos clases, sumar `x_j*(w_clase,j-w_alternativa,j)` más la diferencia de interceptos produce la diferencia de logits. La interfaz muestra hasta cinco aportes positivos, no una descomposición completa. Para NB usa log-probabilidades de características. |
 | Bootstrap por escenario | Reutiliza predicciones finales, remuestrea grupos y estima variabilidad aproximada. No vuelve a entrenar ni ofrece garantías poblacionales con datos sintéticos. |
-| Flask, CSP, pytest | Ingeniería de la aplicación y verificación, no técnicas de ML. Mantienen ejecución simple y evitan regresiones de seguridad. |
+| Flask, CSP, pytest | Ingeniería y pruebas de software; no técnicas de ML. |
 
 Conservar `no` en el texto evita perder información, pero **no garantiza entender la negación**. El modelo puede aprender mal o no tener ejemplos suficientes. Normalizar sin un modelo preentrenado facilita reproducibilidad a cambio de perder tildes, emojis y distinciones como ñ/n.
 

@@ -1,6 +1,6 @@
 # Ánimo · Informe de resultados
 
-Este documento lo genera `entrenamiento/p06_informe.py` a partir de archivos ejecutados y congelados. Fecha de evaluación (UTC): 2026-11-11T06:31:09.725664+00:00. No contiene cifras estimadas a mano. Las cifras redondeadas se presentan con tres decimales; los JSON conservan precisión completa.
+Este informe presenta los resultados de archivos ejecutados y congelados. `entrenamiento/p06_informe.py` genera los gráficos y el CSV de errores a partir de esos resultados. Fecha de evaluación (UTC): 2026-11-11T06:31:09.725664+00:00. No contiene cifras estimadas a mano. Las cifras redondeadas se presentan con tres decimales; los JSON conservan precisión completa.
 
 ## 1. Pregunta y alcance
 
@@ -132,7 +132,7 @@ Una capa de reglas se ejecuta antes de ML y prioriza apoyo humano ante expresion
 
 Las reglas son conservadoras: también pueden activarse con negaciones, citas académicas, mensajes de terceros y frases ambiguas. Pueden fallar ante errores, eufemismos y lenguaje no contemplado. La batería de desarrollo en `tests/casos_seguridad.json` verifica comportamiento de software, **no sensibilidad ni especificidad clínica**. El recurso Línea 113 se consultó mediante la herramienta de líneas de ayuda; la opción 5 fue requisito explícito del proyecto. Referencia institucional: [MINSA](https://www.gob.pe/555?oai_link_source=model_response_hotline).
 
-Sin persistencia de conversaciones en servidor ni navegador. No se aprende en línea. Solo se exporta un archivo si el usuario pulsa Exportar. Flask se enlaza a loopback y no se presenta como despliegue público. Cada mensaje es independiente; la conversación no tiene memoria semántica. Los logs HTTP contienen rutas y estados, sin cuerpos de mensajes.
+Sin persistencia de conversaciones en servidor ni navegador. No se aprende en línea. Se exporta solo por decisión del usuario. Cada mensaje se analiza por separado; el servidor funciona localmente y sus logs no incluyen cuerpos de mensajes.
 
 ## 9. Limitaciones y trabajo siguiente
 
