@@ -1,0 +1,3 @@
+# conserva los bytes de los datos para las huellas sha256 de chatbot e
+"datos de entrenamiento/**/*.csv" -text whitespace=cr-at-eol
+"datos de entrenamiento/corpus_original_E/manifiesto.json" -text

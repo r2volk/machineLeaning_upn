@@ -1,0 +1,106 @@
+{
+  "modelo": "combinado",
+  "modelo_sha256": "98998be0842166a464566d85db84e2daccb71c0fd27e749ebc16c6b5f98bfcde",
+  "fuente": "go_emotions_es_mt test etiquetas simples seleccionadas",
+  "n": 1908,
+  "descartados": 33,
+  "clases": {
+    "tristeza": 100,
+    "neutral": 1575,
+    "enojo": 129,
+    "ansiedad": 12,
+    "alegria": 92
+  },
+  "metricas": {
+    "accuracy": 0.8731656184486373,
+    "macro_f1": 0.5280863577656267,
+    "por_clase": {
+      "alegria": {
+        "precision": 0.8846153846153846,
+        "recall": 0.5,
+        "f1-score": 0.6388888888888888,
+        "support": 92.0
+      },
+      "ansiedad": {
+        "precision": 0.5,
+        "recall": 0.08333333333333333,
+        "f1-score": 0.14285714285714285,
+        "support": 12.0
+      },
+      "enojo": {
+        "precision": 0.6923076923076923,
+        "recall": 0.27906976744186046,
+        "f1-score": 0.39779005524861877,
+        "support": 129.0
+      },
+      "neutral": {
+        "precision": 0.8807077625570776,
+        "recall": 0.9796825396825397,
+        "f1-score": 0.9275623685001503,
+        "support": 1575.0
+      },
+      "tristeza": {
+        "precision": 0.8,
+        "recall": 0.4,
+        "f1-score": 0.5333333333333333,
+        "support": 100.0
+      },
+      "accuracy": 0.8731656184486373,
+      "macro avg": {
+        "precision": 0.7515261678960309,
+        "recall": 0.44841712809154666,
+        "f1-score": 0.5280863577656267,
+        "support": 1908.0
+      },
+      "weighted avg": {
+        "precision": 0.8615340847587551,
+        "recall": 0.8731656184486373,
+        "f1-score": 0.852228010660485,
+        "support": 1908.0
+      }
+    },
+    "matriz": [
+      [
+        46,
+        0,
+        0,
+        46,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        11,
+        0
+      ],
+      [
+        0,
+        0,
+        36,
+        93,
+        0
+      ],
+      [
+        6,
+        1,
+        15,
+        1543,
+        10
+      ],
+      [
+        0,
+        0,
+        1,
+        59,
+        40
+      ]
+    ]
+  },
+  "selectivas": {
+    "aceptados": 1859,
+    "total": 1908,
+    "cobertura": 0.9743186582809225,
+    "accuracy_aceptados": 0.8821947283485745
+  }
+}

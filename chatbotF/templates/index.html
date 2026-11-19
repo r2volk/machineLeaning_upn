@@ -1,0 +1,1702 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="description" content="Ánimo: chatbot académico en español para clasificar señales emocionales con un modelo de Machine Learning explicable.">
+<title>Ánimo · Un momento para ti</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='12' fill='%23284c3d'/%3E%3Ctext x='11' y='29' font-family='Georgia' font-size='30' fill='%23e5eee7'%3Ea%3C/text%3E%3C/svg%3E">
+<style>
+:root {
+  --ink: #1d2521;
+  --muted: #5f6d65;
+  --forest: #284c3d;
+  --forest-strong: #315c46;
+  --forest-hover: #214031;
+  --line: #e2e7e2;
+  --paper: #f6f7f5;
+  --cream: #edf1ed;
+  --green-soft: #e5eee7;
+  --white: #ffffff;
+  --risk-bg: #fff3ea;
+  --risk-border: #e5bfa0;
+  --risk-ink: #8a3a1e;
+  --pos-ink: #22543d;
+  --neg-ink: #8b3322;
+  --radius: 22px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--ink);
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); }
+button, input, textarea, select { font: inherit; }
+button, a { touch-action: manipulation; }
+button { cursor: pointer; color: inherit; }
+button:disabled { cursor: wait; opacity: .55; }
+button:focus-visible, a:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline: 3px solid #6b8f74;
+  outline-offset: 3px;
+}
+a { color: var(--forest); }
+h1, h2, h3, p { margin: 0; }
+[hidden] { display: none !important; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+
+/* Estructura general y barra superior */
+.shell { display: block; min-height: 100vh; }
+.main { max-width: 1440px; width: 100%; margin: 0 auto; padding: 0 42px 124px; }
+
+.topbar {
+  height: 76px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+.top-identity { display: flex; align-items: center; gap: 20px; min-width: 0; }
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-weight: 650;
+  font-size: 25px;
+  letter-spacing: -1px;
+  white-space: nowrap;
+}
+.brand svg { width: 29px; height: 29px; color: #426856; flex-shrink: 0; }
+.identity-divider { height: 24px; width: 1px; background: #d6dfd8; flex-shrink: 0; }
+.breadcrumb { color: var(--ink); font-size: 13px; font-weight: 500; white-space: nowrap; }
+.connection {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--muted);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.connection i { width: 8px; height: 8px; border-radius: 50%; background: #6a9878; display: inline-block; }
+
+.intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 28px 0 22px;
+}
+.eyebrow {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #707f76;
+}
+h1 {
+  font-size: 36px;
+  font-weight: 650;
+  letter-spacing: -1.2px;
+  line-height: 1.15;
+  margin: 8px 0 8px;
+}
+.subtitle { color: var(--muted); font-size: 14px; line-height: 1.6; }
+
+.quiet-btn {
+  background: var(--white);
+  border: 1px solid #d5ded7;
+  padding: 11px 16px;
+  border-radius: 11px;
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.quiet-btn:hover { background: #eef4ef; }
+.primary-btn {
+  background: var(--forest-strong);
+  border: 1px solid var(--forest-strong);
+  color: var(--white);
+}
+.primary-btn:hover { background: var(--forest-hover); border-color: var(--forest-hover); }
+
+/* Vista de conversacion */
+.workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 330px;
+  gap: 20px;
+  align-items: start;
+}
+
+.chat-card, .analysis-card, .stat, .panel {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 28px rgba(30, 48, 39, .04);
+}
+
+.chat-card {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: clamp(500px, calc(100vh - 285px), 660px);
+  min-width: 0;
+}
+
+.chat-top {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 18px 24px;
+  border-bottom: 1px solid var(--line);
+  background: var(--white);
+}
+.avatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: #e8f0e9;
+  color: #2f5540;
+  display: grid;
+  place-items: center;
+  font-size: 19px;
+  font-weight: 650;
+  flex-shrink: 0;
+}
+.chat-top strong { display: block; font-size: 14px; font-weight: 600; margin-bottom: 2px; }
+.chat-top small { color: var(--muted); font-size: 11px; }
+.privacy {
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 11px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.privacy svg { width: 14px; height: 14px; }
+
+.messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px 26px;
+  scroll-behavior: smooth;
+  overscroll-behavior: contain;
+}
+.welcome { padding: 8px 0 0; }
+.welcome-mark {
+  width: 58px;
+  height: 58px;
+  border: 1px solid #e1eae2;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+  background: #eef3ee;
+  color: #426856;
+  margin-bottom: 18px;
+}
+.welcome-mark svg { width: 32px; height: 32px; }
+.welcome h2 { font-size: 28px; font-weight: 600; letter-spacing: -.7px; margin-bottom: 10px; max-width: 440px; }
+.welcome p { line-height: 1.75; color: #56645b; font-size: 16px; max-width: 540px; }
+.welcome .tiny { font-size: 13px; margin-top: 12px; color: var(--muted); line-height: 1.6; }
+
+.suggestions { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0 6px; }
+.suggestion {
+  padding: 10px 13px;
+  background: var(--white);
+  border: 1px solid #dce4dd;
+  border-radius: 10px;
+  font-size: 13px;
+  color: #324c3d;
+  text-align: left;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.suggestion:hover { background: #f0f5f1; border-color: #b7c8bc; }
+.suggestion span { width: 8px; height: 8px; border-radius: 50%; background: #8bb07a; flex-shrink: 0; }
+.suggestion:nth-child(2) span { background: #9b8bbd; }
+.suggestion:nth-child(3) span { background: #7f9db5; }
+.suggestion:nth-child(4) span { background: #c9975b; }
+
+/* Texto grande en el chat para proyeccion en clase */
+.message { margin: 0 0 20px; max-width: 92%; font-size: 18px; line-height: 1.65; }
+.message .who {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--muted);
+  margin-bottom: 5px;
+}
+.message .bubble {
+  padding: 15px 19px;
+  border-radius: 6px 18px 18px 18px;
+  background: #f0f4f0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.message.user { margin-left: auto; max-width: 86%; }
+.message.user .who { text-align: right; }
+.message.user .bubble {
+  background: var(--forest-strong);
+  color: var(--white);
+  border-radius: 18px 6px 18px 18px;
+}
+.message.risk .bubble {
+  background: var(--risk-bg);
+  border: 1px solid var(--risk-border);
+  color: #2b1d17;
+}
+.message .tag {
+  display: inline-block;
+  font-size: 12px;
+  color: #4f6756;
+  margin-top: 6px;
+}
+.message.risk .tag { color: var(--risk-ink); font-weight: 500; }
+
+.composer {
+  padding: 14px 22px 12px;
+  border-top: 1px solid var(--line);
+  background: var(--white);
+}
+.activity { font-size: 12px; color: var(--muted); min-height: 18px; padding-left: 2px; margin-bottom: 4px; }
+.input-wrap {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  background: #f7f9f7;
+  border: 1px solid #dbe3dc;
+  border-radius: 14px;
+  padding: 9px 10px;
+}
+.input-wrap:focus-within { border-color: #6f9478; }
+.input-wrap textarea {
+  resize: none;
+  background: transparent;
+  border: 0;
+  outline: none !important;
+  flex: 1;
+  min-width: 0;
+  height: 48px;
+  max-height: 140px;
+  padding: 6px 4px;
+  color: var(--ink);
+  line-height: 1.45;
+  font-size: 17px;
+}
+.send {
+  border: 0;
+  background: var(--forest-strong);
+  color: var(--white);
+  width: 42px;
+  height: 42px;
+  border-radius: 11px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+.send:hover { background: var(--forest-hover); }
+.send svg { width: 19px; height: 19px; }
+.composer-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  font-size: 11px;
+  color: var(--muted);
+}
+.error { color: var(--neg-ink); font-size: 13px; margin: 8px 0 0; line-height: 1.5; }
+
+/* Columna lateral de analisis y cuidado */
+.analysis-column { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+.analysis-card { padding: 24px 22px; min-height: 390px; }
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 600;
+}
+.mini-label {
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #5c7a65;
+  font-weight: 600;
+}
+.empty-analysis { text-align: center; padding: 28px 0 16px; }
+.orb {
+  width: 82px;
+  height: 82px;
+  margin: 0 auto 18px;
+  border-radius: 26px;
+  background: #e8eeea;
+  border: 6px solid #f4f7f4;
+  display: grid;
+  place-items: center;
+}
+.orb svg { width: 30px; height: 30px; color: #5b7b64; }
+.empty-analysis h3 { font-size: 19px; font-weight: 600; letter-spacing: -.4px; margin-bottom: 8px; }
+.empty-analysis p { font-size: 13px; color: var(--muted); line-height: 1.65; max-width: 230px; margin: auto; }
+.legend {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  justify-content: center;
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+  margin-top: 16px;
+}
+.legend span { font-size: 11px; padding: 5px 8px; background: #f1f5f1; border-radius: 7px; color: #4d6755; }
+
+.analysis-title { font-size: 25px; font-weight: 600; letter-spacing: -.5px; margin: 18px 0 6px; }
+.analysis-sub { font-size: 13px; line-height: 1.6; color: var(--muted); margin-bottom: 14px; }
+.signal-meta {
+  display: inline-block;
+  font-size: 11px;
+  color: #3f5b49;
+  background: #eff5f0;
+  border: 1px solid #dce8de;
+  border-radius: 8px;
+  padding: 5px 9px;
+  margin-bottom: 14px;
+}
+
+.bar-row {
+  display: grid;
+  grid-template-columns: 78px 1fr 44px;
+  gap: 8px;
+  align-items: center;
+  margin: 10px 0;
+  font-size: 12px;
+}
+.bar-row output { text-align: right; color: var(--muted); font-variant-numeric: tabular-nums; }
+progress { width: 100%; height: 7px; border: 0; border-radius: 8px; overflow: hidden; appearance: none; }
+progress::-webkit-progress-bar { background: #edf1ed; }
+progress::-webkit-progress-value { background: #6b997a; border-radius: 8px; }
+progress::-moz-progress-bar { background: #6b997a; }
+.bar-row.top-row progress::-webkit-progress-value { background: var(--forest-strong); }
+.bar-row.top-row progress::-moz-progress-bar { background: var(--forest-strong); }
+.bar-row.top-row span, .bar-row.top-row output { color: var(--ink); font-weight: 600; }
+
+.evidence { border-top: 1px solid var(--line); padding-top: 14px; margin-top: 16px; }
+.evidence h3 { font-size: 12px; font-weight: 600; color: var(--ink); }
+.tokens { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0; }
+.token {
+  font-size: 12px;
+  padding: 5px 9px;
+  background: #edf3ee;
+  color: #2e4b3a;
+  border-radius: 7px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+.fine { font-size: 11px; line-height: 1.65; color: var(--muted); }
+
+.risk-analysis { padding: 14px 0 4px; }
+.risk-analysis h3 { font-size: 22px; font-weight: 600; margin: 10px 0 8px; color: var(--risk-ink); }
+.risk-analysis p { font-size: 13px; color: var(--muted); line-height: 1.7; }
+.risk-icon { font-size: 24px; color: var(--risk-ink); }
+
+.care-card {
+  background: #edf4ed;
+  border: 1px solid #dfeae0;
+  border-radius: 20px;
+  padding: 20px;
+}
+.care-card h3 { font-size: 19px; font-weight: 600; letter-spacing: -.4px; margin: 6px 0 8px; }
+.care-card p { font-size: 12px; color: #4d6453; line-height: 1.7; }
+.text-btn {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--forest);
+  background: none;
+  border: 0;
+  padding: 12px 0 0;
+  text-align: left;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 2px 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+.footer button { font-size: 12px; border: 0; background: none; color: var(--muted); text-decoration: underline; }
+.download:disabled { opacity: .45; }
+
+/* Laboratorio */
+.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin: 20px 0; }
+.stat { padding: 22px; }
+.stat b { display: block; font-size: 32px; font-weight: 650; letter-spacing: -1px; margin: 8px 0 4px; font-variant-numeric: tabular-nums; }
+.stat span { font-size: 12px; color: var(--muted); display: block; }
+
+.panel { padding: 26px; margin-bottom: 18px; }
+.panel h2 { font-size: 22px; font-weight: 600; letter-spacing: -.5px; margin-bottom: 8px; }
+.panel p { font-size: 13px; color: var(--muted); line-height: 1.7; }
+
+.steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-top: 20px; }
+.step { padding: 18px; border: 1px solid #e4ebe4; border-radius: 14px; background: #f8faf8; }
+.step b { display: block; font-size: 21px; font-weight: 650; color: #6c9678; margin-bottom: 10px; }
+.step strong { font-size: 13px; display: block; }
+.step p { font-size: 12px; margin-top: 6px; }
+
+.table-wrap { overflow-x: auto; margin-top: 16px; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th, td {
+  padding: 11px 10px;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+th { font-size: 11px; color: var(--muted); font-weight: 600; background: #f8faf8; white-space: nowrap; }
+td.num, th.num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+tr.winner { background: #eff6f0; font-weight: 600; }
+
+.report-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 18px; }
+.matrix th, .matrix td { text-align: center; padding: 9px 6px; font-size: 12px; white-space: nowrap; }
+.matrix td.diagonal { background: #e1eee3; font-weight: 700; color: #1f422e; }
+
+.pill {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+  background: #edf2ed;
+  color: #355140;
+}
+.pill-alegria { background: #dff2e4; color: #1d5733; }
+.pill-tristeza { background: #e3edf8; color: #22466e; }
+.pill-enojo { background: #fae5e2; color: #8c2c22; }
+.pill-ansiedad { background: #f8efd8; color: #7a5216; }
+.pill-neutral { background: #eef1ef; color: #435249; }
+.pill-pedir_contexto { background: #ece8f8; color: #4c3380; }
+
+.delta-pos { color: var(--pos-ink); font-weight: 650; }
+.delta-neg { color: var(--neg-ink); font-weight: 650; }
+.delta-zero { color: var(--muted); }
+
+.doc-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+.doc-links a {
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  border: 1px solid #d5ded7;
+  border-radius: 10px;
+  padding: 10px 14px;
+  background: var(--white);
+}
+.doc-links a:hover { background: #f0f5f1; }
+
+/* Aprendizaje */
+.learn-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.15fr); gap: 18px; align-items: start; }
+.learn-form { display: grid; gap: 12px; margin-top: 18px; }
+.learn-form label { font-weight: 600; font-size: 13px; }
+.learn-form textarea, .learn-form select {
+  width: 100%;
+  border: 1px solid #cfd9cf;
+  border-radius: 11px;
+  padding: 12px 13px;
+  background: #f9fbf8;
+  color: var(--ink);
+  font-size: 15px;
+}
+.learn-form textarea { min-height: 118px; resize: vertical; }
+.learn-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+.learn-status {
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: #f0f5ed;
+  border: 1px solid #dfeadb;
+  margin: 14px 0;
+  color: #2f4b39;
+  font-size: 13px;
+  line-height: 1.6;
+}
+.learn-status.is-error {
+  background: var(--risk-bg);
+  border-color: var(--risk-border);
+  color: var(--risk-ink);
+}
+.learn-note { margin-top: 12px; }
+.learn-count-row { display: flex; align-items: baseline; gap: 10px; margin: 12px 0 4px; }
+.learn-count { font-size: 36px; font-weight: 650; color: var(--forest); font-variant-numeric: tabular-nums; }
+
+.example-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+.example-row:last-child { border-bottom: 0; }
+.example-info { display: flex; flex-direction: column; gap: 5px; min-width: 0; }
+.example-text { font-size: 14px; color: var(--ink); overflow-wrap: anywhere; }
+
+/* Dialogos */
+dialog {
+  border: 1px solid #dce5dd;
+  border-radius: 22px;
+  padding: 28px;
+  max-width: 530px;
+  width: calc(100% - 32px);
+  color: var(--ink);
+  box-shadow: 0 24px 64px rgba(20, 39, 29, .22);
+}
+dialog::backdrop { background: rgba(24, 46, 37, .42); backdrop-filter: blur(3px); }
+dialog h2 { font-size: 24px; font-weight: 650; letter-spacing: -.5px; margin: 10px 0 14px; }
+dialog p { font-size: 14px; line-height: 1.75; color: var(--muted); margin-bottom: 12px; }
+.close-dialog {
+  float: right;
+  border: 0;
+  background: #edf2ed;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 18px;
+  line-height: 1;
+}
+.primary-link {
+  display: inline-block;
+  padding: 12px 18px;
+  border-radius: 11px;
+  color: var(--white);
+  background: var(--forest-strong);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 4px 0 14px;
+}
+.primary-link:hover { background: var(--forest-hover); }
+
+/* Navegacion inferior flotante de 3 pestanas */
+.nav {
+  position: fixed;
+  z-index: 50;
+  left: 50%;
+  bottom: max(20px, env(safe-area-inset-bottom));
+  transform: translateX(-50%);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  width: min(560px, calc(100% - 28px));
+  height: 64px;
+  padding: 6px;
+  margin: 0;
+  border: 1px solid rgba(110, 134, 115, .26);
+  border-radius: 22px;
+  background: rgba(250, 252, 249, .95);
+  box-shadow: 0 12px 36px rgba(31, 55, 39, .14), 0 2px 8px rgba(31, 55, 39, .06);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.nav::before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 6px;
+  bottom: 6px;
+  width: calc((100% - 12px) / 3);
+  border-radius: 16px;
+  background: #dfece0;
+  box-shadow: 0 1px 3px rgba(34, 65, 43, .08);
+  transition: transform .3s cubic-bezier(.2, .8, .2, 1);
+  pointer-events: none;
+}
+.nav[data-active="lab"]::before { transform: translateX(100%); }
+.nav[data-active="learn"]::before { transform: translateX(200%); }
+.nav button {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-width: 0;
+  padding: 10px 8px;
+  border: 0;
+  border-radius: 16px;
+  background: transparent;
+  color: #5b6e63;
+  font-size: 14px;
+  font-weight: 550;
+  white-space: nowrap;
+  transition: color .2s;
+}
+.nav button:hover, .nav button[aria-current="page"] { color: #20442f; }
+.nav button svg { width: 18px; height: 18px; flex: none; }
+.nav button:focus-visible { outline: 3px solid #557e5e; outline-offset: -3px; }
+
+/* Responsivo */
+@media (max-width: 1120px) {
+  .main { padding: 0 24px 120px; }
+  .workspace { grid-template-columns: minmax(0, 1fr) 295px; }
+  .report-grid { grid-template-columns: minmax(0, 1fr); }
+  .learn-grid { grid-template-columns: minmax(0, 1fr); }
+  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 860px) {
+  .workspace { grid-template-columns: minmax(0, 1fr); }
+  .analysis-card { min-height: 0; }
+  .chat-card { height: 560px; }
+}
+
+@media (max-width: 640px) {
+  .main { padding: 0 16px 108px; }
+  .topbar { height: 64px; }
+  .top-identity { gap: 10px; }
+  .brand { font-size: 22px; }
+  .brand svg { width: 24px; height: 24px; }
+  .identity-divider { height: 18px; }
+  .breadcrumb, .connection { font-size: 11px; }
+  .intro { flex-direction: column; align-items: flex-start; padding: 20px 0 16px; }
+  h1 { font-size: 28px; }
+  .message { font-size: 16px; max-width: 100%; }
+  .chat-top { padding: 14px 16px; }
+  .privacy { display: none; }
+  .messages { padding: 18px 16px; }
+  .composer { padding: 12px 14px; }
+  .panel { padding: 20px; }
+  .stat { padding: 16px; }
+  .stat b { font-size: 26px; }
+  .steps { grid-template-columns: minmax(0, 1fr); }
+  .footer { flex-direction: column; align-items: flex-start; gap: 6px; }
+  .nav { height: 60px; bottom: max(12px, env(safe-area-inset-bottom)); border-radius: 20px; }
+  .nav button { font-size: 12px; gap: 6px; padding: 8px 4px; }
+  .nav button svg { width: 16px; height: 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, .nav::before, .nav button { scroll-behavior: auto !important; transition: none !important; }
+}
+</style>
+</head>
+<body>
+<svg hidden xmlns="http://www.w3.org/2000/svg">
+  <symbol id="flower" viewBox="0 0 48 48">
+    <g fill="none" stroke="currentColor" stroke-width="1.5">
+      <ellipse cx="24" cy="24" rx="9" ry="21"/>
+      <ellipse cx="24" cy="24" rx="9" ry="21" transform="rotate(60 24 24)"/>
+      <ellipse cx="24" cy="24" rx="9" ry="21" transform="rotate(120 24 24)"/>
+      <circle cx="24" cy="24" r="4" fill="currentColor"/>
+    </g>
+  </symbol>
+</svg>
+
+<div class="shell">
+  <main class="main">
+    <header class="topbar">
+      <div class="top-identity">
+        <div class="brand"><svg aria-hidden="true"><use href="#flower"/></svg>ánimo<span aria-hidden="true">.</span></div>
+        <span class="identity-divider" aria-hidden="true"></span>
+        <div class="breadcrumb"><span id="breadcrumb">Conversación</span></div>
+      </div>
+      <div class="connection" role="status">
+        <i id="connection-dot"></i>
+        <span id="connection-text">Conectando con tu equipo</span>
+      </div>
+    </header>
+
+    <!-- Vista 1: Conversacion -->
+    <section id="view-chat" aria-label="Conversación">
+      <div class="intro">
+        <div>
+          <div class="eyebrow">UN ESPACIO PARA EXPRESARTE</div>
+          <h1>Un momento para ti.</h1>
+          <p class="subtitle">Escribe una frase en español para explorar qué señales emocionales detecta el modelo.</p>
+        </div>
+        <button type="button" class="quiet-btn" id="reset">＋ Nueva conversación</button>
+      </div>
+
+      <div class="workspace">
+        <section class="chat-card" aria-label="Chat con Ánimo">
+          <div class="chat-top">
+            <div class="avatar" aria-hidden="true">a.</div>
+            <div>
+              <strong>Ánimo</strong>
+              <small>TF-IDF (1,3) + Regresión Logística · 100 % local</small>
+            </div>
+            <span class="privacy">
+              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" aria-hidden="true">
+                <rect x="4" y="8" width="12" height="9" rx="2"/>
+                <path d="M6 8V5a4 4 0 018 0v3"/>
+              </svg>
+              Solo en esta sesión
+            </span>
+          </div>
+
+          <div class="messages" id="messages" role="log" aria-label="Mensajes de la conversación" aria-live="polite" aria-relevant="additions">
+            <div class="welcome" id="welcome">
+              <div class="welcome-mark"><svg aria-hidden="true"><use href="#flower"/></svg></div>
+              <h2>Hola, ¿cómo va tu día?</h2>
+              <p>Cuéntame qué está pasando o cómo te sientes. Si la señal en tus palabras es débil te pediré más contexto antes de etiquetarla.</p>
+              <p class="tiny">Soy un proyecto académico de Machine Learning. Interpreto señales en texto y puedo equivocarme; no soy una herramienta clínica ni sustituyo apoyo profesional.</p>
+              <div class="suggestions" aria-label="Ideas para empezar">
+                <button type="button" class="suggestion" data-example="No puedo estar más feliz con esta noticia"><span></span>No puedo estar más feliz</button>
+                <button type="button" class="suggestion" data-example="No me fue del todo bien en el examen"><span></span>No me fue del todo bien</button>
+                <button type="button" class="suggestion" data-example="No tengo clases mañana y luego iré al banco"><span></span>Un comentario neutral con «no»</button>
+                <button type="button" class="suggestion" data-example="No dormí nada pensando en la presentación de mañana"><span></span>Nervios por una presentación</button>
+              </div>
+            </div>
+          </div>
+
+          <form class="composer" id="chat-form">
+            <div class="activity" id="activity" role="status" aria-live="polite"></div>
+            <label class="sr-only" for="message">Cuéntame cómo te sientes</label>
+            <div class="input-wrap">
+              <textarea id="message" rows="2" maxlength="1500" placeholder="Escribe lo que tienes en mente…" required></textarea>
+              <button class="send" id="send" type="submit" aria-label="Enviar mensaje">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                  <path d="M12 19V5m-6 6 6-6 6 6"/>
+                </svg>
+              </button>
+            </div>
+            <p class="error" id="chat-error" role="alert" hidden></p>
+            <div class="composer-meta">
+              <span>Enter para enviar · Shift + Enter para nueva línea</span>
+              <span id="counter">0 / 1500</span>
+            </div>
+          </form>
+        </section>
+
+        <aside class="analysis-column" aria-label="Interpretación del último mensaje">
+          <section class="analysis-card">
+            <div class="section-head">
+              Lo que expresa tu mensaje
+              <span class="mini-label">EN VIVO</span>
+            </div>
+            <div id="analysis">
+              <div class="empty-analysis">
+                <div class="orb"><svg aria-hidden="true"><use href="#flower"/></svg></div>
+                <h3>Cada emoción tiene espacio.</h3>
+                <p>Cuando escribas, aquí verás las probabilidades y los n-gramas que inclinaron la predicción.</p>
+              </div>
+              <div class="legend">
+                <span>Alegría</span><span>Tristeza</span><span>Enojo</span><span>Ansiedad</span><span>Neutral</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="care-card">
+            <div class="eyebrow">ANTES QUE CUALQUIER MODELO</div>
+            <h3>Tu bienestar importa.</h3>
+            <p>Si necesitas apoyo humano en Perú, llama gratis a la <strong>Línea 113 Salud (MINSA), Opción 5</strong> (Salud mental y psicología, 24/7). Este proyecto académico no es un servicio clínico.</p>
+            <button type="button" class="text-btn" data-help>Ver opciones de apoyo ↗</button>
+          </section>
+        </aside>
+      </div>
+
+      <footer class="footer">
+        <span>Una interpretación textual académica, no un diagnóstico. Tú conoces mejor cómo te sientes.</span>
+        <div>
+          <button type="button" id="export" class="download" disabled>Exportar sesión</button> ·
+          <button type="button" data-privacy>Privacidad</button>
+        </div>
+      </footer>
+    </section>
+
+    <!-- Vista 2: Laboratorio -->
+    <section id="view-lab" aria-label="Laboratorio y resultados" hidden>
+      <div class="intro">
+        <div>
+          <div class="eyebrow">DEL EXPERIMENTO A LA EVIDENCIA</div>
+          <h1>Un modelo que se puede explicar.</h1>
+          <p class="subtitle">Cifras calculadas únicamente sobre validación y diagnóstico exploratorio. El conjunto test final permanece reservado.</p>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>¿Cómo funciona Ánimo?</h2>
+        <p>El clasificador aprende desde cero sobre frases etiquetadas usando TF-IDF hasta trigramas y Regresión Logística Multinomial balanceada. Cada mensaje se analiza por separado; no hay comprensión humana ni memoria semántica entre turnos.</p>
+        <div class="steps">
+          <div class="step"><b>01</b><strong>Priorizar seguridad</strong><p>Reglas deterministas detectan señales de riesgo antes de tocar el modelo ML.</p></div>
+          <div class="step"><b>02</b><strong>Normalizar el texto</strong><p>Minúsculas y limpieza sin quitar negaciones ni la letra ñ.</p></div>
+          <div class="step"><b>03</b><strong>Calcular probabilidades</strong><p>TF-IDF (1,3) y Softmax estiman las 5 emociones y los términos clave.</p></div>
+          <div class="step"><b>04</b><strong>Responder o pedir contexto</strong><p>Si la probabilidad o el margen son bajos, se abstiene y pregunta.</p></div>
+        </div>
+      </div>
+
+      <div id="lab-content"><p class="subtitle" role="status">Cargando resultados calculados…</p></div>
+    </section>
+
+    <!-- Vista 3: Aprendizaje mediante correcciones -->
+    <section id="view-learn" aria-label="Aprendizaje" hidden>
+      <div class="intro">
+        <div>
+          <div class="eyebrow">TU PARTICIPACIÓN · TÚ DECIDES</div>
+          <h1>Enseñemos con ejemplos.</h1>
+          <p class="subtitle">Guarda correcciones voluntarias en este equipo, reentrena una nueva versión, mide el cambio en validación y vuelve al modelo base cuando quieras.</p>
+        </div>
+      </div>
+
+      <div class="learn-grid">
+        <div class="panel">
+          <h2>Un ejemplo nuevo</h2>
+          <p>Escribe o copia una frase, elige su emoción correcta y pulsa guardar. Ningún mensaje se guarda automáticamente y los mensajes de riesgo se bloquean siempre.</p>
+          <form id="learn-form" class="learn-form">
+            <label for="learn-text">Frase en español</label>
+            <textarea id="learn-text" maxlength="1500" placeholder="Por ejemplo: No esperaba aprobar pero saqué veinte" required></textarea>
+            <button type="button" class="quiet-btn" id="copy-last">Usar mi último mensaje del chat</button>
+            <label for="learn-label">Emoción correcta</label>
+            <select id="learn-label" required>
+              <option value="">Selecciona una emoción</option>
+              <option value="alegria">Alegría</option>
+              <option value="tristeza">Tristeza</option>
+              <option value="enojo">Enojo</option>
+              <option value="ansiedad">Ansiedad o nerviosismo</option>
+              <option value="neutral">Neutral</option>
+            </select>
+            <button type="submit" class="quiet-btn primary-btn">Guardar ejemplo en este equipo</button>
+          </form>
+          <p class="fine learn-note">No se guardan frases que ya existan en validación ni mensajes que activen las reglas de riesgo.</p>
+        </div>
+
+        <div>
+          <div class="panel">
+            <h2>Tu colección local y versiones del modelo</h2>
+            <div class="learn-count-row">
+              <div id="learn-count" class="learn-count">0</div>
+              <p>ejemplos guardados voluntariamente</p>
+            </div>
+            <div class="learn-status" id="learn-status" role="status" aria-live="polite">Cargando estado del modelo…</div>
+            <p>Al entrenar se combina <code>train.csv</code> con tus correcciones locales sin modificar el modelo base ni las particiones de validación.</p>
+
+            <div class="table-wrap" id="learn-metrics-wrap"></div>
+
+            <div class="learn-actions">
+              <button type="button" id="learn-train" class="quiet-btn primary-btn">Entrenar nueva versión</button>
+              <button type="button" id="learn-restore" class="quiet-btn">Restaurar modelo base</button>
+              <button type="button" id="learn-delete" class="quiet-btn">Borrar ejemplos</button>
+            </div>
+            <p class="fine learn-note">El reentrenamiento toma unos segundos. La tabla de validación muestra de forma transparente si el nuevo modelo mejora o cambia frente al modelo base.</p>
+          </div>
+
+          <div class="panel" id="learning-examples" hidden>
+            <h2>Ejemplos guardados localmente</h2>
+            <div id="learning-list"></div>
+          </div>
+
+          <div class="care-card">
+            <h3>Siempre con cuidado.</h3>
+            <p>Ánimo interpreta texto, no diagnostica. Sus reglas de precaución (Línea 113, Opción 5) se ejecutan antes del modelo, incluso después de reentrenarlo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- Navegacion flotante inferior -->
+<nav class="nav" data-active="chat" aria-label="Navegación principal">
+  <button type="button" data-view="chat" aria-current="page">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+      <path d="M5 5h14v11H9l-4 4z"/>
+    </svg>
+    Conversación
+  </button>
+  <button type="button" data-view="lab">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+      <path d="M5 19V11m7 8V5m7 14V9M3 21h18"/>
+    </svg>
+    Laboratorio
+  </button>
+  <button type="button" data-view="learn">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+      <path d="M12 4v16M4 12h16"/>
+    </svg>
+    Aprendizaje
+  </button>
+</nav>
+
+<!-- Dialogo de apoyo humano -->
+<dialog id="help-dialog" aria-labelledby="help-title">
+  <button type="button" class="close-dialog" data-close aria-label="Cerrar">×</button>
+  <div class="eyebrow">APOYO HUMANO · PERÚ</div>
+  <h2 id="help-title">No tienes que pasar por esto a solas.</h2>
+  <p>Si atraviesas un momento difícil, busca a una persona de confianza o pide orientación gratuita en salud mental en la <strong>Línea 113 Salud del MINSA, Opción 5 (Salud mental y psicología)</strong>, disponible las 24 horas todos los días del año.</p>
+  <a class="primary-link" href="tel:113">Llamar al 113 · Opción 5</a>
+  <p><strong>Canales alternativos MINSA:</strong> WhatsApp o Telegram al 955 557 000 / 952 842 623 · Correo: infosalud@minsa.gob.pe.</p>
+  <p>Si existe peligro inmediato, llama al <strong>106 (SAMU)</strong>, al <strong>105 (Policía)</strong> o acude al establecimiento de salud más cercano.</p>
+  <p class="fine">Ánimo es un proyecto académico y no es una herramienta clínica. <a href="https://www.gob.pe/555" target="_blank" rel="noopener noreferrer">Información oficial de Línea 113 (gob.pe) ↗</a></p>
+</dialog>
+
+<!-- Dialogo de privacidad -->
+<dialog id="privacy-dialog" aria-labelledby="privacy-title">
+  <button type="button" class="close-dialog" data-close aria-label="Cerrar">×</button>
+  <div class="eyebrow">UNA CONVERSACIÓN LOCAL</div>
+  <h2 id="privacy-title">Tú decides qué guardar.</h2>
+  <p>El chat funciona localmente en tu equipo y no guarda tus conversaciones automáticamente ni las envía a servicios externos. En la pestaña Aprendizaje puedes guardar de forma explícita ejemplos etiquetados en <code>datos/correcciones_usuario.json</code> y borrarlos cuando quieras.</p>
+  <p>Al recargar, cerrar esta pestaña o iniciar una nueva conversación se borra el historial visible. Si exportas la sesión, se descarga un archivo JSON en tu equipo. Evita escribir datos personales sensibles.</p>
+</dialog>
+
+<script>
+'use strict';
+
+const $ = id => document.getElementById(id);
+
+const names = {
+  alegria: 'Alegría',
+  ansiedad: 'Ansiedad',
+  enojo: 'Enojo',
+  neutral: 'Neutral',
+  tristeza: 'Tristeza',
+  pedir_contexto: 'Pide contexto',
+  incierto: 'Necesito más contexto',
+  vacio: 'Sin texto suficiente',
+};
+
+const fullNames = {
+  alegria: 'Alegría',
+  ansiedad: 'Ansiedad o nerviosismo',
+  enojo: 'Enojo',
+  neutral: 'Neutral',
+  tristeza: 'Tristeza',
+  pedir_contexto: 'Necesito más contexto',
+  incierto: 'Necesito más contexto',
+  vacio: 'Sin texto suficiente',
+};
+
+let history = [];
+let busy = false;
+let labLoaded = false;
+let learningBusy = false;
+let learningRevision = 0;
+
+const emptyAnalysis = $('analysis').innerHTML;
+
+function el(tag, className, text) {
+  const node = document.createElement(tag);
+  if (className) node.className = className;
+  if (text !== undefined) node.textContent = text;
+  return node;
+}
+
+function percent(x) { return (Number(x) * 100).toFixed(1) + ' %'; }
+function number(x) { return Number(x).toFixed(4); }
+function intFmt(x) { return new Intl.NumberFormat('es-PE').format(Number(x)); }
+
+function deltaSpan(value) {
+  const n = Number(value || 0);
+  const cls = n > 0 ? 'delta-pos' : (n < 0 ? 'delta-neg' : 'delta-zero');
+  return el('span', cls, (n > 0 ? '+' : '') + n.toFixed(4));
+}
+
+function scrollChat() { $('messages').scrollTop = $('messages').scrollHeight; }
+
+function updateConnectionBadge(version, available = true) {
+  const dot = $('connection-dot');
+  const text = $('connection-text');
+  if (!available) {
+    dot.style.background = '#b47946';
+    text.textContent = 'Sin conexión al servidor';
+    return;
+  }
+  dot.style.background = version && version !== 'base' ? '#2f6f4e' : '#6a9878';
+  text.textContent = version && version !== 'base'
+    ? 'Modelo local · ' + version
+    : 'Modelo local · base';
+}
+
+function setBusy(value) {
+  busy = value;
+  $('send').disabled = value;
+  $('reset').disabled = value;
+  $('message').readOnly = value;
+  $('activity').textContent = value ? 'Ánimo está analizando tu mensaje…' : '';
+}
+
+async function requestJson(path, options = {}) {
+  const response = await fetch(path, options);
+  const data = await response.json();
+  if (!response.ok) throw new Error(data.error || 'No se pudo completar la operación.');
+  return data;
+}
+
+function chatView(data) {
+  if (data.es_riesgo) {
+    return { reply: data.respuesta, safety: true, estado: 'riesgo', analysis: null };
+  }
+  return {
+    reply: data.respuesta,
+    safety: false,
+    estado: data.estado,
+    analysis: {
+      estado: data.estado,
+      etiqueta: data.etiqueta || (data.estado === 'vacio' ? 'vacio' : 'pedir_contexto'),
+      candidata: data.etiqueta_tentativa || null,
+      segunda: data.segunda_etiqueta || null,
+      aceptada: data.estado === 'clasificado',
+      confianza: data.confianza,
+      margen: data.margen,
+      scores: data.probabilidades || {},
+      evidencia: data.terminos_clave || [],
+    },
+  };
+}
+
+function appendMessage(role, text, data) {
+  $('welcome').hidden = true;
+  const item = el('div', 'message ' + (role === 'user' ? 'user' : '') + (data?.safety ? ' risk' : ''));
+  item.append(el('div', 'who', role === 'user' ? 'Tú' : 'Ánimo'));
+  item.append(el('div', 'bubble', text));
+  if (data?.analysis) {
+    const a = data.analysis;
+    let tagText = 'Interpretación incierta · pide contexto';
+    if (a.estado === 'clasificado') tagText = 'Señal textual · ' + fullNames[a.etiqueta];
+    else if (a.estado === 'vacio') tagText = 'Sin palabras suficientes para analizar';
+    item.append(el('span', 'tag', tagText));
+  }
+  if (data?.safety) {
+    item.append(el('span', 'tag', 'Atención prioritaria · Línea 113, Opción 5 · sin clasificación emocional'));
+  }
+  $('messages').append(item);
+  scrollChat();
+}
+
+function renderAnalysis(data) {
+  const box = $('analysis');
+  box.replaceChildren();
+
+  if (data.safety) {
+    const risk = el('div', 'risk-analysis');
+    risk.append(
+      el('div', 'risk-icon', '♡'),
+      el('h3', '', 'Primero, tu seguridad.'),
+      el('p', '', 'Este mensaje activó las reglas prioritarias de precaución. No se clasifica una emoción ni se guarda para entrenar. Si necesitas apoyo en Perú, llama gratis al 113, Opción 5.')
+    );
+    const help = el('button', 'text-btn', 'Ver opciones de apoyo ↗');
+    help.type = 'button';
+    help.addEventListener('click', () => $('help-dialog').showModal());
+    risk.append(help);
+    box.append(risk);
+    return;
+  }
+
+  const a = data.analysis;
+  box.append(el('h3', 'analysis-title', fullNames[a.etiqueta] || 'Análisis'));
+
+  if (a.estado === 'vacio') {
+    box.append(el('p', 'analysis-sub', 'El mensaje no contenía palabras útiles tras limpiar signos o números. Escribe una frase breve para ver las probabilidades del modelo.'));
+    return;
+  }
+
+  const subText = a.aceptada
+    ? 'Señal más probable según el último mensaje. Tú conoces mejor cómo te sientes.'
+    : 'La probabilidad máxima o el margen entre las dos emociones principales es bajo; hace falta más contexto.';
+  box.append(el('p', 'analysis-sub', subText));
+
+  if (a.confianza !== null && a.confianza !== undefined) {
+    box.append(el(
+      'div',
+      'signal-meta',
+      'Confianza: ' + percent(a.confianza) + ' · Margen: ' + percent(a.margen)
+    ));
+  }
+
+  const entries = Object.entries(a.scores).sort((x, y) => y[1] - x[1]);
+  entries.forEach(([label, score], idx) => {
+    const row = el('div', 'bar-row' + (idx === 0 ? ' top-row' : ''));
+    const bar = el('progress');
+    bar.max = 1;
+    bar.value = score;
+    bar.setAttribute('aria-label', 'Probabilidad para ' + names[label]);
+    row.append(
+      el('span', '', names[label] || label),
+      bar,
+      el('output', '', (score * 100).toFixed(1) + '%')
+    );
+    box.append(row);
+  });
+
+  box.append(el('p', 'fine', 'Probabilidades estimadas por Regresión Logística Multinomial (Softmax). No miden intensidad emocional ni constituyen un diagnóstico.'));
+
+  const evidence = el('div', 'evidence');
+  evidence.append(el('h3', '', a.aceptada ? 'N-gramas que inclinaron la predicción' : 'Evidencia tentativa (no concluyente)'));
+  const tokens = el('div', 'tokens');
+  a.evidencia.forEach(item => {
+    const chip = el('span', 'token', item.termino);
+    if (a.candidata) {
+      chip.title = 'Aporte lineal a ' + (names[a.candidata] || a.candidata) + ': +' + Number(item.aporte).toFixed(3);
+    }
+    tokens.append(chip);
+  });
+  if (!a.evidencia.length) {
+    tokens.append(el('span', 'fine', 'Sin n-gramas con aporte positivo en el vocabulario de entrenamiento.'));
+  }
+  evidence.append(tokens, el('p', 'fine', 'Asociaciones estadísticas aprendidas en entrenamiento, no causas.'));
+  box.append(evidence);
+}
+
+async function sendMessage(event) {
+  event.preventDefault();
+  if (busy) return;
+  const text = $('message').value.trim();
+  if (!text) { $('message').focus(); return; }
+
+  $('chat-error').hidden = true;
+  setBusy(true);
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 15000);
+  try {
+    const result = await requestJson('/api/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ mensaje: text }),
+      signal: controller.signal,
+    });
+    updateConnectionBadge(result.version_modelo, true);
+    const data = chatView(result);
+    appendMessage('user', text);
+    appendMessage('assistant', data.reply, data);
+    history.push({ role: 'user', text }, { role: 'assistant', text: data.reply, ...data });
+    renderAnalysis(data);
+    $('message').value = '';
+    $('counter').textContent = '0 / 1500';
+    $('export').disabled = false;
+  } catch (error) {
+    $('chat-error').textContent = error.name === 'AbortError'
+      ? 'La respuesta está tardando. Tu mensaje sigue aquí.'
+      : error.message;
+    $('chat-error').hidden = false;
+  } finally {
+    clearTimeout(timer);
+    setBusy(false);
+    $('message').focus();
+  }
+}
+
+function resetConversation() {
+  history = [];
+  $('messages').querySelectorAll('.message').forEach(node => node.remove());
+  $('welcome').hidden = false;
+  $('analysis').innerHTML = emptyAnalysis;
+  $('message').value = '';
+  $('counter').textContent = '0 / 1500';
+  $('chat-error').hidden = true;
+  $('export').disabled = true;
+  $('messages').scrollTop = 0;
+  $('message').focus();
+}
+
+function exportSession() {
+  const payload = {
+    proyecto: 'Ánimo — Proyecto Final de Machine Learning',
+    aviso: 'Interpretaciones académicas, no diagnósticos. Este archivo contiene tu conversación local.',
+    mensajes: history,
+  };
+  const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = el('a');
+  a.href = url;
+  a.download = 'animo-sesion.json';
+  document.body.append(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
+/* Utilidad de tablas con alineacion numerica y nodos DOM opcionales */
+function makeTable(headers, rows, numericCols = []) {
+  const numSet = new Set(numericCols);
+  const table = el('table');
+  const head = el('thead');
+  const hr = el('tr');
+  headers.forEach((title, idx) => {
+    const th = el('th', numSet.has(idx) ? 'num' : '', title);
+    th.scope = 'col';
+    hr.append(th);
+  });
+  head.append(hr);
+  table.append(head);
+
+  const body = el('tbody');
+  rows.forEach(row => {
+    const tr = el('tr');
+    row.forEach((value, idx) => {
+      const cell = el('td', numSet.has(idx) ? 'num' : '');
+      if (value instanceof Node) cell.append(value);
+      else cell.textContent = String(value);
+      tr.append(cell);
+    });
+    body.append(tr);
+  });
+  table.append(body);
+
+  const wrap = el('div', 'table-wrap');
+  wrap.append(table);
+  return wrap;
+}
+
+function labPanel(title, description) {
+  const panel = el('section', 'panel');
+  panel.append(el('h2', '', title), el('p', '', description));
+  return panel;
+}
+
+function confusionPanel(title, metrics) {
+  const panel = labPanel(title, 'Filas: etiqueta real. Columnas: predicción del modelo ganador.');
+  const matrix = makeTable(
+    ['Real \\ Pred.', ...metrics.clases.map(c => names[c])],
+    metrics.matriz_confusion.map((row, i) => [names[metrics.clases[i]], ...row])
+  );
+  matrix.querySelector('table').className = 'matrix';
+  matrix.querySelectorAll('tbody tr').forEach((row, i) => {
+    row.children[i + 1].classList.add('diagonal');
+  });
+  panel.append(matrix);
+  return panel;
+}
+
+function renderLab(box, experiment) {
+  const winner = experiment.modelos.find(m => m.clave === experiment.modelo_ganador_clave);
+  const metrics = winner.metricas;
+  const go = metrics.validacion_go;
+  const syn = metrics.validacion_sintetica;
+  const dataInfo = experiment.resumen_datos;
+  const leaks = Object.values(dataInfo.auditoria_fugas).reduce((a, b) => a + b, 0);
+
+  const stats = el('div', 'stats');
+  [
+    ['Entrenamiento', intFmt(dataInfo.train.total), 'Frases únicas · Fugas: ' + leaks],
+    ['Macro-F1 · GoEmotions', number(go.macro_f1), 'Exactitud: ' + percent(go.exactitud)],
+    ['Macro-F1 · Sintética', number(syn.macro_f1), 'Exactitud: ' + percent(syn.exactitud)],
+    ['Vocabulario ganador', intFmt(winner.tamano_vocabulario), 'Trigramas (1,3) solo de train'],
+  ].forEach(([label, value, note]) => {
+    const stat = el('div', 'stat');
+    stat.append(el('span', '', label), el('b', '', value), el('span', '', note));
+    stats.append(stat);
+  });
+
+  /* 1. Comparacion de los 6 modelos */
+  const modelsPanel = labPanel('Comparación de modelos en validación', experiment.justificacion_ganador);
+  const modelsTable = makeTable(
+    ['Modelo', 'N-gramas', 'Vocab.', 'Go F1', 'Go Exact.', 'Sint. F1', 'Sint. Exact.', 'Comb. F1', 'Prob.'],
+    experiment.modelos.map(m => [
+      m.nombre,
+      m.ngramas,
+      intFmt(m.tamano_vocabulario),
+      number(m.metricas.validacion_go.macro_f1),
+      percent(m.metricas.validacion_go.exactitud),
+      number(m.metricas.validacion_sintetica.macro_f1),
+      percent(m.metricas.validacion_sintetica.exactitud),
+      number(m.metricas.validacion_combinada.macro_f1),
+      m.probabilidades_nativas ? 'Sí' : 'No',
+    ]),
+    [2, 3, 4, 5, 6, 7]
+  );
+  modelsTable.querySelectorAll('tbody tr')[experiment.modelos.indexOf(winner)].className = 'winner';
+  modelsPanel.append(modelsTable);
+
+  /* 2. Comparacion controlada bigramas vs trigramas */
+  const ng = experiment.comparacion_bigramas_vs_trigramas;
+  const diff = ng.diferencia_trigramas_menos_bigramas;
+  const ngPanel = labPanel(
+    'Comparación controlada: bigramas (1,2) frente a trigramas (1,3)',
+    'Mismos hiperparámetros fijos (TfidfVectorizer con min_df=2, sublinear_tf=True y LogisticRegression C=1.0 balanceada); solo cambia el tamaño máximo de n-grama.'
+  );
+  ngPanel.append(makeTable(
+    ['Indicador', 'Bigramas (1,2)', 'Trigramas (1,3)', 'Aporte de trigramas'],
+    [
+      ['Tamaño de vocabulario', intFmt(ng.bigramas.vocabulario), intFmt(ng.trigramas.vocabulario), '+' + intFmt(diff.vocabulario)],
+      ['Validación GoEmotions · Macro-F1', number(ng.bigramas.macro_f1_go), number(ng.trigramas.macro_f1_go), deltaSpan(diff.macro_f1_go)],
+      ['Validación sintética · Macro-F1', number(ng.bigramas.macro_f1_sintetica), number(ng.trigramas.macro_f1_sintetica), deltaSpan(diff.macro_f1_sintetica)],
+      ['Validación combinada · Macro-F1', number(ng.bigramas.macro_f1_combinada), number(ng.trigramas.macro_f1_combinada), deltaSpan(diff.macro_f1_combinada)],
+      ['Promedio Macro-F1 (Go + Sintética)', number(ng.bigramas.promedio_macro_f1), number(ng.trigramas.promedio_macro_f1), deltaSpan(diff.promedio_macro_f1)],
+    ],
+    [1, 2, 3]
+  ));
+
+  /* 3. Matrices de confusion separadas */
+  const cmGrid = el('div', 'report-grid');
+  cmGrid.append(
+    confusionPanel('Matriz de confusión · GoEmotions (traducción)', go),
+    confusionPanel('Matriz de confusión · Validación sintética (Claude)', syn)
+  );
+
+  /* 4. Metricas detalladas por clase separando Go y Sintetica */
+  const classPanel = labPanel('Métricas por emoción (separando datos traducidos vs. sintéticos)', dataInfo.nota_ansiedad);
+  classPanel.append(makeTable(
+    ['Emoción', 'Prec. Go', 'Rec. Go', 'F1 Go', 'Sop. Go', 'Prec. Sint.', 'Rec. Sint.', 'F1 Sint.', 'Sop. Sint.'],
+    go.clases.map(c => {
+      const mg = go.por_clase[c];
+      const ms = syn.por_clase[c];
+      return [
+        fullNames[c],
+        number(mg.precision), number(mg.recall), number(mg.f1), intFmt(mg.soporte),
+        number(ms.precision), number(ms.recall), number(ms.f1), intFmt(ms.soporte),
+      ];
+    }),
+    [1, 2, 3, 4, 5, 6, 7, 8]
+  ));
+
+  /* 5. Abstencion (pedir contexto) */
+  const u = experiment.umbrales_abstencion;
+  const absPanel = labPanel(
+    'También puede pedir contexto (abstención)',
+    'Etiqueta solo si probabilidad máxima ≥ ' + u.umbral_prob_minima + ' y margen ≥ ' + u.umbral_margen_minimo + '; si no, pregunta al usuario.'
+  );
+  absPanel.append(makeTable(
+    ['Partición', 'Etiquetados', 'Pide contexto', 'Cobertura', 'Aciertos', 'Exactitud selectiva', 'Macro-F1 selectivo'],
+    [
+      ['Validación GoEmotions', metrics.abstencion.validacion_go],
+      ['Validación sintética', metrics.abstencion.validacion_sintetica],
+      ['Validación combinada', metrics.abstencion.validacion_combinada],
+    ].map(([label, a]) => [
+      label,
+      intFmt(a.etiquetados) + ' / ' + intFmt(a.total),
+      intFmt(a.abstenidos),
+      percent(a.cobertura),
+      intFmt(a.aciertos_en_etiquetados),
+      percent(a.exactitud_selectiva),
+      number(a.macro_f1_selectivo),
+    ]),
+    [1, 2, 3, 4, 5, 6]
+  ));
+
+  /* 6. Comprobacion diagnostica exploratoria */
+  const diagPanel = labPanel('Comprobación diagnóstica exploratoria (distinta de evaluación final)', experiment.diagnostico_exploratorio.nota);
+  diagPanel.append(makeTable(
+    ['Frase exploratoria', 'Lectura esperada', 'Salida del modelo', 'Confianza', 'Margen', 'En train'],
+    experiment.diagnostico_exploratorio.casos.map(item => [
+      item.texto,
+      item.lectura_esperada,
+      el('span', 'pill pill-' + item.etiqueta_final, names[item.etiqueta_final] || item.etiqueta_final),
+      percent(item.confianza),
+      percent(item.margen),
+      item.en_entrenamiento ? 'Sí' : 'No',
+    ]),
+    [3, 4]
+  ));
+
+  /* 7. Procedencia de datos y descarga de documentos */
+  const srcPanel = labPanel(
+    'Procedencia de los datos y documentación',
+    'Vocabulario, pesos TF-IDF y clasificador ajustados únicamente con train.csv. Solapes entre particiones: ' + leaks + '.'
+  );
+  const srcRows = [];
+  [
+    ['Entrenamiento (train.csv)', dataInfo.train],
+    ['Validación GoEmotions', dataInfo.validacion_go],
+    ['Validación sintética', dataInfo.validacion_sintetica],
+  ].forEach(([partName, part]) => {
+    Object.entries(part.por_origen_y_clase).forEach(([origin, counts]) => {
+      const total = Object.values(counts).reduce((a, b) => a + b, 0);
+      srcRows.push([
+        partName, origin,
+        intFmt(counts.alegria), intFmt(counts.ansiedad), intFmt(counts.enojo),
+        intFmt(counts.neutral), intFmt(counts.tristeza), intFmt(total),
+      ]);
+    });
+  });
+  srcPanel.append(makeTable(
+    ['Partición', 'Procedencia', 'Alegría', 'Ansiedad', 'Enojo', 'Neutral', 'Tristeza', 'Total'],
+    srcRows,
+    [2, 3, 4, 5, 6, 7]
+  ));
+
+  const links = el('div', 'doc-links');
+  for (const [path, label] of [['informe', 'Descargar INFORME_RESULTADOS.md'], ['explicacion', 'Descargar Explicacion.md']]) {
+    const link = el('a', '', label);
+    link.href = '/documentos/' + path;
+    links.append(link);
+  }
+  srcPanel.append(links);
+
+  box.replaceChildren(stats, modelsPanel, ngPanel, cmGrid, classPanel, absPanel, diagPanel, srcPanel);
+}
+
+async function loadLab() {
+  if (labLoaded) return;
+  const box = $('lab-content');
+  try {
+    const data = await requestJson('/api/laboratorio');
+    updateConnectionBadge(data.estado_modelo?.version_activa, true);
+    renderLab(box, data.experimentos);
+    labLoaded = true;
+  } catch (error) {
+    const retry = el('button', 'quiet-btn', 'Reintentar');
+    retry.type = 'button';
+    retry.addEventListener('click', loadLab);
+    box.replaceChildren(el('p', 'error', error.message), retry);
+  }
+}
+
+/* Aprendizaje mediante correcciones */
+function showLearningStatus(message, isError = false) {
+  const box = $('learn-status');
+  box.textContent = message;
+  box.classList.toggle('is-error', isError);
+}
+
+function renderValidationDelta(state) {
+  const wrap = $('learn-metrics-wrap');
+  wrap.replaceChildren();
+  if (!state || !state.metricas_base || !state.metricas_actual) return;
+
+  const base = state.metricas_base;
+  const act = state.metricas_actual;
+  const d = state.delta_validacion || {};
+
+  const tbl = makeTable(
+    ['Validación', 'Modelo base', 'Modelo activo', 'Cambio'],
+    [
+      ['GoEmotions · Macro-F1', number(base.validacion_go.macro_f1), number(act.validacion_go.macro_f1), deltaSpan(d.macro_f1_go)],
+      ['GoEmotions · Exactitud', number(base.validacion_go.exactitud), number(act.validacion_go.exactitud), deltaSpan(d.exactitud_go)],
+      ['Sintética · Macro-F1', number(base.validacion_sintetica.macro_f1), number(act.validacion_sintetica.macro_f1), deltaSpan(d.macro_f1_sintetica)],
+      ['Sintética · Exactitud', number(base.validacion_sintetica.exactitud), number(act.validacion_sintetica.exactitud), deltaSpan(d.exactitud_sintetica)],
+      ['Combinada · Macro-F1', number(base.validacion_combinada.macro_f1), number(act.validacion_combinada.macro_f1), deltaSpan(d.macro_f1_combinada)],
+    ],
+    [1, 2, 3]
+  );
+  wrap.append(tbl.firstChild);
+}
+
+function renderExamples(examples) {
+  $('learn-count').textContent = examples.length;
+  $('learning-examples').hidden = examples.length === 0;
+  const list = $('learning-list');
+  list.replaceChildren();
+
+  for (const item of examples) {
+    const row = el('div', 'example-row');
+    const info = el('div', 'example-info');
+    info.append(
+      el('span', 'pill pill-' + item.etiqueta, fullNames[item.etiqueta] || item.etiqueta),
+      el('div', 'example-text', item.texto)
+    );
+
+    const remove = el('button', 'quiet-btn', 'Eliminar');
+    remove.type = 'button';
+    remove.disabled = learningBusy;
+    remove.setAttribute('aria-label', 'Eliminar ejemplo: ' + item.texto);
+    remove.addEventListener('click', () => learningAction(async () => {
+      const data = await requestJson('/api/correcciones/' + encodeURIComponent(item.id), { method: 'DELETE' });
+      renderExamples(data.correcciones);
+      showLearningStatus('Ejemplo eliminado. Si ya estaba incorporado, vuelve a entrenar o restaura el modelo base.');
+    }));
+
+    row.append(info, remove);
+    list.append(row);
+  }
+}
+
+async function loadLearning() {
+  if (learningBusy) return;
+  const revision = ++learningRevision;
+  try {
+    const data = await requestJson('/api/correcciones');
+    if (revision !== learningRevision) return;
+    renderExamples(data.correcciones || []);
+    const state = data.estado_modelo;
+    updateConnectionBadge(state?.version_activa, true);
+    renderValidationDelta(state);
+    showLearningStatus(
+      state.version_activa === 'base'
+        ? 'Modelo base activo. Guarda ejemplos voluntarios y pulsa «Entrenar nueva versión» para probar su efecto.'
+        : 'Versión activa: ' + state.version_activa + ' (' + state.correcciones_incorporadas + ' correcciones incorporadas).'
+    );
+  } catch (error) {
+    if (revision === learningRevision) showLearningStatus(error.message, true);
+  }
+}
+
+function setLearningBusy(value) {
+  learningBusy = value;
+  document.querySelectorAll('#learn-form button, .learn-actions button, .example-row button').forEach(btn => {
+    btn.disabled = value;
+  });
+}
+
+async function learningAction(action) {
+  if (learningBusy) return;
+  learningRevision++;
+  setLearningBusy(true);
+  try {
+    await action();
+  } catch (error) {
+    showLearningStatus(error.message, true);
+  } finally {
+    setLearningBusy(false);
+  }
+}
+
+$('copy-last').addEventListener('click', () => {
+  let candidate = null;
+  for (let i = history.length - 1; i >= 1; i -= 2) {
+    const reply = history[i];
+    const userMsg = history[i - 1];
+    if (userMsg?.role === 'user' && !reply?.safety) {
+      candidate = userMsg.text;
+      break;
+    }
+  }
+  if (!candidate) {
+    showLearningStatus('No hay un mensaje reciente disponible para copiar (los mensajes de riesgo no se copian).', true);
+    return;
+  }
+  $('learn-text').value = candidate;
+  $('learn-text').focus();
+  showLearningStatus('Frase copiada. Revisa el texto, elige la emoción correcta y pulsa guardar.');
+});
+
+$('learn-form').addEventListener('submit', event => {
+  event.preventDefault();
+  learningAction(async () => {
+    const data = await requestJson('/api/correcciones', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ texto: $('learn-text').value, etiqueta: $('learn-label').value }),
+    });
+    renderExamples(data.correcciones);
+    $('learn-form').reset();
+    showLearningStatus('Ejemplo guardado localmente. Pulsa «Entrenar nueva versión» cuando quieras incorporarlo.');
+  });
+});
+
+$('learn-train').addEventListener('click', () => learningAction(async () => {
+  showLearningStatus('Entrenando nueva versión en tu equipo y midiendo validación…');
+  const data = await requestJson('/api/reentrenar', { method: 'POST' });
+  const state = data.estado_modelo;
+  updateConnectionBadge(state.version_activa, true);
+  renderValidationDelta(state);
+  showLearningStatus(
+    'Versión ' + state.version_activa + ' activa con ' + state.correcciones_incorporadas +
+    ' ejemplo(s). Go Macro-F1: ' + number(state.metricas_base.validacion_go.macro_f1) + ' → ' +
+    number(state.metricas_actual.validacion_go.macro_f1) + ' · Sintética: ' +
+    number(state.metricas_base.validacion_sintetica.macro_f1) + ' → ' +
+    number(state.metricas_actual.validacion_sintetica.macro_f1) + '.'
+  );
+}));
+
+$('learn-restore').addEventListener('click', () => learningAction(async () => {
+  const data = await requestJson('/api/restaurar', { method: 'POST' });
+  const state = data.estado_modelo;
+  updateConnectionBadge(state.version_activa, true);
+  renderValidationDelta(state);
+  showLearningStatus('Modelo base restaurado correctamente. Tus ejemplos locales siguen guardados por si deseas reutilizarlos.');
+}));
+
+$('learn-delete').addEventListener('click', () => {
+  if (!confirm('¿Borrar todos los ejemplos guardados localmente?')) return;
+  learningAction(async () => {
+    const data = await requestJson('/api/correcciones', { method: 'DELETE' });
+    renderExamples(data.correcciones);
+    showLearningStatus('Se borraron los ejemplos locales. Si ya entrenaste con ellos, pulsa «Restaurar modelo base» para volver al original.');
+  });
+});
+
+/* Navegacion entre pestanas y gestos de la capsula inferior */
+function switchView(view) {
+  document.querySelectorAll('[id^="view-"]').forEach(section => {
+    section.hidden = section.id !== 'view-' + view;
+  });
+  document.querySelectorAll('[data-view]').forEach(btn => {
+    if (btn.dataset.view === view) btn.setAttribute('aria-current', 'page');
+    else btn.removeAttribute('aria-current');
+  });
+  document.querySelector('.nav').dataset.active = view;
+  $('breadcrumb').textContent = { chat: 'Conversación', lab: 'Laboratorio', learn: 'Aprendizaje' }[view];
+  window.scrollTo(0, 0);
+  if (view === 'lab') loadLab();
+  if (view === 'learn') loadLearning();
+}
+
+async function checkHealth() {
+  try {
+    const health = await requestJson('/api/health');
+    if (!health.modelo_disponible) {
+      updateConnectionBadge(null, false);
+      return;
+    }
+    const corr = await requestJson('/api/correcciones');
+    updateConnectionBadge(corr.estado_modelo?.version_activa || 'base', true);
+  } catch {
+    updateConnectionBadge(null, false);
+  }
+}
+
+const dock = document.querySelector('.nav');
+let dockPointerStart = null;
+let dockSwipeConsumed = false;
+
+dock.addEventListener('pointerdown', event => {
+  if (event.isPrimary) {
+    dockPointerStart = { x: event.clientX, y: event.clientY };
+    dockSwipeConsumed = false;
+  }
+});
+dock.addEventListener('pointerup', event => {
+  if (!dockPointerStart || !event.isPrimary) return;
+  const dx = event.clientX - dockPointerStart.x;
+  const dy = event.clientY - dockPointerStart.y;
+  dockPointerStart = null;
+  if (Math.abs(dx) > 35 && Math.abs(dx) > Math.abs(dy)) {
+    dockSwipeConsumed = true;
+    const views = ['chat', 'lab', 'learn'];
+    const current = views.indexOf(dock.dataset.active);
+    switchView(views[Math.max(0, Math.min(2, current + (dx > 0 ? 1 : -1)))]);
+  }
+});
+dock.addEventListener('pointercancel', () => { dockPointerStart = null; });
+dock.addEventListener('click', event => {
+  if (dockSwipeConsumed) {
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    dockSwipeConsumed = false;
+  }
+}, true);
+
+/* Eventos iniciales */
+$('chat-form').addEventListener('submit', sendMessage);
+$('message').addEventListener('input', () => {
+  $('counter').textContent = $('message').value.length + ' / 1500';
+});
+$('message').addEventListener('keydown', event => {
+  if (event.key === 'Enter' && !event.shiftKey && !event.isComposing) {
+    event.preventDefault();
+    $('chat-form').requestSubmit();
+  }
+});
+$('reset').addEventListener('click', resetConversation);
+$('export').addEventListener('click', exportSession);
+
+document.querySelectorAll('[data-example]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    if (busy) return;
+    $('message').value = btn.dataset.example;
+    $('message').dispatchEvent(new Event('input'));
+    $('message').focus();
+  });
+});
+document.querySelectorAll('[data-view]').forEach(btn => {
+  btn.addEventListener('click', () => switchView(btn.dataset.view));
+});
+document.querySelectorAll('[data-help]').forEach(btn => {
+  btn.addEventListener('click', () => $('help-dialog').showModal());
+});
+document.querySelectorAll('[data-privacy]').forEach(btn => {
+  btn.addEventListener('click', () => $('privacy-dialog').showModal());
+});
+document.querySelectorAll('[data-close]').forEach(btn => {
+  btn.addEventListener('click', () => btn.closest('dialog').close());
+});
+
+checkHealth();
+</script>
+</body>
+</html>

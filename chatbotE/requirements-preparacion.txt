@@ -1,0 +1,2 @@
+# dependencia adicional para regenerar los csv desde parquet
+pyarrow==26.0.1

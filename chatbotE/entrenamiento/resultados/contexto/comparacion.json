@@ -1,0 +1,1807 @@
+{
+  "modelo_base_sha256": "98998be0842166a464566d85db84e2daccb71c0fd27e749ebc16c6b5f98bfcde",
+  "datos_sha256": {
+    "train.csv": "d5cbf595ccaff696d13f26226d14519b231a14ceab1e3ab4115df6c6939d409a",
+    "validacion_go.csv": "7169e612221c13ab2ac1b562ebe908d641eb2e31bf51f59ca851a4c1324a1170",
+    "validacion_sintetica.csv": "324e5679d1568d02e65e79fbb4bcb8ce1d52e440f74eb8ee6f30be5f9566e7a4"
+  },
+  "diagnostico_sha256": "44dca2584074557dccf06b6a414f86a5ed5ab8a3d42def821294edc52bf1d385",
+  "train_n": 23689,
+  "umbral": 0.3,
+  "margen": 0.1,
+  "segundos_ajuste_trigramas": 18.948515500000212,
+  "resultados": {
+    "bigramas": {
+      "rango": [
+        1,
+        2
+      ],
+      "vocabulario": 113298,
+      "validacion_go": {
+        "n": 1899,
+        "metricas": {
+          "accuracy": 0.885202738283307,
+          "macro_f1": 0.6077668843613488,
+          "por_clase": {
+            "alegria": {
+              "precision": 0.8928571428571429,
+              "recall": 0.4716981132075472,
+              "f1-score": 0.6172839506172839,
+              "support": 106.0
+            },
+            "ansiedad": {
+              "precision": 0.75,
+              "recall": 0.375,
+              "f1-score": 0.5,
+              "support": 8.0
+            },
+            "enojo": {
+              "precision": 0.6271186440677966,
+              "recall": 0.3394495412844037,
+              "f1-score": 0.44047619047619047,
+              "support": 109.0
+            },
+            "neutral": {
+              "precision": 0.8978060046189377,
+              "recall": 0.9767587939698492,
+              "f1-score": 0.9356197352587244,
+              "support": 1592.0
+            },
+            "tristeza": {
+              "precision": 0.75,
+              "recall": 0.42857142857142855,
+              "f1-score": 0.5454545454545454,
+              "support": 84.0
+            },
+            "accuracy": 0.885202738283307,
+            "macro avg": {
+              "precision": 0.7835563583087755,
+              "recall": 0.5182955754066457,
+              "f1-score": 0.6077668843613488,
+              "support": 1899.0
+            },
+            "weighted avg": {
+              "precision": 0.8748319898365433,
+              "recall": 0.885202738283307,
+              "f1-score": 0.8703363896142222,
+              "support": 1899.0
+            }
+          },
+          "matriz": [
+            [
+              50,
+              0,
+              1,
+              54,
+              1
+            ],
+            [
+              0,
+              3,
+              0,
+              5,
+              0
+            ],
+            [
+              0,
+              0,
+              37,
+              72,
+              0
+            ],
+            [
+              5,
+              1,
+              20,
+              1555,
+              11
+            ],
+            [
+              1,
+              0,
+              1,
+              46,
+              36
+            ]
+          ]
+        },
+        "chat": {
+          "aceptados": 1848,
+          "total": 1899,
+          "cobertura": 0.9731437598736177,
+          "accuracy_aceptados": 0.8906926406926406
+        }
+      },
+      "validacion_sintetica": {
+        "n": 1932,
+        "metricas": {
+          "accuracy": 0.9658385093167702,
+          "macro_f1": 0.9613080377586207,
+          "por_clase": {
+            "alegria": {
+              "precision": 1.0,
+              "recall": 0.9075829383886256,
+              "f1-score": 0.9515527950310559,
+              "support": 422.0
+            },
+            "ansiedad": {
+              "precision": 0.9831932773109243,
+              "recall": 0.8602941176470589,
+              "f1-score": 0.9176470588235294,
+              "support": 136.0
+            },
+            "enojo": {
+              "precision": 1.0,
+              "recall": 0.9887218045112782,
+              "f1-score": 0.994328922495274,
+              "support": 266.0
+            },
+            "neutral": {
+              "precision": 0.9312242090784044,
+              "recall": 0.9985250737463127,
+              "f1-score": 0.9637010676156583,
+              "support": 678.0
+            },
+            "tristeza": {
+              "precision": 0.9681818181818181,
+              "recall": 0.9906976744186047,
+              "f1-score": 0.9793103448275862,
+              "support": 430.0
+            },
+            "accuracy": 0.9658385093167702,
+            "macro avg": {
+              "precision": 0.9765198609142294,
+              "recall": 0.9491643217423761,
+              "f1-score": 0.9613080377586207,
+              "support": 1932.0
+            },
+            "weighted avg": {
+              "precision": 0.9675996279956655,
+              "recall": 0.9658385093167702,
+              "f1-score": 0.9654966589058629,
+              "support": 1932.0
+            }
+          },
+          "matriz": [
+            [
+              383,
+              2,
+              0,
+              27,
+              10
+            ],
+            [
+              0,
+              117,
+              0,
+              16,
+              3
+            ],
+            [
+              0,
+              0,
+              263,
+              3,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              677,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              4,
+              426
+            ]
+          ]
+        },
+        "chat": {
+          "aceptados": 1869,
+          "total": 1932,
+          "cobertura": 0.967391304347826,
+          "accuracy_aceptados": 0.9807383627608347
+        }
+      },
+      "diagnostico": {
+        "n": 32,
+        "aciertos_chat": 18,
+        "abstenciones": 1,
+        "pares_totales": 16,
+        "pares_correctos": 6,
+        "controles_neutrales": 7,
+        "controles_neutrales_con_emocion": 0,
+        "por_tipo": {
+          "negacion": {
+            "total": 16,
+            "aciertos_chat": 14
+          },
+          "indirecta": {
+            "total": 16,
+            "aciertos_chat": 4
+          }
+        },
+        "casos": [
+          {
+            "id": "N01a",
+            "grupo": "N01",
+            "tipo": "negacion",
+            "etiqueta": "tristeza",
+            "texto": "No me fue del todo bien y volví a casa con el ánimo por el suelo.",
+            "candidata": "tristeza",
+            "chat": "tristeza",
+            "scores": {
+              "alegria": 0.05600391106215815,
+              "ansiedad": 0.06031884449201714,
+              "enojo": 0.04086205059810639,
+              "neutral": 0.08829618298209012,
+              "tristeza": 0.7545190108656282
+            },
+            "trigramas_conocidos": []
+          },
+          {
+            "id": "N01b",
+            "grupo": "N01",
+            "tipo": "negacion",
+            "etiqueta": "alegria",
+            "texto": "Me fue mejor de lo esperado y volví a casa con una sonrisa enorme.",
+            "candidata": "alegria",
+            "chat": "alegria",
+            "scores": {
+              "alegria": 0.40900982820138293,
+              "ansiedad": 0.013729558346589522,
+              "enojo": 0.07802044360739943,
+              "neutral": 0.23636107012273702,
+              "tristeza": 0.2628790997218911
+            },
+            "trigramas_conocidos": []
+          },
+          {
+            "id": "N02a",
+            "grupo": "N02",
+            "tipo": "negacion",
+            "etiqueta": "alegria",
+            "texto": "No puedo dejar de sonreír desde que me dieron la noticia.",
+            "candidata": "alegria",
+            "chat": "alegria",
+            "scores": {
+              "alegria": 0.8488462804579465,
+              "ansiedad": 0.023623295751098748,
+              "enojo": 0.016064399769565273,
+              "neutral": 0.013809405013473717,
+              "tristeza": 0.09765661900791578
+            },
+            "trigramas_conocidos": []
+          },
+          {
+            "id": "N02b",
+            "grupo": "N02",
+            "tipo": "negacion",
+            "etiqueta": "tristeza",
+            "texto": "No puedo dejar de llorar desde que me dieron la noticia.",
+            "candidata": "tristeza",
+            "chat": "tristeza",
+            "scores": {
+              "alegria": 0.27533028542651905,
+              "ansiedad": 0.03097003886120713,
+              "enojo": 0.017372801541407412,
+              "neutral": 0.010369657998462692,
+              "tristeza": 0.6659572161724037
+            },
+            "trigramas_conocidos": []
+          },
+          {
+            "id": "N03a",
+            "grupo": "N03",
+            "tipo": "negacion",
+            "etiqueta": "ansiedad",
+            "texto": "No consigo quedarme quieto de los nervios por la entrevista.",
+            "candidata": "ansiedad",
+            "chat": "ansiedad",
+            "scores": {
+              "alegria": 0.001330083537524838,
+              "ansiedad": 0.9778376100831314,
+              "enojo": 0.0021713028730947393,
+              "neutral": 0.016072782208215446,
+              "tristeza": 0.002588221298033531
+            },
+            "trigramas_conocidos": []
+          },
+          {
+            "id": "N03b",
+            "grupo": "N03",
+            "tipo": "negacion",
+            "etiqueta": "neutral",
+            "texto": "No necesito moverme de aquí para hacer la entrevista por videollamada.",
+            "candidata": "neutral",
+            "chat": "neutral",
+            "scores": {
+              "alegria": 0.007548603822956677,
+              "ansiedad": 0.025714193694410473,
+              "enojo": 0.05468880352662672,
+              "neutral": 0.871616844568197,
+              "tristeza": 0.040431554387808974
+            },
+            "trigramas_conocidos": []
+          },
+          {
+            "id": "N04a",
+            "grupo": "N04",
+            "tipo": "negacion",
+            "etiqueta": "enojo",
+            "texto": "No es la primera vez que se adueñan de mi trabajo y ya me colmaron la paciencia.",
+            "candidata": "enojo",
+            "chat": "enojo",
+            "scores": {
+              "alegria": 0.07184039448560271,
+              "ansiedad": 0.02843089325095488,
+              "enojo": 0.7859458294228187,
+              "neutral": 0.08437869073491627,
+              "tristeza": 0.029404192105707657
+            },
+            "trigramas_conocidos": []
+          },
+          {
+            "id": "N04b",
+            "grupo": "N04",
+            "tipo": "negacion",
+            "etiqueta": "neutral",
+            "texto": "No es la primera vez que compartimos el trabajo por el mismo enlace.",
+            "candidata": "neutral",
+            "chat": "neutral",
+            "scores": {
+              "alegria": 0.05087750498629939,
+              "ansiedad": 0.023070971649622542,
+              "enojo": 0.03957464560174676,
+              "neutral": 0.8653288536340759,
+              "tristeza": 0.021148024128255484
+            },
+            "trigramas_conocidos": []
+          },
+          {
+            "id": "N05a",
+            "grupo": "N05",
+            "tipo": "negacion",
+            "etiqueta": "alegria",
+            "texto": "No esperaba que me escogieran y ahora salto de gusto.",
+            "candidata": "alegria",
+            "chat": "alegria",
+            "scores": {
+              "alegria": 0.45250671848858626,
+              "ansiedad": 0.03737959990709118,
+              "enojo": 0.09429288897448564,
+              "neutral": 0.3348090753423999,
+              "tristeza": 0.08101171728743713
+            },
+            "trigramas_conocidos": []
+          },
+          {
+            "id": "N05b",
+            "grupo": "N05",
+            "tipo": "negacion",
+            "etiqueta": "tristeza",
+            "texto": "No me escogieron y se me quitaron las ganas de celebrar.",
+            "candidata": "tristeza",
+            "chat": "tristeza",
+            "scores": {
+              "alegria": 0.22185803574495597,
+              "ansiedad": 0.07464024167391786,
+              "enojo": 0.2626181931838172,
+              "neutral": 0.014186191419040529,
+              "tristeza": 0.4266973379782685
+            },
+            "trigramas_conocidos": []
+          },
+          {
+            "id": "N06a",
+            "grupo": "N06",
+            "tipo": "negacion",
+            "etiqueta": "ansiedad",
+            "texto": "No paro de imaginar qué puede salir mal mañana y me tiemblan las manos.",
+            "candidata": "ansiedad",
+            "chat": "ansiedad",
+            "scores": {
+              "alegria": 0.02995560684618792,
+              "ansiedad": 0.8225780691622122,
+              "enojo": 0.04374356501283515,
+              "neutral": 0.07743253069513031,
+              "tristeza": 0.026290228283634438
+            },
+            "trigramas_conocidos": []
+          },
+          {
+            "id": "N06b",
+            "grupo": "N06",
+            "tipo": "negacion",
+            "etiqueta": "enojo",
+            "texto": "No paro de darle vueltas a cómo cambiaron mi turno sin avisar y me hierve la sangre.",
+            "candidata": "enojo",
+            "chat": "enojo",
+            "scores": {
+              "alegria": 0.022741407098292026,
+              "ansiedad": 0.08136800041719011,
+              "enojo": 0.7964406051972068,
+              "neutral": 0.07388676793404633,
+              "tristeza": 0.0255632193532645
+            },
+            "trigramas_conocidos": []
+          },
+          {
+            "id": "N07a",
+            "grupo": "N07",
+            "tipo": "negacion",
+            "etiqueta": "neutral",
+            "texto": "No encontré el archivo en la carpeta principal y lo descargué otra vez.",
+            "candidata": "neutral",
+            "chat": "neutral",
+            "scores": {
+              "alegria": 0.009116312709267134,
+              "ansiedad": 0.007141481463256987,
+              "enojo": 0.03871919436239496,
+              "neutral": 0.9332613540267127,
+              "tristeza": 0.011761657438368186
+            },
+            "trigramas_conocidos": []
+          },
+          {
+            "id": "N07b",
+            "grupo": "N07",
+            "tipo": "negacion",
+            "etiqueta": "enojo",
+            "texto": "No encontré el archivo porque lo borraron sin preguntar y estoy que exploto.",
+            "candidata": "neutral",
+            "chat": "neutral",
+            "scores": {
+              "alegria": 0.016083791090088687,
+              "ansiedad": 0.013370205034971957,
+              "enojo": 0.15783583684534702,
+              "neutral": 0.7753886410943533,
+              "tristeza": 0.03732152593523888
+            },
+            "trigramas_conocidos": []
+          },
+          {
+            "id": "N08a",
+            "grupo": "N08",
+            "tipo": "negacion",
+            "etiqueta": "tristeza",
+            "texto": "No me alegra que se vaya mi mejor amiga y ya la extraño.",
+            "candidata": "alegria",
+            "chat": "alegria",
+            "scores": {
+              "alegria": 0.6497407229638081,
+              "ansiedad": 0.024565949741444982,
+              "enojo": 0.057444867420141106,
+              "neutral": 0.04224361342287243,
+              "tristeza": 0.22600484645173324
+            },
+            "trigramas_conocidos": []
+          },
+          {
+            "id": "N08b",
+            "grupo": "N08",
+            "tipo": "negacion",
+            "etiqueta": "neutral",
+            "texto": "No tengo el horario de salida de mi amiga y se lo pediré por mensaje.",
+            "candidata": "neutral",
+            "chat": "neutral",
+            "scores": {
+              "alegria": 0.07650709170587841,
+              "ansiedad": 0.13097945196847158,
+              "enojo": 0.08252771746375924,
+              "neutral": 0.43967562942264365,
+              "tristeza": 0.2703101094392472
+            },
+            "trigramas_conocidos": []
+          },
+          {
+            "id": "I01a",
+            "grupo": "I01",
+            "tipo": "indirecta",
+            "etiqueta": "tristeza",
+            "texto": "Guardé la medalla en el cajón y me quedó un vacío al pensar que nadie vino a verme.",
+            "candidata": "neutral",
+            "chat": "neutral",
+            "scores": {
+              "alegria": 0.024026752593994987,
+              "ansiedad": 0.029135620315569568,
+              "enojo": 0.05403890526079293,
+              "neutral": 0.7253568592311704,
+              "tristeza": 0.1674418625984721
+            },
+            "trigramas_conocidos": []
+          },
+          {
+            "id": "I01b",
+            "grupo": "I01",
+            "tipo": "indirecta",
+            "etiqueta": "neutral",
+            "texto": "Guardé la medalla en el cajón junto a los certificados del torneo.",
+            "candidata": "neutral",
+            "chat": "neutral",
+            "scores": {
+              "alegria": 0.013540948574817665,
+              "ansiedad": 0.011996539187701988,
+              "enojo": 0.016863981004022466,
+              "neutral": 0.9493071771163847,
+              "tristeza": 0.008291354117073138
+            },
+            "trigramas_conocidos": []
+          },
+          {
+            "id": "I02a",
+            "grupo": "I02",
+            "tipo": "indirecta",
+            "etiqueta": "alegria",
+            "texto": "Salí del salón queriendo contarle a todo el mundo que por fin lo logré.",
+            "candidata": "neutral",
+            "chat": "neutral",
+            "scores": {
+              "alegria": 0.10165777507403753,
+              "ansiedad": 0.02496217284044264,
+              "enojo": 0.047533497263917354,
+              "neutral": 0.7768630374726071,
+              "tristeza": 0.04898351734899523
+            },
+            "trigramas_conocidos": []
+          },
+          {
+            "id": "I02b",
+            "grupo": "I02",
+            "tipo": "indirecta",
+            "etiqueta": "ansiedad",
+            "texto": "Salí del salón ensayando en mi cabeza todas las preguntas que me podrían hacer mañana.",
+            "candidata": "neutral",
+            "chat": "neutral",
+            "scores": {
+              "alegria": 0.10675686862741167,
+              "ansiedad": 0.0835725230813496,
+              "enojo": 0.11808046455966552,
+              "neutral": 0.5899449678837402,
+              "tristeza": 0.1016451758478331
+            },
+            "trigramas_conocidos": []
+          },
+          {
+            "id": "I03a",
+            "grupo": "I03",
+            "tipo": "indirecta",
+            "etiqueta": "enojo",
+            "texto": "Tuve que contar hasta diez cuando vi que me dejaron toda la entrega otra vez.",
+            "candidata": "neutral",
+            "chat": "neutral",
+            "scores": {
+              "alegria": 0.23283983435609715,
+              "ansiedad": 0.03751339578594392,
+              "enojo": 0.1067706822239261,
+              "neutral": 0.5140187188124274,
+              "tristeza": 0.10885736882160538
+            },
+            "trigramas_conocidos": []
+          },
+          {
+            "id": "I03b",
+            "grupo": "I03",
+            "tipo": "indirecta",
+            "etiqueta": "neutral",
+            "texto": "Tuve que contar hasta diez para que el equipo sincronizara la grabación.",
+            "candidata": "neutral",
+            "chat": "neutral",
+            "scores": {
+              "alegria": 0.016462253032667434,
+              "ansiedad": 0.002572977080908973,
+              "enojo": 0.007928225808039568,
+              "neutral": 0.9590189976612797,
+              "tristeza": 0.014017546417104143
+            },
+            "trigramas_conocidos": []
+          },
+          {
+            "id": "I04a",
+            "grupo": "I04",
+            "tipo": "indirecta",
+            "etiqueta": "ansiedad",
+            "texto": "Miro el reloj cada dos minutos pensando en todo lo que podría salir mal durante la exposición.",
+            "candidata": "neutral",
+            "chat": "neutral",
+            "scores": {
+              "alegria": 0.03515675223790625,
+              "ansiedad": 0.10161510965282226,
+              "enojo": 0.03818899177329168,
+              "neutral": 0.7563334529614875,
+              "tristeza": 0.06870569337449248
+            },
+            "trigramas_conocidos": []
+          },
+          {
+            "id": "I04b",
+            "grupo": "I04",
+            "tipo": "indirecta",
+            "etiqueta": "neutral",
+            "texto": "Miro el reloj cada dos minutos para registrar la duración de la exposición.",
+            "candidata": "neutral",
+            "chat": "neutral",
+            "scores": {
+              "alegria": 0.028598103361507667,
+              "ansiedad": 0.009189257452245695,
+              "enojo": 0.01575272027164678,
+              "neutral": 0.9366782543047552,
+              "tristeza": 0.009781664609844731
+            },
+            "trigramas_conocidos": []
+          },
+          {
+            "id": "I05a",
+            "grupo": "I05",
+            "tipo": "indirecta",
+            "etiqueta": "alegria",
+            "texto": "Después de la llamada me puse a bailar en la cocina de puro gusto.",
+            "candidata": "alegria",
+            "chat": "incierto",
+            "scores": {
+              "alegria": 0.4661987241886025,
+              "ansiedad": 0.02118260269170841,
+              "enojo": 0.07516407048464117,
+              "neutral": 0.4053241963971926,
+              "tristeza": 0.03213040623785539
+            },
+            "trigramas_conocidos": []
+          },
+          {
+            "id": "I05b",
+            "grupo": "I05",
+            "tipo": "indirecta",
+            "etiqueta": "tristeza",
+            "texto": "Después de la llamada me quedé mirando la pantalla sin ganas de hablar con nadie.",
+            "candidata": "tristeza",
+            "chat": "tristeza",
+            "scores": {
+              "alegria": 0.0533675144688585,
+              "ansiedad": 0.01496756189735579,
+              "enojo": 0.04419594562935065,
+              "neutral": 0.31530019612671606,
+              "tristeza": 0.572168781877719
+            },
+            "trigramas_conocidos": []
+          },
+          {
+            "id": "I06a",
+            "grupo": "I06",
+            "tipo": "indirecta",
+            "etiqueta": "enojo",
+            "texto": "Apreté la mandíbula cuando volvieron a echarme una culpa que era de ellos.",
+            "candidata": "neutral",
+            "chat": "neutral",
+            "scores": {
+              "alegria": 0.01266940956613617,
+              "ansiedad": 0.004807233407073269,
+              "enojo": 0.022928493214769852,
+              "neutral": 0.9158624443347356,
+              "tristeza": 0.04373241947728519
+            },
+            "trigramas_conocidos": []
+          },
+          {
+            "id": "I06b",
+            "grupo": "I06",
+            "tipo": "indirecta",
+            "etiqueta": "ansiedad",
+            "texto": "Apreté la mandíbula mientras esperaba que me llamaran a exponer y repasaba todas mis dudas.",
+            "candidata": "neutral",
+            "chat": "neutral",
+            "scores": {
+              "alegria": 0.15261590047313178,
+              "ansiedad": 0.056833155101657776,
+              "enojo": 0.17107214685176966,
+              "neutral": 0.47528249421634766,
+              "tristeza": 0.14419630335709313
+            },
+            "trigramas_conocidos": []
+          },
+          {
+            "id": "I07a",
+            "grupo": "I07",
+            "tipo": "indirecta",
+            "etiqueta": "tristeza",
+            "texto": "Me hacía tanta ilusión ir y ahora prefiero quedarme en cama porque se canceló.",
+            "candidata": "neutral",
+            "chat": "neutral",
+            "scores": {
+              "alegria": 0.06181882985049329,
+              "ansiedad": 0.026119548037852543,
+              "enojo": 0.07027862059383533,
+              "neutral": 0.7478490855151758,
+              "tristeza": 0.09393391600264292
+            },
+            "trigramas_conocidos": []
+          },
+          {
+            "id": "I07b",
+            "grupo": "I07",
+            "tipo": "indirecta",
+            "etiqueta": "alegria",
+            "texto": "Me hacía tanta ilusión ir que ya tengo las entradas listas y se me escapa la sonrisa.",
+            "candidata": "tristeza",
+            "chat": "tristeza",
+            "scores": {
+              "alegria": 0.20022962019855509,
+              "ansiedad": 0.09864140680382166,
+              "enojo": 0.10657514690892389,
+              "neutral": 0.24641302969975507,
+              "tristeza": 0.34814079638894435
+            },
+            "trigramas_conocidos": []
+          },
+          {
+            "id": "I08a",
+            "grupo": "I08",
+            "tipo": "indirecta",
+            "etiqueta": "enojo",
+            "texto": "Me dejaron hablando solo por tercera vez y tuve que salir a caminar para no alzar la voz.",
+            "candidata": "neutral",
+            "chat": "neutral",
+            "scores": {
+              "alegria": 0.04339180436897823,
+              "ansiedad": 0.027722212192417963,
+              "enojo": 0.04436808487723751,
+              "neutral": 0.833167879513554,
+              "tristeza": 0.05135001904781239
+            },
+            "trigramas_conocidos": []
+          },
+          {
+            "id": "I08b",
+            "grupo": "I08",
+            "tipo": "indirecta",
+            "etiqueta": "ansiedad",
+            "texto": "Me dejaron esperando la confirmación y llevo toda la tarde pensando que algo puede fallar.",
+            "candidata": "neutral",
+            "chat": "neutral",
+            "scores": {
+              "alegria": 0.058071762286870984,
+              "ansiedad": 0.12330423639088421,
+              "enojo": 0.12984732133600313,
+              "neutral": 0.48290738889828166,
+              "tristeza": 0.20586929108796
+            },
+            "trigramas_conocidos": []
+          },
+          {
+            "id": "A01",
+            "grupo": "A01",
+            "tipo": "ambiguo",
+            "etiqueta": "",
+            "texto": "No me fue del todo bien.",
+            "candidata": "neutral",
+            "chat": "neutral",
+            "scores": {
+              "alegria": 0.06704040872556655,
+              "ansiedad": 0.07776732396575844,
+              "enojo": 0.1814086658843148,
+              "neutral": 0.4710299016401844,
+              "tristeza": 0.20275369978417576
+            },
+            "trigramas_conocidos": []
+          },
+          {
+            "id": "A02",
+            "grupo": "A02",
+            "tipo": "ambiguo",
+            "etiqueta": "",
+            "texto": "No era lo que esperaba.",
+            "candidata": "neutral",
+            "chat": "neutral",
+            "scores": {
+              "alegria": 0.011377593597437733,
+              "ansiedad": 0.01069070479612145,
+              "enojo": 0.047695673993433226,
+              "neutral": 0.9013482928838188,
+              "tristeza": 0.028887734729188742
+            },
+            "trigramas_conocidos": []
+          },
+          {
+            "id": "A03",
+            "grupo": "A03",
+            "tipo": "ambiguo",
+            "etiqueta": "",
+            "texto": "Me quedé pensando en lo que me dijo.",
+            "candidata": "tristeza",
+            "chat": "tristeza",
+            "scores": {
+              "alegria": 0.0549929406897359,
+              "ansiedad": 0.16218271920684552,
+              "enojo": 0.05428032567911856,
+              "neutral": 0.12595534015736606,
+              "tristeza": 0.6025886742669341
+            },
+            "trigramas_conocidos": []
+          },
+          {
+            "id": "A04",
+            "grupo": "A04",
+            "tipo": "ambiguo",
+            "etiqueta": "",
+            "texto": "No sé qué decir todavía.",
+            "candidata": "neutral",
+            "chat": "neutral",
+            "scores": {
+              "alegria": 0.007460926319379455,
+              "ansiedad": 0.042574911655082856,
+              "enojo": 0.024832352638054462,
+              "neutral": 0.9082673096507575,
+              "tristeza": 0.016864499736725595
+            },
+            "trigramas_conocidos": []
+          }
+        ]
+      }
+    },
+    "trigramas": {
+      "rango": [
+        1,
+        3
+      ],
+      "vocabulario": 259200,
+      "validacion_go": {
+        "n": 1899,
+        "metricas": {
+          "accuracy": 0.8825697735650342,
+          "macro_f1": 0.6004320935646842,
+          "por_clase": {
+            "alegria": {
+              "precision": 0.8421052631578947,
+              "recall": 0.4528301886792453,
+              "f1-score": 0.588957055214724,
+              "support": 106.0
+            },
+            "ansiedad": {
+              "precision": 0.75,
+              "recall": 0.375,
+              "f1-score": 0.5,
+              "support": 8.0
+            },
+            "enojo": {
+              "precision": 0.6363636363636364,
+              "recall": 0.3211009174311927,
+              "f1-score": 0.4268292682926829,
+              "support": 109.0
+            },
+            "neutral": {
+              "precision": 0.896133871898442,
+              "recall": 0.9755025125628141,
+              "f1-score": 0.9341353383458647,
+              "support": 1592.0
+            },
+            "tristeza": {
+              "precision": 0.74,
+              "recall": 0.44047619047619047,
+              "f1-score": 0.5522388059701493,
+              "support": 84.0
+            },
+            "accuracy": 0.8825697735650342,
+            "macro avg": {
+              "precision": 0.7729205542839945,
+              "recall": 0.5129819618298885,
+              "f1-score": 0.6004320935646842,
+              "support": 1899.0
+            },
+            "weighted avg": {
+              "precision": 0.8706855810008914,
+              "recall": 0.8825697735650342,
+              "f1-score": 0.867027570534372,
+              "support": 1899.0
+            }
+          },
+          "matriz": [
+            [
+              48,
+              0,
+              1,
+              56,
+              1
+            ],
+            [
+              0,
+              3,
+              0,
+              5,
+              0
+            ],
+            [
+              0,
+              0,
+              35,
+              74,
+              0
+            ],
+            [
+              8,
+              1,
+              18,
+              1553,
+              12
+            ],
+            [
+              1,
+              0,
+              1,
+              45,
+              37
+            ]
+          ]
+        },
+        "chat": {
+          "aceptados": 1852,
+          "total": 1899,
+          "cobertura": 0.9752501316482359,
+          "accuracy_aceptados": 0.8898488120950324
+        }
+      },
+      "validacion_sintetica": {
+        "n": 1932,
+        "metricas": {
+          "accuracy": 0.9787784679089027,
+          "macro_f1": 0.977607377388176,
+          "por_clase": {
+            "alegria": {
+              "precision": 1.0,
+              "recall": 0.9454976303317536,
+              "f1-score": 0.9719853836784409,
+              "support": 422.0
+            },
+            "ansiedad": {
+              "precision": 1.0,
+              "recall": 0.9264705882352942,
+              "f1-score": 0.9618320610687023,
+              "support": 136.0
+            },
+            "enojo": {
+              "precision": 1.0,
+              "recall": 0.9887218045112782,
+              "f1-score": 0.994328922495274,
+              "support": 266.0
+            },
+            "neutral": {
+              "precision": 0.9589235127478754,
+              "recall": 0.9985250737463127,
+              "f1-score": 0.9783236994219653,
+              "support": 678.0
+            },
+            "tristeza": {
+              "precision": 0.9726027397260274,
+              "recall": 0.9906976744186047,
+              "f1-score": 0.9815668202764977,
+              "support": 430.0
+            },
+            "accuracy": 0.9787784679089027,
+            "macro avg": {
+              "precision": 0.9863052504947806,
+              "recall": 0.9699825542486487,
+              "f1-score": 0.977607377388176,
+              "support": 1932.0
+            },
+            "weighted avg": {
+              "precision": 0.9794872255306684,
+              "recall": 0.9787784679089027,
+              "f1-score": 0.9787037714950181,
+              "support": 1932.0
+            }
+          },
+          "matriz": [
+            [
+              399,
+              0,
+              0,
+              16,
+              7
+            ],
+            [
+              0,
+              126,
+              0,
+              6,
+              4
+            ],
+            [
+              0,
+              0,
+              263,
+              3,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              677,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              4,
+              426
+            ]
+          ]
+        },
+        "chat": {
+          "aceptados": 1887,
+          "total": 1932,
+          "cobertura": 0.9767080745341615,
+          "accuracy_aceptados": 0.9878113407525172
+        }
+      },
+      "diagnostico": {
+        "n": 32,
+        "aciertos_chat": 18,
+        "abstenciones": 2,
+        "pares_totales": 16,
+        "pares_correctos": 6,
+        "controles_neutrales": 7,
+        "controles_neutrales_con_emocion": 0,
+        "por_tipo": {
+          "negacion": {
+            "total": 16,
+            "aciertos_chat": 13
+          },
+          "indirecta": {
+            "total": 16,
+            "aciertos_chat": 5
+          }
+        },
+        "casos": [
+          {
+            "id": "N01a",
+            "grupo": "N01",
+            "tipo": "negacion",
+            "etiqueta": "tristeza",
+            "texto": "No me fue del todo bien y volví a casa con el ánimo por el suelo.",
+            "candidata": "tristeza",
+            "chat": "tristeza",
+            "scores": {
+              "alegria": 0.06947858778233278,
+              "ansiedad": 0.0909763353243505,
+              "enojo": 0.054772834254949186,
+              "neutral": 0.08033407053799273,
+              "tristeza": 0.7044381721003747
+            },
+            "trigramas_conocidos": [
+              "con el animo",
+              "volvi casa con"
+            ]
+          },
+          {
+            "id": "N01b",
+            "grupo": "N01",
+            "tipo": "negacion",
+            "etiqueta": "alegria",
+            "texto": "Me fue mejor de lo esperado y volví a casa con una sonrisa enorme.",
+            "candidata": "alegria",
+            "chat": "alegria",
+            "scores": {
+              "alegria": 0.39565014580269753,
+              "ansiedad": 0.020689370872343658,
+              "enojo": 0.08934236374732356,
+              "neutral": 0.26369410220958717,
+              "tristeza": 0.23062401736804805
+            },
+            "trigramas_conocidos": [
+              "con una sonrisa",
+              "de lo esperado",
+              "fue mejor de",
+              "me fue mejor",
+              "mejor de lo",
+              "volvi casa con"
+            ]
+          },
+          {
+            "id": "N02a",
+            "grupo": "N02",
+            "tipo": "negacion",
+            "etiqueta": "alegria",
+            "texto": "No puedo dejar de sonreír desde que me dieron la noticia.",
+            "candidata": "alegria",
+            "chat": "alegria",
+            "scores": {
+              "alegria": 0.8259411995247393,
+              "ansiedad": 0.041659782634916195,
+              "enojo": 0.02052907462370532,
+              "neutral": 0.017969777284379564,
+              "tristeza": 0.09390016593225944
+            },
+            "trigramas_conocidos": [
+              "dejar de sonreir",
+              "desde que me",
+              "me dieron la",
+              "no puedo dejar",
+              "puedo dejar de",
+              "que me dieron"
+            ]
+          },
+          {
+            "id": "N02b",
+            "grupo": "N02",
+            "tipo": "negacion",
+            "etiqueta": "tristeza",
+            "texto": "No puedo dejar de llorar desde que me dieron la noticia.",
+            "candidata": "tristeza",
+            "chat": "tristeza",
+            "scores": {
+              "alegria": 0.3386295995451806,
+              "ansiedad": 0.06803295602249199,
+              "enojo": 0.02880703232280475,
+              "neutral": 0.019754031807193647,
+              "tristeza": 0.544776380302329
+            },
+            "trigramas_conocidos": [
+              "dejar de llorar",
+              "desde que me",
+              "me dieron la",
+              "no puedo dejar",
+              "puedo dejar de",
+              "que me dieron"
+            ]
+          },
+          {
+            "id": "N03a",
+            "grupo": "N03",
+            "tipo": "negacion",
+            "etiqueta": "ansiedad",
+            "texto": "No consigo quedarme quieto de los nervios por la entrevista.",
+            "candidata": "ansiedad",
+            "chat": "ansiedad",
+            "scores": {
+              "alegria": 0.003570233436414207,
+              "ansiedad": 0.9474308607523576,
+              "enojo": 0.005972488796434321,
+              "neutral": 0.03666394282076916,
+              "tristeza": 0.006362474194024588
+            },
+            "trigramas_conocidos": [
+              "de los nervios",
+              "los nervios por",
+              "nervios por la",
+              "por la entrevista"
+            ]
+          },
+          {
+            "id": "N03b",
+            "grupo": "N03",
+            "tipo": "negacion",
+            "etiqueta": "neutral",
+            "texto": "No necesito moverme de aquí para hacer la entrevista por videollamada.",
+            "candidata": "neutral",
+            "chat": "neutral",
+            "scores": {
+              "alegria": 0.010062820496324187,
+              "ansiedad": 0.02998737632353014,
+              "enojo": 0.04861532597682605,
+              "neutral": 0.8720013720701162,
+              "tristeza": 0.039333105133203296
+            },
+            "trigramas_conocidos": [
+              "para hacer la"
+            ]
+          },
+          {
+            "id": "N04a",
+            "grupo": "N04",
+            "tipo": "negacion",
+            "etiqueta": "enojo",
+            "texto": "No es la primera vez que se adueñan de mi trabajo y ya me colmaron la paciencia.",
+            "candidata": "enojo",
+            "chat": "enojo",
+            "scores": {
+              "alegria": 0.12636676007831768,
+              "ansiedad": 0.04195110754476273,
+              "enojo": 0.6448342329170595,
+              "neutral": 0.13775947659163384,
+              "tristeza": 0.04908842286822624
+            },
+            "trigramas_conocidos": [
+              "de mi trabajo",
+              "es la primera",
+              "la primera vez",
+              "no es la",
+              "primera vez que",
+              "vez que se"
+            ]
+          },
+          {
+            "id": "N04b",
+            "grupo": "N04",
+            "tipo": "negacion",
+            "etiqueta": "neutral",
+            "texto": "No es la primera vez que compartimos el trabajo por el mismo enlace.",
+            "candidata": "neutral",
+            "chat": "neutral",
+            "scores": {
+              "alegria": 0.06063765585373615,
+              "ansiedad": 0.021428042121143718,
+              "enojo": 0.04111670097928744,
+              "neutral": 0.8551420111857048,
+              "tristeza": 0.02167558986012809
+            },
+            "trigramas_conocidos": [
+              "es la primera",
+              "la primera vez",
+              "no es la",
+              "por el mismo",
+              "primera vez que",
+              "trabajo por el"
+            ]
+          },
+          {
+            "id": "N05a",
+            "grupo": "N05",
+            "tipo": "negacion",
+            "etiqueta": "alegria",
+            "texto": "No esperaba que me escogieran y ahora salto de gusto.",
+            "candidata": "alegria",
+            "chat": "alegria",
+            "scores": {
+              "alegria": 0.4311821000404826,
+              "ansiedad": 0.04259342759319349,
+              "enojo": 0.10922334311001551,
+              "neutral": 0.3230306543186519,
+              "tristeza": 0.09397047493765646
+            },
+            "trigramas_conocidos": [
+              "esperaba que me",
+              "no esperaba que"
+            ]
+          },
+          {
+            "id": "N05b",
+            "grupo": "N05",
+            "tipo": "negacion",
+            "etiqueta": "tristeza",
+            "texto": "No me escogieron y se me quitaron las ganas de celebrar.",
+            "candidata": "tristeza",
+            "chat": "incierto",
+            "scores": {
+              "alegria": 0.3284758524148314,
+              "ansiedad": 0.0860131184610965,
+              "enojo": 0.19286675356160507,
+              "neutral": 0.011473613024242523,
+              "tristeza": 0.3811706625382247
+            },
+            "trigramas_conocidos": [
+              "ganas de celebrar",
+              "las ganas de"
+            ]
+          },
+          {
+            "id": "N06a",
+            "grupo": "N06",
+            "tipo": "negacion",
+            "etiqueta": "ansiedad",
+            "texto": "No paro de imaginar qué puede salir mal mañana y me tiemblan las manos.",
+            "candidata": "ansiedad",
+            "chat": "ansiedad",
+            "scores": {
+              "alegria": 0.03655625197659166,
+              "ansiedad": 0.7829395105062044,
+              "enojo": 0.049489947803305345,
+              "neutral": 0.09579086930090397,
+              "tristeza": 0.035223420412994574
+            },
+            "trigramas_conocidos": [
+              "de imaginar que",
+              "me tiemblan las",
+              "no paro de",
+              "puede salir mal",
+              "que puede salir",
+              "tiemblan las manos"
+            ]
+          },
+          {
+            "id": "N06b",
+            "grupo": "N06",
+            "tipo": "negacion",
+            "etiqueta": "enojo",
+            "texto": "No paro de darle vueltas a cómo cambiaron mi turno sin avisar y me hierve la sangre.",
+            "candidata": "enojo",
+            "chat": "enojo",
+            "scores": {
+              "alegria": 0.029871187819810897,
+              "ansiedad": 0.08293205595281893,
+              "enojo": 0.7723573159157378,
+              "neutral": 0.08166964452476308,
+              "tristeza": 0.033169795786869315
+            },
+            "trigramas_conocidos": [
+              "avisar me hierve",
+              "de darle vueltas",
+              "hierve la sangre",
+              "me hierve la",
+              "no paro de",
+              "sin avisar me"
+            ]
+          },
+          {
+            "id": "N07a",
+            "grupo": "N07",
+            "tipo": "negacion",
+            "etiqueta": "neutral",
+            "texto": "No encontré el archivo en la carpeta principal y lo descargué otra vez.",
+            "candidata": "neutral",
+            "chat": "neutral",
+            "scores": {
+              "alegria": 0.011261157527458494,
+              "ansiedad": 0.010063307227621722,
+              "enojo": 0.04123360611058811,
+              "neutral": 0.9208885249209648,
+              "tristeza": 0.01655340421336694
+            },
+            "trigramas_conocidos": [
+              "en la carpeta"
+            ]
+          },
+          {
+            "id": "N07b",
+            "grupo": "N07",
+            "tipo": "negacion",
+            "etiqueta": "enojo",
+            "texto": "No encontré el archivo porque lo borraron sin preguntar y estoy que exploto.",
+            "candidata": "neutral",
+            "chat": "neutral",
+            "scores": {
+              "alegria": 0.026300789615272376,
+              "ansiedad": 0.020560198079901778,
+              "enojo": 0.20924701935774004,
+              "neutral": 0.689271861537675,
+              "tristeza": 0.05462013140941081
+            },
+            "trigramas_conocidos": [
+              "estoy que exploto"
+            ]
+          },
+          {
+            "id": "N08a",
+            "grupo": "N08",
+            "tipo": "negacion",
+            "etiqueta": "tristeza",
+            "texto": "No me alegra que se vaya mi mejor amiga y ya la extraño.",
+            "candidata": "alegria",
+            "chat": "alegria",
+            "scores": {
+              "alegria": 0.7263000953911797,
+              "ansiedad": 0.026307114372183416,
+              "enojo": 0.054875455701548496,
+              "neutral": 0.030644825940903595,
+              "tristeza": 0.16187250859418476
+            },
+            "trigramas_conocidos": [
+              "me alegra que",
+              "no me alegra",
+              "que se vaya"
+            ]
+          },
+          {
+            "id": "N08b",
+            "grupo": "N08",
+            "tipo": "negacion",
+            "etiqueta": "neutral",
+            "texto": "No tengo el horario de salida de mi amiga y se lo pediré por mensaje.",
+            "candidata": "neutral",
+            "chat": "neutral",
+            "scores": {
+              "alegria": 0.07863040226958795,
+              "ansiedad": 0.13526456148873642,
+              "enojo": 0.09173314617755914,
+              "neutral": 0.4063576597021129,
+              "tristeza": 0.2880142303620036
+            },
+            "trigramas_conocidos": [
+              "el horario de",
+              "no tengo el",
+              "salida de mi"
+            ]
+          },
+          {
+            "id": "I01a",
+            "grupo": "I01",
+            "tipo": "indirecta",
+            "etiqueta": "tristeza",
+            "texto": "Guardé la medalla en el cajón y me quedó un vacío al pensar que nadie vino a verme.",
+            "candidata": "neutral",
+            "chat": "neutral",
+            "scores": {
+              "alegria": 0.03764967753935303,
+              "ansiedad": 0.0443986680797131,
+              "enojo": 0.07486214455644781,
+              "neutral": 0.6500005742364904,
+              "tristeza": 0.19308893558799567
+            },
+            "trigramas_conocidos": [
+              "al pensar que"
+            ]
+          },
+          {
+            "id": "I01b",
+            "grupo": "I01",
+            "tipo": "indirecta",
+            "etiqueta": "neutral",
+            "texto": "Guardé la medalla en el cajón junto a los certificados del torneo.",
+            "candidata": "neutral",
+            "chat": "neutral",
+            "scores": {
+              "alegria": 0.0164023025423362,
+              "ansiedad": 0.017459527968514684,
+              "enojo": 0.020433345577565196,
+              "neutral": 0.9345304944818046,
+              "tristeza": 0.011174329429779199
+            },
+            "trigramas_conocidos": []
+          },
+          {
+            "id": "I02a",
+            "grupo": "I02",
+            "tipo": "indirecta",
+            "etiqueta": "alegria",
+            "texto": "Salí del salón queriendo contarle a todo el mundo que por fin lo logré.",
+            "candidata": "neutral",
+            "chat": "neutral",
+            "scores": {
+              "alegria": 0.11111353089737042,
+              "ansiedad": 0.027946242362605615,
+              "enojo": 0.060341933059688574,
+              "neutral": 0.743436414923059,
+              "tristeza": 0.057161878757276414
+            },
+            "trigramas_conocidos": [
+              "el mundo que",
+              "que por fin",
+              "todo el mundo"
+            ]
+          },
+          {
+            "id": "I02b",
+            "grupo": "I02",
+            "tipo": "indirecta",
+            "etiqueta": "ansiedad",
+            "texto": "Salí del salón ensayando en mi cabeza todas las preguntas que me podrían hacer mañana.",
+            "candidata": "neutral",
+            "chat": "neutral",
+            "scores": {
+              "alegria": 0.1276573838908974,
+              "ansiedad": 0.10305584782077733,
+              "enojo": 0.14572559327179005,
+              "neutral": 0.507236169751323,
+              "tristeza": 0.11632500526521228
+            },
+            "trigramas_conocidos": [
+              "en mi cabeza",
+              "las preguntas que",
+              "todas las preguntas"
+            ]
+          },
+          {
+            "id": "I03a",
+            "grupo": "I03",
+            "tipo": "indirecta",
+            "etiqueta": "enojo",
+            "texto": "Tuve que contar hasta diez cuando vi que me dejaron toda la entrega otra vez.",
+            "candidata": "neutral",
+            "chat": "neutral",
+            "scores": {
+              "alegria": 0.2321897082085883,
+              "ansiedad": 0.04916274290816067,
+              "enojo": 0.141203332259645,
+              "neutral": 0.43219140695075786,
+              "tristeza": 0.1452528096728481
+            },
+            "trigramas_conocidos": [
+              "cuando vi que"
+            ]
+          },
+          {
+            "id": "I03b",
+            "grupo": "I03",
+            "tipo": "indirecta",
+            "etiqueta": "neutral",
+            "texto": "Tuve que contar hasta diez para que el equipo sincronizara la grabación.",
+            "candidata": "neutral",
+            "chat": "neutral",
+            "scores": {
+              "alegria": 0.01718258380015499,
+              "ansiedad": 0.0034871189055319454,
+              "enojo": 0.01015018853661034,
+              "neutral": 0.9540180280215014,
+              "tristeza": 0.015162080736201398
+            },
+            "trigramas_conocidos": [
+              "para que el",
+              "que el equipo"
+            ]
+          },
+          {
+            "id": "I04a",
+            "grupo": "I04",
+            "tipo": "indirecta",
+            "etiqueta": "ansiedad",
+            "texto": "Miro el reloj cada dos minutos pensando en todo lo que podría salir mal durante la exposición.",
+            "candidata": "neutral",
+            "chat": "neutral",
+            "scores": {
+              "alegria": 0.03749538354020436,
+              "ansiedad": 0.09746835048858277,
+              "enojo": 0.04289747621384868,
+              "neutral": 0.7364028957460128,
+              "tristeza": 0.08573589401135141
+            },
+            "trigramas_conocidos": [
+              "lo que podria",
+              "todo lo que"
+            ]
+          },
+          {
+            "id": "I04b",
+            "grupo": "I04",
+            "tipo": "indirecta",
+            "etiqueta": "neutral",
+            "texto": "Miro el reloj cada dos minutos para registrar la duración de la exposición.",
+            "candidata": "neutral",
+            "chat": "neutral",
+            "scores": {
+              "alegria": 0.03916961094352832,
+              "ansiedad": 0.012960144328753349,
+              "enojo": 0.020665975565948236,
+              "neutral": 0.9121529975948112,
+              "tristeza": 0.015051271566959073
+            },
+            "trigramas_conocidos": [
+              "de la exposicion"
+            ]
+          },
+          {
+            "id": "I05a",
+            "grupo": "I05",
+            "tipo": "indirecta",
+            "etiqueta": "alegria",
+            "texto": "Después de la llamada me puse a bailar en la cocina de puro gusto.",
+            "candidata": "alegria",
+            "chat": "alegria",
+            "scores": {
+              "alegria": 0.469272222955733,
+              "ansiedad": 0.03203112890284818,
+              "enojo": 0.08894960425439515,
+              "neutral": 0.35182099685336116,
+              "tristeza": 0.05792604703366268
+            },
+            "trigramas_conocidos": [
+              "de la llamada",
+              "despues de la",
+              "en la cocina",
+              "la cocina de"
+            ]
+          },
+          {
+            "id": "I05b",
+            "grupo": "I05",
+            "tipo": "indirecta",
+            "etiqueta": "tristeza",
+            "texto": "Después de la llamada me quedé mirando la pantalla sin ganas de hablar con nadie.",
+            "candidata": "tristeza",
+            "chat": "tristeza",
+            "scores": {
+              "alegria": 0.0933842740915115,
+              "ansiedad": 0.022093626946923926,
+              "enojo": 0.05575258633462543,
+              "neutral": 0.2582025751770312,
+              "tristeza": 0.5705669374499079
+            },
+            "trigramas_conocidos": [
+              "de hablar con",
+              "de la llamada",
+              "despues de la",
+              "hablar con nadie",
+              "sin ganas de"
+            ]
+          },
+          {
+            "id": "I06a",
+            "grupo": "I06",
+            "tipo": "indirecta",
+            "etiqueta": "enojo",
+            "texto": "Apreté la mandíbula cuando volvieron a echarme una culpa que era de ellos.",
+            "candidata": "neutral",
+            "chat": "neutral",
+            "scores": {
+              "alegria": 0.016336096362900416,
+              "ansiedad": 0.005571497411705171,
+              "enojo": 0.02359444696569305,
+              "neutral": 0.9116997580051236,
+              "tristeza": 0.04279820125457773
+            },
+            "trigramas_conocidos": [
+              "que era de"
+            ]
+          },
+          {
+            "id": "I06b",
+            "grupo": "I06",
+            "tipo": "indirecta",
+            "etiqueta": "ansiedad",
+            "texto": "Apreté la mandíbula mientras esperaba que me llamaran a exponer y repasaba todas mis dudas.",
+            "candidata": "neutral",
+            "chat": "neutral",
+            "scores": {
+              "alegria": 0.21533284644744552,
+              "ansiedad": 0.07029199569598321,
+              "enojo": 0.19305746842713903,
+              "neutral": 0.3514386249461375,
+              "tristeza": 0.16987906448329476
+            },
+            "trigramas_conocidos": [
+              "esperaba que me"
+            ]
+          },
+          {
+            "id": "I07a",
+            "grupo": "I07",
+            "tipo": "indirecta",
+            "etiqueta": "tristeza",
+            "texto": "Me hacía tanta ilusión ir y ahora prefiero quedarme en cama porque se canceló.",
+            "candidata": "neutral",
+            "chat": "neutral",
+            "scores": {
+              "alegria": 0.07897879956489152,
+              "ansiedad": 0.035294831051069946,
+              "enojo": 0.0869560629232283,
+              "neutral": 0.6741222385324375,
+              "tristeza": 0.12464806792837288
+            },
+            "trigramas_conocidos": []
+          },
+          {
+            "id": "I07b",
+            "grupo": "I07",
+            "tipo": "indirecta",
+            "etiqueta": "alegria",
+            "texto": "Me hacía tanta ilusión ir que ya tengo las entradas listas y se me escapa la sonrisa.",
+            "candidata": "tristeza",
+            "chat": "tristeza",
+            "scores": {
+              "alegria": 0.21188166112871298,
+              "ansiedad": 0.13007239053591782,
+              "enojo": 0.12097897056759362,
+              "neutral": 0.1829166292286612,
+              "tristeza": 0.3541503485391143
+            },
+            "trigramas_conocidos": []
+          },
+          {
+            "id": "I08a",
+            "grupo": "I08",
+            "tipo": "indirecta",
+            "etiqueta": "enojo",
+            "texto": "Me dejaron hablando solo por tercera vez y tuve que salir a caminar para no alzar la voz.",
+            "candidata": "neutral",
+            "chat": "neutral",
+            "scores": {
+              "alegria": 0.04805334608537217,
+              "ansiedad": 0.03991574400082911,
+              "enojo": 0.053854689215027944,
+              "neutral": 0.7921445056500169,
+              "tristeza": 0.0660317150487538
+            },
+            "trigramas_conocidos": []
+          },
+          {
+            "id": "I08b",
+            "grupo": "I08",
+            "tipo": "indirecta",
+            "etiqueta": "ansiedad",
+            "texto": "Me dejaron esperando la confirmación y llevo toda la tarde pensando que algo puede fallar.",
+            "candidata": "neutral",
+            "chat": "incierto",
+            "scores": {
+              "alegria": 0.06856710559450561,
+              "ansiedad": 0.12586062655271357,
+              "enojo": 0.13072760953391266,
+              "neutral": 0.3808223393382347,
+              "tristeza": 0.29402231898063347
+            },
+            "trigramas_conocidos": [
+              "toda la tarde"
+            ]
+          },
+          {
+            "id": "A01",
+            "grupo": "A01",
+            "tipo": "ambiguo",
+            "etiqueta": "",
+            "texto": "No me fue del todo bien.",
+            "candidata": "neutral",
+            "chat": "incierto",
+            "scores": {
+              "alegria": 0.08048117075416301,
+              "ansiedad": 0.11057280612385197,
+              "enojo": 0.2059147287951413,
+              "neutral": 0.3470597414534456,
+              "tristeza": 0.25597155287339807
+            },
+            "trigramas_conocidos": []
+          },
+          {
+            "id": "A02",
+            "grupo": "A02",
+            "tipo": "ambiguo",
+            "etiqueta": "",
+            "texto": "No era lo que esperaba.",
+            "candidata": "neutral",
+            "chat": "neutral",
+            "scores": {
+              "alegria": 0.012968751039564026,
+              "ansiedad": 0.008805126114049072,
+              "enojo": 0.03824071011709131,
+              "neutral": 0.9116260567602815,
+              "tristeza": 0.028359355969014073
+            },
+            "trigramas_conocidos": [
+              "era lo que",
+              "lo que esperaba",
+              "no era lo"
+            ]
+          },
+          {
+            "id": "A03",
+            "grupo": "A03",
+            "tipo": "ambiguo",
+            "etiqueta": "",
+            "texto": "Me quedé pensando en lo que me dijo.",
+            "candidata": "tristeza",
+            "chat": "tristeza",
+            "scores": {
+              "alegria": 0.10429395171095154,
+              "ansiedad": 0.1584273494067461,
+              "enojo": 0.103432571909275,
+              "neutral": 0.20197119292915597,
+              "tristeza": 0.43187493404387134
+            },
+            "trigramas_conocidos": [
+              "en lo que",
+              "lo que me",
+              "pensando en lo",
+              "que me dijo"
+            ]
+          },
+          {
+            "id": "A04",
+            "grupo": "A04",
+            "tipo": "ambiguo",
+            "etiqueta": "",
+            "texto": "No sé qué decir todavía.",
+            "candidata": "neutral",
+            "chat": "neutral",
+            "scores": {
+              "alegria": 0.010691316774009927,
+              "ansiedad": 0.050391519291390394,
+              "enojo": 0.02645789501880045,
+              "neutral": 0.890406037263398,
+              "tristeza": 0.02205323165240108
+            },
+            "trigramas_conocidos": [
+              "no se que",
+              "se que decir"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "criterios": {
+    "macro_f1_go_igual_o_mejor": false,
+    "mas_aciertos_en_diagnostico": false,
+    "pares_correctos_igual_o_mejor": true,
+    "sin_mas_emociones_en_controles_neutrales": true
+  }
+}

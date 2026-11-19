@@ -1,0 +1,29 @@
+{
+  "train": {
+    "sintetico_asistido_IA": 240,
+    "go_emotions_es_mt": 15381,
+    "sintetico_claude": 8068
+  },
+  "train_clases": {
+    "alegria": 2452,
+    "tristeza": 2428,
+    "enojo": 2777,
+    "ansiedad": 1996,
+    "neutral": 14036
+  },
+  "validacion_go_clases": {
+    "neutral": 1592,
+    "tristeza": 84,
+    "enojo": 109,
+    "alegria": 106,
+    "ansiedad": 8
+  },
+  "validacion_sintetica_clases": {
+    "enojo": 266,
+    "tristeza": 430,
+    "neutral": 678,
+    "alegria": 422,
+    "ansiedad": 136
+  },
+  "descartadas_train": 200
+}

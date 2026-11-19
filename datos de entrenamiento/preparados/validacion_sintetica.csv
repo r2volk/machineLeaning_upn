@@ -1,0 +1,1933 @@
+texto,etiqueta,grupo,origen
+"Ya basta con el desprecio a mi opinión en la reunión, estoy muy enojada.",enojo,g00002,sintetico_claude
+"Hasta aquí llegué con cómo ignoraron mi opinión en el equipo, estoy furiosa",enojo,g00002,sintetico_claude
+Hoy lloré un rato por la disolución de mi banda de amigos.,tristeza,g00006,sintetico_claude
+Terminé llorando en mi cuarto por el fin de nuestra banda,tristeza,g00006,sintetico_claude
+Mañana hablamos de lo del presupuesto de mi exposición.,neutral,g00007,sintetico_claude
+Mañana conversamos sobre los costos de mi exposición.,neutral,g00007,sintetico_claude
+Hay que ver lo del correo del profesor sobre sistemas operativos con el resto del equipo.,neutral,g00020,sintetico_claude
+Debemos coordinar lo del mensaje del docente de sistemas operativos con los demás,neutral,g00020,sintetico_claude
+Estoy muy enojado con el incumplimiento de mi compañero de equipo.,enojo,g00022,sintetico_claude
+Ando de mal genio por la promesa rota de mi compañero de equipo.,enojo,g00022,sintetico_claude
+Estoy esperando el bus en el paradero.,neutral,g00024,sintetico_claude
+Aguardo el bus en la parada.,neutral,g00024,sintetico_claude
+Con la beca que me otorgaron se me alegró el día,alegria,g00027,sintetico_claude
+Con mi beca de estudios me cambió el ánimo para bien,alegria,g00027,sintetico_claude
+Me hace sonreír pensar en el aprobado de mi proyecto.,alegria,g00036,sintetico_claude
+Recordar la aprobación de mi proyecto por el comité me llena de alegría.,alegria,g00036,sintetico_claude
+Lo del recibo del agua lo conversamos en clase.,neutral,g00040,sintetico_claude
+En clase conversamos sobre la factura del agua de este mes,neutral,g00040,sintetico_claude
+Estoy muy enojada con los cambios de última hora en economía.,enojo,g00042,sintetico_claude
+Ando de mal genio por las reglas que cambiaron a último momento en economía,enojo,g00042,sintetico_claude
+Hoy vi lo del horario de la clase de cálculo en el correo,neutral,g00046,sintetico_claude
+Leí lo de la hora de las sesiones de cálculo en el correo de hoy,neutral,g00046,sintetico_claude
+Ando sonriendo sola desde lo de la propuesta de trabajo que me hicieron,alegria,g00054,sintetico_claude
+Desde lo de la oferta laboral que me llegó no se me quita la sonrisa.,alegria,g00054,sintetico_claude
+Estoy muy enojado con los comentarios de mi profesora sobre mi familia.,enojo,g00056,sintetico_claude
+Ando de mal genio por la mala manera en que mi profesora habló de mi familia.,enojo,g00056,sintetico_claude
+Estoy que exploto por el descuento que me quitaron sin explicación.,enojo,g00061,sintetico_claude
+Estoy a punto de explotar por la promoción que no me respetaron en la tienda.,enojo,g00061,sintetico_claude
+Lo del lugar de la reunión del lunes está en el documento compartido.,neutral,g00063,sintetico_claude
+El detalle del sitio donde nos reunimos el lunes figura en el archivo compartido.,neutral,g00063,sintetico_claude
+Mi celular tiene el 60 por ciento de batería.,neutral,g00064,sintetico_claude
+A mi teléfono le queda el 60 por ciento de batería,neutral,g00064,sintetico_claude
+"Sobre la reserva de la biblioteca, ya revisé los detalles.",neutral,g00070,sintetico_claude
+"respecto al espacio reservado en la biblioteca, ya vi todos los detalles",neutral,g00070,sintetico_claude
+Aviso: lo del archivo adjunto del correo se mantiene tal como estaba,neutral,g00072,sintetico_claude
+Información sobre el documento que viene adjunto en el correo: no hubo ningún cambio.,neutral,g00072,sintetico_claude
+Cancelaron mi pedido sin avisarme y me da mucha cólera.,enojo,g00082,sintetico_claude
+Me anularon la compra sin una palabra y estoy muy molesta,enojo,g00082,sintetico_claude
+Estoy muy triste por la lluvia gris de todos estos días.,tristeza,g00089,sintetico_claude
+Tengo el ánimo por los suelos a causa de tantos días nublados seguidos.,tristeza,g00089,sintetico_claude
+Lo del cambio de turno de esta semana lo conversamos en clase,neutral,g00096,sintetico_claude
+En clase conversamos sobre el nuevo turno que me asignaron esta semana.,neutral,g00096,sintetico_claude
+Me desvelé pensando en mi charla frente a todo el salón el jueves.,ansiedad,g00103,sintetico_claude
+Casi no dormí por estar pensando en mi exposición delante de toda la clase el jueves,ansiedad,g00103,sintetico_claude
+Compartí lo del cambio de contraseña del correo institucional en el grupo,neutral,g00106,sintetico_claude
+Subí lo de la actualización de la clave del correo de la universidad al grupo de WhatsApp.,neutral,g00106,sintetico_claude
+Lo del avance semanal de mi proyecto final está en el documento compartido,neutral,g00111,sintetico_claude
+El detalle del reporte semanal de mi proyecto final figura en el archivo compartido.,neutral,g00111,sintetico_claude
+Nos toca ver lo del calendario de exámenes esta semana.,neutral,g00113,sintetico_claude
+Esta semana tenemos que revisar lo del cronograma de evaluaciones,neutral,g00113,sintetico_claude
+Se me apagó el día por la disolución de mi banda de amigos,tristeza,g00120,sintetico_claude
+Mi día se volvió gris por el fin de nuestra banda,tristeza,g00120,sintetico_claude
+"Ya basta con la forma en que me trató mi mejor amigo en la reunión, estoy muy enojada.",enojo,g00122,sintetico_claude
+"Hasta aquí llegué con el trato que tuvo mi mejor amigo conmigo delante de todos, estoy furiosa.",enojo,g00122,sintetico_claude
+Gracias a la victoria de mi equipo en el campeonato tengo ganas de celebrar,alegria,g00127,sintetico_claude
+Después del triunfo de mi equipo en el torneo me dieron ganas de festejar con todos.,alegria,g00127,sintetico_claude
+Hay que ver lo de la compra del pasaje con el resto del equipo,neutral,g00136,sintetico_claude
+Debemos coordinar lo de la reserva del boleto de viaje con los demás,neutral,g00136,sintetico_claude
+Qué lindo se siente lo de la beca que me otorgaron,alegria,g00138,sintetico_claude
+Se siente buenísimo lo de mi beca de estudios.,alegria,g00138,sintetico_claude
+"ya basta con el ruido de mis vecinos a medianoche, estoy muy enojada.",enojo,g00145,sintetico_claude
+"Hasta aquí llegué con la bulla que hacen mis vecinos de madrugada, estoy furiosa.",enojo,g00145,sintetico_claude
+Estoy triste y desilusionada por mis planes que se cayeron,tristeza,g00149,sintetico_claude
+me siento triste y desanimada con los planes que se cancelaron en el último momento.,tristeza,g00149,sintetico_claude
+Lo del mapa del campus está en el documento compartido,neutral,g00152,sintetico_claude
+El detalle del plano del campus figura en el archivo compartido.,neutral,g00152,sintetico_claude
+Con la fiesta de promoción se me alegró el día.,alegria,g00153,sintetico_claude
+Con el festejo de fin de año con los compañeros me cambió el ánimo para bien.,alegria,g00153,sintetico_claude
+Me alegra un montón lo de la respuesta de mi hermana a mi propuesta.,alegria,g00160,sintetico_claude
+Me llena de satisfacción lo del sí de mi hermana a mi idea,alegria,g00160,sintetico_claude
+Estoy que exploto por los correos basura que llegan todos los días.,enojo,g00161,sintetico_claude
+Estoy a punto de explotar por la propaganda que no para de llegar a mi correo.,enojo,g00161,sintetico_claude
+"qué lindo se siente lo del cambio de horario en mi trabajo, que me favorece.",alegria,g00162,sintetico_claude
+"Se siente buenísimo lo de mi nuevo horario de trabajo, que me queda perfecto.",alegria,g00162,sintetico_claude
+Me desvelé pensando en el riesgo de llegar tarde al examen.,ansiedad,g00171,sintetico_claude
+Casi no dormí por estar pensando en la hora de salida para llegar a tiempo,ansiedad,g00171,sintetico_claude
+Hoy vi lo de la copia de mi horario en el correo.,neutral,g00173,sintetico_claude
+Leí lo de mi horario impreso en el correo de hoy,neutral,g00173,sintetico_claude
+Lo del pedido de útiles lo conversamos en clase.,neutral,g00175,sintetico_claude
+En clase conversamos sobre la compra de los útiles,neutral,g00175,sintetico_claude
+Estoy muy triste por la despedida en el aeropuerto,tristeza,g00179,sintetico_claude
+Tengo el ánimo por los suelos a causa del adiós que nos dimos en el aeropuerto,tristeza,g00179,sintetico_claude
+La tristeza por la renuncia de mi mejor compañero de trabajo no me deja en paz,tristeza,g00180,sintetico_claude
+Hoy no puedo con la tristeza por la salida de mi mejor amigo de la oficina,tristeza,g00180,sintetico_claude
+Estoy muy enojada con las excusas de mi compañero que no trabajó en el grupo.,enojo,g00189,sintetico_claude
+Ando de mal genio por el compañero que se quedó de brazos cruzados en nuestro trabajo.,enojo,g00189,sintetico_claude
+Me desvelé pensando en la tormenta que anuncian para este fin de semana.,ansiedad,g00191,sintetico_claude
+Casi no dormí por estar pensando en el mal tiempo previsto para el fin de semana.,ansiedad,g00191,sintetico_claude
+Compartí lo de las instrucciones del laboratorio de contabilidad en el grupo.,neutral,g00197,sintetico_claude
+Subí lo de la guía del laboratorio de contabilidad al grupo de WhatsApp,neutral,g00197,sintetico_claude
+hoy vi lo de la actividad del grupo en la casa de mis tíos en el correo.,neutral,g00207,sintetico_claude
+Leí lo del trabajo del grupo en la casa de mis tíos en el correo de hoy,neutral,g00207,sintetico_claude
+Mañana hablamos de lo del correo del profesor sobre sistemas operativos,neutral,g00213,sintetico_claude
+Mañana conversamos sobre el mensaje del docente de sistemas operativos,neutral,g00213,sintetico_claude
+Estoy que exploto por la actitud de mi abuelo conmigo.,enojo,g00214,sintetico_claude
+Estoy a punto de explotar por la forma de actuar de mi abuelo conmigo.,enojo,g00214,sintetico_claude
+Nos toca ver lo de la ruta del bus a la universidad esta semana.,neutral,g00225,sintetico_claude
+Esta semana tenemos que revisar lo del recorrido del bus hacia la universidad.,neutral,g00225,sintetico_claude
+Estoy muy agradecido y contento por la victoria de mi equipo en el campeonato.,alegria,g00234,sintetico_claude
+Me siento afortunado por el triunfo de mi equipo en el torneo,alegria,g00234,sintetico_claude
+La tristeza por la partida de mi compañero de cuarto no me deja en paz,tristeza,g00243,sintetico_claude
+hoy no puedo con la tristeza por el día en que se fue mi compañero de cuarto.,tristeza,g00243,sintetico_claude
+"Ya basta con el incumplimiento de mi mejor amigo, estoy muy enojado",enojo,g00247,sintetico_claude
+"Hasta aquí llegué con la promesa rota de mi mejor amigo, estoy furioso",enojo,g00247,sintetico_claude
+Se me apagó el día por la cancelación del concierto al que iba con mis amigos,tristeza,g00253,sintetico_claude
+Mi día se volvió gris por el concierto al que ya no pudimos ir.,tristeza,g00253,sintetico_claude
+me hace sonreír pensar en la fiesta que me prepararon mis amigos.,alegria,g00257,sintetico_claude
+recordar la sorpresa de cumpleaños de mis amigos me llena de alegría.,alegria,g00257,sintetico_claude
+Hoy lloré un rato por el cierre del negocio de mi familia.,tristeza,g00259,sintetico_claude
+Terminé llorando en mi cuarto por el fin del negocio de mi familia,tristeza,g00259,sintetico_claude
+Hay que ver lo de la reunión del sábado en el taller con el resto del equipo,neutral,g00262,sintetico_claude
+Debemos coordinar lo del encuentro del sábado en el taller con los demás,neutral,g00262,sintetico_claude
+Estoy muy triste por la mudanza de mis padres a otra ciudad.,tristeza,g00263,sintetico_claude
+Tengo el ánimo por los suelos a causa de la partida de mis papás a vivir lejos,tristeza,g00263,sintetico_claude
+Me hace sonreír pensar en mi cumpleaños de este año,alegria,g00265,sintetico_claude
+Recordar la celebración de mis años me llena de alegría.,alegria,g00265,sintetico_claude
+Ando sonriendo sola desde lo del depósito que por fin me hicieron.,alegria,g00266,sintetico_claude
+Desde lo del pago que llegó justo a tiempo no se me quita la sonrisa.,alegria,g00266,sintetico_claude
+Hay que ver lo del borrador de mi trabajo grupal con el resto del equipo.,neutral,g00280,sintetico_claude
+Debemos coordinar lo de la primera versión de mi trabajo grupal con los demás.,neutral,g00280,sintetico_claude
+se me apagó el día por el cierre del negocio de mi familia.,tristeza,g00281,sintetico_claude
+mi día se volvió gris por el fin del negocio de mi familia.,tristeza,g00281,sintetico_claude
+Encontré los datos del calendario de exámenes en la página del curso,neutral,g00282,sintetico_claude
+Saqué la información del cronograma de evaluaciones de la web del curso.,neutral,g00282,sintetico_claude
+Me alegra un montón lo del lanzamiento de mi aplicación.,alegria,g00292,sintetico_claude
+Me llena de satisfacción lo de la publicación de mi app en la tienda.,alegria,g00292,sintetico_claude
+"Ya basta con los cambios de última hora en álgebra, estoy muy enojada.",enojo,g00293,sintetico_claude
+"Hasta aquí llegué con las reglas que cambiaron a último momento en álgebra, estoy furiosa.",enojo,g00293,sintetico_claude
+"gané el sorteo de la librería, qué suerte tan linda.",alegria,g00297,sintetico_claude
+Me gané un vale en el sorteo y estoy encantado.,alegria,g00297,sintetico_claude
+Estoy triste y desilusionado por el cumpleaños que pasé solo.,tristeza,g00302,sintetico_claude
+Me siento triste y desanimado con mi cumpleaños sin nadie cerca.,tristeza,g00302,sintetico_claude
+Estoy muy triste por la soledad de estos días,tristeza,g00307,sintetico_claude
+Tengo el ánimo por los suelos a causa de estos días tan solitarios,tristeza,g00307,sintetico_claude
+Aviso: lo del material de la semana se mantiene tal como estaba.,neutral,g00308,sintetico_claude
+Información sobre los archivos de esta semana: no hubo ningún cambio.,neutral,g00308,sintetico_claude
+Ando sonriendo solo desde lo de la fiesta que me prepararon mis amigos.,alegria,g00314,sintetico_claude
+Desde lo de la sorpresa de cumpleaños de mis amigos no se me quita la sonrisa,alegria,g00314,sintetico_claude
+"Estoy muy triste por la ausencia de mi hermano, que viajó a trabajar lejos.",tristeza,g00315,sintetico_claude
+"Tengo el ánimo por los suelos a causa de la lejanía de mi hermano, que se fue a trabajar fuera",tristeza,g00315,sintetico_claude
+Me hace sonreír pensar en la victoria de mi equipo en el campeonato.,alegria,g00317,sintetico_claude
+Recordar el triunfo de mi equipo en el torneo me llena de alegría.,alegria,g00317,sintetico_claude
+Me hace sonreír pensar en mi nuevo cuarto en el departamento.,alegria,g00323,sintetico_claude
+Recordar la mudanza a mi propio espacio me llena de alegría,alegria,g00323,sintetico_claude
+Estoy muy triste por la noticia de que no pasé a la siguiente etapa,tristeza,g00327,sintetico_claude
+Tengo el ánimo por los suelos a causa de mi eliminación del proceso de selección,tristeza,g00327,sintetico_claude
+La tristeza por la cancelación del concierto al que iba con mis amigos no me deja en paz,tristeza,g00330,sintetico_claude
+Hoy no puedo con la tristeza por el concierto al que ya no pudimos ir,tristeza,g00330,sintetico_claude
+encontré los datos de la copia de mi horario en la página del curso.,neutral,g00333,sintetico_claude
+Saqué la información de mi horario impreso de la web del curso,neutral,g00333,sintetico_claude
+Estoy muy agradecido y contento por la cena con mi pareja de anoche,alegria,g00339,sintetico_claude
+Me siento afortunado por la salida romántica de ayer con mi pareja,alegria,g00339,sintetico_claude
+Mañana hablamos de lo de la lista de compras del fin de semana,neutral,g00356,sintetico_claude
+Mañana conversamos sobre las compras que haré el fin de semana.,neutral,g00356,sintetico_claude
+Hay que ver lo de la copia de mi horario con el resto del equipo.,neutral,g00357,sintetico_claude
+Debemos coordinar lo de mi horario impreso con los demás.,neutral,g00357,sintetico_claude
+Anoto lo del aviso de la secretaría en mi agenda,neutral,g00360,sintetico_claude
+Registré lo del comunicado de la secretaría en mi calendario.,neutral,g00360,sintetico_claude
+"Ya basta con la mala atención en el restaurante, estoy muy enojado",enojo,g00361,sintetico_claude
+"Hasta aquí llegué con el pésimo servicio que nos dieron en el restaurante, estoy furioso.",enojo,g00361,sintetico_claude
+Encontré los datos del horario de la clase de física en la página del curso,neutral,g00370,sintetico_claude
+saqué la información de la hora de las sesiones de física de la web del curso.,neutral,g00370,sintetico_claude
+Mañana hablamos de lo del cambio de turno de esta semana,neutral,g00379,sintetico_claude
+mañana conversamos sobre el nuevo turno que me asignaron esta semana.,neutral,g00379,sintetico_claude
+Se me apagó el día por la derrota de mi equipo en la final,tristeza,g00380,sintetico_claude
+Mi día se volvió gris por la final que perdió mi equipo.,tristeza,g00380,sintetico_claude
+con los comentarios de mi abuelo sobre mi trabajo se me acabó la paciencia,enojo,g00384,sintetico_claude
+Con las críticas de mi abuelo a lo que hice ya colmaron mi paciencia.,enojo,g00384,sintetico_claude
+Estoy inquieta por la cantidad de tareas de esta semana.,ansiedad,g00402,sintetico_claude
+Me siento intranquila por la montaña de pendientes que tengo esta semana.,ansiedad,g00402,sintetico_claude
+"ya basta con las excusas de mi compañero que no trabajó en el grupo, estoy muy enojada.",enojo,g00404,sintetico_claude
+"Hasta aquí llegué con el compañero que se quedó de brazos cruzados en nuestro trabajo, estoy furiosa.",enojo,g00404,sintetico_claude
+Estoy muy agradecido y contento por el regalo que recibí ayer,alegria,g00412,sintetico_claude
+Me siento afortunado por la sorpresa que me llevé ayer.,alegria,g00412,sintetico_claude
+Estoy muy enojado con la nota que cambiaron sin avisarme.,enojo,g00416,sintetico_claude
+Ando de mal genio por el cambio de mi calificación sin explicaciones,enojo,g00416,sintetico_claude
+Hoy vi lo de la reunión del viernes en el gimnasio en el correo,neutral,g00420,sintetico_claude
+Leí lo del encuentro del viernes en el gimnasio en el correo de hoy.,neutral,g00420,sintetico_claude
+Mañana hablamos de lo del borrador de mi informe técnico,neutral,g00426,sintetico_claude
+Mañana conversamos sobre la primera versión de mi informe técnico,neutral,g00426,sintetico_claude
+Con mi primer día en el trabajo nuevo se me alegró el día.,alegria,g00427,sintetico_claude
+con mi estreno en la empresa nueva me cambió el ánimo para bien,alegria,g00427,sintetico_claude
+Me desvelé pensando en el trabajo grupal que aún no avanzamos.,ansiedad,g00429,sintetico_claude
+Casi no dormí por estar pensando en el avance que nos falta de nuestro trabajo grupal.,ansiedad,g00429,sintetico_claude
+Se me apagó el día por la muerte de mi perro,tristeza,g00430,sintetico_claude
+mi día se volvió gris por la pérdida de mi mascota.,tristeza,g00430,sintetico_claude
+"Ya basta con el robo de mi bicicleta, estoy muy enojado.",enojo,g00431,sintetico_claude
+"Hasta aquí llegué con la desaparición de mi bici de la puerta de mi casa, estoy furioso",enojo,g00431,sintetico_claude
+La tristeza por la mudanza de mis padres a otra ciudad no me deja en paz,tristeza,g00444,sintetico_claude
+Hoy no puedo con la tristeza por la partida de mis papás a vivir lejos.,tristeza,g00444,sintetico_claude
+Mañana hablamos de lo de la reserva del laboratorio,neutral,g00447,sintetico_claude
+mañana conversamos sobre el espacio reservado en el laboratorio,neutral,g00447,sintetico_claude
+Lo de la fecha de entrega de mi tesis lo conversamos en clase.,neutral,g00456,sintetico_claude
+En clase conversamos sobre el día fijado para entregar mi tesis.,neutral,g00456,sintetico_claude
+Con los comentarios de mi tía sobre mi familia se me acabó la paciencia.,enojo,g00463,sintetico_claude
+Con la mala manera en que mi tía habló de mi familia ya colmaron mi paciencia,enojo,g00463,sintetico_claude
+Nos toca ver lo de las instrucciones del laboratorio de contabilidad esta semana.,neutral,g00468,sintetico_claude
+Esta semana tenemos que revisar lo de la guía del laboratorio de contabilidad,neutral,g00468,sintetico_claude
+Me hace sonreír pensar en la clase de estadística de hoy.,alegria,g00472,sintetico_claude
+Recordar la sesión de estadística de esta mañana me llena de alegría.,alegria,g00472,sintetico_claude
+Estoy triste y desilusionado por el fracaso en mi entrevista de trabajo.,tristeza,g00475,sintetico_claude
+Me siento triste y desanimado con la entrevista que no me salió bien.,tristeza,g00475,sintetico_claude
+Estoy muy agradecido y contento por el cierre de mi trabajo grupal,alegria,g00483,sintetico_claude
+Me siento afortunado por la entrega final de mi trabajo grupal.,alegria,g00483,sintetico_claude
+Lo del enlace de la clase virtual lo conversamos en clase,neutral,g00485,sintetico_claude
+En clase conversamos sobre el link de la sesión en línea.,neutral,g00485,sintetico_claude
+Hoy lloré un rato por la separación de mis tíos.,tristeza,g00490,sintetico_claude
+Terminé llorando en mi cuarto por el divorcio de mis tíos.,tristeza,g00490,sintetico_claude
+"Estoy inquieta por mi informe, que todavía está incompleto",ansiedad,g00494,sintetico_claude
+Me siento intranquila por el informe que aún no termino.,ansiedad,g00494,sintetico_claude
+Estoy muy enojado con el aumento del alquiler sin aviso.,enojo,g00497,sintetico_claude
+Ando de mal genio por la subida del alquiler que nos soltaron de golpe.,enojo,g00497,sintetico_claude
+Compartí lo del punto de encuentro del grupo en el grupo.,neutral,g00512,sintetico_claude
+Subí lo del sitio donde se reúne el grupo al grupo de WhatsApp.,neutral,g00512,sintetico_claude
+Encontré los datos de la compra del pasaje en la página del curso.,neutral,g00515,sintetico_claude
+Saqué la información de la reserva del boleto de viaje de la web del curso.,neutral,g00515,sintetico_claude
+Me alegra un montón lo de la visita al zoológico con mi familia.,alegria,g00518,sintetico_claude
+Me llena de satisfacción lo del paseo familiar al zoológico.,alegria,g00518,sintetico_claude
+La tristeza por la derrota de mi equipo en la final no me deja en paz.,tristeza,g00526,sintetico_claude
+Hoy no puedo con la tristeza por la final que perdió mi equipo.,tristeza,g00526,sintetico_claude
+Nos toca ver lo de la reunión del domingo en la biblioteca esta semana,neutral,g00528,sintetico_claude
+Esta semana tenemos que revisar lo del encuentro del domingo en la biblioteca.,neutral,g00528,sintetico_claude
+"La tristeza por la ausencia de mi hermano, que viajó a trabajar lejos no me deja en paz.",tristeza,g00532,sintetico_claude
+"Hoy no puedo con la tristeza por la lejanía de mi hermano, que se fue a trabajar fuera.",tristeza,g00532,sintetico_claude
+Me desvelé pensando en la defensa de mi tesis,ansiedad,g00535,sintetico_claude
+Casi no dormí por estar pensando en mi sustentación final de tesis.,ansiedad,g00535,sintetico_claude
+Hoy lloré un rato por la nostalgia de mi tierra.,tristeza,g00541,sintetico_claude
+Terminé llorando en mi cuarto por la lejanía de mi ciudad natal.,tristeza,g00541,sintetico_claude
+Hay que ver lo del pago de la matrícula con el resto del equipo.,neutral,g00542,sintetico_claude
+Debemos coordinar lo de la cuota de matrícula del ciclo con los demás.,neutral,g00542,sintetico_claude
+Hay que ver lo del enlace de la clase virtual con el resto del equipo.,neutral,g00545,sintetico_claude
+Debemos coordinar lo del link de la sesión en línea con los demás,neutral,g00545,sintetico_claude
+Compartí lo del presupuesto de mi tesis en el grupo,neutral,g00548,sintetico_claude
+Subí lo de los costos de mi tesis al grupo de WhatsApp.,neutral,g00548,sintetico_claude
+Estoy muy enojado con el bus que nunca pasó,enojo,g00552,sintetico_claude
+Ando de mal genio por la demora del transporte esta mañana.,enojo,g00552,sintetico_claude
+La tristeza por la ausencia de mi jefe en mi cumpleaños no me deja en paz.,tristeza,g00557,sintetico_claude
+Hoy no puedo con la tristeza por la falta de mi jefe en mi celebración.,tristeza,g00557,sintetico_claude
+qué lindo se siente lo del ascenso que me dieron en el trabajo.,alegria,g00564,sintetico_claude
+Se siente buenísimo lo de mi nuevo puesto en la oficina.,alegria,g00564,sintetico_claude
+Nos toca ver lo del presupuesto de mi aplicación esta semana.,neutral,g00570,sintetico_claude
+Esta semana tenemos que revisar lo de los costos de mi aplicación,neutral,g00570,sintetico_claude
+estoy que exploto por la demora de la universidad con mi trámite.,enojo,g00572,sintetico_claude
+Estoy a punto de explotar por el trámite que llevan semanas sin resolver.,enojo,g00572,sintetico_claude
+Lo de la compra del pasaje está en el documento compartido.,neutral,g00573,sintetico_claude
+El detalle de la reserva del boleto de viaje figura en el archivo compartido,neutral,g00573,sintetico_claude
+Lo del material de la semana está en el documento compartido,neutral,g00576,sintetico_claude
+El detalle de los archivos de esta semana figura en el archivo compartido.,neutral,g00576,sintetico_claude
+Mañana hablamos de lo del avance semanal de mi proyecto final,neutral,g00586,sintetico_claude
+Mañana conversamos sobre el reporte semanal de mi proyecto final.,neutral,g00586,sintetico_claude
+Hoy lloré un rato por la venta de la casa de mi infancia.,tristeza,g00597,sintetico_claude
+terminé llorando en mi cuarto por el adiós a la casa donde crecí.,tristeza,g00597,sintetico_claude
+Qué lindo se siente lo de la conversación con mi mejor amigo.,alegria,g00600,sintetico_claude
+Se siente buenísimo lo del rato de charla con mi amigo de siempre.,alegria,g00600,sintetico_claude
+Estoy muy triste por la pelea con mi mejor amigo.,tristeza,g00605,sintetico_claude
+Tengo el ánimo por los suelos a causa del distanciamiento con mi mejor amigo,tristeza,g00605,sintetico_claude
+"Ya basta con la clase que cancelaron a último minuto, estoy muy enojada",enojo,g00608,sintetico_claude
+"Hasta aquí llegué con el aviso tardío de que no habría clase, estoy furiosa",enojo,g00608,sintetico_claude
+Se me apagó el día por el cumpleaños que pasé solo.,tristeza,g00613,sintetico_claude
+Mi día se volvió gris por mi cumpleaños sin nadie cerca.,tristeza,g00613,sintetico_claude
+Lo del recibo del agua está en el documento compartido.,neutral,g00614,sintetico_claude
+El detalle de la factura del agua de este mes figura en el archivo compartido,neutral,g00614,sintetico_claude
+Me alegra un montón lo del concierto de anoche.,alegria,g00619,sintetico_claude
+Me llena de satisfacción lo de la salida al concierto con mis amigos,alegria,g00619,sintetico_claude
+La tristeza por el curso de contabilidad que jalé no me deja en paz,tristeza,g00622,sintetico_claude
+Hoy no puedo con la tristeza por mi desaprobado en contabilidad.,tristeza,g00622,sintetico_claude
+Hoy lloré un rato por la despedida de mis compañeros de trabajo.,tristeza,g00627,sintetico_claude
+Terminé llorando en mi cuarto por el último día con mi equipo de trabajo.,tristeza,g00627,sintetico_claude
+Me alegra un montón lo de la sorpresa que me dio mi equipo en el auditorio.,alegria,g00634,sintetico_claude
+Me llena de satisfacción lo del detalle que tuvieron mis compañeros en el auditorio.,alegria,g00634,sintetico_claude
+Hay que ver lo de las instrucciones del laboratorio de álgebra con el resto del equipo.,neutral,g00642,sintetico_claude
+Debemos coordinar lo de la guía del laboratorio de álgebra con los demás,neutral,g00642,sintetico_claude
+Estoy muy agradecido y contento por mi nuevo cuarto en el departamento.,alegria,g00656,sintetico_claude
+Me siento afortunado por la mudanza a mi propio espacio.,alegria,g00656,sintetico_claude
+Estoy muy enojado con los gritos de mi jefe en la reunión,enojo,g00658,sintetico_claude
+ando de mal genio por la forma en que me gritó mi jefe frente a todos,enojo,g00658,sintetico_claude
+Ando sonriendo sola desde lo de la visita al zoológico con mi familia.,alegria,g00660,sintetico_claude
+Desde lo del paseo familiar al zoológico no se me quita la sonrisa,alegria,g00660,sintetico_claude
+La tristeza por la partida de mi mejor amigo al extranjero no me deja en paz,tristeza,g00662,sintetico_claude
+Hoy no puedo con la tristeza por la mudanza de mi amigo a otro país,tristeza,g00662,sintetico_claude
+Mañana hablamos de lo de las instrucciones del laboratorio de cálculo,neutral,g00668,sintetico_claude
+mañana conversamos sobre la guía del laboratorio de cálculo.,neutral,g00668,sintetico_claude
+estoy muy enojado con la clase que cancelaron a último minuto.,enojo,g00674,sintetico_claude
+Ando de mal genio por el aviso tardío de que no habría clase,enojo,g00674,sintetico_claude
+Nos toca ver lo de la actividad del grupo en la biblioteca esta semana,neutral,g00686,sintetico_claude
+Esta semana tenemos que revisar lo del trabajo del grupo en la biblioteca.,neutral,g00686,sintetico_claude
+La tristeza por la separación de mis tíos no me deja en paz.,tristeza,g00689,sintetico_claude
+Hoy no puedo con la tristeza por el divorcio de mis tíos.,tristeza,g00689,sintetico_claude
+Hoy lloré un rato por la partida de mi compañero de cuarto.,tristeza,g00690,sintetico_claude
+Terminé llorando en mi cuarto por el día en que se fue mi compañero de cuarto.,tristeza,g00690,sintetico_claude
+Me alegra un montón lo del cierre de mi prototipo,alegria,g00693,sintetico_claude
+Me llena de satisfacción lo de la entrega final de mi prototipo,alegria,g00693,sintetico_claude
+Gracias al cierre de mi trabajo grupal tengo ganas de celebrar,alegria,g00699,sintetico_claude
+Después de la entrega final de mi trabajo grupal me dieron ganas de festejar con todos.,alegria,g00699,sintetico_claude
+Hoy vi lo de la reserva del gimnasio en el correo,neutral,g00702,sintetico_claude
+Leí lo del espacio reservado en el gimnasio en el correo de hoy.,neutral,g00702,sintetico_claude
+Lo del pago de la matrícula está en el documento compartido,neutral,g00703,sintetico_claude
+El detalle de la cuota de matrícula del ciclo figura en el archivo compartido.,neutral,g00703,sintetico_claude
+Encontré los datos de la agenda del curso de inglés en la página del curso.,neutral,g00704,sintetico_claude
+Saqué la información del sílabo de inglés de la web del curso.,neutral,g00704,sintetico_claude
+Me alegra un montón lo de la comida que preparé hoy,alegria,g00715,sintetico_claude
+Me llena de satisfacción lo del plato que cociné esta noche.,alegria,g00715,sintetico_claude
+Hoy lloré un rato por la lejanía de mi familia,tristeza,g00718,sintetico_claude
+Terminé llorando en mi cuarto por la distancia que me separa de mi familia.,tristeza,g00718,sintetico_claude
+Estoy que exploto por el ruido de mis vecinos a medianoche,enojo,g00719,sintetico_claude
+Estoy a punto de explotar por la bulla que hacen mis vecinos de madrugada,enojo,g00719,sintetico_claude
+Se me apagó el día por la despedida de mis compañeros de trabajo.,tristeza,g00720,sintetico_claude
+Mi día se volvió gris por el último día con mi equipo de trabajo,tristeza,g00720,sintetico_claude
+Hoy pasé por el parque donde jugaba con mi hermano y me puse melancólica.,tristeza,g00722,sintetico_claude
+Al ver el parque donde jugaba con mi hermano me invadió la nostalgia y la tristeza,tristeza,g00722,sintetico_claude
+Lo de las instrucciones del laboratorio de química lo conversamos en clase,neutral,g00726,sintetico_claude
+En clase conversamos sobre la guía del laboratorio de química.,neutral,g00726,sintetico_claude
+Lo de la lista de compras del fin de semana lo conversamos en clase,neutral,g00729,sintetico_claude
+En clase conversamos sobre las compras que haré el fin de semana,neutral,g00729,sintetico_claude
+Estoy triste y desilusionado por el silencio de mi compañero de equipo últimamente.,tristeza,g00732,sintetico_claude
+Me siento triste y desanimado con la distancia que puso mi compañero de equipo conmigo,tristeza,g00732,sintetico_claude
+Lo del borrador de mi proyecto final lo conversamos en clase.,neutral,g00763,sintetico_claude
+En clase conversamos sobre la primera versión de mi proyecto final.,neutral,g00763,sintetico_claude
+Estoy triste y desilusionado por la disolución de mi banda de amigos.,tristeza,g00764,sintetico_claude
+Me siento triste y desanimado con el fin de nuestra banda,tristeza,g00764,sintetico_claude
+Me desvelé pensando en el trámite de mi beca.,ansiedad,g00772,sintetico_claude
+Casi no dormí por estar pensando en los papeles pendientes de mi beca.,ansiedad,g00772,sintetico_claude
+Con la injusticia de mi horario de trabajo se me acabó la paciencia,enojo,g00775,sintetico_claude
+Con el horario que me impusieron sin consultarme ya colmaron mi paciencia,enojo,g00775,sintetico_claude
+Estoy triste y desilusionado por la partida de mi mejor amigo al extranjero,tristeza,g00778,sintetico_claude
+Me siento triste y desanimado con la mudanza de mi amigo a otro país.,tristeza,g00778,sintetico_claude
+Hoy lloré un rato por el silencio de mi jefe últimamente.,tristeza,g00779,sintetico_claude
+Terminé llorando en mi cuarto por la distancia que puso mi jefe conmigo,tristeza,g00779,sintetico_claude
+Me hace sonreír pensar en el lanzamiento de mi aplicación,alegria,g00794,sintetico_claude
+Recordar la publicación de mi app en la tienda me llena de alegría.,alegria,g00794,sintetico_claude
+Hay que ver lo del material de la semana con el resto del equipo.,neutral,g00795,sintetico_claude
+debemos coordinar lo de los archivos de esta semana con los demás,neutral,g00795,sintetico_claude
+Me desvelé pensando en la demostración de mi prototipo.,ansiedad,g00796,sintetico_claude
+Casi no dormí por estar pensando en la prueba en vivo de mi prototipo.,ansiedad,g00796,sintetico_claude
+Se me apagó el día por la mudanza de mis padres a otra ciudad,tristeza,g00800,sintetico_claude
+Mi día se volvió gris por la partida de mis papás a vivir lejos.,tristeza,g00800,sintetico_claude
+Estoy inquieta por mi presentación sobre mi prototipo ante el jurado,ansiedad,g00801,sintetico_claude
+Me siento intranquila por la sustentación de mi prototipo frente al jurado,ansiedad,g00801,sintetico_claude
+Hoy vi lo del correo del profesor sobre economía en el correo.,neutral,g00808,sintetico_claude
+leí lo del mensaje del docente de economía en el correo de hoy,neutral,g00808,sintetico_claude
+Me hace sonreír pensar en el depósito que por fin me hicieron.,alegria,g00816,sintetico_claude
+Recordar el pago que llegó justo a tiempo me llena de alegría,alegria,g00816,sintetico_claude
+Estoy triste y desilusionada por la cancelación del concierto al que iba con mis amigos.,tristeza,g00817,sintetico_claude
+Me siento triste y desanimada con el concierto al que ya no pudimos ir.,tristeza,g00817,sintetico_claude
+Lo del pedido de útiles está en el documento compartido.,neutral,g00820,sintetico_claude
+El detalle de la compra de los útiles figura en el archivo compartido.,neutral,g00820,sintetico_claude
+Mañana hablamos de lo del mapa del campus,neutral,g00827,sintetico_claude
+mañana conversamos sobre el plano del campus,neutral,g00827,sintetico_claude
+La tristeza por la lejanía de mi familia no me deja en paz.,tristeza,g00832,sintetico_claude
+Hoy no puedo con la tristeza por la distancia que me separa de mi familia.,tristeza,g00832,sintetico_claude
+Me alegra un montón lo de la fiesta que me prepararon mis amigos.,alegria,g00833,sintetico_claude
+Me llena de satisfacción lo de la sorpresa de cumpleaños de mis amigos.,alegria,g00833,sintetico_claude
+extraño la casa de mis abuelos y a toda la familia reunida.,tristeza,g00835,sintetico_claude
+Me hace falta ese tiempo en que toda mi familia estaba junta.,tristeza,g00835,sintetico_claude
+Con la partida de mi compañero de cuarto se me fueron las ganas de reír.,tristeza,g00842,sintetico_claude
+Con el día en que se fue mi compañero de cuarto me quedé sin ganas de sonreír,tristeza,g00842,sintetico_claude
+gracias al lanzamiento de mi aplicación tengo ganas de celebrar,alegria,g00843,sintetico_claude
+Después de la publicación de mi app en la tienda me dieron ganas de festejar con todos.,alegria,g00843,sintetico_claude
+Estoy que exploto por el desorden que dejó mi compañero de cuarto.,enojo,g00844,sintetico_claude
+Estoy a punto de explotar por la suciedad que dejaron en la cocina.,enojo,g00844,sintetico_claude
+Estoy triste y desilusionada por el rechazo de la universidad que quería,tristeza,g00852,sintetico_claude
+Me siento triste y desanimada con la respuesta negativa de la universidad que elegí.,tristeza,g00852,sintetico_claude
+La tristeza por la venta de la casa de mi infancia no me deja en paz.,tristeza,g00853,sintetico_claude
+Hoy no puedo con la tristeza por el adiós a la casa donde crecí.,tristeza,g00853,sintetico_claude
+Con la mudanza de mis padres a otra ciudad se me fueron las ganas de reír,tristeza,g00854,sintetico_claude
+Con la partida de mis papás a vivir lejos me quedé sin ganas de sonreír.,tristeza,g00854,sintetico_claude
+Lo de la compra del pasaje lo conversamos en clase,neutral,g00855,sintetico_claude
+En clase conversamos sobre la reserva del boleto de viaje.,neutral,g00855,sintetico_claude
+Hay que ver lo del cambio de aula de sistemas operativos con el resto del equipo.,neutral,g00858,sintetico_claude
+Debemos coordinar lo del aula nueva de sistemas operativos con los demás,neutral,g00858,sintetico_claude
+ando sonriendo solo desde lo de mi cumpleaños de este año.,alegria,g00865,sintetico_claude
+Desde lo de la celebración de mis años no se me quita la sonrisa,alegria,g00865,sintetico_claude
+Con el tráfico de esta mañana se me acabó la paciencia.,enojo,g00868,sintetico_claude
+Con el embotellamiento que me hizo llegar tarde ya colmaron mi paciencia,enojo,g00868,sintetico_claude
+Hoy lloré un rato por la despedida en el aeropuerto,tristeza,g00870,sintetico_claude
+Terminé llorando en mi cuarto por el adiós que nos dimos en el aeropuerto.,tristeza,g00870,sintetico_claude
+Estoy muy triste por el mensaje frío que me mandó mi mejor amigo.,tristeza,g00871,sintetico_claude
+Tengo el ánimo por los suelos a causa de la respuesta seca de mi mejor amigo,tristeza,g00871,sintetico_claude
+Estoy triste y desilusionada por la ausencia de mi mejor amigo en mi cumpleaños,tristeza,g00872,sintetico_claude
+Me siento triste y desanimada con la falta de mi mejor amigo en mi celebración,tristeza,g00872,sintetico_claude
+Nos toca ver lo del cambio de contraseña del correo institucional esta semana.,neutral,g00876,sintetico_claude
+Esta semana tenemos que revisar lo de la actualización de la clave del correo de la universidad,neutral,g00876,sintetico_claude
+Estoy muy enojado con la demora de la universidad con mi trámite,enojo,g00879,sintetico_claude
+Ando de mal genio por el trámite que llevan semanas sin resolver.,enojo,g00879,sintetico_claude
+Qué lindo se siente lo de la comida que preparé hoy,alegria,g00883,sintetico_claude
+Se siente buenísimo lo del plato que cociné esta noche,alegria,g00883,sintetico_claude
+Qué lindo se siente lo de la ceremonia de mi graduación.,alegria,g00893,sintetico_claude
+Se siente buenísimo lo del día en que me gradué.,alegria,g00893,sintetico_claude
+Estoy que exploto por la injusticia de mi horario de trabajo,enojo,g00896,sintetico_claude
+Estoy a punto de explotar por el horario que me impusieron sin consultarme,enojo,g00896,sintetico_claude
+Nos toca ver lo de la copia de mi horario esta semana.,neutral,g00905,sintetico_claude
+Esta semana tenemos que revisar lo de mi horario impreso,neutral,g00905,sintetico_claude
+Hay que ver lo de la agenda de la próxima semana con el resto del equipo.,neutral,g00908,sintetico_claude
+debemos coordinar lo del plan de actividades de la semana que viene con los demás.,neutral,g00908,sintetico_claude
+"Si no entrego a tiempo, no sé qué voy a hacer",ansiedad,g00922,sintetico_claude
+Me angustia la idea de no cumplir con la fecha de entrega.,ansiedad,g00922,sintetico_claude
+Lo del aviso de la secretaría está en el documento compartido.,neutral,g00927,sintetico_claude
+El detalle del comunicado de la secretaría figura en el archivo compartido.,neutral,g00927,sintetico_claude
+Mañana hablamos de lo del pedido de útiles,neutral,g00935,sintetico_claude
+Mañana conversamos sobre la compra de los útiles,neutral,g00935,sintetico_claude
+Encontré los datos del recibo del agua en la página del curso.,neutral,g00947,sintetico_claude
+Saqué la información de la factura del agua de este mes de la web del curso,neutral,g00947,sintetico_claude
+Hoy vi lo del cambio de aula de economía en el correo.,neutral,g00949,sintetico_claude
+Leí lo del aula nueva de economía en el correo de hoy.,neutral,g00949,sintetico_claude
+"Hoy lloré un rato por el recuerdo de mi abuela, que ya no está.",tristeza,g00951,sintetico_claude
+"Terminé llorando en mi cuarto por mi abuela, que ya no está con nosotros",tristeza,g00951,sintetico_claude
+Me alegra un montón lo de la nota que saqué en inglés,alegria,g00952,sintetico_claude
+Me llena de satisfacción lo de mi resultado en el examen de inglés.,alegria,g00952,sintetico_claude
+"Ya basta con la prepotencia del encargado, estoy muy enojada.",enojo,g00972,sintetico_claude
+"Hasta aquí llegué con la soberbia del encargado en el laboratorio, estoy furiosa",enojo,g00972,sintetico_claude
+Me hace sonreír pensar en el reencuentro con mis primos,alegria,g00973,sintetico_claude
+Recordar volver a ver a mis primos después de tanto tiempo me llena de alegría,alegria,g00973,sintetico_claude
+Ando sonriendo sola desde lo de la tarde de juegos con mis sobrinos.,alegria,g00974,sintetico_claude
+Desde lo del rato que pasé jugando con mis sobrinos no se me quita la sonrisa.,alegria,g00974,sintetico_claude
+"Estoy inquieta por el viaje de mi hermana, que va sola.",ansiedad,g00977,sintetico_claude
+Me siento intranquila por el viaje de mi hermana al extranjero.,ansiedad,g00977,sintetico_claude
+Ando sonriendo solo desde lo de la conversación con mi mejor amigo.,alegria,g00989,sintetico_claude
+Desde lo del rato de charla con mi amigo de siempre no se me quita la sonrisa,alegria,g00989,sintetico_claude
+Lo de la actividad del grupo en el taller lo conversamos en clase,neutral,g00991,sintetico_claude
+En clase conversamos sobre el trabajo del grupo en el taller.,neutral,g00991,sintetico_claude
+Hoy lloré un rato por la muerte de mi perro,tristeza,g00992,sintetico_claude
+Terminé llorando en mi cuarto por la pérdida de mi mascota.,tristeza,g00992,sintetico_claude
+Estoy muy triste por la casa tan silenciosa desde que se fue mi hermana.,tristeza,g00995,sintetico_claude
+Tengo el ánimo por los suelos a causa del silencio de mi casa sin mi hermana.,tristeza,g00995,sintetico_claude
+Nos toca ver lo de la llamada con mi compañero de equipo esta semana.,neutral,g01002,sintetico_claude
+Esta semana tenemos que revisar lo de la charla telefónica con mi compañero de equipo.,neutral,g01002,sintetico_claude
+Estoy muy agradecido y contento por la exposición que di en álgebra.,alegria,g01009,sintetico_claude
+Me siento afortunado por mi presentación de hoy en la clase de álgebra.,alegria,g01009,sintetico_claude
+Lo de la salida de campo del viernes está en el documento compartido,neutral,g01010,sintetico_claude
+El detalle de la visita guiada del viernes figura en el archivo compartido,neutral,g01010,sintetico_claude
+Ando sonriendo solo desde lo del partido que jugamos el fin de semana,alegria,g01014,sintetico_claude
+Desde lo de la pichanga del sábado con los amigos no se me quita la sonrisa,alegria,g01014,sintetico_claude
+Me desvelé pensando en la renovación de mi contrato,ansiedad,g01016,sintetico_claude
+Casi no dormí por estar pensando en la decisión sobre mi contrato en el trabajo,ansiedad,g01016,sintetico_claude
+Estoy muy enojado con el engaño con el precio del producto,enojo,g01029,sintetico_claude
+Ando de mal genio por el producto que no era como lo anunciaron,enojo,g01029,sintetico_claude
+Gracias a la sorpresa que me dio mi equipo en la casa de mis tíos tengo ganas de celebrar,alegria,g01031,sintetico_claude
+Después del detalle que tuvieron mis compañeros en la casa de mis tíos me dieron ganas de festejar con todos.,alegria,g01031,sintetico_claude
+No me aceptaron en la beca y me siento muy desanimado,tristeza,g01032,sintetico_claude
+Me dijeron que no a la beca y se me fueron las ganas de todo.,tristeza,g01032,sintetico_claude
+Nos toca ver lo de la salida de campo del viernes esta semana.,neutral,g01033,sintetico_claude
+Esta semana tenemos que revisar lo de la visita guiada del viernes.,neutral,g01033,sintetico_claude
+Estoy muy enojado con la copia de mi trabajo por un compañero.,enojo,g01039,sintetico_claude
+Ando de mal genio por el compañero que se llevó el crédito de mi trabajo.,enojo,g01039,sintetico_claude
+Lo del punto de encuentro del grupo lo conversamos en clase.,neutral,g01040,sintetico_claude
+En clase conversamos sobre el sitio donde se reúne el grupo.,neutral,g01040,sintetico_claude
+Estoy muy agradecido y contento por el sorteo que gané.,alegria,g01045,sintetico_claude
+Me siento afortunado por mi triunfo en el sorteo.,alegria,g01045,sintetico_claude
+Hay que ver lo de la lista de compras del fin de semana con el resto del equipo.,neutral,g01052,sintetico_claude
+Debemos coordinar lo de las compras que haré el fin de semana con los demás.,neutral,g01052,sintetico_claude
+Estoy triste y desilusionado por la casa tan silenciosa desde que se fue mi hermana,tristeza,g01060,sintetico_claude
+Me siento triste y desanimado con el silencio de mi casa sin mi hermana.,tristeza,g01060,sintetico_claude
+Hay que ver lo de la agenda del curso de base de datos con el resto del equipo.,neutral,g01065,sintetico_claude
+Debemos coordinar lo del sílabo de base de datos con los demás,neutral,g01065,sintetico_claude
+Estoy que exploto por el bus que nunca pasó,enojo,g01072,sintetico_claude
+Estoy a punto de explotar por la demora del transporte esta mañana.,enojo,g01072,sintetico_claude
+Me desvelé pensando en la nota final de estadística.,ansiedad,g01078,sintetico_claude
+casi no dormí por estar pensando en mi promedio final de estadística.,ansiedad,g01078,sintetico_claude
+Hoy vi lo del cambio de turno de esta semana en el correo,neutral,g01084,sintetico_claude
+Leí lo del nuevo turno que me asignaron esta semana en el correo de hoy,neutral,g01084,sintetico_claude
+Estoy triste y desilusionada por la nostalgia de mi tierra.,tristeza,g01085,sintetico_claude
+Me siento triste y desanimada con la lejanía de mi ciudad natal.,tristeza,g01085,sintetico_claude
+"Ya basta con el bus que nunca pasó, estoy muy enojado.",enojo,g01088,sintetico_claude
+"Hasta aquí llegué con la demora del transporte esta mañana, estoy furioso",enojo,g01088,sintetico_claude
+Estoy muy agradecido y contento por el lanzamiento de mi aplicación.,alegria,g01097,sintetico_claude
+Me siento afortunado por la publicación de mi app en la tienda,alegria,g01097,sintetico_claude
+Me alegra un montón lo del viaje que planeamos entre amigos.,alegria,g01099,sintetico_claude
+Me llena de satisfacción lo de las vacaciones que vamos a tomar juntos.,alegria,g01099,sintetico_claude
+Mañana hablamos de lo de la actualización del sistema de la universidad,neutral,g01116,sintetico_claude
+Mañana conversamos sobre la nueva versión del sistema académico.,neutral,g01116,sintetico_claude
+me hace sonreír pensar en el regalo que recibí ayer.,alegria,g01127,sintetico_claude
+Recordar la sorpresa que me llevé ayer me llena de alegría,alegria,g01127,sintetico_claude
+Estoy triste y desilusionada por la separación de mis tíos,tristeza,g01133,sintetico_claude
+Me siento triste y desanimada con el divorcio de mis tíos.,tristeza,g01133,sintetico_claude
+Encontré los datos del presupuesto de mi proyecto final en la página del curso.,neutral,g01134,sintetico_claude
+Saqué la información de los costos de mi proyecto final de la web del curso.,neutral,g01134,sintetico_claude
+"Ya basta con la nota que cambiaron sin avisarme, estoy muy enojada.",enojo,g01141,sintetico_claude
+"Hasta aquí llegué con el cambio de mi calificación sin explicaciones, estoy furiosa",enojo,g01141,sintetico_claude
+Estoy inquieta por mi primera semana en un trabajo nuevo.,ansiedad,g01145,sintetico_claude
+Me siento intranquila por mis primeros días en la empresa nueva,ansiedad,g01145,sintetico_claude
+Lo del presupuesto de mi exposición lo conversamos en clase.,neutral,g01148,sintetico_claude
+En clase conversamos sobre los costos de mi exposición.,neutral,g01148,sintetico_claude
+Se me apagó el día por las expectativas que no se cumplieron con mi informe técnico,tristeza,g01152,sintetico_claude
+Mi día se volvió gris por el fracaso de mi informe técnico.,tristeza,g01152,sintetico_claude
+Lo del cambio de aula de redes lo conversamos en clase.,neutral,g01155,sintetico_claude
+En clase conversamos sobre el aula nueva de redes.,neutral,g01155,sintetico_claude
+Ando sonriendo sola desde lo de la llamada de mi mejor amigo,alegria,g01156,sintetico_claude
+Desde lo del mensaje que me mandó mi mejor amigo no se me quita la sonrisa.,alegria,g01156,sintetico_claude
+Me hace sonreír pensar en el partido que jugamos el fin de semana.,alegria,g01169,sintetico_claude
+Recordar la pichanga del sábado con los amigos me llena de alegría.,alegria,g01169,sintetico_claude
+Con las excusas de mi compañero que no trabajó en el grupo se me acabó la paciencia,enojo,g01185,sintetico_claude
+Con el compañero que se quedó de brazos cruzados en nuestro trabajo ya colmaron mi paciencia.,enojo,g01185,sintetico_claude
+Me hace sonreír pensar en la propuesta de trabajo que me hicieron,alegria,g01189,sintetico_claude
+Recordar la oferta laboral que me llegó me llena de alegría,alegria,g01189,sintetico_claude
+Me desvelé pensando en el examen de manejo,ansiedad,g01192,sintetico_claude
+Casi no dormí por estar pensando en la prueba de conducir,ansiedad,g01192,sintetico_claude
+Ando sonriendo sola desde lo de mi aceptación en las prácticas de la empresa.,alegria,g01194,sintetico_claude
+Desde lo de la respuesta positiva que me dieron para las prácticas no se me quita la sonrisa,alegria,g01194,sintetico_claude
+Me alegra un montón lo del regalo que recibí ayer,alegria,g01201,sintetico_claude
+Me llena de satisfacción lo de la sorpresa que me llevé ayer.,alegria,g01201,sintetico_claude
+Aviso: lo del archivo con las notas del taller se mantiene tal como estaba.,neutral,g01204,sintetico_claude
+información sobre el documento con los apuntes del taller: no hubo ningún cambio,neutral,g01204,sintetico_claude
+Estoy triste y desilusionada por el trabajo que perdí.,tristeza,g01207,sintetico_claude
+Me siento triste y desanimada con mi despido de la empresa.,tristeza,g01207,sintetico_claude
+Nos toca ver lo del correo del profesor sobre economía esta semana,neutral,g01213,sintetico_claude
+Esta semana tenemos que revisar lo del mensaje del docente de economía.,neutral,g01213,sintetico_claude
+Cada vez que suena el celular pienso que es una mala noticia.,ansiedad,g01214,sintetico_claude
+Cuando suena mi teléfono me sobresalto pensando que pasó algo malo.,ansiedad,g01214,sintetico_claude
+Compartí lo de la agenda de la próxima semana en el grupo.,neutral,g01216,sintetico_claude
+Subí lo del plan de actividades de la semana que viene al grupo de WhatsApp,neutral,g01216,sintetico_claude
+Hoy vi lo del recibo del agua en el correo,neutral,g01221,sintetico_claude
+Leí lo de la factura del agua de este mes en el correo de hoy.,neutral,g01221,sintetico_claude
+Hoy vi lo del archivo adjunto del correo en el correo.,neutral,g01225,sintetico_claude
+Leí lo del documento que viene adjunto en el correo en el correo de hoy,neutral,g01225,sintetico_claude
+Estoy muy enojada con los correos basura que llegan todos los días.,enojo,g01244,sintetico_claude
+Ando de mal genio por la propaganda que no para de llegar a mi correo.,enojo,g01244,sintetico_claude
+Hay que ver lo de la lista de materiales para química con el resto del equipo.,neutral,g01249,sintetico_claude
+Debemos coordinar lo de los materiales que piden en química con los demás.,neutral,g01249,sintetico_claude
+Estoy que exploto por la mentira de mi mamá.,enojo,g01252,sintetico_claude
+Estoy a punto de explotar por el engaño de mi mamá,enojo,g01252,sintetico_claude
+ando sonriendo solo desde lo del sorteo que gané.,alegria,g01253,sintetico_claude
+Desde lo de mi triunfo en el sorteo no se me quita la sonrisa,alegria,g01253,sintetico_claude
+Mañana hablamos de lo de la llamada con mi pareja.,neutral,g01260,sintetico_claude
+Mañana conversamos sobre la charla telefónica con mi pareja,neutral,g01260,sintetico_claude
+Qué lindo se siente lo de la visita al zoológico con mi familia.,alegria,g01263,sintetico_claude
+Se siente buenísimo lo del paseo familiar al zoológico.,alegria,g01263,sintetico_claude
+Hoy lloré un rato por las expectativas que no se cumplieron con mi tesis.,tristeza,g01276,sintetico_claude
+Terminé llorando en mi cuarto por el fracaso de mi tesis.,tristeza,g01276,sintetico_claude
+nos toca ver lo del aviso de la secretaría esta semana,neutral,g01282,sintetico_claude
+Esta semana tenemos que revisar lo del comunicado de la secretaría,neutral,g01282,sintetico_claude
+Me desvelé pensando en los resultados que saldrán esta semana,ansiedad,g01286,sintetico_claude
+Casi no dormí por estar pensando en las notas que van a publicar pronto,ansiedad,g01286,sintetico_claude
+estoy muy enojado con la forma en que me trató mi primo en la reunión,enojo,g01290,sintetico_claude
+Ando de mal genio por el trato que tuvo mi primo conmigo delante de todos.,enojo,g01290,sintetico_claude
+Estoy muy agradecido y contento por la clase de redes de hoy.,alegria,g01297,sintetico_claude
+Me siento afortunado por la sesión de redes de esta mañana.,alegria,g01297,sintetico_claude
+Encontré los datos de la lista de materiales para estadística en la página del curso,neutral,g01300,sintetico_claude
+saqué la información de los materiales que piden en estadística de la web del curso.,neutral,g01300,sintetico_claude
+Estoy muy enojada con la cancelación de mi pedido sin aviso.,enojo,g01324,sintetico_claude
+ando de mal genio por el pedido que cancelaron sin avisarme,enojo,g01324,sintetico_claude
+"Me alegra un montón lo del cambio de horario en mi trabajo, que me favorece.",alegria,g01337,sintetico_claude
+"me llena de satisfacción lo de mi nuevo horario de trabajo, que me queda perfecto",alegria,g01337,sintetico_claude
+Mi primo vive a tres cuadras de mi casa.,neutral,g01341,sintetico_claude
+Mi primo vive muy cerca: a tres cuadras,neutral,g01341,sintetico_claude
+Estoy muy triste por el trabajo que perdí.,tristeza,g01347,sintetico_claude
+Tengo el ánimo por los suelos a causa de mi despido de la empresa,tristeza,g01347,sintetico_claude
+Me hace sonreír pensar en la cena con mi pareja de anoche.,alegria,g01356,sintetico_claude
+recordar la salida romántica de ayer con mi pareja me llena de alegría.,alegria,g01356,sintetico_claude
+Hay que ver lo de la reserva de la biblioteca con el resto del equipo.,neutral,g01373,sintetico_claude
+Debemos coordinar lo del espacio reservado en la biblioteca con los demás,neutral,g01373,sintetico_claude
+El profesor explicó la diferencia entre regresión y clasificación,neutral,g01382,sintetico_claude
+En clase se explicó en qué se distinguen regresión y clasificación.,neutral,g01382,sintetico_claude
+Compartí lo del horario de la clase de economía en el grupo.,neutral,g01383,sintetico_claude
+Subí lo de la hora de las sesiones de economía al grupo de WhatsApp,neutral,g01383,sintetico_claude
+Qué lindo se siente lo de la fiesta de promoción,alegria,g01384,sintetico_claude
+Se siente buenísimo lo del festejo de fin de año con los compañeros.,alegria,g01384,sintetico_claude
+Mi proyecto quedó mejor de lo que pensaba y me siento orgullosa,alegria,g01385,sintetico_claude
+El proyecto salió mucho mejor de lo esperado y estoy orgullosa de mi equipo.,alegria,g01385,sintetico_claude
+Lo del turno de atención en secretaría está en el documento compartido.,neutral,g01387,sintetico_claude
+El detalle del horario de atención de secretaría figura en el archivo compartido,neutral,g01387,sintetico_claude
+Se me apagó el día por la venta de la casa de mi infancia,tristeza,g01388,sintetico_claude
+mi día se volvió gris por el adiós a la casa donde crecí.,tristeza,g01388,sintetico_claude
+Encontré los datos de la ruta del bus a la universidad en la página del curso.,neutral,g01399,sintetico_claude
+Saqué la información del recorrido del bus hacia la universidad de la web del curso.,neutral,g01399,sintetico_claude
+Me alegra un montón lo del reencuentro con mis primos,alegria,g01407,sintetico_claude
+Me llena de satisfacción lo de volver a ver a mis primos después de tanto tiempo.,alegria,g01407,sintetico_claude
+Mañana hablamos de lo del cambio de aula de química.,neutral,g01414,sintetico_claude
+Mañana conversamos sobre el aula nueva de química.,neutral,g01414,sintetico_claude
+"Ya basta con el chisme que inventaron sobre mí, estoy muy enojada.",enojo,g01417,sintetico_claude
+"Hasta aquí llegué con el rumor falso que corrió sobre mí, estoy furiosa.",enojo,g01417,sintetico_claude
+Mañana hablamos de lo del recibo del agua.,neutral,g01426,sintetico_claude
+Mañana conversamos sobre la factura del agua de este mes,neutral,g01426,sintetico_claude
+me alegra un montón lo de la ceremonia de mi graduación,alegria,g01429,sintetico_claude
+me llena de satisfacción lo del día en que me gradué,alegria,g01429,sintetico_claude
+Estoy que exploto por el desprecio a mi opinión en la reunión.,enojo,g01430,sintetico_claude
+Estoy a punto de explotar por cómo ignoraron mi opinión en el equipo,enojo,g01430,sintetico_claude
+Mañana hablamos de lo del material de la semana,neutral,g01431,sintetico_claude
+mañana conversamos sobre los archivos de esta semana,neutral,g01431,sintetico_claude
+Estoy muy enojado con la impuntualidad de mi grupo en el taller.,enojo,g01432,sintetico_claude
+Ando de mal genio por los retrasos de mis compañeros en el taller.,enojo,g01432,sintetico_claude
+Con la mentira de mi profesora se me acabó la paciencia.,enojo,g01433,sintetico_claude
+Con el engaño de mi profesora ya colmaron mi paciencia.,enojo,g01433,sintetico_claude
+Lo del cambio de contraseña del correo institucional está en el documento compartido,neutral,g01434,sintetico_claude
+El detalle de la actualización de la clave del correo de la universidad figura en el archivo compartido,neutral,g01434,sintetico_claude
+Nos toca ver lo de la hora de salida del bus esta semana,neutral,g01439,sintetico_claude
+Esta semana tenemos que revisar lo del horario de partida del bus.,neutral,g01439,sintetico_claude
+Estoy inquieta por la espera de los resultados,ansiedad,g01441,sintetico_claude
+Me siento intranquila por la hora en que llegarán los resultados,ansiedad,g01441,sintetico_claude
+Me alegra un montón lo de la noticia de mi aprobación en el curso.,alegria,g01446,sintetico_claude
+Me llena de satisfacción lo del aviso de que pasé el curso,alegria,g01446,sintetico_claude
+Nos toca ver lo de la reserva de la biblioteca esta semana,neutral,g01453,sintetico_claude
+esta semana tenemos que revisar lo del espacio reservado en la biblioteca,neutral,g01453,sintetico_claude
+Compartí lo del feriado del mes en el grupo,neutral,g01454,sintetico_claude
+Subí lo del día no laborable de este mes al grupo de WhatsApp,neutral,g01454,sintetico_claude
+estoy inquieta por la entrevista de trabajo de mañana.,ansiedad,g01460,sintetico_claude
+Me siento intranquila por mi entrevista con la empresa mañana.,ansiedad,g01460,sintetico_claude
+Me desvelé pensando en la entrevista de trabajo de mañana,ansiedad,g01467,sintetico_claude
+Casi no dormí por estar pensando en mi entrevista con la empresa mañana.,ansiedad,g01467,sintetico_claude
+Estoy inquieta por mi viaje en avión de la próxima semana.,ansiedad,g01471,sintetico_claude
+Me siento intranquila por el vuelo que tomo la semana que viene.,ansiedad,g01471,sintetico_claude
+La tristeza por la casa tan silenciosa desde que se fue mi hermana no me deja en paz.,tristeza,g01476,sintetico_claude
+Hoy no puedo con la tristeza por el silencio de mi casa sin mi hermana.,tristeza,g01476,sintetico_claude
+Estoy triste y desilusionado por el mensaje frío que me mandó mi vecino.,tristeza,g01478,sintetico_claude
+Me siento triste y desanimado con la respuesta seca de mi vecino.,tristeza,g01478,sintetico_claude
+Ando sonriendo sola desde lo de la exposición que di en programación,alegria,g01479,sintetico_claude
+Desde lo de mi presentación de hoy en la clase de programación no se me quita la sonrisa.,alegria,g01479,sintetico_claude
+"Ya basta con el trato del banco con mi reclamo, estoy muy enojado",enojo,g01488,sintetico_claude
+"hasta aquí llegué con la respuesta del banco a mi reclamo, estoy furioso",enojo,g01488,sintetico_claude
+Anoto lo del correo del profesor sobre física en mi agenda,neutral,g01490,sintetico_claude
+Registré lo del mensaje del docente de física en mi calendario.,neutral,g01490,sintetico_claude
+Estoy triste y desilusionado por la venta de la casa de mi infancia.,tristeza,g01491,sintetico_claude
+Me siento triste y desanimado con el adiós a la casa donde crecí,tristeza,g01491,sintetico_claude
+Encontré los datos de la salida de campo del lunes en la página del curso,neutral,g01492,sintetico_claude
+Saqué la información de la visita guiada del lunes de la web del curso.,neutral,g01492,sintetico_claude
+Estoy muy agradecido y contento por la fiesta de promoción,alegria,g01501,sintetico_claude
+Me siento afortunado por el festejo de fin de año con los compañeros.,alegria,g01501,sintetico_claude
+Me alegra un montón lo del sorteo que gané.,alegria,g01510,sintetico_claude
+Me llena de satisfacción lo de mi triunfo en el sorteo.,alegria,g01510,sintetico_claude
+"Ya basta con el ruido de las obras toda la mañana, estoy muy enojada.",enojo,g01514,sintetico_claude
+"Hasta aquí llegué con las obras en la calle que no me dejan en paz, estoy furiosa",enojo,g01514,sintetico_claude
+Hoy vi lo del archivo con las notas del taller en el correo.,neutral,g01518,sintetico_claude
+leí lo del documento con los apuntes del taller en el correo de hoy.,neutral,g01518,sintetico_claude
+Ando sonriendo sola desde lo del ascenso que me dieron en el trabajo.,alegria,g01524,sintetico_claude
+Desde lo de mi nuevo puesto en la oficina no se me quita la sonrisa.,alegria,g01524,sintetico_claude
+Qué lindo se siente lo de la respuesta de mi tía a mi propuesta.,alegria,g01527,sintetico_claude
+Se siente buenísimo lo del sí de mi tía a mi idea.,alegria,g01527,sintetico_claude
+mañana hablamos de lo del enlace de la clase virtual,neutral,g01528,sintetico_claude
+Mañana conversamos sobre el link de la sesión en línea.,neutral,g01528,sintetico_claude
+Estoy muy enojada con los comentarios de mi profesora sobre mi trabajo.,enojo,g01540,sintetico_claude
+Ando de mal genio por las críticas de mi profesora a lo que hice.,enojo,g01540,sintetico_claude
+Estoy muy triste por la derrota de mi equipo en la final.,tristeza,g01545,sintetico_claude
+tengo el ánimo por los suelos a causa de la final que perdió mi equipo.,tristeza,g01545,sintetico_claude
+Lo del archivo adjunto del correo lo conversamos en clase.,neutral,g01555,sintetico_claude
+En clase conversamos sobre el documento que viene adjunto en el correo,neutral,g01555,sintetico_claude
+Lo del pago de la matrícula lo conversamos en clase.,neutral,g01557,sintetico_claude
+En clase conversamos sobre la cuota de matrícula del ciclo.,neutral,g01557,sintetico_claude
+Encontré los datos del avance semanal de mi aplicación en la página del curso.,neutral,g01566,sintetico_claude
+Saqué la información del reporte semanal de mi aplicación de la web del curso.,neutral,g01566,sintetico_claude
+La tristeza por el recuerdo de mi primer amor no me deja en paz.,tristeza,g01567,sintetico_claude
+Hoy no puedo con la tristeza por los tiempos con mi primer amor que ya no volverán.,tristeza,g01567,sintetico_claude
+Estoy triste y desilusionado por la pelea con mi mejor amigo,tristeza,g01568,sintetico_claude
+Me siento triste y desanimado con el distanciamiento con mi mejor amigo,tristeza,g01568,sintetico_claude
+Con las expectativas que no se cumplieron con mi prototipo se me fueron las ganas de reír,tristeza,g01570,sintetico_claude
+Con el fracaso de mi prototipo me quedé sin ganas de sonreír.,tristeza,g01570,sintetico_claude
+Lo del calendario de exámenes está en el documento compartido.,neutral,g01571,sintetico_claude
+El detalle del cronograma de evaluaciones figura en el archivo compartido,neutral,g01571,sintetico_claude
+Estoy que exploto por la cancelación de mi pedido sin aviso.,enojo,g01580,sintetico_claude
+Estoy a punto de explotar por el pedido que cancelaron sin avisarme,enojo,g01580,sintetico_claude
+Hoy lloré un rato por el cumpleaños que pasé sola.,tristeza,g01591,sintetico_claude
+Terminé llorando en mi cuarto por mi cumpleaños sin nadie cerca,tristeza,g01591,sintetico_claude
+Lo de la reserva de la oficina está en el documento compartido.,neutral,g01596,sintetico_claude
+El detalle del espacio reservado en la oficina figura en el archivo compartido,neutral,g01596,sintetico_claude
+Hoy vi lo del cambio de contraseña del correo institucional en el correo.,neutral,g01597,sintetico_claude
+Leí lo de la actualización de la clave del correo de la universidad en el correo de hoy,neutral,g01597,sintetico_claude
+me desvelé pensando en mi primera semana en un trabajo nuevo.,ansiedad,g01611,sintetico_claude
+Casi no dormí por estar pensando en mis primeros días en la empresa nueva,ansiedad,g01611,sintetico_claude
+Me alegra un montón lo del cariño de mis amigos esta semana,alegria,g01614,sintetico_claude
+Me llena de satisfacción lo del apoyo y las risas de mis amigos esta semana.,alegria,g01614,sintetico_claude
+hay que ver lo de la fecha de entrega de mi tesis con el resto del equipo,neutral,g01615,sintetico_claude
+Debemos coordinar lo del día fijado para entregar mi tesis con los demás,neutral,g01615,sintetico_claude
+Encontré los datos del borrador de mi proyecto final en la página del curso,neutral,g01625,sintetico_claude
+Saqué la información de la primera versión de mi proyecto final de la web del curso,neutral,g01625,sintetico_claude
+Nos toca ver lo del feriado del mes esta semana.,neutral,g01628,sintetico_claude
+Esta semana tenemos que revisar lo del día no laborable de este mes.,neutral,g01628,sintetico_claude
+La ciudad me parece fría y solitaria desde que llegué.,tristeza,g01633,sintetico_claude
+"Desde que llegué, esta ciudad se me hace muy sola y triste.",tristeza,g01633,sintetico_claude
+Estoy muy agradecido y contento por el partido que jugamos el fin de semana.,alegria,g01636,sintetico_claude
+Me siento afortunado por la pichanga del sábado con los amigos.,alegria,g01636,sintetico_claude
+hay que ver lo del calendario de exámenes con el resto del equipo.,neutral,g01678,sintetico_claude
+Debemos coordinar lo del cronograma de evaluaciones con los demás,neutral,g01678,sintetico_claude
+"ya basta con la mentira de mi hermana, estoy muy enojada.",enojo,g01680,sintetico_claude
+"Hasta aquí llegué con el engaño de mi hermana, estoy furiosa",enojo,g01680,sintetico_claude
+Hoy vi lo de la agenda de la próxima semana en el correo,neutral,g01715,sintetico_claude
+Leí lo del plan de actividades de la semana que viene en el correo de hoy.,neutral,g01715,sintetico_claude
+Estoy que exploto por la decisión del comité sin consultarnos,enojo,g01717,sintetico_claude
+Estoy a punto de explotar por lo que decidió el comité a nuestras espaldas,enojo,g01717,sintetico_claude
+Hoy vi lo del borrador de mi trabajo grupal en el correo.,neutral,g01725,sintetico_claude
+Leí lo de la primera versión de mi trabajo grupal en el correo de hoy,neutral,g01725,sintetico_claude
+Nos toca ver lo de la lista de asistencia esta semana.,neutral,g01732,sintetico_claude
+Esta semana tenemos que revisar lo del registro de asistentes,neutral,g01732,sintetico_claude
+Me desvelé pensando en mi reunión con la asesora sobre mi tesis.,ansiedad,g01735,sintetico_claude
+Casi no dormí por estar pensando en la cita con el asesor de mi tesis.,ansiedad,g01735,sintetico_claude
+Compartí lo del pago de la matrícula en el grupo.,neutral,g01739,sintetico_claude
+Subí lo de la cuota de matrícula del ciclo al grupo de WhatsApp.,neutral,g01739,sintetico_claude
+Lo de la lista de compras del fin de semana está en el documento compartido,neutral,g01746,sintetico_claude
+El detalle de las compras que haré el fin de semana figura en el archivo compartido.,neutral,g01746,sintetico_claude
+Estoy que exploto por la nota injusta que me pusieron en redes,enojo,g01769,sintetico_claude
+Estoy a punto de explotar por el puntaje que me bajaron sin razón en redes,enojo,g01769,sintetico_claude
+Qué lindo se siente lo del cierre de mi proyecto final.,alegria,g01776,sintetico_claude
+Se siente buenísimo lo de la entrega final de mi proyecto final,alegria,g01776,sintetico_claude
+se me apagó el día por el rechazo de la universidad que quería.,tristeza,g01783,sintetico_claude
+Mi día se volvió gris por la respuesta negativa de la universidad que elegí,tristeza,g01783,sintetico_claude
+Hoy vi lo del turno de atención en secretaría en el correo,neutral,g01785,sintetico_claude
+Leí lo del horario de atención de secretaría en el correo de hoy.,neutral,g01785,sintetico_claude
+Hoy lloré un rato por la despedida de mi promoción,tristeza,g01788,sintetico_claude
+Terminé llorando en mi cuarto por el último día con mis compañeros de promoción.,tristeza,g01788,sintetico_claude
+Mañana hablamos de lo del lugar de la reunión del miércoles,neutral,g01790,sintetico_claude
+Mañana conversamos sobre el sitio donde nos reunimos el miércoles.,neutral,g01790,sintetico_claude
+Qué lindo se siente lo del regalo que recibí ayer,alegria,g01796,sintetico_claude
+Se siente buenísimo lo de la sorpresa que me llevé ayer.,alegria,g01796,sintetico_claude
+Se me apagó el día por la nostalgia de mi tierra.,tristeza,g01798,sintetico_claude
+Mi día se volvió gris por la lejanía de mi ciudad natal,tristeza,g01798,sintetico_claude
+Hoy me acordé de mi abuela y se me llenaron los ojos de lágrimas.,tristeza,g01801,sintetico_claude
+Pensé en mi abuela y no pude evitar ponerme a llorar,tristeza,g01801,sintetico_claude
+Ando sonriendo solo desde lo del reencuentro con mis primos,alegria,g01802,sintetico_claude
+Desde lo de volver a ver a mis primos después de tanto tiempo no se me quita la sonrisa,alegria,g01802,sintetico_claude
+Lo de la lista de asistencia lo conversamos en clase,neutral,g01803,sintetico_claude
+En clase conversamos sobre el registro de asistentes,neutral,g01803,sintetico_claude
+Estoy muy triste por el recuerdo de mi primer amor,tristeza,g01811,sintetico_claude
+Tengo el ánimo por los suelos a causa de los tiempos con mi primer amor que ya no volverán.,tristeza,g01811,sintetico_claude
+"Ya basta con los correos basura que llegan todos los días, estoy muy enojado",enojo,g01812,sintetico_claude
+"Hasta aquí llegué con la propaganda que no para de llegar a mi correo, estoy furioso.",enojo,g01812,sintetico_claude
+Me hace sonreír pensar en la exposición que di en álgebra.,alegria,g01814,sintetico_claude
+Recordar mi presentación de hoy en la clase de álgebra me llena de alegría.,alegria,g01814,sintetico_claude
+"Me hace sonreír pensar en el cambio de horario en mi trabajo, que me favorece.",alegria,g01816,sintetico_claude
+"Recordar mi nuevo horario de trabajo, que me queda perfecto me llena de alegría.",alegria,g01816,sintetico_claude
+Nos toca ver lo de la inscripción al taller de álgebra esta semana,neutral,g01821,sintetico_claude
+Esta semana tenemos que revisar lo de la matrícula en el taller de álgebra.,neutral,g01821,sintetico_claude
+Estoy muy agradecido y contento por la respuesta de mi vecino a mi propuesta,alegria,g01823,sintetico_claude
+Me siento afortunado por el sí de mi vecino a mi idea,alegria,g01823,sintetico_claude
+"Estoy triste y desilusionado por la ausencia de mi hermano, que viajó a trabajar lejos.",tristeza,g01825,sintetico_claude
+"Me siento triste y desanimado con la lejanía de mi hermano, que se fue a trabajar fuera",tristeza,g01825,sintetico_claude
+Qué lindo se siente lo de la comida familiar del domingo.,alegria,g01832,sintetico_claude
+Se siente buenísimo lo del almuerzo con toda mi familia.,alegria,g01832,sintetico_claude
+La tristeza por la disolución de mi banda de amigos no me deja en paz.,tristeza,g01835,sintetico_claude
+Hoy no puedo con la tristeza por el fin de nuestra banda,tristeza,g01835,sintetico_claude
+"Ya basta con la nota injusta que me pusieron en álgebra, estoy muy enojada.",enojo,g01844,sintetico_claude
+"Hasta aquí llegué con el puntaje que me bajaron sin razón en álgebra, estoy furiosa.",enojo,g01844,sintetico_claude
+Me hace sonreír pensar en la beca que me otorgaron.,alegria,g01845,sintetico_claude
+Recordar mi beca de estudios me llena de alegría.,alegria,g01845,sintetico_claude
+Estoy muy enojada con el tráfico de esta mañana,enojo,g01846,sintetico_claude
+Ando de mal genio por el embotellamiento que me hizo llegar tarde,enojo,g01846,sintetico_claude
+Mañana hablamos de lo del archivo con las notas del taller.,neutral,g01849,sintetico_claude
+Mañana conversamos sobre el documento con los apuntes del taller.,neutral,g01849,sintetico_claude
+Hay que ver lo del archivo con las notas del taller con el resto del equipo,neutral,g01866,sintetico_claude
+Debemos coordinar lo del documento con los apuntes del taller con los demás.,neutral,g01866,sintetico_claude
+estoy muy agradecido y contento por la comida que preparé hoy,alegria,g01876,sintetico_claude
+Me siento afortunado por el plato que cociné esta noche.,alegria,g01876,sintetico_claude
+Esperé dos horas en la atención y no resolvieron nada.,enojo,g01888,sintetico_claude
+"Dos horas en la fila para nada, qué bronca",enojo,g01888,sintetico_claude
+Compartí lo de la reserva de la oficina en el grupo,neutral,g01889,sintetico_claude
+Subí lo del espacio reservado en la oficina al grupo de WhatsApp,neutral,g01889,sintetico_claude
+Me hace sonreír pensar en la fiesta de promoción.,alegria,g01903,sintetico_claude
+Recordar el festejo de fin de año con los compañeros me llena de alegría,alegria,g01903,sintetico_claude
+Compartí lo de la fecha de entrega de mi proyecto final en el grupo,neutral,g01911,sintetico_claude
+subí lo del día fijado para entregar mi proyecto final al grupo de WhatsApp.,neutral,g01911,sintetico_claude
+Me da ansiedad que se acerque la fecha del examen,ansiedad,g01918,sintetico_claude
+Me pone muy inquieta que el examen esté tan cerca,ansiedad,g01918,sintetico_claude
+Hay que ver lo del mapa del campus con el resto del equipo.,neutral,g01919,sintetico_claude
+Debemos coordinar lo del plano del campus con los demás,neutral,g01919,sintetico_claude
+gracias a la noticia de mi aprobación en el curso tengo ganas de celebrar.,alegria,g01920,sintetico_claude
+Después del aviso de que pasé el curso me dieron ganas de festejar con todos,alegria,g01920,sintetico_claude
+Estoy muy enojada con el descuento que me quitaron sin explicación.,enojo,g01929,sintetico_claude
+Ando de mal genio por la promoción que no me respetaron en la tienda,enojo,g01929,sintetico_claude
+Hoy lloré un rato por las fotos viejas de mi familia.,tristeza,g01938,sintetico_claude
+Terminé llorando en mi cuarto por el álbum de recuerdos de mi familia.,tristeza,g01938,sintetico_claude
+Me alegra un montón lo de la mejora de mi promedio.,alegria,g01941,sintetico_claude
+"Me llena de satisfacción lo de mis notas de este ciclo, que subieron.",alegria,g01941,sintetico_claude
+Hoy lloré un rato por la cancelación del concierto al que iba con mis amigos.,tristeza,g01942,sintetico_claude
+Terminé llorando en mi cuarto por el concierto al que ya no pudimos ir,tristeza,g01942,sintetico_claude
+Qué lindo se siente lo del depósito que por fin me hicieron,alegria,g01943,sintetico_claude
+Se siente buenísimo lo del pago que llegó justo a tiempo.,alegria,g01943,sintetico_claude
+Mañana hablamos de lo del calendario de exámenes.,neutral,g01946,sintetico_claude
+Mañana conversamos sobre el cronograma de evaluaciones,neutral,g01946,sintetico_claude
+Lo de la agenda de la próxima semana lo conversamos en clase.,neutral,g01951,sintetico_claude
+En clase conversamos sobre el plan de actividades de la semana que viene.,neutral,g01951,sintetico_claude
+Se me apagó el día por la pelea con mi mejor amigo,tristeza,g01955,sintetico_claude
+Mi día se volvió gris por el distanciamiento con mi mejor amigo,tristeza,g01955,sintetico_claude
+Estoy triste y desilusionada por la derrota de mi equipo en la final.,tristeza,g01971,sintetico_claude
+Me siento triste y desanimada con la final que perdió mi equipo.,tristeza,g01971,sintetico_claude
+Estoy que exploto por la sanción que me pusieron sin motivo.,enojo,g01976,sintetico_claude
+Estoy a punto de explotar por el castigo injusto en el trabajo.,enojo,g01976,sintetico_claude
+Estoy triste y desilusionado por el cierre del negocio de mi familia.,tristeza,g01988,sintetico_claude
+Me siento triste y desanimado con el fin del negocio de mi familia.,tristeza,g01988,sintetico_claude
+la tarea consiste en limpiar el conjunto de datos.,neutral,g01989,sintetico_claude
+El trabajo pide limpiar la base de datos del ejercicio.,neutral,g01989,sintetico_claude
+Qué lindo se siente lo de la tarde de juegos con mis sobrinos.,alegria,g01990,sintetico_claude
+Se siente buenísimo lo del rato que pasé jugando con mis sobrinos.,alegria,g01990,sintetico_claude
+Qué lindo se siente lo del sorteo que gané.,alegria,g01991,sintetico_claude
+Se siente buenísimo lo de mi triunfo en el sorteo.,alegria,g01991,sintetico_claude
+Me desvelé pensando en mi viaje en avión de la próxima semana.,ansiedad,g01995,sintetico_claude
+Casi no dormí por estar pensando en el vuelo que tomo la semana que viene.,ansiedad,g01995,sintetico_claude
+"Ya basta con los comentarios de mi primo sobre mi trabajo, estoy muy enojada.",enojo,g02021,sintetico_claude
+"Hasta aquí llegué con las críticas de mi primo a lo que hice, estoy furiosa.",enojo,g02021,sintetico_claude
+Mañana hablamos de lo de la compra del pasaje.,neutral,g02029,sintetico_claude
+mañana conversamos sobre la reserva del boleto de viaje.,neutral,g02029,sintetico_claude
+Ando sonriendo solo desde lo de mi primer día en el trabajo nuevo,alegria,g02031,sintetico_claude
+Desde lo de mi estreno en la empresa nueva no se me quita la sonrisa.,alegria,g02031,sintetico_claude
+Con la comida que preparé hoy se me alegró el día,alegria,g02041,sintetico_claude
+Con el plato que cociné esta noche me cambió el ánimo para bien.,alegria,g02041,sintetico_claude
+La tristeza por la ausencia de mi mamá esta navidad no me deja en paz,tristeza,g02045,sintetico_claude
+Hoy no puedo con la tristeza por la falta de mi mamá en las fiestas de fin de año.,tristeza,g02045,sintetico_claude
+Con la sorpresa que me dio mi equipo en la casa de mis tíos se me alegró el día,alegria,g02047,sintetico_claude
+con el detalle que tuvieron mis compañeros en la casa de mis tíos me cambió el ánimo para bien.,alegria,g02047,sintetico_claude
+estoy triste y desilusionada por las vacaciones que se cancelaron.,tristeza,g02051,sintetico_claude
+me siento triste y desanimada con el viaje que ya no pudimos hacer,tristeza,g02051,sintetico_claude
+Estoy triste y desilusionada por el día gris en el gimnasio.,tristeza,g02060,sintetico_claude
+Me siento triste y desanimada con la tarde tan apagada en el gimnasio,tristeza,g02060,sintetico_claude
+"Ya basta con la copia de mi trabajo por un compañero, estoy muy enojado",enojo,g02066,sintetico_claude
+"Hasta aquí llegué con el compañero que se llevó el crédito de mi trabajo, estoy furioso",enojo,g02066,sintetico_claude
+Compartí lo de la compra del pasaje en el grupo.,neutral,g02068,sintetico_claude
+Subí lo de la reserva del boleto de viaje al grupo de WhatsApp.,neutral,g02068,sintetico_claude
+Mañana hablamos de lo de la agenda del curso de química,neutral,g02071,sintetico_claude
+Mañana conversamos sobre el sílabo de química,neutral,g02071,sintetico_claude
+Qué lindo se siente lo de mi cumpleaños de este año.,alegria,g02077,sintetico_claude
+Se siente buenísimo lo de la celebración de mis años.,alegria,g02077,sintetico_claude
+Me desvelé pensando en el nuevo semestre que empieza,ansiedad,g02084,sintetico_claude
+Casi no dormí por estar pensando en el inicio del siguiente ciclo.,ansiedad,g02084,sintetico_claude
+Qué lindo se siente lo de la mejora de mi promedio,alegria,g02088,sintetico_claude
+"Se siente buenísimo lo de mis notas de este ciclo, que subieron.",alegria,g02088,sintetico_claude
+Nos toca ver lo del cambio de turno de esta semana esta semana,neutral,g02091,sintetico_claude
+Esta semana tenemos que revisar lo del nuevo turno que me asignaron esta semana,neutral,g02091,sintetico_claude
+Con la decisión del comité sin consultarnos se me acabó la paciencia,enojo,g02096,sintetico_claude
+Con lo que decidió el comité a nuestras espaldas ya colmaron mi paciencia.,enojo,g02096,sintetico_claude
+Lo de la copia de mi horario está en el documento compartido.,neutral,g02099,sintetico_claude
+El detalle de mi horario impreso figura en el archivo compartido,neutral,g02099,sintetico_claude
+Estoy muy agradecido y contento por la propuesta de trabajo que me hicieron,alegria,g02104,sintetico_claude
+Me siento afortunado por la oferta laboral que me llegó.,alegria,g02104,sintetico_claude
+hoy lloré un rato por la renuncia de mi mejor compañero de trabajo,tristeza,g02116,sintetico_claude
+Terminé llorando en mi cuarto por la salida de mi mejor amigo de la oficina.,tristeza,g02116,sintetico_claude
+Qué lindo se siente lo de la nota que saqué en programación,alegria,g02122,sintetico_claude
+Se siente buenísimo lo de mi resultado en el examen de programación.,alegria,g02122,sintetico_claude
+Se me apagó el día por el curso de estadística que jalé.,tristeza,g02130,sintetico_claude
+mi día se volvió gris por mi desaprobado en estadística,tristeza,g02130,sintetico_claude
+Estoy muy enojado con el internet que se cae todo el tiempo,enojo,g02141,sintetico_claude
+ando de mal genio por la mala conexión que no se arregla nunca.,enojo,g02141,sintetico_claude
+Me desvelé pensando en las cuentas por pagar de este mes,ansiedad,g02142,sintetico_claude
+casi no dormí por estar pensando en los pagos que se me acumulan este mes.,ansiedad,g02142,sintetico_claude
+Se me apagó el día por mis planes que se cayeron.,tristeza,g02145,sintetico_claude
+mi día se volvió gris por los planes que se cancelaron en el último momento.,tristeza,g02145,sintetico_claude
+"Ya basta con el aumento del alquiler sin aviso, estoy muy enojado.",enojo,g02146,sintetico_claude
+"Hasta aquí llegué con la subida del alquiler que nos soltaron de golpe, estoy furioso.",enojo,g02146,sintetico_claude
+Mañana hablamos de lo de la fecha de entrega de mi informe técnico.,neutral,g02147,sintetico_claude
+Mañana conversamos sobre el día fijado para entregar mi informe técnico,neutral,g02147,sintetico_claude
+"Sobre el pedido de útiles, ya revisé los detalles",neutral,g02148,sintetico_claude
+"Respecto a la compra de los útiles, ya vi todos los detalles",neutral,g02148,sintetico_claude
+Compartí lo de la actualización del sistema de la universidad en el grupo.,neutral,g02151,sintetico_claude
+Subí lo de la nueva versión del sistema académico al grupo de WhatsApp,neutral,g02151,sintetico_claude
+Ando sonriendo solo desde lo del concierto de anoche.,alegria,g02156,sintetico_claude
+Desde lo de la salida al concierto con mis amigos no se me quita la sonrisa.,alegria,g02156,sintetico_claude
+Qué lindo se siente lo del lanzamiento de mi aplicación.,alegria,g02161,sintetico_claude
+Se siente buenísimo lo de la publicación de mi app en la tienda,alegria,g02161,sintetico_claude
+Me desvelé pensando en el examen oral de inglés.,ansiedad,g02163,sintetico_claude
+casi no dormí por estar pensando en la prueba oral de inglés.,ansiedad,g02163,sintetico_claude
+Hoy vi lo del mapa del campus en el correo.,neutral,g02166,sintetico_claude
+Leí lo del plano del campus en el correo de hoy.,neutral,g02166,sintetico_claude
+Estoy muy triste por la ausencia de mi mamá esta navidad.,tristeza,g02169,sintetico_claude
+Tengo el ánimo por los suelos a causa de la falta de mi mamá en las fiestas de fin de año.,tristeza,g02169,sintetico_claude
+Me alegra un montón lo del ascenso que me dieron en el trabajo,alegria,g02181,sintetico_claude
+me llena de satisfacción lo de mi nuevo puesto en la oficina.,alegria,g02181,sintetico_claude
+"No pienso aceptar esa nota, fue completamente injusta.",enojo,g02182,sintetico_claude
+Esa calificación es una injusticia y estoy muy enojada.,enojo,g02182,sintetico_claude
+Estoy que exploto por los cambios de última hora en redes,enojo,g02184,sintetico_claude
+Estoy a punto de explotar por las reglas que cambiaron a último momento en redes,enojo,g02184,sintetico_claude
+"Ya basta con la sanción que me pusieron sin motivo, estoy muy enojado.",enojo,g02185,sintetico_claude
+"Hasta aquí llegué con el castigo injusto en el trabajo, estoy furioso.",enojo,g02185,sintetico_claude
+Me alegra un montón lo de la beca que me otorgaron.,alegria,g02199,sintetico_claude
+Me llena de satisfacción lo de mi beca de estudios,alegria,g02199,sintetico_claude
+Me alegra un montón lo de la fiesta de promoción.,alegria,g02202,sintetico_claude
+Me llena de satisfacción lo del festejo de fin de año con los compañeros.,alegria,g02202,sintetico_claude
+Gracias a la mejora de mi promedio tengo ganas de celebrar,alegria,g02203,sintetico_claude
+"después de mis notas de este ciclo, que subieron me dieron ganas de festejar con todos",alegria,g02203,sintetico_claude
+Lo del calendario de exámenes lo conversamos en clase.,neutral,g02205,sintetico_claude
+en clase conversamos sobre el cronograma de evaluaciones.,neutral,g02205,sintetico_claude
+Hoy lloré un rato por la ausencia de mi profesora en mi cumpleaños.,tristeza,g02206,sintetico_claude
+Terminé llorando en mi cuarto por la falta de mi profesora en mi celebración.,tristeza,g02206,sintetico_claude
+me alegra un montón lo del partido que jugamos el fin de semana.,alegria,g02209,sintetico_claude
+Me llena de satisfacción lo de la pichanga del sábado con los amigos.,alegria,g02209,sintetico_claude
+Me alegra un montón lo de la clase de contabilidad de hoy.,alegria,g02210,sintetico_claude
+Me llena de satisfacción lo de la sesión de contabilidad de esta mañana.,alegria,g02210,sintetico_claude
+Estoy triste y desilusionada por la ausencia de mi mamá esta navidad,tristeza,g02216,sintetico_claude
+me siento triste y desanimada con la falta de mi mamá en las fiestas de fin de año.,tristeza,g02216,sintetico_claude
+"Ya basta con la actitud de mi profesora conmigo, estoy muy enojado",enojo,g02217,sintetico_claude
+"Hasta aquí llegué con la forma de actuar de mi profesora conmigo, estoy furioso.",enojo,g02217,sintetico_claude
+Estoy inquieta por la demostración de mi prototipo,ansiedad,g02221,sintetico_claude
+Me siento intranquila por la prueba en vivo de mi prototipo,ansiedad,g02221,sintetico_claude
+Hoy vi lo de la inscripción al taller de física en el correo.,neutral,g02226,sintetico_claude
+Leí lo de la matrícula en el taller de física en el correo de hoy,neutral,g02226,sintetico_claude
+La tristeza por la nostalgia de mi tierra no me deja en paz.,tristeza,g02228,sintetico_claude
+Hoy no puedo con la tristeza por la lejanía de mi ciudad natal.,tristeza,g02228,sintetico_claude
+La tristeza por la pelea con mi mejor amigo no me deja en paz.,tristeza,g02230,sintetico_claude
+Hoy no puedo con la tristeza por el distanciamiento con mi mejor amigo.,tristeza,g02230,sintetico_claude
+Estoy muy agradecido y contento por la llamada de mi pareja.,alegria,g02232,sintetico_claude
+Me siento afortunado por el mensaje que me mandó mi pareja.,alegria,g02232,sintetico_claude
+Estoy que exploto por el ruido de las obras toda la mañana.,enojo,g02239,sintetico_claude
+Estoy a punto de explotar por las obras en la calle que no me dejan en paz,enojo,g02239,sintetico_claude
+En mi grupo somos cuatro personas.,neutral,g02240,sintetico_claude
+El grupo de trabajo está formado por cuatro integrantes,neutral,g02240,sintetico_claude
+Me hace sonreír pensar en la visita al zoológico con mi familia.,alegria,g02248,sintetico_claude
+Recordar el paseo familiar al zoológico me llena de alegría,alegria,g02248,sintetico_claude
+Estoy muy agradecido y contento por la sorpresa que me dio mi equipo en la casa de mis tíos.,alegria,g02262,sintetico_claude
+Me siento afortunado por el detalle que tuvieron mis compañeros en la casa de mis tíos,alegria,g02262,sintetico_claude
+Lo del borrador de mi tesis está en el documento compartido,neutral,g02265,sintetico_claude
+El detalle de la primera versión de mi tesis figura en el archivo compartido.,neutral,g02265,sintetico_claude
+me alegra un montón lo del aprobado de mi proyecto,alegria,g02267,sintetico_claude
+Me llena de satisfacción lo de la aprobación de mi proyecto por el comité.,alegria,g02267,sintetico_claude
+Me alegra un montón lo de mi nuevo cuarto en el departamento.,alegria,g02269,sintetico_claude
+Me llena de satisfacción lo de la mudanza a mi propio espacio,alegria,g02269,sintetico_claude
+Estoy muy triste por la disolución de mi banda de amigos,tristeza,g02272,sintetico_claude
+Tengo el ánimo por los suelos a causa del fin de nuestra banda.,tristeza,g02272,sintetico_claude
+Hoy vi lo de la compra del pasaje en el correo,neutral,g02282,sintetico_claude
+Leí lo de la reserva del boleto de viaje en el correo de hoy.,neutral,g02282,sintetico_claude
+Hoy lloré un rato por la ausencia de mi mamá esta navidad,tristeza,g02283,sintetico_claude
+Terminé llorando en mi cuarto por la falta de mi mamá en las fiestas de fin de año.,tristeza,g02283,sintetico_claude
+Estoy que exploto por las dos horas de espera que me hicieron pasar,enojo,g02288,sintetico_claude
+Estoy a punto de explotar por la espera interminable en la atención al cliente.,enojo,g02288,sintetico_claude
+Estoy muy triste por el curso de contabilidad que jalé.,tristeza,g02296,sintetico_claude
+Tengo el ánimo por los suelos a causa de mi desaprobado en contabilidad,tristeza,g02296,sintetico_claude
+Hay que ver lo del lugar de la reunión del martes con el resto del equipo.,neutral,g02297,sintetico_claude
+Debemos coordinar lo del sitio donde nos reunimos el martes con los demás.,neutral,g02297,sintetico_claude
+Ando sonriendo sola desde lo del cierre de mi proyecto final.,alegria,g02302,sintetico_claude
+Desde lo de la entrega final de mi proyecto final no se me quita la sonrisa.,alegria,g02302,sintetico_claude
+Me desperté a media noche pensando en la tarea pendiente,ansiedad,g02310,sintetico_claude
+me desvelé pensando en lo mucho que me falta por entregar,ansiedad,g02310,sintetico_claude
+Hoy lloré un rato por mis planes que se cayeron,tristeza,g02320,sintetico_claude
+Terminé llorando en mi cuarto por los planes que se cancelaron en el último momento.,tristeza,g02320,sintetico_claude
+Encontré los datos del cambio de aula de inglés en la página del curso,neutral,g02321,sintetico_claude
+Saqué la información del aula nueva de inglés de la web del curso,neutral,g02321,sintetico_claude
+Estoy muy triste por la partida de mi mejor amigo al extranjero,tristeza,g02326,sintetico_claude
+Tengo el ánimo por los suelos a causa de la mudanza de mi amigo a otro país.,tristeza,g02326,sintetico_claude
+Estoy que exploto por los comentarios de mi tía sobre mi trabajo,enojo,g02332,sintetico_claude
+Estoy a punto de explotar por las críticas de mi tía a lo que hice.,enojo,g02332,sintetico_claude
+Hay que ver lo del punto de encuentro del grupo con el resto del equipo.,neutral,g02337,sintetico_claude
+Debemos coordinar lo del sitio donde se reúne el grupo con los demás,neutral,g02337,sintetico_claude
+Hoy lloré un rato por el rechazo de la universidad que quería.,tristeza,g02340,sintetico_claude
+Terminé llorando en mi cuarto por la respuesta negativa de la universidad que elegí.,tristeza,g02340,sintetico_claude
+Hoy lloré un rato por las vacaciones que se cancelaron,tristeza,g02348,sintetico_claude
+Terminé llorando en mi cuarto por el viaje que ya no pudimos hacer.,tristeza,g02348,sintetico_claude
+encontré los datos de las instrucciones del laboratorio de física en la página del curso.,neutral,g02352,sintetico_claude
+Saqué la información de la guía del laboratorio de física de la web del curso,neutral,g02352,sintetico_claude
+Hoy vi lo de la lista de asistencia en el correo.,neutral,g02359,sintetico_claude
+Leí lo del registro de asistentes en el correo de hoy,neutral,g02359,sintetico_claude
+Estoy inquieta por el cambio de ciudad que se viene,ansiedad,g02361,sintetico_claude
+Me siento intranquila por la mudanza que se acerca.,ansiedad,g02361,sintetico_claude
+Me hace sonreír pensar en la mejora de mi promedio.,alegria,g02369,sintetico_claude
+"Recordar mis notas de este ciclo, que subieron me llena de alegría.",alegria,g02369,sintetico_claude
+Mañana hablamos de lo del archivo adjunto del correo.,neutral,g02388,sintetico_claude
+Mañana conversamos sobre el documento que viene adjunto en el correo,neutral,g02388,sintetico_claude
+Hay que ver lo de la actualización del sistema de la universidad con el resto del equipo.,neutral,g02393,sintetico_claude
+Debemos coordinar lo de la nueva versión del sistema académico con los demás,neutral,g02393,sintetico_claude
+Se me apagó el día por la casa tan silenciosa desde que se fue mi hermana,tristeza,g02398,sintetico_claude
+Mi día se volvió gris por el silencio de mi casa sin mi hermana,tristeza,g02398,sintetico_claude
+"Ya basta con las interrupciones en la clase de programación, estoy muy enojado.",enojo,g02402,sintetico_claude
+"Hasta aquí llegué con la forma en que me interrumpieron en clase, estoy furioso",enojo,g02402,sintetico_claude
+Compartí lo del cambio de turno de esta semana en el grupo,neutral,g02404,sintetico_claude
+Subí lo del nuevo turno que me asignaron esta semana al grupo de WhatsApp,neutral,g02404,sintetico_claude
+Estoy inquieta por el trámite de mi beca.,ansiedad,g02405,sintetico_claude
+Me siento intranquila por los papeles pendientes de mi beca.,ansiedad,g02405,sintetico_claude
+Tengo miedo de que me rechacen en el proceso de selección.,ansiedad,g02413,sintetico_claude
+Me preocupa mucho que no me elijan en el proceso de selección.,ansiedad,g02413,sintetico_claude
+Me alegra un montón lo del depósito que por fin me hicieron.,alegria,g02416,sintetico_claude
+Me llena de satisfacción lo del pago que llegó justo a tiempo.,alegria,g02416,sintetico_claude
+Me hace sonreír pensar en la comida que preparé hoy.,alegria,g02425,sintetico_claude
+Recordar el plato que cociné esta noche me llena de alegría.,alegria,g02425,sintetico_claude
+Hoy vi lo de las instrucciones del laboratorio de física en el correo.,neutral,g02444,sintetico_claude
+Leí lo de la guía del laboratorio de física en el correo de hoy,neutral,g02444,sintetico_claude
+Nos toca ver lo del archivo con las notas del taller esta semana.,neutral,g02447,sintetico_claude
+Esta semana tenemos que revisar lo del documento con los apuntes del taller.,neutral,g02447,sintetico_claude
+Estoy que exploto por los gritos de mi jefe en la reunión,enojo,g02455,sintetico_claude
+Estoy a punto de explotar por la forma en que me gritó mi jefe frente a todos,enojo,g02455,sintetico_claude
+Con el lanzamiento de mi aplicación se me alegró el día,alegria,g02457,sintetico_claude
+Con la publicación de mi app en la tienda me cambió el ánimo para bien.,alegria,g02457,sintetico_claude
+Se me apagó el día por la despedida en el aeropuerto.,tristeza,g02464,sintetico_claude
+Mi día se volvió gris por el adiós que nos dimos en el aeropuerto,tristeza,g02464,sintetico_claude
+Estoy muy triste por la ausencia de mi abuelo en mi cumpleaños,tristeza,g02471,sintetico_claude
+Tengo el ánimo por los suelos a causa de la falta de mi abuelo en mi celebración.,tristeza,g02471,sintetico_claude
+Estoy muy triste por el rechazo de la universidad que quería.,tristeza,g02479,sintetico_claude
+Tengo el ánimo por los suelos a causa de la respuesta negativa de la universidad que elegí,tristeza,g02479,sintetico_claude
+Lo de la lista de materiales para inglés está en el documento compartido.,neutral,g02490,sintetico_claude
+El detalle de los materiales que piden en inglés figura en el archivo compartido.,neutral,g02490,sintetico_claude
+"Ya basta con la demora de la universidad con mi trámite, estoy muy enojado",enojo,g02492,sintetico_claude
+"Hasta aquí llegué con el trámite que llevan semanas sin resolver, estoy furioso.",enojo,g02492,sintetico_claude
+Estoy muy agradecido y contento por mi aceptación en las prácticas de la empresa,alegria,g02493,sintetico_claude
+Me siento afortunado por la respuesta positiva que me dieron para las prácticas,alegria,g02493,sintetico_claude
+Estoy que exploto por la prepotencia del encargado,enojo,g02495,sintetico_claude
+estoy a punto de explotar por la soberbia del encargado en el taller.,enojo,g02495,sintetico_claude
+"Se me apagó el día por el recuerdo de mi abuela, que ya no está.",tristeza,g02503,sintetico_claude
+"Mi día se volvió gris por mi abuela, que ya no está con nosotros.",tristeza,g02503,sintetico_claude
+Mañana hablamos de lo de la lista de asistencia.,neutral,g02509,sintetico_claude
+Mañana conversamos sobre el registro de asistentes.,neutral,g02509,sintetico_claude
+Estoy que exploto por la copia de mi trabajo por un compañero.,enojo,g02514,sintetico_claude
+Estoy a punto de explotar por el compañero que se llevó el crédito de mi trabajo.,enojo,g02514,sintetico_claude
+Qué lindo se siente lo de la llamada de mi hermana.,alegria,g02518,sintetico_claude
+Se siente buenísimo lo del mensaje que me mandó mi hermana.,alegria,g02518,sintetico_claude
+Hoy vi lo del material de la semana en el correo.,neutral,g02528,sintetico_claude
+Leí lo de los archivos de esta semana en el correo de hoy,neutral,g02528,sintetico_claude
+"Ya basta con la plata que nunca me devolvieron, estoy muy enojado.",enojo,g02536,sintetico_claude
+"Hasta aquí llegué con el dinero prestado que no me pagan, estoy furioso",enojo,g02536,sintetico_claude
+La tristeza por la despedida de mis compañeros de trabajo no me deja en paz,tristeza,g02539,sintetico_claude
+Hoy no puedo con la tristeza por el último día con mi equipo de trabajo.,tristeza,g02539,sintetico_claude
+La tristeza por la despedida en el aeropuerto no me deja en paz.,tristeza,g02549,sintetico_claude
+Hoy no puedo con la tristeza por el adiós que nos dimos en el aeropuerto,tristeza,g02549,sintetico_claude
+Estoy que exploto por el aumento del alquiler sin aviso,enojo,g02552,sintetico_claude
+estoy a punto de explotar por la subida del alquiler que nos soltaron de golpe.,enojo,g02552,sintetico_claude
+La tristeza por el mensaje frío que me mandó mi asesora no me deja en paz,tristeza,g02554,sintetico_claude
+Hoy no puedo con la tristeza por la respuesta seca de mi asesora,tristeza,g02554,sintetico_claude
+Qué lindo se siente lo de la fiesta que me prepararon mis amigos.,alegria,g02557,sintetico_claude
+Se siente buenísimo lo de la sorpresa de cumpleaños de mis amigos,alegria,g02557,sintetico_claude
+Qué lindo se siente lo del partido que jugamos el fin de semana,alegria,g02558,sintetico_claude
+Se siente buenísimo lo de la pichanga del sábado con los amigos.,alegria,g02558,sintetico_claude
+Encontré los datos de la lista de asistencia en la página del curso,neutral,g02564,sintetico_claude
+Saqué la información del registro de asistentes de la web del curso,neutral,g02564,sintetico_claude
+"La tristeza por el recuerdo de mi abuela, que ya no está no me deja en paz.",tristeza,g02579,sintetico_claude
+"Hoy no puedo con la tristeza por mi abuela, que ya no está con nosotros.",tristeza,g02579,sintetico_claude
+hoy vi lo del lugar de la reunión del lunes en el correo.,neutral,g02586,sintetico_claude
+Leí lo del sitio donde nos reunimos el lunes en el correo de hoy,neutral,g02586,sintetico_claude
+estoy inquieta por el partido decisivo del sábado.,ansiedad,g02587,sintetico_claude
+Me siento intranquila por la final del torneo el sábado,ansiedad,g02587,sintetico_claude
+Lo de la lista de asistencia está en el documento compartido.,neutral,g02589,sintetico_claude
+El detalle del registro de asistentes figura en el archivo compartido.,neutral,g02589,sintetico_claude
+Me hace sonreír pensar en la tarde de juegos con mis sobrinos.,alegria,g02594,sintetico_claude
+Recordar el rato que pasé jugando con mis sobrinos me llena de alegría,alegria,g02594,sintetico_claude
+Ando sonriendo sola desde lo de la mejora de mi promedio.,alegria,g02595,sintetico_claude
+"Desde lo de mis notas de este ciclo, que subieron no se me quita la sonrisa.",alegria,g02595,sintetico_claude
+Estoy muy triste por la partida de mi compañero de cuarto,tristeza,g02596,sintetico_claude
+Tengo el ánimo por los suelos a causa del día en que se fue mi compañero de cuarto.,tristeza,g02596,sintetico_claude
+Lo de la llamada con mi compañero de equipo lo conversamos en clase,neutral,g02597,sintetico_claude
+En clase conversamos sobre la charla telefónica con mi compañero de equipo,neutral,g02597,sintetico_claude
+Con la noticia de mi aprobación en el curso se me alegró el día.,alegria,g02602,sintetico_claude
+Con el aviso de que pasé el curso me cambió el ánimo para bien,alegria,g02602,sintetico_claude
+Estoy que exploto por los comentarios de mi pareja sobre mi familia,enojo,g02613,sintetico_claude
+Estoy a punto de explotar por la mala manera en que mi pareja habló de mi familia.,enojo,g02613,sintetico_claude
+"Ya basta con el tráfico de esta mañana, estoy muy enojado",enojo,g02615,sintetico_claude
+"Hasta aquí llegué con el embotellamiento que me hizo llegar tarde, estoy furioso",enojo,g02615,sintetico_claude
+Lo de la hora de salida del bus está en el documento compartido.,neutral,g02617,sintetico_claude
+El detalle del horario de partida del bus figura en el archivo compartido,neutral,g02617,sintetico_claude
+Estoy triste y desilusionada por la lejanía de mi familia.,tristeza,g02621,sintetico_claude
+Me siento triste y desanimada con la distancia que me separa de mi familia,tristeza,g02621,sintetico_claude
+Ando sonriendo sola desde lo de la fiesta de promoción.,alegria,g02625,sintetico_claude
+Desde lo del festejo de fin de año con los compañeros no se me quita la sonrisa.,alegria,g02625,sintetico_claude
+Me alegra un montón lo de la tarde de juegos con mis sobrinos,alegria,g02632,sintetico_claude
+Me llena de satisfacción lo del rato que pasé jugando con mis sobrinos.,alegria,g02632,sintetico_claude
+La entrevista salió tan bien que salí flotando,alegria,g02645,sintetico_claude
+Me fue de lo mejor en la entrevista y salí con una sonrisa enorme.,alegria,g02645,sintetico_claude
+Estoy muy triste por las vacaciones que se cancelaron.,tristeza,g02657,sintetico_claude
+tengo el ánimo por los suelos a causa del viaje que ya no pudimos hacer.,tristeza,g02657,sintetico_claude
+Lo de la ruta del bus a la universidad lo conversamos en clase.,neutral,g02659,sintetico_claude
+En clase conversamos sobre el recorrido del bus hacia la universidad,neutral,g02659,sintetico_claude
+Hay que ver lo de la ruta del bus a la universidad con el resto del equipo.,neutral,g02662,sintetico_claude
+Debemos coordinar lo del recorrido del bus hacia la universidad con los demás.,neutral,g02662,sintetico_claude
+Me desvelé pensando en la conversación pendiente con mi pareja,ansiedad,g02667,sintetico_claude
+Casi no dormí por estar pensando en el diálogo que tengo que tener con mi pareja.,ansiedad,g02667,sintetico_claude
+Me desvelé pensando en la presentación ante el comité,ansiedad,g02668,sintetico_claude
+Casi no dormí por estar pensando en mi turno de exponer ante el comité,ansiedad,g02668,sintetico_claude
+Cambié mi foto de perfil en el correo institucional.,neutral,g02671,sintetico_claude
+Puse otra foto en el perfil de mi correo de la universidad.,neutral,g02671,sintetico_claude
+"Me desvelé pensando en el viaje de mi hermana, que va sola.",ansiedad,g02673,sintetico_claude
+Casi no dormí por estar pensando en el viaje de mi hermana al extranjero.,ansiedad,g02673,sintetico_claude
+aviso: lo del pedido de útiles se mantiene tal como estaba,neutral,g02674,sintetico_claude
+Información sobre la compra de los útiles: no hubo ningún cambio,neutral,g02674,sintetico_claude
+Mañana hablamos de lo de la ruta del bus a la universidad.,neutral,g02678,sintetico_claude
+Mañana conversamos sobre el recorrido del bus hacia la universidad.,neutral,g02678,sintetico_claude
+Mañana hablamos de lo de la actividad del grupo en la oficina.,neutral,g02684,sintetico_claude
+Mañana conversamos sobre el trabajo del grupo en la oficina,neutral,g02684,sintetico_claude
+nos toca ver lo de la lista de materiales para economía esta semana,neutral,g02688,sintetico_claude
+Esta semana tenemos que revisar lo de los materiales que piden en economía.,neutral,g02688,sintetico_claude
+Lo del enlace de la clase virtual está en el documento compartido.,neutral,g02692,sintetico_claude
+El detalle del link de la sesión en línea figura en el archivo compartido.,neutral,g02692,sintetico_claude
+Me siento presionado porque todos esperan mucho de mí,ansiedad,g02698,sintetico_claude
+Siento una presión enorme por lo que esperan de mí.,ansiedad,g02698,sintetico_claude
+Encontré los datos del archivo con las notas del taller en la página del curso.,neutral,g02702,sintetico_claude
+Saqué la información del documento con los apuntes del taller de la web del curso.,neutral,g02702,sintetico_claude
+Me alegra un montón lo de la cena con mi pareja de anoche.,alegria,g02720,sintetico_claude
+Me llena de satisfacción lo de la salida romántica de ayer con mi pareja.,alegria,g02720,sintetico_claude
+La tristeza por la ruptura con mi pareja no me deja en paz.,tristeza,g02726,sintetico_claude
+Hoy no puedo con la tristeza por el final de mi noviazgo.,tristeza,g02726,sintetico_claude
+Encontré los datos de la reunión del sábado en el gimnasio en la página del curso.,neutral,g02731,sintetico_claude
+Saqué la información del encuentro del sábado en el gimnasio de la web del curso.,neutral,g02731,sintetico_claude
+"Ya basta con el desorden que dejó mi compañero de cuarto, estoy muy enojada.",enojo,g02734,sintetico_claude
+"Hasta aquí llegué con la suciedad que dejaron en la cocina, estoy furiosa.",enojo,g02734,sintetico_claude
+me preocupa que el bus se demore y llegue tarde.,ansiedad,g02736,sintetico_claude
+Estoy inquieta por si el transporte me hace llegar tarde,ansiedad,g02736,sintetico_claude
+la tristeza por el malentendido con mi vecino no me deja en paz.,tristeza,g02743,sintetico_claude
+Hoy no puedo con la tristeza por la discusión que tuve con mi vecino.,tristeza,g02743,sintetico_claude
+"Ya basta con el descuento que me quitaron sin explicación, estoy muy enojada.",enojo,g02749,sintetico_claude
+"hasta aquí llegué con la promoción que no me respetaron en la tienda, estoy furiosa.",enojo,g02749,sintetico_claude
+"Me desvelé pensando en mi informe, que todavía está incompleto.",ansiedad,g02759,sintetico_claude
+Casi no dormí por estar pensando en el informe que aún no termino.,ansiedad,g02759,sintetico_claude
+Hoy vi lo del enlace de la clase virtual en el correo.,neutral,g02761,sintetico_claude
+Leí lo del link de la sesión en línea en el correo de hoy.,neutral,g02761,sintetico_claude
+Se me apagó el día por el silencio de mi tía últimamente.,tristeza,g02769,sintetico_claude
+mi día se volvió gris por la distancia que puso mi tía conmigo,tristeza,g02769,sintetico_claude
+La tristeza por el silencio de mi profesora últimamente no me deja en paz.,tristeza,g02775,sintetico_claude
+Hoy no puedo con la tristeza por la distancia que puso mi profesora conmigo,tristeza,g02775,sintetico_claude
+Compartí lo del borrador de mi proyecto final en el grupo.,neutral,g02776,sintetico_claude
+Subí lo de la primera versión de mi proyecto final al grupo de WhatsApp.,neutral,g02776,sintetico_claude
+Qué lindo se siente lo de mi nuevo cuarto en el departamento.,alegria,g02784,sintetico_claude
+Se siente buenísimo lo de la mudanza a mi propio espacio.,alegria,g02784,sintetico_claude
+Estoy muy triste por las fotos viejas de mi familia.,tristeza,g02790,sintetico_claude
+Tengo el ánimo por los suelos a causa del álbum de recuerdos de mi familia,tristeza,g02790,sintetico_claude
+Hoy lloré un rato por la noticia de que no pasé a la siguiente etapa.,tristeza,g02801,sintetico_claude
+Terminé llorando en mi cuarto por mi eliminación del proceso de selección.,tristeza,g02801,sintetico_claude
+Me hace sonreír pensar en la comida familiar del domingo.,alegria,g02819,sintetico_claude
+Recordar el almuerzo con toda mi familia me llena de alegría.,alegria,g02819,sintetico_claude
+Con el feriado largo que viene se me alegró el día.,alegria,g02823,sintetico_claude
+Con los días libres de este mes me cambió el ánimo para bien.,alegria,g02823,sintetico_claude
+Compartí lo de la lista de materiales para base de datos en el grupo,neutral,g02824,sintetico_claude
+Subí lo de los materiales que piden en base de datos al grupo de WhatsApp.,neutral,g02824,sintetico_claude
+Encontré los datos de la fecha de entrega de mi tesis en la página del curso.,neutral,g02825,sintetico_claude
+Saqué la información del día fijado para entregar mi tesis de la web del curso.,neutral,g02825,sintetico_claude
+Hay que ver lo del pedido de útiles con el resto del equipo,neutral,g02833,sintetico_claude
+debemos coordinar lo de la compra de los útiles con los demás,neutral,g02833,sintetico_claude
+Hoy salí del trabajo a las seis,neutral,g02842,sintetico_claude
+Terminé mi turno a las 6 de la tarde,neutral,g02842,sintetico_claude
+Estoy triste y desilusionado por la despedida de mi promoción.,tristeza,g02844,sintetico_claude
+Me siento triste y desanimado con el último día con mis compañeros de promoción.,tristeza,g02844,sintetico_claude
+Lo de la reunión del lunes en la universidad está en el documento compartido,neutral,g02849,sintetico_claude
+El detalle del encuentro del lunes en la universidad figura en el archivo compartido.,neutral,g02849,sintetico_claude
+"Sobre el material de la semana, ya revisé los detalles",neutral,g02857,sintetico_claude
+"Respecto a los archivos de esta semana, ya vi todos los detalles.",neutral,g02857,sintetico_claude
+Lo de la agenda del curso de economía lo conversamos en clase,neutral,g02858,sintetico_claude
+En clase conversamos sobre el sílabo de economía.,neutral,g02858,sintetico_claude
+La tristeza por las vacaciones que se cancelaron no me deja en paz.,tristeza,g02861,sintetico_claude
+Hoy no puedo con la tristeza por el viaje que ya no pudimos hacer,tristeza,g02861,sintetico_claude
+Estoy muy enojado con la plata que nunca me devolvieron,enojo,g02866,sintetico_claude
+Ando de mal genio por el dinero prestado que no me pagan,enojo,g02866,sintetico_claude
+Lo del cambio de aula de estadística está en el documento compartido.,neutral,g02871,sintetico_claude
+El detalle del aula nueva de estadística figura en el archivo compartido,neutral,g02871,sintetico_claude
+se me apagó el día por la lluvia gris de todos estos días,tristeza,g02873,sintetico_claude
+mi día se volvió gris por tantos días nublados seguidos.,tristeza,g02873,sintetico_claude
+Estoy que exploto por las interrupciones en la clase de cálculo.,enojo,g02882,sintetico_claude
+Estoy a punto de explotar por la forma en que me interrumpieron en clase.,enojo,g02882,sintetico_claude
+Me preocupa no llegar a tiempo a la entrevista,ansiedad,g02886,sintetico_claude
+Estoy nervioso porque podría llegar tarde a la entrevista.,ansiedad,g02886,sintetico_claude
+se me apagó el día por la noticia de que no pasé a la siguiente etapa,tristeza,g02891,sintetico_claude
+Mi día se volvió gris por mi eliminación del proceso de selección,tristeza,g02891,sintetico_claude
+Estoy muy enojado con el robo de mi bicicleta.,enojo,g02895,sintetico_claude
+Ando de mal genio por la desaparición de mi bici de la puerta de mi casa.,enojo,g02895,sintetico_claude
+nos toca ver lo del mapa del campus esta semana,neutral,g02896,sintetico_claude
+Esta semana tenemos que revisar lo del plano del campus,neutral,g02896,sintetico_claude
+Qué lindo se siente lo de la sorpresa que me dio mi equipo en el gimnasio,alegria,g02901,sintetico_claude
+Se siente buenísimo lo del detalle que tuvieron mis compañeros en el gimnasio.,alegria,g02901,sintetico_claude
+Hay que ver lo de la hora de salida del bus con el resto del equipo,neutral,g02902,sintetico_claude
+Debemos coordinar lo del horario de partida del bus con los demás.,neutral,g02902,sintetico_claude
+Me hace sonreír pensar en el viaje que planeamos entre amigos.,alegria,g02906,sintetico_claude
+Recordar las vacaciones que vamos a tomar juntos me llena de alegría,alegria,g02906,sintetico_claude
+Hay que ver lo de la salida de campo del sábado con el resto del equipo.,neutral,g02916,sintetico_claude
+Debemos coordinar lo de la visita guiada del sábado con los demás,neutral,g02916,sintetico_claude
+Estoy muy enojada con el desorden que dejó mi compañero de cuarto,enojo,g02918,sintetico_claude
+Ando de mal genio por la suciedad que dejaron en la cocina.,enojo,g02918,sintetico_claude
+Lo del aviso de la secretaría lo conversamos en clase,neutral,g02922,sintetico_claude
+En clase conversamos sobre el comunicado de la secretaría.,neutral,g02922,sintetico_claude
+Encontré los datos de la agenda de la próxima semana en la página del curso.,neutral,g02923,sintetico_claude
+Saqué la información del plan de actividades de la semana que viene de la web del curso,neutral,g02923,sintetico_claude
+Estoy muy triste por el malentendido con mi tía.,tristeza,g02942,sintetico_claude
+Tengo el ánimo por los suelos a causa de la discusión que tuve con mi tía,tristeza,g02942,sintetico_claude
+"Ya basta con la injusticia de mi horario de trabajo, estoy muy enojado",enojo,g02945,sintetico_claude
+"Hasta aquí llegué con el horario que me impusieron sin consultarme, estoy furioso",enojo,g02945,sintetico_claude
+Se me apagó el día por la ausencia de mi mamá esta navidad.,tristeza,g02948,sintetico_claude
+Mi día se volvió gris por la falta de mi mamá en las fiestas de fin de año.,tristeza,g02948,sintetico_claude
+compartí lo de la actividad del grupo en el auditorio en el grupo.,neutral,g02950,sintetico_claude
+Subí lo del trabajo del grupo en el auditorio al grupo de WhatsApp.,neutral,g02950,sintetico_claude
+Hay que ver lo del turno de atención en secretaría con el resto del equipo.,neutral,g02951,sintetico_claude
+Debemos coordinar lo del horario de atención de secretaría con los demás,neutral,g02951,sintetico_claude
+mi grupo sacó la mejor nota del curso.,alegria,g02956,sintetico_claude
+Nuestro grupo obtuvo el puntaje más alto de la clase y estamos felices.,alegria,g02956,sintetico_claude
+lo de la fecha de entrega de mi prototipo está en el documento compartido,neutral,g02958,sintetico_claude
+El detalle del día fijado para entregar mi prototipo figura en el archivo compartido.,neutral,g02958,sintetico_claude
+Me hace sonreír pensar en la visita sorpresa de mi pareja,alegria,g02960,sintetico_claude
+Recordar la llegada inesperada de mi pareja me llena de alegría,alegria,g02960,sintetico_claude
+Estoy triste y desilusionado por el malentendido con mi tía.,tristeza,g02961,sintetico_claude
+Me siento triste y desanimado con la discusión que tuve con mi tía.,tristeza,g02961,sintetico_claude
+Qué lindo se siente lo del feriado largo que viene.,alegria,g02963,sintetico_claude
+Se siente buenísimo lo de los días libres de este mes.,alegria,g02963,sintetico_claude
+Lo de la agenda de la próxima semana está en el documento compartido,neutral,g02964,sintetico_claude
+El detalle del plan de actividades de la semana que viene figura en el archivo compartido.,neutral,g02964,sintetico_claude
+La tristeza por la noticia de que no pasé a la siguiente etapa no me deja en paz,tristeza,g02966,sintetico_claude
+Hoy no puedo con la tristeza por mi eliminación del proceso de selección.,tristeza,g02966,sintetico_claude
+"Ya basta con la falta de respeto de unos compañeros, estoy muy enojado",enojo,g02967,sintetico_claude
+"Hasta aquí llegué con la burla de unos compañeros hacia mí, estoy furioso.",enojo,g02967,sintetico_claude
+Estoy muy triste por la muerte de mi perro.,tristeza,g02996,sintetico_claude
+Tengo el ánimo por los suelos a causa de la pérdida de mi mascota.,tristeza,g02996,sintetico_claude
+Me desvelé pensando en el examen de admisión,ansiedad,g02998,sintetico_claude
+Casi no dormí por estar pensando en la prueba de ingreso.,ansiedad,g02998,sintetico_claude
+Mañana hablamos de lo de la inscripción al taller de base de datos.,neutral,g03000,sintetico_claude
+Mañana conversamos sobre la matrícula en el taller de base de datos,neutral,g03000,sintetico_claude
+Hoy vi lo de la actualización del sistema de la universidad en el correo.,neutral,g03002,sintetico_claude
+Leí lo de la nueva versión del sistema académico en el correo de hoy,neutral,g03002,sintetico_claude
+hoy lloré un rato por la soledad de estos días,tristeza,g03005,sintetico_claude
+Terminé llorando en mi cuarto por estos días tan solitarios.,tristeza,g03005,sintetico_claude
+Estoy que exploto por el cobro de más que me hicieron,enojo,g03008,sintetico_claude
+Estoy a punto de explotar por el cargo de más en mi cuenta.,enojo,g03008,sintetico_claude
+Ya nadie me escribe como antes.,tristeza,g03012,sintetico_claude
+Siento que mis amigos ya no me buscan y eso me entristece.,tristeza,g03012,sintetico_claude
+Me hace sonreír pensar en la llamada de mi vecino.,alegria,g03014,sintetico_claude
+Recordar el mensaje que me mandó mi vecino me llena de alegría,alegria,g03014,sintetico_claude
+Me desvelé pensando en el examen de estadística del lunes.,ansiedad,g03016,sintetico_claude
+Casi no dormí por estar pensando en la evaluación de estadística que tengo el lunes.,ansiedad,g03016,sintetico_claude
+Ando sonriendo sola desde lo del regalo que recibí ayer.,alegria,g03020,sintetico_claude
+desde lo de la sorpresa que me llevé ayer no se me quita la sonrisa,alegria,g03020,sintetico_claude
+Qué lindo se siente lo de la clase de programación de hoy,alegria,g03021,sintetico_claude
+Se siente buenísimo lo de la sesión de programación de esta mañana,alegria,g03021,sintetico_claude
+Estoy triste y desilusionado por la despedida de mis compañeros de trabajo.,tristeza,g03025,sintetico_claude
+Me siento triste y desanimado con el último día con mi equipo de trabajo.,tristeza,g03025,sintetico_claude
+La tristeza por el día gris en el gimnasio no me deja en paz.,tristeza,g03028,sintetico_claude
+Hoy no puedo con la tristeza por la tarde tan apagada en el gimnasio,tristeza,g03028,sintetico_claude
+Se me apagó el día por las fotos viejas de mi familia,tristeza,g03037,sintetico_claude
+Mi día se volvió gris por el álbum de recuerdos de mi familia,tristeza,g03037,sintetico_claude
+Lo del correo del profesor sobre base de datos lo conversamos en clase.,neutral,g03043,sintetico_claude
+En clase conversamos sobre el mensaje del docente de base de datos.,neutral,g03043,sintetico_claude
+"Hoy no quiero hablar con nadie, solo quiero llorar.",tristeza,g03044,sintetico_claude
+"no tengo ganas de conversar, me siento muy triste hoy.",tristeza,g03044,sintetico_claude
+Ando sonriendo sola desde lo del aprobado de mi proyecto,alegria,g03049,sintetico_claude
+desde lo de la aprobación de mi proyecto por el comité no se me quita la sonrisa.,alegria,g03049,sintetico_claude
+encontré los datos del cambio de turno de esta semana en la página del curso.,neutral,g03052,sintetico_claude
+saqué la información del nuevo turno que me asignaron esta semana de la web del curso.,neutral,g03052,sintetico_claude
+Lo de la ruta del bus a la universidad está en el documento compartido.,neutral,g03056,sintetico_claude
+El detalle del recorrido del bus hacia la universidad figura en el archivo compartido.,neutral,g03056,sintetico_claude
+Estoy que exploto por la nota que cambiaron sin avisarme.,enojo,g03057,sintetico_claude
+Estoy a punto de explotar por el cambio de mi calificación sin explicaciones,enojo,g03057,sintetico_claude
+Lo de la lista de materiales para inglés lo conversamos en clase,neutral,g03059,sintetico_claude
+En clase conversamos sobre los materiales que piden en inglés.,neutral,g03059,sintetico_claude
+Encontré los datos del feriado del mes en la página del curso.,neutral,g03075,sintetico_claude
+Saqué la información del día no laborable de este mes de la web del curso.,neutral,g03075,sintetico_claude
+Encontré los datos del punto de encuentro del grupo en la página del curso,neutral,g03079,sintetico_claude
+saqué la información del sitio donde se reúne el grupo de la web del curso.,neutral,g03079,sintetico_claude
+Estoy muy triste por el silencio de mi asesora últimamente,tristeza,g03081,sintetico_claude
+Tengo el ánimo por los suelos a causa de la distancia que puso mi asesora conmigo.,tristeza,g03081,sintetico_claude
+Lo del horario de la clase de estadística lo conversamos en clase,neutral,g03095,sintetico_claude
+En clase conversamos sobre la hora de las sesiones de estadística.,neutral,g03095,sintetico_claude
+Se me apagó el día por el día gris en la casa de mis tíos.,tristeza,g03097,sintetico_claude
+Mi día se volvió gris por la tarde tan apagada en la casa de mis tíos.,tristeza,g03097,sintetico_claude
+Lo del lugar de la reunión del viernes lo conversamos en clase.,neutral,g03103,sintetico_claude
+En clase conversamos sobre el sitio donde nos reunimos el viernes.,neutral,g03103,sintetico_claude
+Lo del avance semanal de mi informe técnico lo conversamos en clase.,neutral,g03109,sintetico_claude
+En clase conversamos sobre el reporte semanal de mi informe técnico.,neutral,g03109,sintetico_claude
+Estoy muy enojada con el trato del banco con mi reclamo.,enojo,g03116,sintetico_claude
+Ando de mal genio por la respuesta del banco a mi reclamo.,enojo,g03116,sintetico_claude
+Estoy muy enojado con la prepotencia del encargado.,enojo,g03122,sintetico_claude
+ando de mal genio por la soberbia del encargado en el taller,enojo,g03122,sintetico_claude
+Me alegra un montón lo de mi cumpleaños de este año,alegria,g03130,sintetico_claude
+Me llena de satisfacción lo de la celebración de mis años,alegria,g03130,sintetico_claude
+Me hace sonreír pensar en el feriado largo que viene,alegria,g03144,sintetico_claude
+Recordar los días libres de este mes me llena de alegría.,alegria,g03144,sintetico_claude
+Nos toca ver lo de la agenda del curso de economía esta semana.,neutral,g03146,sintetico_claude
+Esta semana tenemos que revisar lo del sílabo de economía.,neutral,g03146,sintetico_claude
+qué lindo se siente lo del cariño de mis amigos esta semana.,alegria,g03150,sintetico_claude
+Se siente buenísimo lo del apoyo y las risas de mis amigos esta semana.,alegria,g03150,sintetico_claude
+Estoy que exploto por el chisme que inventaron sobre mí,enojo,g03151,sintetico_claude
+estoy a punto de explotar por el rumor falso que corrió sobre mí,enojo,g03151,sintetico_claude
+No me siento bien con la idea de hablar con mi jefe.,ansiedad,g03159,sintetico_claude
+Me da mucha tensión tener que hablar con mi jefe.,ansiedad,g03159,sintetico_claude
+Estoy que exploto por la plata que nunca me devolvieron.,enojo,g03162,sintetico_claude
+Estoy a punto de explotar por el dinero prestado que no me pagan.,enojo,g03162,sintetico_claude
+ando sonriendo solo desde lo de la cena con mi pareja de anoche,alegria,g03166,sintetico_claude
+Desde lo de la salida romántica de ayer con mi pareja no se me quita la sonrisa,alegria,g03166,sintetico_claude
+Estoy triste y desilusionado por la mudanza de mis padres a otra ciudad,tristeza,g03170,sintetico_claude
+Me siento triste y desanimado con la partida de mis papás a vivir lejos,tristeza,g03170,sintetico_claude
+hoy lloré en el bus sin saber bien por qué.,tristeza,g03172,sintetico_claude
+Me puse a llorar en el bus y me sentí muy vacío,tristeza,g03172,sintetico_claude
+Lo del horario de la clase de programación está en el documento compartido.,neutral,g03173,sintetico_claude
+El detalle de la hora de las sesiones de programación figura en el archivo compartido,neutral,g03173,sintetico_claude
+Ando sonriendo solo desde lo del cariño de mis amigos esta semana.,alegria,g03181,sintetico_claude
+Desde lo del apoyo y las risas de mis amigos esta semana no se me quita la sonrisa,alegria,g03181,sintetico_claude
+Estoy muy triste por las expectativas que no se cumplieron con mi prototipo,tristeza,g03182,sintetico_claude
+Tengo el ánimo por los suelos a causa del fracaso de mi prototipo.,tristeza,g03182,sintetico_claude
+Ando sonriendo sola desde lo del viaje que planeamos entre amigos.,alegria,g03190,sintetico_claude
+Desde lo de las vacaciones que vamos a tomar juntos no se me quita la sonrisa,alegria,g03190,sintetico_claude
+me desvelé pensando en el viaje de mis papás por carretera,ansiedad,g03191,sintetico_claude
+Casi no dormí por estar pensando en el trayecto de mis papás de noche en bus.,ansiedad,g03191,sintetico_claude
+"Ya basta con el cobro de más que me hicieron, estoy muy enojado.",enojo,g03198,sintetico_claude
+"Hasta aquí llegué con el cargo de más en mi cuenta, estoy furioso.",enojo,g03198,sintetico_claude
+Con la separación de mis tíos se me fueron las ganas de reír,tristeza,g03215,sintetico_claude
+Con el divorcio de mis tíos me quedé sin ganas de sonreír,tristeza,g03215,sintetico_claude
+Estoy triste y desilusionada por la lluvia gris de todos estos días,tristeza,g03231,sintetico_claude
+Me siento triste y desanimada con tantos días nublados seguidos,tristeza,g03231,sintetico_claude
+Encontré los datos del lugar de la reunión del domingo en la página del curso.,neutral,g03237,sintetico_claude
+Saqué la información del sitio donde nos reunimos el domingo de la web del curso.,neutral,g03237,sintetico_claude
+Qué lindo se siente lo de mi primer día en el trabajo nuevo.,alegria,g03239,sintetico_claude
+Se siente buenísimo lo de mi estreno en la empresa nueva.,alegria,g03239,sintetico_claude
+Me hace sonreír pensar en mi aceptación en las prácticas de la empresa.,alegria,g03241,sintetico_claude
+Recordar la respuesta positiva que me dieron para las prácticas me llena de alegría.,alegria,g03241,sintetico_claude
+Encontré los datos de la inscripción al taller de álgebra en la página del curso.,neutral,g03242,sintetico_claude
+Saqué la información de la matrícula en el taller de álgebra de la web del curso,neutral,g03242,sintetico_claude
+Me hace sonreír pensar en el cierre de mi exposición,alegria,g03245,sintetico_claude
+Recordar la entrega final de mi exposición me llena de alegría,alegria,g03245,sintetico_claude
+Qué lindo se siente lo del reconocimiento que me dieron en la universidad.,alegria,g03249,sintetico_claude
+se siente buenísimo lo del premio que recibí en clase.,alegria,g03249,sintetico_claude
+Se me apagó el día por la despedida de mi promoción.,tristeza,g03254,sintetico_claude
+Mi día se volvió gris por el último día con mis compañeros de promoción.,tristeza,g03254,sintetico_claude
+Hoy vi lo de la agenda del curso de economía en el correo.,neutral,g03272,sintetico_claude
+Leí lo del sílabo de economía en el correo de hoy.,neutral,g03272,sintetico_claude
+La tristeza por el cierre del negocio de mi familia no me deja en paz.,tristeza,g03273,sintetico_claude
+Hoy no puedo con la tristeza por el fin del negocio de mi familia,tristeza,g03273,sintetico_claude
+Me hace sonreír pensar en la respuesta de mi profesora a mi propuesta,alegria,g03286,sintetico_claude
+Recordar el sí de mi profesora a mi idea me llena de alegría,alegria,g03286,sintetico_claude
+Hoy almorcé arroz con pollo.,neutral,g03289,sintetico_claude
+Al mediodía comí arroz con pollo.,neutral,g03289,sintetico_claude
+Estoy muy triste por la lejanía de mi familia.,tristeza,g03292,sintetico_claude
+Tengo el ánimo por los suelos a causa de la distancia que me separa de mi familia,tristeza,g03292,sintetico_claude
+Me desvelé pensando en mi presentación sobre mi proyecto final ante el jurado.,ansiedad,g03295,sintetico_claude
+Casi no dormí por estar pensando en la sustentación de mi proyecto final frente al jurado.,ansiedad,g03295,sintetico_claude
+Mi mejor amiga dejó de hablarme y me siento muy mal,tristeza,g03305,sintetico_claude
+Mi mejor amiga se alejó de mí y me duele muchísimo.,tristeza,g03305,sintetico_claude
+La tristeza por el fracaso en mi entrevista de trabajo no me deja en paz.,tristeza,g03311,sintetico_claude
+Hoy no puedo con la tristeza por la entrevista que no me salió bien.,tristeza,g03311,sintetico_claude
+Se me apagó el día por la partida de mi mejor amigo al extranjero,tristeza,g03320,sintetico_claude
+Mi día se volvió gris por la mudanza de mi amigo a otro país,tristeza,g03320,sintetico_claude
+Estoy muy triste por la separación de mis tíos.,tristeza,g03322,sintetico_claude
+Tengo el ánimo por los suelos a causa del divorcio de mis tíos.,tristeza,g03322,sintetico_claude
+Estoy muy enojada con el ruido de mis vecinos a medianoche.,enojo,g03323,sintetico_claude
+Ando de mal genio por la bulla que hacen mis vecinos de madrugada,enojo,g03323,sintetico_claude
+Estoy inquieta por los resultados que saldrán esta semana.,ansiedad,g03326,sintetico_claude
+Me siento intranquila por las notas que van a publicar pronto,ansiedad,g03326,sintetico_claude
+Nos toca ver lo del cambio de aula de física esta semana.,neutral,g03335,sintetico_claude
+Esta semana tenemos que revisar lo del aula nueva de física.,neutral,g03335,sintetico_claude
+La tristeza por la muerte de mi perro no me deja en paz.,tristeza,g03336,sintetico_claude
+Hoy no puedo con la tristeza por la pérdida de mi mascota.,tristeza,g03336,sintetico_claude
+Hay que ver lo del presupuesto de mi proyecto final con el resto del equipo.,neutral,g03350,sintetico_claude
+Debemos coordinar lo de los costos de mi proyecto final con los demás,neutral,g03350,sintetico_claude
+"Hoy lloré un rato por la ausencia de mi hermano, que viajó a trabajar lejos.",tristeza,g03355,sintetico_claude
+"Terminé llorando en mi cuarto por la lejanía de mi hermano, que se fue a trabajar fuera",tristeza,g03355,sintetico_claude
+La tristeza por la soledad de estos días no me deja en paz.,tristeza,g03359,sintetico_claude
+Hoy no puedo con la tristeza por estos días tan solitarios.,tristeza,g03359,sintetico_claude
+Estoy muy agradecido y contento por la ceremonia de mi graduación.,alegria,g03362,sintetico_claude
+Me siento afortunado por el día en que me gradué,alegria,g03362,sintetico_claude
+Me desvelé pensando en la fecha de entrega de mi aplicación.,ansiedad,g03378,sintetico_claude
+Casi no dormí por estar pensando en el plazo para entregar mi aplicación.,ansiedad,g03378,sintetico_claude
+Lo del feriado del mes lo conversamos en clase.,neutral,g03382,sintetico_claude
+En clase conversamos sobre el día no laborable de este mes,neutral,g03382,sintetico_claude
+Lo de la actualización del sistema de la universidad lo conversamos en clase.,neutral,g03384,sintetico_claude
+En clase conversamos sobre la nueva versión del sistema académico,neutral,g03384,sintetico_claude
+Estoy triste y desilusionado por la renuncia de mi mejor compañero de trabajo.,tristeza,g03386,sintetico_claude
+Me siento triste y desanimado con la salida de mi mejor amigo de la oficina.,tristeza,g03386,sintetico_claude
+se me apagó el día por las vacaciones que se cancelaron.,tristeza,g03387,sintetico_claude
+Mi día se volvió gris por el viaje que ya no pudimos hacer,tristeza,g03387,sintetico_claude
+Hoy lloré un rato por el malentendido con mi compañero de equipo,tristeza,g03389,sintetico_claude
+Terminé llorando en mi cuarto por la discusión que tuve con mi compañero de equipo.,tristeza,g03389,sintetico_claude
+Lo del material de la semana lo conversamos en clase.,neutral,g03399,sintetico_claude
+En clase conversamos sobre los archivos de esta semana.,neutral,g03399,sintetico_claude
+Hoy vi lo del feriado del mes en el correo,neutral,g03403,sintetico_claude
+leí lo del día no laborable de este mes en el correo de hoy,neutral,g03403,sintetico_claude
+Lo del correo del profesor sobre estadística está en el documento compartido.,neutral,g03407,sintetico_claude
+El detalle del mensaje del docente de estadística figura en el archivo compartido.,neutral,g03407,sintetico_claude
+Hoy vi lo de la fecha de entrega de mi informe técnico en el correo,neutral,g03410,sintetico_claude
+Leí lo del día fijado para entregar mi informe técnico en el correo de hoy.,neutral,g03410,sintetico_claude
+La biblioteca abre de ocho a seis.,neutral,g03413,sintetico_claude
+el horario de la biblioteca es de 8 de la mañana a 6 de la tarde.,neutral,g03413,sintetico_claude
+Encontré los datos del aviso de la secretaría en la página del curso.,neutral,g03442,sintetico_claude
+Saqué la información del comunicado de la secretaría de la web del curso.,neutral,g03442,sintetico_claude
+Hay que ver lo del recibo del agua con el resto del equipo.,neutral,g03444,sintetico_claude
+Debemos coordinar lo de la factura del agua de este mes con los demás.,neutral,g03444,sintetico_claude
+Hoy lloré un rato por la pelea con mi mejor amigo.,tristeza,g03448,sintetico_claude
+Terminé llorando en mi cuarto por el distanciamiento con mi mejor amigo,tristeza,g03448,sintetico_claude
+"Ya basta con la impuntualidad de mi grupo en la casa de mis tíos, estoy muy enojado.",enojo,g03451,sintetico_claude
+"Hasta aquí llegué con los retrasos de mis compañeros en la casa de mis tíos, estoy furioso.",enojo,g03451,sintetico_claude
+Encontré los datos de la lista de compras del fin de semana en la página del curso.,neutral,g03452,sintetico_claude
+Saqué la información de las compras que haré el fin de semana de la web del curso,neutral,g03452,sintetico_claude
+Ando sonriendo solo desde lo de la victoria de mi equipo en el campeonato.,alegria,g03456,sintetico_claude
+Desde lo del triunfo de mi equipo en el torneo no se me quita la sonrisa.,alegria,g03456,sintetico_claude
+Hay que ver lo de la lista de asistencia con el resto del equipo.,neutral,g03457,sintetico_claude
+Debemos coordinar lo del registro de asistentes con los demás.,neutral,g03457,sintetico_claude
+Compartí lo de la lista de asistencia en el grupo.,neutral,g03460,sintetico_claude
+Subí lo del registro de asistentes al grupo de WhatsApp.,neutral,g03460,sintetico_claude
+Mi tía llegó de viaje y en casa estamos de fiesta,alegria,g03487,sintetico_claude
+Volvió mi tía de viaje y toda la familia está celebrando,alegria,g03487,sintetico_claude
+Hay que ver lo del avance semanal de mi exposición con el resto del equipo.,neutral,g03490,sintetico_claude
+Debemos coordinar lo del reporte semanal de mi exposición con los demás.,neutral,g03490,sintetico_claude
+Anoto lo del mapa del campus en mi agenda.,neutral,g03491,sintetico_claude
+Registré lo del plano del campus en mi calendario.,neutral,g03491,sintetico_claude
+compartí lo de la lista de compras del fin de semana en el grupo,neutral,g03493,sintetico_claude
+Subí lo de las compras que haré el fin de semana al grupo de WhatsApp.,neutral,g03493,sintetico_claude
+Estoy triste y desilusionado por el recuerdo de mi primer amor.,tristeza,g03496,sintetico_claude
+me siento triste y desanimado con los tiempos con mi primer amor que ya no volverán,tristeza,g03496,sintetico_claude
+nos toca ver lo de la fecha de entrega de mi proyecto final esta semana.,neutral,g03519,sintetico_claude
+Esta semana tenemos que revisar lo del día fijado para entregar mi proyecto final,neutral,g03519,sintetico_claude
+Estoy inquieta por el nuevo semestre que empieza.,ansiedad,g03527,sintetico_claude
+Me siento intranquila por el inicio del siguiente ciclo.,ansiedad,g03527,sintetico_claude
+hoy vi lo de la salida de campo del jueves en el correo.,neutral,g03528,sintetico_claude
+Leí lo de la visita guiada del jueves en el correo de hoy.,neutral,g03528,sintetico_claude
+Con el regalo que recibí ayer se me alegró el día.,alegria,g03529,sintetico_claude
+Con la sorpresa que me llevé ayer me cambió el ánimo para bien.,alegria,g03529,sintetico_claude
+Estoy que exploto por el engaño con el precio del producto.,enojo,g03534,sintetico_claude
+Estoy a punto de explotar por el producto que no era como lo anunciaron,enojo,g03534,sintetico_claude
+Qué lindo se siente lo del reencuentro con mis primos,alegria,g03546,sintetico_claude
+Se siente buenísimo lo de volver a ver a mis primos después de tanto tiempo.,alegria,g03546,sintetico_claude
+Ando sonriendo sola desde lo de la comida que preparé hoy,alegria,g03547,sintetico_claude
+desde lo del plato que cociné esta noche no se me quita la sonrisa,alegria,g03547,sintetico_claude
+Estoy muy triste por el cumpleaños que pasé solo,tristeza,g03549,sintetico_claude
+Tengo el ánimo por los suelos a causa de mi cumpleaños sin nadie cerca.,tristeza,g03549,sintetico_claude
+Se me apagó el día por la renuncia de mi mejor compañero de trabajo.,tristeza,g03555,sintetico_claude
+Mi día se volvió gris por la salida de mi mejor amigo de la oficina.,tristeza,g03555,sintetico_claude
+Hoy lloré un rato por el trabajo que perdí.,tristeza,g03561,sintetico_claude
+Terminé llorando en mi cuarto por mi despido de la empresa.,tristeza,g03561,sintetico_claude
+Ando sonriendo solo desde lo de la beca que me otorgaron.,alegria,g03563,sintetico_claude
+Desde lo de mi beca de estudios no se me quita la sonrisa,alegria,g03563,sintetico_claude
+Me alegra un montón lo de mi primer día en el trabajo nuevo,alegria,g03568,sintetico_claude
+Me llena de satisfacción lo de mi estreno en la empresa nueva,alegria,g03568,sintetico_claude
+qué lindo se siente lo de la exposición que di en base de datos,alegria,g03571,sintetico_claude
+Se siente buenísimo lo de mi presentación de hoy en la clase de base de datos,alegria,g03571,sintetico_claude
+Me hace sonreír pensar en el ascenso que me dieron en el trabajo.,alegria,g03573,sintetico_claude
+Recordar mi nuevo puesto en la oficina me llena de alegría.,alegria,g03573,sintetico_claude
+se me apagó el día por el mensaje frío que me mandó mi mamá,tristeza,g03574,sintetico_claude
+Mi día se volvió gris por la respuesta seca de mi mamá,tristeza,g03574,sintetico_claude
+Aviso: lo del recibo del agua se mantiene tal como estaba.,neutral,g03580,sintetico_claude
+Información sobre la factura del agua de este mes: no hubo ningún cambio.,neutral,g03580,sintetico_claude
+Ando sonriendo solo desde lo de la comida familiar del domingo.,alegria,g03589,sintetico_claude
+Desde lo del almuerzo con toda mi familia no se me quita la sonrisa.,alegria,g03589,sintetico_claude
+Se me apagó el día por el fracaso en mi entrevista de trabajo,tristeza,g03594,sintetico_claude
+Mi día se volvió gris por la entrevista que no me salió bien.,tristeza,g03594,sintetico_claude
+Hoy vi lo de la lista de compras del fin de semana en el correo.,neutral,g03609,sintetico_claude
+Leí lo de las compras que haré el fin de semana en el correo de hoy,neutral,g03609,sintetico_claude
+estoy muy triste por la nostalgia de mi tierra.,tristeza,g03611,sintetico_claude
+Tengo el ánimo por los suelos a causa de la lejanía de mi ciudad natal,tristeza,g03611,sintetico_claude
+Me desvelé pensando en el proceso de matrícula de mañana,ansiedad,g03620,sintetico_claude
+Casi no dormí por estar pensando en la inscripción de cursos de mañana,ansiedad,g03620,sintetico_claude
+Estoy inquieta por el examen de admisión.,ansiedad,g03621,sintetico_claude
+Me siento intranquila por la prueba de ingreso,ansiedad,g03621,sintetico_claude
+El profesor subió las diapositivas de la semana al aula virtual,neutral,g03628,sintetico_claude
+En el aula virtual ya están las diapositivas de esta semana.,neutral,g03628,sintetico_claude
+Nos toca ver lo del pedido de útiles esta semana.,neutral,g03639,sintetico_claude
+Esta semana tenemos que revisar lo de la compra de los útiles.,neutral,g03639,sintetico_claude
+Encontré los datos de la actualización del sistema de la universidad en la página del curso.,neutral,g03642,sintetico_claude
+saqué la información de la nueva versión del sistema académico de la web del curso.,neutral,g03642,sintetico_claude
+"Ya basta con los gritos de mi jefe en la reunión, estoy muy enojado",enojo,g03645,sintetico_claude
+"Hasta aquí llegué con la forma en que me gritó mi jefe frente a todos, estoy furioso",enojo,g03645,sintetico_claude
+Estoy que exploto por la forma en que me trató mi mamá en la reunión,enojo,g03647,sintetico_claude
+Estoy a punto de explotar por el trato que tuvo mi mamá conmigo delante de todos.,enojo,g03647,sintetico_claude
+Encontré los datos del correo del profesor sobre química en la página del curso.,neutral,g03649,sintetico_claude
+Saqué la información del mensaje del docente de química de la web del curso.,neutral,g03649,sintetico_claude
+Lo del presupuesto de mi exposición está en el documento compartido.,neutral,g03653,sintetico_claude
+El detalle de los costos de mi exposición figura en el archivo compartido.,neutral,g03653,sintetico_claude
+Nos toca ver lo del recibo del agua esta semana,neutral,g03664,sintetico_claude
+Esta semana tenemos que revisar lo de la factura del agua de este mes,neutral,g03664,sintetico_claude
+Lo del turno de atención en secretaría lo conversamos en clase,neutral,g03666,sintetico_claude
+En clase conversamos sobre el horario de atención de secretaría.,neutral,g03666,sintetico_claude
+Me desvelé pensando en el mensaje que debo enviarle a mi hermana,ansiedad,g03671,sintetico_claude
+Casi no dormí por estar pensando en la carta que tengo que escribirle a mi hermana,ansiedad,g03671,sintetico_claude
+Hay que ver lo del feriado del mes con el resto del equipo,neutral,g03674,sintetico_claude
+Debemos coordinar lo del día no laborable de este mes con los demás.,neutral,g03674,sintetico_claude
+Lo de las instrucciones del laboratorio de cálculo está en el documento compartido,neutral,g03676,sintetico_claude
+El detalle de la guía del laboratorio de cálculo figura en el archivo compartido.,neutral,g03676,sintetico_claude
+Ando sonriendo solo desde lo de la nota que saqué en cálculo,alegria,g03685,sintetico_claude
+Desde lo de mi resultado en el examen de cálculo no se me quita la sonrisa.,alegria,g03685,sintetico_claude
+Compartí lo de la copia de mi horario en el grupo.,neutral,g03687,sintetico_claude
+Subí lo de mi horario impreso al grupo de WhatsApp,neutral,g03687,sintetico_claude
+Encontré los datos del enlace de la clase virtual en la página del curso,neutral,g03693,sintetico_claude
+Saqué la información del link de la sesión en línea de la web del curso.,neutral,g03693,sintetico_claude
+Me hace sonreír pensar en el cariño de mis amigos esta semana.,alegria,g03697,sintetico_claude
+Recordar el apoyo y las risas de mis amigos esta semana me llena de alegría.,alegria,g03697,sintetico_claude
+Hoy lloré un rato por la mudanza de mis padres a otra ciudad,tristeza,g03702,sintetico_claude
+Terminé llorando en mi cuarto por la partida de mis papás a vivir lejos.,tristeza,g03702,sintetico_claude
+Nos toca ver lo del lugar de la reunión del martes esta semana.,neutral,g03703,sintetico_claude
+Esta semana tenemos que revisar lo del sitio donde nos reunimos el martes.,neutral,g03703,sintetico_claude
+Me desvelé pensando en el veredicto del jurado,ansiedad,g03705,sintetico_claude
+Casi no dormí por estar pensando en la opinión del jurado sobre mi trabajo,ansiedad,g03705,sintetico_claude
+Encontré los datos de la hora de salida del bus en la página del curso.,neutral,g03712,sintetico_claude
+Saqué la información del horario de partida del bus de la web del curso,neutral,g03712,sintetico_claude
+Estoy muy enojado con la sanción que me pusieron sin motivo.,enojo,g03715,sintetico_claude
+Ando de mal genio por el castigo injusto en el trabajo.,enojo,g03715,sintetico_claude
+Estoy que exploto por el robo de mi bicicleta.,enojo,g03717,sintetico_claude
+Estoy a punto de explotar por la desaparición de mi bici de la puerta de mi casa.,enojo,g03717,sintetico_claude
+Con la cena con mi pareja de anoche se me alegró el día.,alegria,g03733,sintetico_claude
+Con la salida romántica de ayer con mi pareja me cambió el ánimo para bien.,alegria,g03733,sintetico_claude
+Nos toca ver lo del pago de la matrícula esta semana,neutral,g03734,sintetico_claude
+Esta semana tenemos que revisar lo de la cuota de matrícula del ciclo,neutral,g03734,sintetico_claude
+Compartí lo de la agenda del curso de química en el grupo.,neutral,g03735,sintetico_claude
+subí lo del sílabo de química al grupo de WhatsApp,neutral,g03735,sintetico_claude
+Estoy triste y desilusionada por la partida de mi compañero de cuarto,tristeza,g03747,sintetico_claude
+Me siento triste y desanimada con el día en que se fue mi compañero de cuarto.,tristeza,g03747,sintetico_claude
+Se me apagó el día por la separación de mis tíos.,tristeza,g03749,sintetico_claude
+Mi día se volvió gris por el divorcio de mis tíos.,tristeza,g03749,sintetico_claude
+Ando sonriendo sola desde lo de la ceremonia de mi graduación,alegria,g03752,sintetico_claude
+Desde lo del día en que me gradué no se me quita la sonrisa.,alegria,g03752,sintetico_claude
+Estoy muy triste por mis planes que se cayeron.,tristeza,g03756,sintetico_claude
+Tengo el ánimo por los suelos a causa de los planes que se cancelaron en el último momento,tristeza,g03756,sintetico_claude
+Lo del cambio de contraseña del correo institucional lo conversamos en clase.,neutral,g03757,sintetico_claude
+En clase conversamos sobre la actualización de la clave del correo de la universidad,neutral,g03757,sintetico_claude
+Compartí lo de la inscripción al taller de cálculo en el grupo,neutral,g03761,sintetico_claude
+Subí lo de la matrícula en el taller de cálculo al grupo de WhatsApp,neutral,g03761,sintetico_claude
+La tristeza por el rechazo de la universidad que quería no me deja en paz.,tristeza,g03771,sintetico_claude
+Hoy no puedo con la tristeza por la respuesta negativa de la universidad que elegí.,tristeza,g03771,sintetico_claude
+Por fin pude tocar mi canción favorita en la guitarra y estoy radiante.,alegria,g03775,sintetico_claude
+Ya toco mi canción favorita con la guitarra y me siento feliz.,alegria,g03775,sintetico_claude
+Se me apagó el día por la ruptura con mi pareja.,tristeza,g03777,sintetico_claude
+Mi día se volvió gris por el final de mi noviazgo.,tristeza,g03777,sintetico_claude
+Estoy que exploto por la clase que cancelaron a último minuto,enojo,g03778,sintetico_claude
+Estoy a punto de explotar por el aviso tardío de que no habría clase,enojo,g03778,sintetico_claude
+Estoy muy enojada con la nota injusta que me pusieron en física.,enojo,g03782,sintetico_claude
+Ando de mal genio por el puntaje que me bajaron sin razón en física,enojo,g03782,sintetico_claude
+Lo del mapa del campus lo conversamos en clase,neutral,g03803,sintetico_claude
+En clase conversamos sobre el plano del campus.,neutral,g03803,sintetico_claude
+Con la partida de mi mejor amigo al extranjero se me fueron las ganas de reír,tristeza,g03812,sintetico_claude
+Con la mudanza de mi amigo a otro país me quedé sin ganas de sonreír.,tristeza,g03812,sintetico_claude
+Estoy muy enojada con el cobro de más que me hicieron.,enojo,g03813,sintetico_claude
+Ando de mal genio por el cargo de más en mi cuenta.,enojo,g03813,sintetico_claude
+"Ya basta con la cancelación de mi pedido sin aviso, estoy muy enojado",enojo,g03835,sintetico_claude
+"Hasta aquí llegué con el pedido que cancelaron sin avisarme, estoy furioso",enojo,g03835,sintetico_claude
+Ando sonriendo solo desde lo de la respuesta de mi tía a mi propuesta,alegria,g03846,sintetico_claude
+desde lo del sí de mi tía a mi idea no se me quita la sonrisa,alegria,g03846,sintetico_claude
+Mañana hablamos de lo del pago de la matrícula.,neutral,g03848,sintetico_claude
+Mañana conversamos sobre la cuota de matrícula del ciclo,neutral,g03848,sintetico_claude
+Compartí lo del lugar de la reunión del lunes en el grupo,neutral,g03852,sintetico_claude
+Subí lo del sitio donde nos reunimos el lunes al grupo de WhatsApp,neutral,g03852,sintetico_claude
+Con el trato del banco con mi reclamo se me acabó la paciencia,enojo,g03853,sintetico_claude
+Con la respuesta del banco a mi reclamo ya colmaron mi paciencia,enojo,g03853,sintetico_claude
+Se me apagó el día por la lejanía de mi familia.,tristeza,g03854,sintetico_claude
+Mi día se volvió gris por la distancia que me separa de mi familia.,tristeza,g03854,sintetico_claude
+Hoy vi lo de la llamada con mi vecino en el correo,neutral,g03865,sintetico_claude
+Leí lo de la charla telefónica con mi vecino en el correo de hoy,neutral,g03865,sintetico_claude
+Encontré los datos del pago de la matrícula en la página del curso,neutral,g03866,sintetico_claude
+Saqué la información de la cuota de matrícula del ciclo de la web del curso.,neutral,g03866,sintetico_claude
+Con el día gris en el gimnasio se me fueron las ganas de reír.,tristeza,g03868,sintetico_claude
+con la tarde tan apagada en el gimnasio me quedé sin ganas de sonreír.,tristeza,g03868,sintetico_claude
+Hoy vi lo del avance semanal de mi proyecto final en el correo,neutral,g03870,sintetico_claude
+Leí lo del reporte semanal de mi proyecto final en el correo de hoy,neutral,g03870,sintetico_claude
+Hoy lloré un rato por la partida de mi mejor amigo al extranjero.,tristeza,g03872,sintetico_claude
+Terminé llorando en mi cuarto por la mudanza de mi amigo a otro país.,tristeza,g03872,sintetico_claude
+Nos toca ver lo del avance semanal de mi prototipo esta semana.,neutral,g03873,sintetico_claude
+Esta semana tenemos que revisar lo del reporte semanal de mi prototipo,neutral,g03873,sintetico_claude
+lo de la actividad del grupo en la biblioteca está en el documento compartido.,neutral,g03875,sintetico_claude
+El detalle del trabajo del grupo en la biblioteca figura en el archivo compartido.,neutral,g03875,sintetico_claude
+Me desvelé pensando en la cena en la que seguro habrá tensión.,ansiedad,g03881,sintetico_claude
+Casi no dormí por estar pensando en la reunión familiar en la que habrá discusión.,ansiedad,g03881,sintetico_claude
+Nos toca ver lo de la compra del pasaje esta semana.,neutral,g03884,sintetico_claude
+esta semana tenemos que revisar lo de la reserva del boleto de viaje.,neutral,g03884,sintetico_claude
+Me alegra un montón lo de la comida familiar del domingo,alegria,g03885,sintetico_claude
+Me llena de satisfacción lo del almuerzo con toda mi familia.,alegria,g03885,sintetico_claude
+Me hace sonreír pensar en el sorteo que gané.,alegria,g03896,sintetico_claude
+Recordar mi triunfo en el sorteo me llena de alegría,alegria,g03896,sintetico_claude
+Estoy que exploto por las excusas de mi compañero que no trabajó en el grupo,enojo,g03899,sintetico_claude
+Estoy a punto de explotar por el compañero que se quedó de brazos cruzados en nuestro trabajo,enojo,g03899,sintetico_claude
+Me alegra un montón lo de la exposición que di en base de datos,alegria,g03900,sintetico_claude
+Me llena de satisfacción lo de mi presentación de hoy en la clase de base de datos,alegria,g03900,sintetico_claude
+Estoy muy enojada con la decisión del comité sin consultarnos.,enojo,g03902,sintetico_claude
+Ando de mal genio por lo que decidió el comité a nuestras espaldas.,enojo,g03902,sintetico_claude
+Estoy muy enojada con las dos horas de espera que me hicieron pasar,enojo,g03910,sintetico_claude
+Ando de mal genio por la espera interminable en la atención al cliente.,enojo,g03910,sintetico_claude
+Nos toca ver lo del punto de encuentro del grupo esta semana,neutral,g03918,sintetico_claude
+Esta semana tenemos que revisar lo del sitio donde se reúne el grupo.,neutral,g03918,sintetico_claude
+Me desvelé pensando en la reunión con mi jefe el lunes,ansiedad,g03921,sintetico_claude
+Casi no dormí por estar pensando en la cita con mi jefe este lunes.,ansiedad,g03921,sintetico_claude
+Nos toca ver lo del turno de atención en secretaría esta semana.,neutral,g03925,sintetico_claude
+Esta semana tenemos que revisar lo del horario de atención de secretaría.,neutral,g03925,sintetico_claude
+Ando sonriendo solo desde lo de la clase de inglés de hoy.,alegria,g03927,sintetico_claude
+Desde lo de la sesión de inglés de esta mañana no se me quita la sonrisa,alegria,g03927,sintetico_claude
+Estoy triste y desilusionado por la despedida en el aeropuerto.,tristeza,g03928,sintetico_claude
+Me siento triste y desanimado con el adiós que nos dimos en el aeropuerto.,tristeza,g03928,sintetico_claude
+Mañana hablamos de lo del aviso de la secretaría,neutral,g03930,sintetico_claude
+Mañana conversamos sobre el comunicado de la secretaría,neutral,g03930,sintetico_claude
+lo de la reunión del viernes en la biblioteca lo conversamos en clase,neutral,g03932,sintetico_claude
+En clase conversamos sobre el encuentro del viernes en la biblioteca.,neutral,g03932,sintetico_claude
+Me hace sonreír pensar en la noticia de mi aprobación en el curso,alegria,g03942,sintetico_claude
+Recordar el aviso de que pasé el curso me llena de alegría.,alegria,g03942,sintetico_claude
+Estoy muy enojada con la falta de respeto de unos compañeros,enojo,g03955,sintetico_claude
+Ando de mal genio por la burla de unos compañeros hacia mí.,enojo,g03955,sintetico_claude
+Me desvelé pensando en la espera de los resultados.,ansiedad,g03965,sintetico_claude
+Casi no dormí por estar pensando en la hora en que llegarán los resultados.,ansiedad,g03965,sintetico_claude
+Me hace sonreír pensar en la sorpresa que me dio mi equipo en la universidad,alegria,g03967,sintetico_claude
+Recordar el detalle que tuvieron mis compañeros en la universidad me llena de alegría.,alegria,g03967,sintetico_claude
+qué lindo se siente lo de la noticia de mi aprobación en el curso,alegria,g03978,sintetico_claude
+Se siente buenísimo lo del aviso de que pasé el curso.,alegria,g03978,sintetico_claude
+Me desvelé pensando en la cantidad de tareas de esta semana.,ansiedad,g03980,sintetico_claude
+Casi no dormí por estar pensando en la montaña de pendientes que tengo esta semana,ansiedad,g03980,sintetico_claude
+Estoy inquieta por la cena en la que seguro habrá tensión.,ansiedad,g03988,sintetico_claude
+me siento intranquila por la reunión familiar en la que habrá discusión.,ansiedad,g03988,sintetico_claude
+estoy muy enojado con el chisme que inventaron sobre mí.,enojo,g03993,sintetico_claude
+Ando de mal genio por el rumor falso que corrió sobre mí,enojo,g03993,sintetico_claude
+estoy triste y desilusionada por las expectativas que no se cumplieron con mi aplicación.,tristeza,g04000,sintetico_claude
+Me siento triste y desanimada con el fracaso de mi aplicación.,tristeza,g04000,sintetico_claude
+Me desvelé pensando en la visita de mis suegros,ansiedad,g04002,sintetico_claude
+Casi no dormí por estar pensando en la cena con los padres de mi pareja.,ansiedad,g04002,sintetico_claude
+Gracias a mi nuevo cuarto en el departamento tengo ganas de celebrar,alegria,g04004,sintetico_claude
+Después de la mudanza a mi propio espacio me dieron ganas de festejar con todos.,alegria,g04004,sintetico_claude
+Aviso: lo del horario de la clase de sistemas operativos se mantiene tal como estaba.,neutral,g04023,sintetico_claude
+Información sobre la hora de las sesiones de sistemas operativos: no hubo ningún cambio.,neutral,g04023,sintetico_claude
+La tristeza por las fotos viejas de mi familia no me deja en paz.,tristeza,g04025,sintetico_claude
+Hoy no puedo con la tristeza por el álbum de recuerdos de mi familia.,tristeza,g04025,sintetico_claude
+"Estoy muy triste por el recuerdo de mi abuela, que ya no está.",tristeza,g04026,sintetico_claude
+"Tengo el ánimo por los suelos a causa de mi abuela, que ya no está con nosotros",tristeza,g04026,sintetico_claude
+Nos toca ver lo del borrador de mi tesis esta semana,neutral,g04042,sintetico_claude
+Esta semana tenemos que revisar lo de la primera versión de mi tesis,neutral,g04042,sintetico_claude
+Estoy triste y desilusionada por la muerte de mi perro,tristeza,g04050,sintetico_claude
+Me siento triste y desanimada con la pérdida de mi mascota,tristeza,g04050,sintetico_claude
+Hoy vi lo del aviso de la secretaría en el correo.,neutral,g04051,sintetico_claude
+Leí lo del comunicado de la secretaría en el correo de hoy.,neutral,g04051,sintetico_claude
+Estoy muy enojada con la mala atención en el restaurante,enojo,g04054,sintetico_claude
+Ando de mal genio por el pésimo servicio que nos dieron en el restaurante.,enojo,g04054,sintetico_claude
+"Sobre el avance semanal de mi proyecto final, ya revisé los detalles.",neutral,g04057,sintetico_claude
+"Respecto al reporte semanal de mi proyecto final, ya vi todos los detalles",neutral,g04057,sintetico_claude
+Hay que ver lo del aviso de la secretaría con el resto del equipo.,neutral,g04064,sintetico_claude
+Debemos coordinar lo del comunicado de la secretaría con los demás,neutral,g04064,sintetico_claude
+Encontré los datos del pedido de útiles en la página del curso,neutral,g04070,sintetico_claude
+saqué la información de la compra de los útiles de la web del curso,neutral,g04070,sintetico_claude
+Compartí lo de la reunión del sábado en la casa de mis tíos en el grupo.,neutral,g04076,sintetico_claude
+Subí lo del encuentro del sábado en la casa de mis tíos al grupo de WhatsApp.,neutral,g04076,sintetico_claude
+Estoy que exploto por la impuntualidad de mi grupo en el taller.,enojo,g04084,sintetico_claude
+estoy a punto de explotar por los retrasos de mis compañeros en el taller.,enojo,g04084,sintetico_claude
+Se me apagó el día por el malentendido con mi profesora.,tristeza,g04095,sintetico_claude
+Mi día se volvió gris por la discusión que tuve con mi profesora.,tristeza,g04095,sintetico_claude
+Encontré los datos del archivo adjunto del correo en la página del curso.,neutral,g04102,sintetico_claude
+Saqué la información del documento que viene adjunto en el correo de la web del curso.,neutral,g04102,sintetico_claude
+Estoy muy agradecido y contento por la fiesta que me prepararon mis amigos,alegria,g04106,sintetico_claude
+Me siento afortunado por la sorpresa de cumpleaños de mis amigos.,alegria,g04106,sintetico_claude
+Estoy muy enojado con el ruido de las obras toda la mañana,enojo,g04109,sintetico_claude
+ando de mal genio por las obras en la calle que no me dejan en paz.,enojo,g04109,sintetico_claude
+Con el sorteo que gané se me alegró el día.,alegria,g04110,sintetico_claude
+Con mi triunfo en el sorteo me cambió el ánimo para bien.,alegria,g04110,sintetico_claude
+Lo del archivo con las notas del taller lo conversamos en clase,neutral,g04112,sintetico_claude
+En clase conversamos sobre el documento con los apuntes del taller.,neutral,g04112,sintetico_claude
+Qué lindo se siente lo del concierto de anoche.,alegria,g04119,sintetico_claude
+Se siente buenísimo lo de la salida al concierto con mis amigos.,alegria,g04119,sintetico_claude
+Qué lindo se siente lo de la visita sorpresa de mi abuelo.,alegria,g04124,sintetico_claude
+Se siente buenísimo lo de la llegada inesperada de mi abuelo,alegria,g04124,sintetico_claude
+Hoy vi lo del punto de encuentro del grupo en el correo.,neutral,g04129,sintetico_claude
+Leí lo del sitio donde se reúne el grupo en el correo de hoy.,neutral,g04129,sintetico_claude
+Lo de la salida de campo del martes lo conversamos en clase.,neutral,g04138,sintetico_claude
+En clase conversamos sobre la visita guiada del martes.,neutral,g04138,sintetico_claude
+Estoy muy agradecido y contento por el aprobado de mi proyecto.,alegria,g04142,sintetico_claude
+Me siento afortunado por la aprobación de mi proyecto por el comité,alegria,g04142,sintetico_claude
+Mis padres se sintieron orgullosos de mi diploma y yo también.,alegria,g04155,sintetico_claude
+Mis papás lloraron de felicidad con mi diploma y me emocioné con ellos.,alegria,g04155,sintetico_claude
+encontré los datos del turno de atención en secretaría en la página del curso,neutral,g04158,sintetico_claude
+Saqué la información del horario de atención de secretaría de la web del curso.,neutral,g04158,sintetico_claude
+Mañana hablamos de lo del horario de la clase de álgebra,neutral,g04159,sintetico_claude
+Mañana conversamos sobre la hora de las sesiones de álgebra,neutral,g04159,sintetico_claude
+Nos toca ver lo de la agenda de la próxima semana esta semana,neutral,g04170,sintetico_claude
+Esta semana tenemos que revisar lo del plan de actividades de la semana que viene,neutral,g04170,sintetico_claude
+Me alegra un montón lo del reconocimiento que me dieron en la universidad.,alegria,g04180,sintetico_claude
+Me llena de satisfacción lo del premio que recibí en clase.,alegria,g04180,sintetico_claude
+Estoy muy triste por el cierre del negocio de mi familia.,tristeza,g04186,sintetico_claude
+tengo el ánimo por los suelos a causa del fin del negocio de mi familia,tristeza,g04186,sintetico_claude
+Me hace sonreír pensar en el reconocimiento que me dieron en la universidad,alegria,g04197,sintetico_claude
+Recordar el premio que recibí en clase me llena de alegría.,alegria,g04197,sintetico_claude
+Estoy triste y desilusionado por la noticia de que no pasé a la siguiente etapa.,tristeza,g04198,sintetico_claude
+me siento triste y desanimado con mi eliminación del proceso de selección.,tristeza,g04198,sintetico_claude
+La tristeza por las expectativas que no se cumplieron con mi exposición no me deja en paz.,tristeza,g04205,sintetico_claude
+Hoy no puedo con la tristeza por el fracaso de mi exposición,tristeza,g04205,sintetico_claude
+Me alegra un montón lo del feriado largo que viene.,alegria,g04206,sintetico_claude
+me llena de satisfacción lo de los días libres de este mes.,alegria,g04206,sintetico_claude
+Mañana hablamos de lo de la agenda de la próxima semana.,neutral,g04208,sintetico_claude
+Mañana conversamos sobre el plan de actividades de la semana que viene.,neutral,g04208,sintetico_claude
+Mañana hablamos de lo de la lista de materiales para base de datos,neutral,g04212,sintetico_claude
+Mañana conversamos sobre los materiales que piden en base de datos.,neutral,g04212,sintetico_claude
+estoy muy enojada con la injusticia de mi horario de trabajo,enojo,g04219,sintetico_claude
+Ando de mal genio por el horario que me impusieron sin consultarme,enojo,g04219,sintetico_claude
+Estoy que exploto por el internet que se cae todo el tiempo.,enojo,g04229,sintetico_claude
+Estoy a punto de explotar por la mala conexión que no se arregla nunca,enojo,g04229,sintetico_claude
+Me desvelé pensando en la respuesta que espero de la universidad,ansiedad,g04236,sintetico_claude
+"Casi no dormí por estar pensando en la decisión de la universidad, que todavía no llega.",ansiedad,g04236,sintetico_claude
+Se me apagó el día por la ausencia de mi asesora en mi cumpleaños.,tristeza,g04239,sintetico_claude
+Mi día se volvió gris por la falta de mi asesora en mi celebración.,tristeza,g04239,sintetico_claude
+Compartí lo del pedido de útiles en el grupo.,neutral,g04244,sintetico_claude
+Subí lo de la compra de los útiles al grupo de WhatsApp,neutral,g04244,sintetico_claude
+Me desvelé pensando en el cambio de ciudad que se viene.,ansiedad,g04251,sintetico_claude
+Casi no dormí por estar pensando en la mudanza que se acerca.,ansiedad,g04251,sintetico_claude
+Hay que ver lo de la llamada con mi profesora con el resto del equipo,neutral,g04253,sintetico_claude
+Debemos coordinar lo de la charla telefónica con mi profesora con los demás.,neutral,g04253,sintetico_claude
+Qué lindo se siente lo de mi aceptación en las prácticas de la empresa,alegria,g04259,sintetico_claude
+Se siente buenísimo lo de la respuesta positiva que me dieron para las prácticas.,alegria,g04259,sintetico_claude
+Me desvelé pensando en las evaluaciones de desempeño.,ansiedad,g04262,sintetico_claude
+Casi no dormí por estar pensando en la revisión de mi rendimiento en el trabajo,ansiedad,g04262,sintetico_claude
+Me reencontré con una amiga del colegio y fue lo mejor del día.,alegria,g04264,sintetico_claude
+Me topé con una amiga del colegio y se me alegró el día,alegria,g04264,sintetico_claude
+Hoy vi lo de la lista de materiales para álgebra en el correo.,neutral,g04267,sintetico_claude
+Leí lo de los materiales que piden en álgebra en el correo de hoy.,neutral,g04267,sintetico_claude
+Estoy muy triste por la cancelación del concierto al que iba con mis amigos,tristeza,g04279,sintetico_claude
+Tengo el ánimo por los suelos a causa del concierto al que ya no pudimos ir,tristeza,g04279,sintetico_claude
+Lo de la llamada con mi abuelo está en el documento compartido,neutral,g04287,sintetico_claude
+El detalle de la charla telefónica con mi abuelo figura en el archivo compartido,neutral,g04287,sintetico_claude
+Hoy vi lo del calendario de exámenes en el correo,neutral,g04290,sintetico_claude
+Leí lo del cronograma de evaluaciones en el correo de hoy,neutral,g04290,sintetico_claude
+Lo de la hora de salida del bus lo conversamos en clase.,neutral,g04292,sintetico_claude
+En clase conversamos sobre el horario de partida del bus,neutral,g04292,sintetico_claude
+Hay que ver lo del horario de la clase de álgebra con el resto del equipo.,neutral,g04294,sintetico_claude
+Debemos coordinar lo de la hora de las sesiones de álgebra con los demás.,neutral,g04294,sintetico_claude
+Pasé toda la tarde riendo con mis primos.,alegria,g04295,sintetico_claude
+Con mis primos me reí un montón esta tarde,alegria,g04295,sintetico_claude
+Estoy muy triste por la despedida de mis compañeros de trabajo.,tristeza,g04297,sintetico_claude
+Tengo el ánimo por los suelos a causa del último día con mi equipo de trabajo.,tristeza,g04297,sintetico_claude
+Estoy muy triste por la despedida de mi promoción,tristeza,g04299,sintetico_claude
+Tengo el ánimo por los suelos a causa del último día con mis compañeros de promoción.,tristeza,g04299,sintetico_claude
+Lo de la copia de mi horario lo conversamos en clase.,neutral,g04301,sintetico_claude
+En clase conversamos sobre mi horario impreso.,neutral,g04301,sintetico_claude
+Ando sonriendo solo desde lo del feriado largo que viene.,alegria,g04302,sintetico_claude
+Desde lo de los días libres de este mes no se me quita la sonrisa,alegria,g04302,sintetico_claude
+Estoy triste y desilusionado por la ruptura con mi pareja.,tristeza,g04303,sintetico_claude
+Me siento triste y desanimado con el final de mi noviazgo.,tristeza,g04303,sintetico_claude
+Compartí lo del recibo del agua en el grupo.,neutral,g04307,sintetico_claude
+Subí lo de la factura del agua de este mes al grupo de WhatsApp.,neutral,g04307,sintetico_claude
+Hay que ver lo del archivo adjunto del correo con el resto del equipo,neutral,g04313,sintetico_claude
+Debemos coordinar lo del documento que viene adjunto en el correo con los demás.,neutral,g04313,sintetico_claude
+ando sonriendo sola desde lo de la sorpresa que me dio mi equipo en el gimnasio,alegria,g04332,sintetico_claude
+Desde lo del detalle que tuvieron mis compañeros en el gimnasio no se me quita la sonrisa.,alegria,g04332,sintetico_claude
+Hoy lloré un rato por la derrota de mi equipo en la final,tristeza,g04334,sintetico_claude
+Terminé llorando en mi cuarto por la final que perdió mi equipo.,tristeza,g04334,sintetico_claude
+Lo del feriado del mes está en el documento compartido.,neutral,g04340,sintetico_claude
+El detalle del día no laborable de este mes figura en el archivo compartido.,neutral,g04340,sintetico_claude
+Me alegra un montón lo de mi aceptación en las prácticas de la empresa.,alegria,g04343,sintetico_claude
+Me llena de satisfacción lo de la respuesta positiva que me dieron para las prácticas.,alegria,g04343,sintetico_claude
+Hoy vi lo de la hora de salida del bus en el correo,neutral,g04349,sintetico_claude
+Leí lo del horario de partida del bus en el correo de hoy.,neutral,g04349,sintetico_claude
+Hoy lloré un rato por la ruptura con mi pareja.,tristeza,g04355,sintetico_claude
+Terminé llorando en mi cuarto por el final de mi noviazgo.,tristeza,g04355,sintetico_claude
+La tristeza por el cumpleaños que pasé solo no me deja en paz,tristeza,g04360,sintetico_claude
+Hoy no puedo con la tristeza por mi cumpleaños sin nadie cerca,tristeza,g04360,sintetico_claude
+Encontré los datos de la reserva de la casa de mis tíos en la página del curso,neutral,g04363,sintetico_claude
+Saqué la información del espacio reservado en la casa de mis tíos de la web del curso.,neutral,g04363,sintetico_claude
+"estoy triste y desilusionado por el recuerdo de mi abuela, que ya no está.",tristeza,g04367,sintetico_claude
+"Me siento triste y desanimado con mi abuela, que ya no está con nosotros.",tristeza,g04367,sintetico_claude
+encontré los datos del material de la semana en la página del curso.,neutral,g04377,sintetico_claude
+Saqué la información de los archivos de esta semana de la web del curso,neutral,g04377,sintetico_claude
+Estoy muy triste por el fracaso en mi entrevista de trabajo.,tristeza,g04381,sintetico_claude
+Tengo el ánimo por los suelos a causa de la entrevista que no me salió bien.,tristeza,g04381,sintetico_claude
+Estoy muy enojado con las interrupciones en la clase de física.,enojo,g04386,sintetico_claude
+Ando de mal genio por la forma en que me interrumpieron en clase.,enojo,g04386,sintetico_claude
+La tristeza por la despedida de mi promoción no me deja en paz,tristeza,g04393,sintetico_claude
+Hoy no puedo con la tristeza por el último día con mis compañeros de promoción.,tristeza,g04393,sintetico_claude
+Mañana hablamos de lo del punto de encuentro del grupo,neutral,g04403,sintetico_claude
+Mañana conversamos sobre el sitio donde se reúne el grupo,neutral,g04403,sintetico_claude
+"Sobre el presupuesto de mi trabajo grupal, ya revisé los detalles.",neutral,g04405,sintetico_claude
+"Respecto a los costos de mi trabajo grupal, ya vi todos los detalles.",neutral,g04405,sintetico_claude
+Hay que ver lo de la inscripción al taller de estadística con el resto del equipo,neutral,g04410,sintetico_claude
+Debemos coordinar lo de la matrícula en el taller de estadística con los demás,neutral,g04410,sintetico_claude
+Hay que ver lo de la actividad del grupo en el gimnasio con el resto del equipo.,neutral,g04411,sintetico_claude
+Debemos coordinar lo del trabajo del grupo en el gimnasio con los demás.,neutral,g04411,sintetico_claude
+Hoy lloré un rato por la casa tan silenciosa desde que se fue mi hermana.,tristeza,g04413,sintetico_claude
+Terminé llorando en mi cuarto por el silencio de mi casa sin mi hermana.,tristeza,g04413,sintetico_claude
+Nos toca ver lo de la actualización del sistema de la universidad esta semana.,neutral,g04432,sintetico_claude
+esta semana tenemos que revisar lo de la nueva versión del sistema académico,neutral,g04432,sintetico_claude
+Lo del cambio de turno de esta semana está en el documento compartido.,neutral,g04435,sintetico_claude
+El detalle del nuevo turno que me asignaron esta semana figura en el archivo compartido.,neutral,g04435,sintetico_claude
+Compartí lo del turno de atención en secretaría en el grupo,neutral,g04442,sintetico_claude
+Subí lo del horario de atención de secretaría al grupo de WhatsApp.,neutral,g04442,sintetico_claude
+Estoy muy triste por la renuncia de mi mejor compañero de trabajo.,tristeza,g04444,sintetico_claude
+Tengo el ánimo por los suelos a causa de la salida de mi mejor amigo de la oficina.,tristeza,g04444,sintetico_claude
+Con la sanción que me pusieron sin motivo se me acabó la paciencia,enojo,g04446,sintetico_claude
+con el castigo injusto en el trabajo ya colmaron mi paciencia,enojo,g04446,sintetico_claude
+Nos toca ver lo del horario de la clase de redes esta semana.,neutral,g04458,sintetico_claude
+Esta semana tenemos que revisar lo de la hora de las sesiones de redes.,neutral,g04458,sintetico_claude
+Compartí lo de la ruta del bus a la universidad en el grupo.,neutral,g04464,sintetico_claude
+Subí lo del recorrido del bus hacia la universidad al grupo de WhatsApp.,neutral,g04464,sintetico_claude
+Qué lindo se siente lo de la propuesta de trabajo que me hicieron.,alegria,g04470,sintetico_claude
+Se siente buenísimo lo de la oferta laboral que me llegó.,alegria,g04470,sintetico_claude
+Me hace sonreír pensar en la nota que saqué en sistemas operativos,alegria,g04471,sintetico_claude
+Recordar mi resultado en el examen de sistemas operativos me llena de alegría,alegria,g04471,sintetico_claude
+Estoy inquieta por la respuesta que espero de la universidad.,ansiedad,g04490,sintetico_claude
+"Me siento intranquila por la decisión de la universidad, que todavía no llega",ansiedad,g04490,sintetico_claude
+estoy muy enojada con el desprecio a mi opinión en la reunión.,enojo,g04512,sintetico_claude
+Ando de mal genio por cómo ignoraron mi opinión en el equipo.,enojo,g04512,sintetico_claude
+Lo de la inscripción al taller de base de datos lo conversamos en clase,neutral,g04513,sintetico_claude
+En clase conversamos sobre la matrícula en el taller de base de datos,neutral,g04513,sintetico_claude
+Hoy lloré un rato por el curso de programación que jalé,tristeza,g04514,sintetico_claude
+Terminé llorando en mi cuarto por mi desaprobado en programación,tristeza,g04514,sintetico_claude
+Hoy lloré un rato por la lluvia gris de todos estos días,tristeza,g04531,sintetico_claude
+Terminé llorando en mi cuarto por tantos días nublados seguidos,tristeza,g04531,sintetico_claude
+"Ya basta con los comentarios de mi primo sobre mi familia, estoy muy enojado.",enojo,g04534,sintetico_claude
+"Hasta aquí llegué con la mala manera en que mi primo habló de mi familia, estoy furioso",enojo,g04534,sintetico_claude
+Estoy inquieta por el mensaje que debo enviarle a mi abuelo.,ansiedad,g04541,sintetico_claude
+Me siento intranquila por la carta que tengo que escribirle a mi abuelo,ansiedad,g04541,sintetico_claude
+Encontré los datos del mapa del campus en la página del curso.,neutral,g04544,sintetico_claude
+Saqué la información del plano del campus de la web del curso.,neutral,g04544,sintetico_claude
+Estoy muy agradecido y contento por el reconocimiento que me dieron en la universidad,alegria,g04554,sintetico_claude
+Me siento afortunado por el premio que recibí en clase.,alegria,g04554,sintetico_claude
+Me desvelé pensando en la asignación de los grupos del curso,ansiedad,g04568,sintetico_claude
+Casi no dormí por estar pensando en el sorteo de los equipos de trabajo del curso.,ansiedad,g04568,sintetico_claude
+"Ando sonriendo solo desde lo del cambio de horario en mi trabajo, que me favorece.",alegria,g04570,sintetico_claude
+"Desde lo de mi nuevo horario de trabajo, que me queda perfecto no se me quita la sonrisa.",alegria,g04570,sintetico_claude
+me alegra un montón lo de la llamada de mi mejor amigo.,alegria,g04573,sintetico_claude
+Me llena de satisfacción lo del mensaje que me mandó mi mejor amigo.,alegria,g04573,sintetico_claude
+Estoy que exploto por el incumplimiento de mi vecino.,enojo,g04574,sintetico_claude
+Estoy a punto de explotar por la promesa rota de mi vecino.,enojo,g04574,sintetico_claude
+"Sobre el feriado del mes, ya revisé los detalles.",neutral,g04576,sintetico_claude
+"Respecto al día no laborable de este mes, ya vi todos los detalles.",neutral,g04576,sintetico_claude
+Se me apagó el día por la soledad de estos días,tristeza,g04577,sintetico_claude
+Mi día se volvió gris por estos días tan solitarios.,tristeza,g04577,sintetico_claude
+Ando sonriendo sola desde lo del reconocimiento que me dieron en la universidad.,alegria,g04583,sintetico_claude
+Desde lo del premio que recibí en clase no se me quita la sonrisa.,alegria,g04583,sintetico_claude
+Encontré los datos de la actividad del grupo en la biblioteca en la página del curso.,neutral,g04584,sintetico_claude
+Saqué la información del trabajo del grupo en la biblioteca de la web del curso.,neutral,g04584,sintetico_claude
+"Ya basta con el engaño con el precio del producto, estoy muy enojada.",enojo,g04586,sintetico_claude
+"Hasta aquí llegué con el producto que no era como lo anunciaron, estoy furiosa",enojo,g04586,sintetico_claude
+Me desvelé pensando en el partido decisivo del jueves.,ansiedad,g04598,sintetico_claude
+Casi no dormí por estar pensando en la final del torneo el jueves.,ansiedad,g04598,sintetico_claude
+mañana hablamos de lo de la hora de salida del bus,neutral,g04600,sintetico_claude
+Mañana conversamos sobre el horario de partida del bus,neutral,g04600,sintetico_claude
+Nos toca ver lo de la lista de compras del fin de semana esta semana,neutral,g04607,sintetico_claude
+Esta semana tenemos que revisar lo de las compras que haré el fin de semana.,neutral,g04607,sintetico_claude
+Compartí lo de la llamada con mi primo en el grupo,neutral,g04620,sintetico_claude
+Subí lo de la charla telefónica con mi primo al grupo de WhatsApp,neutral,g04620,sintetico_claude
+Qué lindo se siente lo del viaje que planeamos entre amigos.,alegria,g04626,sintetico_claude
+Se siente buenísimo lo de las vacaciones que vamos a tomar juntos,alegria,g04626,sintetico_claude
+hoy vi lo del pedido de útiles en el correo,neutral,g04627,sintetico_claude
+Leí lo de la compra de los útiles en el correo de hoy.,neutral,g04627,sintetico_claude
+Hay que ver lo del cambio de contraseña del correo institucional con el resto del equipo.,neutral,g04632,sintetico_claude
+Debemos coordinar lo de la actualización de la clave del correo de la universidad con los demás.,neutral,g04632,sintetico_claude
+La tristeza por el trabajo que perdí no me deja en paz.,tristeza,g04639,sintetico_claude
+Hoy no puedo con la tristeza por mi despido de la empresa,tristeza,g04639,sintetico_claude
+Estoy inquieta por el examen oral de base de datos.,ansiedad,g04640,sintetico_claude
+Me siento intranquila por la prueba oral de base de datos.,ansiedad,g04640,sintetico_claude
+lo del punto de encuentro del grupo está en el documento compartido,neutral,g04645,sintetico_claude
+El detalle del sitio donde se reúne el grupo figura en el archivo compartido,neutral,g04645,sintetico_claude
+Estoy muy triste por el día gris en la universidad.,tristeza,g04648,sintetico_claude
+Tengo el ánimo por los suelos a causa de la tarde tan apagada en la universidad.,tristeza,g04648,sintetico_claude
+Hoy lloré un rato por el mensaje frío que me mandó mi asesora,tristeza,g04652,sintetico_claude
+Terminé llorando en mi cuarto por la respuesta seca de mi asesora,tristeza,g04652,sintetico_claude
+Me hace sonreír pensar en la ceremonia de mi graduación.,alegria,g04654,sintetico_claude
+Recordar el día en que me gradué me llena de alegría.,alegria,g04654,sintetico_claude
+Encontré los datos del cambio de contraseña del correo institucional en la página del curso.,neutral,g04658,sintetico_claude
+Saqué la información de la actualización de la clave del correo de la universidad de la web del curso,neutral,g04658,sintetico_claude
+Estoy muy enojado con la actitud de mi abuelo conmigo.,enojo,g04663,sintetico_claude
+Ando de mal genio por la forma de actuar de mi abuelo conmigo.,enojo,g04663,sintetico_claude
+Compartí lo del cambio de aula de estadística en el grupo.,neutral,g04665,sintetico_claude
+Subí lo del aula nueva de estadística al grupo de WhatsApp,neutral,g04665,sintetico_claude
+Mañana hablamos de lo del cambio de contraseña del correo institucional,neutral,g04672,sintetico_claude
+Mañana conversamos sobre la actualización de la clave del correo de la universidad,neutral,g04672,sintetico_claude
+La tristeza por la lluvia gris de todos estos días no me deja en paz,tristeza,g04684,sintetico_claude
+Hoy no puedo con la tristeza por tantos días nublados seguidos.,tristeza,g04684,sintetico_claude
+Me alegra un montón lo de la victoria de mi equipo en el campeonato,alegria,g04688,sintetico_claude
+Me llena de satisfacción lo del triunfo de mi equipo en el torneo.,alegria,g04688,sintetico_claude
+Mañana hablamos de lo del turno de atención en secretaría,neutral,g04692,sintetico_claude
+Mañana conversamos sobre el horario de atención de secretaría,neutral,g04692,sintetico_claude
+Mañana hablamos de lo de la salida de campo del miércoles.,neutral,g04696,sintetico_claude
+Mañana conversamos sobre la visita guiada del miércoles,neutral,g04696,sintetico_claude
+qué lindo se siente lo del aprobado de mi proyecto.,alegria,g04709,sintetico_claude
+se siente buenísimo lo de la aprobación de mi proyecto por el comité.,alegria,g04709,sintetico_claude
+Ando sonriendo solo desde lo de mi nuevo cuarto en el departamento,alegria,g04710,sintetico_claude
+Desde lo de la mudanza a mi propio espacio no se me quita la sonrisa.,alegria,g04710,sintetico_claude
+Me hace sonreír pensar en el concierto de anoche.,alegria,g04711,sintetico_claude
+recordar la salida al concierto con mis amigos me llena de alegría.,alegria,g04711,sintetico_claude
+Qué lindo se siente lo de la victoria de mi equipo en el campeonato.,alegria,g04712,sintetico_claude
+Se siente buenísimo lo del triunfo de mi equipo en el torneo.,alegria,g04712,sintetico_claude
+mañana hablamos de lo del feriado del mes,neutral,g04713,sintetico_claude
+Mañana conversamos sobre el día no laborable de este mes.,neutral,g04713,sintetico_claude
+Hay que ver lo del cambio de turno de esta semana con el resto del equipo.,neutral,g04720,sintetico_claude
+Debemos coordinar lo del nuevo turno que me asignaron esta semana con los demás.,neutral,g04720,sintetico_claude
+Lo de la agenda del curso de inglés está en el documento compartido.,neutral,g04724,sintetico_claude
+El detalle del sílabo de inglés figura en el archivo compartido,neutral,g04724,sintetico_claude
+"Ya basta con la decisión del comité sin consultarnos, estoy muy enojada",enojo,g04725,sintetico_claude
+"Hasta aquí llegué con lo que decidió el comité a nuestras espaldas, estoy furiosa",enojo,g04725,sintetico_claude
+"El cuarto tiene una cama, un escritorio y un armario.",neutral,g04726,sintetico_claude
+"En el cuarto hay una cama, un escritorio y un closet.",neutral,g04726,sintetico_claude
+estoy que exploto por la falta de respeto de unos compañeros,enojo,g04734,sintetico_claude
+Estoy a punto de explotar por la burla de unos compañeros hacia mí.,enojo,g04734,sintetico_claude
+Estoy que exploto por la mala atención en el restaurante.,enojo,g04735,sintetico_claude
+Estoy a punto de explotar por el pésimo servicio que nos dieron en el restaurante,enojo,g04735,sintetico_claude
+"Ya basta con el internet que se cae todo el tiempo, estoy muy enojado",enojo,g04746,sintetico_claude
+"Hasta aquí llegué con la mala conexión que no se arregla nunca, estoy furioso.",enojo,g04746,sintetico_claude
+Estoy triste y desilusionada por las fotos viejas de mi familia.,tristeza,g04757,sintetico_claude
+Me siento triste y desanimada con el álbum de recuerdos de mi familia.,tristeza,g04757,sintetico_claude
+Estoy triste y desilusionada por el curso de álgebra que jalé.,tristeza,g04758,sintetico_claude
+Me siento triste y desanimada con mi desaprobado en álgebra.,tristeza,g04758,sintetico_claude
+Mañana hablamos de lo de la reunión del lunes en la biblioteca.,neutral,g04763,sintetico_claude
+Mañana conversamos sobre el encuentro del lunes en la biblioteca.,neutral,g04763,sintetico_claude
+Estoy muy enojada con la mentira de mi profesora,enojo,g04766,sintetico_claude
+Ando de mal genio por el engaño de mi profesora,enojo,g04766,sintetico_claude
+Ando sonriendo sola desde lo de la noticia de mi aprobación en el curso,alegria,g04768,sintetico_claude
+Desde lo del aviso de que pasé el curso no se me quita la sonrisa.,alegria,g04768,sintetico_claude
+Estoy que exploto por el trato del banco con mi reclamo,enojo,g04781,sintetico_claude
+estoy a punto de explotar por la respuesta del banco a mi reclamo,enojo,g04781,sintetico_claude
+"Se me apagó el día por la ausencia de mi hermano, que viajó a trabajar lejos.",tristeza,g04783,sintetico_claude
+"Mi día se volvió gris por la lejanía de mi hermano, que se fue a trabajar fuera",tristeza,g04783,sintetico_claude
+Gracias a la conversación con mi mejor amigo tengo ganas de celebrar,alegria,g04785,sintetico_claude
+Después del rato de charla con mi amigo de siempre me dieron ganas de festejar con todos.,alegria,g04785,sintetico_claude
+Lo de la inscripción al taller de redes está en el documento compartido.,neutral,g04791,sintetico_claude
+El detalle de la matrícula en el taller de redes figura en el archivo compartido.,neutral,g04791,sintetico_claude
+Me alegra un montón lo de la visita sorpresa de mi tía.,alegria,g04795,sintetico_claude
+Me llena de satisfacción lo de la llegada inesperada de mi tía.,alegria,g04795,sintetico_claude
+Estoy muy triste por la ruptura con mi pareja,tristeza,g04798,sintetico_claude
+Tengo el ánimo por los suelos a causa del final de mi noviazgo.,tristeza,g04798,sintetico_claude
+Estoy que exploto por el tráfico de esta mañana.,enojo,g04805,sintetico_claude
+Estoy a punto de explotar por el embotellamiento que me hizo llegar tarde.,enojo,g04805,sintetico_claude
+Ando sonriendo sola desde lo del lanzamiento de mi aplicación,alegria,g04812,sintetico_claude
+desde lo de la publicación de mi app en la tienda no se me quita la sonrisa.,alegria,g04812,sintetico_claude
+Con la copia de mi trabajo por un compañero se me acabó la paciencia.,enojo,g04827,sintetico_claude
+Con el compañero que se llevó el crédito de mi trabajo ya colmaron mi paciencia.,enojo,g04827,sintetico_claude
+Me alegra un montón lo de la conversación con mi mejor amigo.,alegria,g04836,sintetico_claude
+me llena de satisfacción lo del rato de charla con mi amigo de siempre.,alegria,g04836,sintetico_claude
+Hoy lloré un rato por el fracaso en mi entrevista de trabajo,tristeza,g04838,sintetico_claude
+Terminé llorando en mi cuarto por la entrevista que no me salió bien.,tristeza,g04838,sintetico_claude
+Nos toca ver lo del enlace de la clase virtual esta semana,neutral,g04840,sintetico_claude
+Esta semana tenemos que revisar lo del link de la sesión en línea.,neutral,g04840,sintetico_claude
+Se me apagó el día por la partida de mi compañero de cuarto.,tristeza,g04845,sintetico_claude
+Mi día se volvió gris por el día en que se fue mi compañero de cuarto.,tristeza,g04845,sintetico_claude
+Lo del archivo adjunto del correo está en el documento compartido.,neutral,g04846,sintetico_claude
+El detalle del documento que viene adjunto en el correo figura en el archivo compartido.,neutral,g04846,sintetico_claude
+Lo de la reserva del gimnasio lo conversamos en clase.,neutral,g04854,sintetico_claude
+En clase conversamos sobre el espacio reservado en el gimnasio,neutral,g04854,sintetico_claude
+qué lindo se siente lo de la cena con mi pareja de anoche.,alegria,g04871,sintetico_claude
+Se siente buenísimo lo de la salida romántica de ayer con mi pareja.,alegria,g04871,sintetico_claude
+Gracias a la clase de sistemas operativos de hoy tengo ganas de celebrar,alegria,g04879,sintetico_claude
+Después de la sesión de sistemas operativos de esta mañana me dieron ganas de festejar con todos.,alegria,g04879,sintetico_claude
+Mañana hablamos de lo de la copia de mi horario,neutral,g04882,sintetico_claude
+Mañana conversamos sobre mi horario impreso.,neutral,g04882,sintetico_claude
+La tristeza por mis planes que se cayeron no me deja en paz,tristeza,g04884,sintetico_claude
+hoy no puedo con la tristeza por los planes que se cancelaron en el último momento.,tristeza,g04884,sintetico_claude
+Lo del archivo con las notas del taller está en el documento compartido,neutral,g04885,sintetico_claude
+El detalle del documento con los apuntes del taller figura en el archivo compartido.,neutral,g04885,sintetico_claude
+Hoy vi lo del pago de la matrícula en el correo.,neutral,g04888,sintetico_claude
+Leí lo de la cuota de matrícula del ciclo en el correo de hoy.,neutral,g04888,sintetico_claude
+Hoy lloré un rato por el recuerdo de mi primer amor.,tristeza,g04890,sintetico_claude
+Terminé llorando en mi cuarto por los tiempos con mi primer amor que ya no volverán.,tristeza,g04890,sintetico_claude
+hoy lloré un rato por el día gris en el taller,tristeza,g04891,sintetico_claude
+Terminé llorando en mi cuarto por la tarde tan apagada en el taller.,tristeza,g04891,sintetico_claude
+"Ya basta con las dos horas de espera que me hicieron pasar, estoy muy enojado",enojo,g04892,sintetico_claude
+"Hasta aquí llegué con la espera interminable en la atención al cliente, estoy furioso.",enojo,g04892,sintetico_claude
+Se me apagó el día por el recuerdo de mi primer amor.,tristeza,g04893,sintetico_claude
+Mi día se volvió gris por los tiempos con mi primer amor que ya no volverán,tristeza,g04893,sintetico_claude
+Compartí lo de la salida de campo del jueves en el grupo.,neutral,g04899,sintetico_claude
+Subí lo de la visita guiada del jueves al grupo de WhatsApp.,neutral,g04899,sintetico_claude
+Ando sonriendo solo desde lo de la visita sorpresa de mi abuelo.,alegria,g04900,sintetico_claude
+desde lo de la llegada inesperada de mi abuelo no se me quita la sonrisa,alegria,g04900,sintetico_claude
+Se me apagó el día por el trabajo que perdí.,tristeza,g04903,sintetico_claude
+Mi día se volvió gris por mi despido de la empresa,tristeza,g04903,sintetico_claude
+Compartí lo de la hora de salida del bus en el grupo,neutral,g04910,sintetico_claude
+Subí lo del horario de partida del bus al grupo de WhatsApp,neutral,g04910,sintetico_claude
+Estoy muy triste por la venta de la casa de mi infancia.,tristeza,g04921,sintetico_claude
+Tengo el ánimo por los suelos a causa del adiós a la casa donde crecí,tristeza,g04921,sintetico_claude
+Encontré los datos de la llamada con mi hermana en la página del curso.,neutral,g04924,sintetico_claude
+Saqué la información de la charla telefónica con mi hermana de la web del curso.,neutral,g04924,sintetico_claude
+Lo de la actualización del sistema de la universidad está en el documento compartido.,neutral,g04925,sintetico_claude
+El detalle de la nueva versión del sistema académico figura en el archivo compartido,neutral,g04925,sintetico_claude
+Nos toca ver lo del archivo adjunto del correo esta semana.,neutral,g04934,sintetico_claude
+Esta semana tenemos que revisar lo del documento que viene adjunto en el correo.,neutral,g04934,sintetico_claude
+Estoy triste y desilusionada por la soledad de estos días.,tristeza,g04951,sintetico_claude
+Me siento triste y desanimada con estos días tan solitarios.,tristeza,g04951,sintetico_claude
+Hoy vi lo del presupuesto de mi tesis en el correo.,neutral,g04953,sintetico_claude
+Leí lo de los costos de mi tesis en el correo de hoy,neutral,g04953,sintetico_claude
+Compartí lo del material de la semana en el grupo.,neutral,g04965,sintetico_claude
+Subí lo de los archivos de esta semana al grupo de WhatsApp.,neutral,g04965,sintetico_claude
+Con la respuesta de mi hermana a mi propuesta se me alegró el día.,alegria,g04967,sintetico_claude
+Con el sí de mi hermana a mi idea me cambió el ánimo para bien.,alegria,g04967,sintetico_claude
+Me alegra un montón lo de la propuesta de trabajo que me hicieron.,alegria,g04968,sintetico_claude
+Me llena de satisfacción lo de la oferta laboral que me llegó.,alegria,g04968,sintetico_claude
+Hoy vi lo de la ruta del bus a la universidad en el correo,neutral,g04973,sintetico_claude
+Leí lo del recorrido del bus hacia la universidad en el correo de hoy.,neutral,g04973,sintetico_claude
+Nos toca ver lo del material de la semana esta semana,neutral,g04975,sintetico_claude
+Esta semana tenemos que revisar lo de los archivos de esta semana.,neutral,g04975,sintetico_claude
+Me hace sonreír pensar en la conversación con mi mejor amigo.,alegria,g04981,sintetico_claude
+Recordar el rato de charla con mi amigo de siempre me llena de alegría,alegria,g04981,sintetico_claude
+me hace sonreír pensar en mi primer día en el trabajo nuevo,alegria,g04986,sintetico_claude
+Recordar mi estreno en la empresa nueva me llena de alegría.,alegria,g04986,sintetico_claude

@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.DS_Store
+*.pyc
+/.versiones/
+
+# datos y estado generados por aprendizaje local
+/datos/correcciones_usuario.json
+/modelos/modelo_activo.joblib
+/modelos/estado_modelo.json
+/modelos/evaluacion_final/

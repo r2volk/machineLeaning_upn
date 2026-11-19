@@ -1,0 +1,2 @@
+# conserva los bytes de las evidencias verificadas por sha256
+entrenamiento/resultados/**/*.json -text
