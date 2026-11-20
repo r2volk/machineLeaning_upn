@@ -10,13 +10,12 @@ from pathlib import Path
 import joblib
 
 from entrenamiento.p01_config import (
-    CLASES,
     RAIZ_PROYECTO,
     RUTA_MODELO_BASE,
     RUTA_RESULTADOS,
 )
 from entrenamiento.p02_datos import cargar_particiones
-from entrenamiento.p03_preprocesamiento import normalizar_texto
+from entrenamiento.p03_preprocesamiento import normalizar_texto, preparar_texto_modelo
 from entrenamiento.p04_seguridad import evaluar_riesgo
 from entrenamiento.p07_inferencia import analizar_mensaje
 from entrenamiento.p10_evaluar_test import evaluar_conjunto_test
@@ -29,12 +28,13 @@ class TestPipelineML(unittest.TestCase):
     def test_conteos_y_cero_fugas_en_particiones(self):
         # verifica los conteos exactos entregados y ausencia de fugas entre particiones
         train, val_go, val_sin, resumen = cargar_particiones()
-        self.assertEqual(len(train), 23689)
+        self.assertEqual(len(train), 26469)
         self.assertEqual(len(val_go), 1899)
         self.assertEqual(len(val_sin), 1932)
         self.assertEqual(resumen["train"]["por_origen"]["go_emotions_es_mt"], 15381)
         self.assertEqual(resumen["train"]["por_origen"]["sintetico_claude"], 8068)
         self.assertEqual(resumen["train"]["por_origen"]["sintetico_asistido_IA"], 240)
+        self.assertEqual(resumen["train"]["por_origen"]["curado_situaciones_implicitas"], 2780)
         for clave, valor in resumen["auditoria_fugas"].items():
             self.assertEqual(valor, 0, f"Fuga detectada en {clave}")
 
@@ -43,6 +43,8 @@ class TestPipelineML(unittest.TestCase):
         salida = normalizar_texto("¡Nooooo me fue bien mañana en programación 123!")
         self.assertEqual(salida, "no me fue bien mañana en programacion")
         self.assertIn("no", salida.split())
+        negada = preparar_texto_modelo("No estoy enojado, solo cansado")
+        self.assertEqual(negada, "no neg_estoy neg_enojado solo cansado")
 
     def test_seguridad_detecta_riesgo_y_evita_falsos_positivos(self):
         # valida deteccion de crisis y tolerancia a expresiones coloquiales inofensivas
@@ -88,13 +90,20 @@ class TestPipelineML(unittest.TestCase):
         self.assertEqual(contexto["estado"], "pedir_contexto")
 
     def test_resultados_experimentos_coherentes(self):
-        # comprueba que los trigramas superan a bigramas con parametros fijos
+        # comprueba ventaja global de trigramas y del modelo ganador hibrido
         with RUTA_RESULTADOS.open("r", encoding="utf-8") as archivo:
             datos = json.load(archivo)
         dif = datos["comparacion_bigramas_vs_trigramas"]["diferencia_trigramas_menos_bigramas"]
-        self.assertGreater(dif["macro_f1_go"], 0.0)
         self.assertGreater(dif["macro_f1_sintetica"], 0.0)
         self.assertGreater(dif["macro_f1_combinada"], 0.0)
+        self.assertGreater(dif["promedio_macro_f1"], 0.0)
+
+        modelos = {m["clave"]: m["metricas"] for m in datos["modelos"]}
+        ganador = modelos[datos["modelo_ganador_clave"]]
+        trigramas = modelos["tfidf_lr_trigramas"]
+        self.assertGreater(ganador["validacion_go"]["macro_f1"], trigramas["validacion_go"]["macro_f1"])
+        self.assertGreater(ganador["promedio_macro_f1"], trigramas["promedio_macro_f1"])
+
         for caso in datos["diagnostico_exploratorio"]["casos"]:
             self.assertFalse(caso["en_entrenamiento"])
 

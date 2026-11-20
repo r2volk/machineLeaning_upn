@@ -55,6 +55,18 @@ class TestAplicacionFlask(unittest.TestCase):
         self.assertIn("113", data_crisis["respuesta"])
         self.assertIn("Opción 5", data_crisis["respuesta"])
 
+        r_ctx = self.cliente.post(
+            "/api/chat",
+            json={
+                "mensaje": "reprobe el curso y me siento sin fuerzas",
+                "contexto_previo": "No me fue del todo bien en el examen",
+            },
+        )
+        self.assertEqual(r_ctx.status_code, 200)
+        data_ctx = r_ctx.get_json()
+        self.assertTrue(data_ctx["uso_contexto"])
+        self.assertEqual(data_ctx["etiqueta"], "tristeza")
+
     def test_bloqueo_de_riesgo_y_ciclo_guardar_entrenar_restaurar(self):
         # comprueba rechazo de riesgo y ciclo completo de aprendizaje reversible
         r_riesgo = self.cliente.post(
@@ -94,12 +106,12 @@ class TestAplicacionFlask(unittest.TestCase):
         self.assertEqual(len(r_del.get_json()["correcciones"]), 0)
 
     def test_laboratorio_expone_metricas_calculadas(self):
-        # valida que el laboratorio devuelva los seis modelos y las particiones
+        # valida que el laboratorio devuelva los nueve modelos y las particiones
         resp = self.cliente.get("/api/laboratorio")
         self.assertEqual(resp.status_code, 200)
         data = resp.get_json()
-        self.assertEqual(len(data["experimentos"]["modelos"]), 6)
-        self.assertEqual(data["experimentos"]["resumen_datos"]["train"]["total"], 23689)
+        self.assertEqual(len(data["experimentos"]["modelos"]), 9)
+        self.assertEqual(data["experimentos"]["resumen_datos"]["train"]["total"], 26469)
         for clase in CLASES:
             self.assertIn(clase, data["nombres_clases"])
 

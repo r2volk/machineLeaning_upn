@@ -14,8 +14,12 @@ from entrenamiento.p01_config import (
     UMBRAL_MARGEN_MINIMO,
     UMBRAL_PROB_MINIMA,
 )
-from entrenamiento.p02_datos import cargar_csv_etiquetado, resumir_particion
-from entrenamiento.p03_preprocesamiento import normalizar_lote, normalizar_texto
+from entrenamiento.p02_datos import (
+    cargar_csv_etiquetado,
+    cargar_entrenamiento_completo,
+    resumir_particion,
+)
+from entrenamiento.p03_preprocesamiento import normalizar_texto, preparar_lote_modelo
 from entrenamiento.p06_metricas import evaluar_abstencion, evaluar_predicciones
 from entrenamiento.p07_inferencia import analizar_mensaje
 
@@ -26,11 +30,13 @@ def evaluar_conjunto_test(
     dir_salida=None,
     forzar=False,
 ):
-    # evalua el modelo congelado sobre un test nuevo y guarda metricas y predicciones
+    # evalua el modelo base congelado una sola vez sobre un csv de prueba final
+    # guarda metricas en json y predicciones fila por fila en csv para auditoria
     salida = Path(dir_salida) if dir_salida else (DIR_MODELOS / "evaluacion_final")
     ruta_metricas = salida / "metricas_test.json"
     ruta_predicciones = salida / "predicciones_test.csv"
 
+    # bloquea repetir la evaluacion por accidente para respetar la regla del test unico
     if ruta_metricas.exists() and not forzar:
         raise RuntimeError(
             "Ya existe una evaluacion final guardada en "
@@ -38,13 +44,16 @@ def evaluar_conjunto_test(
             "si necesitas repetirla conscientemente usa --forzar."
         )
 
+    # carga el modelo congelado, el archivo de test y entrenamiento para auditar solape
     modelo = joblib.load(ruta_modelo)
     test_filas = cargar_csv_etiquetado(ruta_test)
-    train_filas = cargar_csv_etiquetado(RUTA_TRAIN)
+    train_filas = cargar_entrenamiento_completo(RUTA_TRAIN)
 
     train_set = {normalizar_texto(f["texto"]) for f in train_filas}
-    test_limpios = normalizar_lote([f["texto"] for f in test_filas])
+    test_norm = [normalizar_texto(f["texto"]) for f in test_filas]
+    test_limpios = preparar_lote_modelo([f["texto"] for f in test_filas])
     y_real = [f["etiqueta"] for f in test_filas]
+    # predice sobre todo el test sin ajustar nada en el modelo
     y_pred = list(modelo.predict(test_limpios))
 
     metricas = evaluar_predicciones(y_real, y_pred)
@@ -60,8 +69,10 @@ def evaluar_conjunto_test(
         else None
     )
 
-    solape_train = sum(1 for t in test_limpios if t in train_set)
+    # cuenta si alguna frase del test ya existia en entrenamiento
+    solape_train = sum(1 for t in test_norm if t in train_set)
 
+    # escribe las predicciones detalladas de cada mensaje para revision posterior
     salida.mkdir(parents=True, exist_ok=True)
     with ruta_predicciones.open("w", encoding="utf-8", newline="") as archivo:
         campos = [

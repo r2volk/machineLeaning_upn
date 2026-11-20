@@ -18,8 +18,12 @@ from entrenamiento.p01_config import (
     RUTA_VAL_GO,
     RUTA_VAL_SINTETICA,
 )
-from entrenamiento.p02_datos import cargar_csv_etiquetado
-from entrenamiento.p03_preprocesamiento import normalizar_lote, normalizar_texto
+from entrenamiento.p02_datos import cargar_csv_etiquetado, cargar_entrenamiento_completo
+from entrenamiento.p03_preprocesamiento import (
+    normalizar_texto,
+    preparar_lote_modelo,
+    preparar_texto_modelo,
+)
 from entrenamiento.p04_seguridad import evaluar_riesgo
 from entrenamiento.p05_modelos import construir_modelo_ganador
 from entrenamiento.p06_metricas import evaluar_modelo_en_particiones, redondear
@@ -49,7 +53,8 @@ def guardar_lista_correcciones(correcciones, ruta=RUTA_CORRECCIONES):
 
 
 def agregar_correccion(texto, etiqueta, ruta=RUTA_CORRECCIONES):
-    # valida texto, bloquea mensajes de riesgo y evita mezclar validacion
+    # valida una frase nueva del usuario antes de guardarla en el archivo local
+    # bloquea mensajes de riesgo y frases que ya pertenecen a validacion
     texto_limpio = (texto or "").strip()
     etiqueta_limpia = (etiqueta or "").strip().lower()
 
@@ -58,6 +63,7 @@ def agregar_correccion(texto, etiqueta, ruta=RUTA_CORRECCIONES):
     if etiqueta_limpia not in CLASES:
         raise ValueError(f"La emoción debe ser una de: {', '.join(CLASES)}.")
 
+    # impide guardar frases de suicidio o autolesion para entrenar el modelo
     riesgo = evaluar_riesgo(texto_limpio)
     if riesgo["es_riesgo"]:
         raise ValueError(
@@ -70,6 +76,7 @@ def agregar_correccion(texto, etiqueta, ruta=RUTA_CORRECCIONES):
     if not normalizado:
         raise ValueError("La frase debe contener al menos una palabra válida.")
 
+    # evita fugas impidiendo guardar textos que ya estan en validacion
     if normalizado in _textos_validacion_normalizados():
         raise ValueError(
             "Esa frase ya pertenece al conjunto de validación. No se guarda para "
@@ -88,6 +95,7 @@ def agregar_correccion(texto, etiqueta, ruta=RUTA_CORRECCIONES):
             guardar_lista_correcciones(correcciones, ruta)
             return item
 
+    # crea un registro nuevo con id corto y fecha utc y lo escribe en disco
     nuevo = {
         "id": uuid.uuid4().hex[:10],
         "texto": texto_limpio,
@@ -193,25 +201,25 @@ def reentrenar_con_correcciones(
             "No hay correcciones válidas guardadas para entrenar una nueva versión."
         )
 
-    train_filas = cargar_csv_etiquetado(RUTA_TRAIN)
+    train_filas = cargar_entrenamiento_completo(RUTA_TRAIN)
     val_go_filas = cargar_csv_etiquetado(RUTA_VAL_GO)
     val_sin_filas = cargar_csv_etiquetado(RUTA_VAL_SINTETICA)
 
-    x_train = normalizar_lote([f["texto"] for f in train_filas])
+    x_train = preparar_lote_modelo([f["texto"] for f in train_filas])
     y_train = [f["etiqueta"] for f in train_filas]
 
     # repite cada correccion un numero acotado para superar min_df sin distorsionar
     for item in seguras:
-        texto_norm = normalizar_texto(item["texto"])
+        texto_norm = preparar_texto_modelo(item["texto"])
         if not texto_norm:
             continue
         for _ in range(PESO_REPETICION_CORRECCION):
             x_train.append(texto_norm)
             y_train.append(item["etiqueta"])
 
-    x_go = normalizar_lote([f["texto"] for f in val_go_filas])
+    x_go = preparar_lote_modelo([f["texto"] for f in val_go_filas])
     y_go = [f["etiqueta"] for f in val_go_filas]
-    x_sin = normalizar_lote([f["texto"] for f in val_sin_filas])
+    x_sin = preparar_lote_modelo([f["texto"] for f in val_sin_filas])
     y_sin = [f["etiqueta"] for f in val_sin_filas]
 
     nuevo_modelo = construir_modelo_ganador()
@@ -263,9 +271,9 @@ def restaurar_modelo_base(
         val_sin_filas = cargar_csv_etiquetado(RUTA_VAL_SINTETICA)
         metricas_base = evaluar_modelo_en_particiones(
             modelo_base,
-            normalizar_lote([f["texto"] for f in val_go_filas]),
+            preparar_lote_modelo([f["texto"] for f in val_go_filas]),
             [f["etiqueta"] for f in val_go_filas],
-            normalizar_lote([f["texto"] for f in val_sin_filas]),
+            preparar_lote_modelo([f["texto"] for f in val_sin_filas]),
             [f["etiqueta"] for f in val_sin_filas],
         )
 

@@ -20,7 +20,8 @@ def redondear(valor):
 
 
 def evaluar_predicciones(y_real, y_pred, etiquetas=CLASES):
-    # calcula exactitud, macro-f1, precision, recall, f1 por clase y matriz
+    # calcula exactitud, macro-f1, precision, recall por clase y matriz de confusion
+    # usa macro-f1 porque las cinco emociones tienen el mismo peso aunque neutral domine
     exactitud = accuracy_score(y_real, y_pred)
     precision, recall, f1, soporte = precision_recall_fscore_support(
         y_real,
@@ -29,6 +30,7 @@ def evaluar_predicciones(y_real, y_pred, etiquetas=CLASES):
         zero_division=0,
     )
 
+    # agrupa las metricas individuales de cada emocion con su cantidad real de ejemplos
     por_clase = {}
     for indice, clase in enumerate(etiquetas):
         por_clase[clase] = {
@@ -38,6 +40,7 @@ def evaluar_predicciones(y_real, y_pred, etiquetas=CLASES):
             "soporte": int(soporte[indice]),
         }
 
+    # construye la matriz 5x5 donde filas son etiquetas reales y columnas predichas
     matriz = confusion_matrix(y_real, y_pred, labels=etiquetas).tolist()
 
     return {
@@ -59,9 +62,11 @@ def evaluar_abstencion(
     umbral_prob=UMBRAL_PROB_MINIMA,
     umbral_margen=UMBRAL_MARGEN_MINIMO,
 ):
-    # mide cuantos mensajes etiqueta el modelo y cuantos de esos acierta
+    # simula la regla de pedir contexto sobre una particion completa de validacion
+    # mide que porcentaje de mensajes se etiqueta y que tanto acierta en esos casos
     probs = modelo.predict_proba(textos_limpios)
     clases_modelo = np.array(modelo.classes_)
+    # ordena las probabilidades de mayor a menor para tomar la primera y la segunda
     orden = np.argsort(probs, axis=1)[:, ::-1]
 
     top1_indices = orden[:, 0]
@@ -71,6 +76,7 @@ def evaluar_abstencion(
     margenes = p1 - p2
     predicciones = clases_modelo[top1_indices]
 
+    # solo acepta etiquetar si cumple a la vez el umbral de probabilidad y de margen
     mascara = (p1 >= umbral_prob) & (margenes >= umbral_margen)
     total = len(y_real)
     etiquetados = int(np.sum(mascara))
@@ -89,6 +95,7 @@ def evaluar_abstencion(
             "macro_f1_selectivo": 0.0,
         }
 
+    # calcula exactitud y macro-f1 unicamente sobre los mensajes que si se etiquetaron
     y_real_arr = np.array(y_real)
     y_sel_real = y_real_arr[mascara]
     y_sel_pred = predicciones[mascara]
@@ -117,7 +124,8 @@ def evaluar_abstencion(
 
 
 def evaluar_modelo_en_particiones(modelo, x_go, y_go, x_sin, y_sin):
-    # evalua un modelo entrenado en validacion go, sintetica y combinada
+    # evalua un modelo ya entrenado en validacion go, sintetica y combinada
+    # agrega tambien el promedio de macro-f1 y la evaluacion con abstencion
     pred_go = modelo.predict(x_go)
     pred_sin = modelo.predict(x_sin)
 
@@ -128,6 +136,7 @@ def evaluar_modelo_en_particiones(modelo, x_go, y_go, x_sin, y_sin):
         list(pred_go) + list(pred_sin),
     )
 
+    # promedia go y sintetica por igual para que ninguna particion domine sola
     promedio_macro_f1 = redondear(
         (metricas_go["macro_f1"] + metricas_sin["macro_f1"]) / 2.0
     )
@@ -139,6 +148,7 @@ def evaluar_modelo_en_particiones(modelo, x_go, y_go, x_sin, y_sin):
         "promedio_macro_f1": promedio_macro_f1,
     }
 
+    # solo mide abstencion si el algoritmo entrega probabilidades con predict_proba
     if hasattr(modelo, "predict_proba"):
         resultado["abstencion"] = {
             "validacion_go": evaluar_abstencion(modelo, x_go, y_go),

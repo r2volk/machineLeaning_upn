@@ -6,7 +6,7 @@ from entrenamiento.p01_config import (
     UMBRAL_MARGEN_MINIMO,
     UMBRAL_PROB_MINIMA,
 )
-from entrenamiento.p03_preprocesamiento import normalizar_texto
+from entrenamiento.p03_preprocesamiento import preparar_texto_modelo
 from entrenamiento.p04_seguridad import construir_respuesta_crisis, evaluar_riesgo
 
 # respuestas breves y empaticas segun la senal detectada
@@ -35,7 +35,8 @@ RESPUESTAS_EMOCION = {
 
 
 def extraer_terminos_influyentes(modelo, texto_limpio, clase_objetivo, limite=5):
-    # muestra los n-gramas del mensaje con mayor contribucion lineal a la clase
+    # calcula que palabras y subpalabras del mensaje sumaron mas peso a la emocion
+    # multiplica el valor tf-idf de cada termino por su peso en la regresion logistica
     if not hasattr(modelo, "named_steps"):
         return []
 
@@ -44,6 +45,7 @@ def extraer_terminos_influyentes(modelo, texto_limpio, clase_objetivo, limite=5)
     if vectorizador is None or clasificador is None or not hasattr(clasificador, "coef_"):
         return []
 
+    # transforma solo este mensaje y busca las columnas que quedaron distintas de cero
     matriz = vectorizador.transform([texto_limpio])
     indices_activos = matriz.nonzero()[1]
     if len(indices_activos) == 0:
@@ -54,22 +56,38 @@ def extraer_terminos_influyentes(modelo, texto_limpio, clase_objetivo, limite=5)
     if clase_objetivo not in clases:
         return []
 
+    # recorre cada termino activo y separa palabras completas de subpalabras
     fila_pesos = clasificador.coef_[clases.index(clase_objetivo)]
-    aportes = []
+    aportes_palabras = []
+    aportes_subpalabras = []
     for idx in indices_activos:
         valor_tfidf = float(matriz[0, idx])
         peso = float(fila_pesos[idx])
         aporte = valor_tfidf * peso
-        if aporte > 0:
-            aportes.append(
-                {
-                    "termino": str(nombres[idx]),
-                    "aporte": round(aporte, 4),
-                }
+        if aporte <= 0:
+            continue
+
+        nombre = str(nombres[idx])
+        if nombre.startswith("caracteres__"):
+            # etiqueta los fragmentos de caracteres con sub para leerlos facil en la web
+            limpio = nombre.removeprefix("caracteres__").strip()
+            if limpio:
+                aportes_subpalabras.append(
+                    {"termino": f"sub:{limpio}", "aporte": round(aporte, 4)}
+                )
+        else:
+            limpio = nombre.removeprefix("palabras__")
+            aportes_palabras.append(
+                {"termino": limpio, "aporte": round(aporte, 4)}
             )
 
-    aportes.sort(key=lambda item: item["aporte"], reverse=True)
-    return aportes[:limite]
+    # muestra primero las palabras completas mas fuertes y rellena con subpalabras
+    aportes_palabras.sort(key=lambda item: item["aporte"], reverse=True)
+    if len(aportes_palabras) >= limite:
+        return aportes_palabras[:limite]
+
+    aportes_subpalabras.sort(key=lambda item: item["aporte"], reverse=True)
+    return (aportes_palabras + aportes_subpalabras)[:limite]
 
 
 def analizar_mensaje(
@@ -77,8 +95,10 @@ def analizar_mensaje(
     texto_original,
     umbral_prob=UMBRAL_PROB_MINIMA,
     umbral_margen=UMBRAL_MARGEN_MINIMO,
+    contexto_previo=None,
 ):
-    # evalua riesgo antes de clasificar y decide si etiquetar o pedir contexto
+    # analiza un mensaje en vivo: seguridad primero, luego contexto y probabilidades
+    # decide si responder con una emocion o pedir mas contexto cuando hay duda
     riesgo = evaluar_riesgo(texto_original)
     if riesgo["es_riesgo"]:
         crisis = construir_respuesta_crisis()
@@ -89,6 +109,7 @@ def analizar_mensaje(
             "etiqueta": None,
             "nombre_etiqueta": "Atención prioritaria",
             "pide_contexto": False,
+            "uso_contexto": False,
             "confianza": None,
             "margen": None,
             "probabilidades": {},
@@ -97,7 +118,13 @@ def analizar_mensaje(
             "recursos": crisis["recursos"],
         }
 
-    texto_limpio = normalizar_texto(texto_original)
+    # si el turno previo pidio contexto y era seguro combina ambos mensajes
+    contexto_limpio = (contexto_previo or "").strip()
+    uso_contexto = bool(contexto_limpio) and not evaluar_riesgo(contexto_limpio)["es_riesgo"]
+    texto_entrada = f"{contexto_limpio} {texto_original}".strip() if uso_contexto else texto_original
+
+    # limpia el texto y marca negaciones antes de pasarlo al clasificador
+    texto_limpio = preparar_texto_modelo(texto_entrada)
     if not texto_limpio:
         return {
             "es_riesgo": False,
@@ -105,6 +132,7 @@ def analizar_mensaje(
             "etiqueta": None,
             "nombre_etiqueta": "Sin texto suficiente",
             "pide_contexto": True,
+            "uso_contexto": False,
             "confianza": 0.0,
             "margen": 0.0,
             "probabilidades": {},
@@ -116,6 +144,7 @@ def analizar_mensaje(
             "recursos": None,
         }
 
+    # calcula las probabilidades de las 5 emociones y las ordena de mayor a menor
     probs = modelo.predict_proba([texto_limpio])[0]
     clases = list(modelo.classes_)
     orden = np.argsort(probs)[::-1]
@@ -131,6 +160,7 @@ def analizar_mensaje(
         for i in orden
     }
 
+    # obtiene las palabras que mas inclinaron la prediccion hacia la primera emocion
     terminos = extraer_terminos_influyentes(modelo, texto_limpio, mejor_clase)
 
     # si la confianza o la ventaja sobre la segunda emocion son bajas pide contexto
@@ -150,6 +180,7 @@ def analizar_mensaje(
             "segunda_etiqueta": segunda_clase,
             "nombre_etiqueta": "Pide más contexto",
             "pide_contexto": True,
+            "uso_contexto": uso_contexto,
             "confianza": round(p1, 4),
             "margen": round(margen, 4),
             "probabilidades": mapa_probs,
@@ -166,6 +197,7 @@ def analizar_mensaje(
         "segunda_etiqueta": segunda_clase,
         "nombre_etiqueta": NOMBRES_CLASES.get(mejor_clase, mejor_clase),
         "pide_contexto": False,
+        "uso_contexto": uso_contexto,
         "confianza": round(p1, 4),
         "margen": round(margen, 4),
         "probabilidades": mapa_probs,

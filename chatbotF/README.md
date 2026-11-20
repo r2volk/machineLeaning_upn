@@ -24,9 +24,9 @@ Con el entorno virtual y las dependencias ya instaladas, basta con estos tres pa
 
 ## Qué incluye la interfaz
 
-- **Conversación:** chat con texto grande pensado para proyectar en clase, probabilidades por emoción, términos que influyeron en la predicción, solicitud de contexto cuando la señal es débil y respuesta prioritaria ante mensajes de riesgo.
+- **Conversación:** chat con texto grande pensado para proyectar en clase, probabilidades por emoción, términos que influyeron en la predicción, solicitud de contexto cuando la señal es débil (con memoria de 1 turno para usar tu aclaración) y respuesta prioritaria ante mensajes de riesgo.
 - **Aprendizaje:** formulario explícito para escribir o copiar una frase, elegir su emoción y guardarla localmente, reentrenar una nueva versión del modelo, ver el cambio real en validación, borrar ejemplos y volver al modelo base en un clic.
-- **Laboratorio:** panel con los conteos por procedencia, la comparación de los seis modelos en validación, la comparación controlada de bigramas frente a trigramas, las métricas por clase, las matrices de confusión, las métricas con abstención y el diagnóstico exploratorio.
+- **Laboratorio:** panel con los conteos por procedencia, la comparación de los nueve modelos en validación (incluyendo Red Neuronal MLP y Ensamble), la comparación controlada de bigramas frente a trigramas, las métricas por clase, las matrices de confusión, las métricas con abstención y el diagnóstico exploratorio.
 
 ---
 
@@ -64,7 +64,11 @@ python -m unittest discover -s pruebas -v
 
 ## Datos y archivos locales
 
-`train.csv` contiene 23.689 ejemplos: 15.381 de [GoEmotions traducido al español](https://huggingface.co/datasets/mrm8488/go_emotions-es-mt), 8.068 sintéticos generados con Claude y 240 sintéticos del corpus inicial. La validación de GoEmotions tiene 1.899 ejemplos y la sintética tiene 1.932. Los CSV incluyen la procedencia en la columna `origen`. Los datos derivados de GoEmotions conservan su atribución y [licencia Apache 2.0](../datos%20de%20entrenamiento/fuentes/go_emotions_es/LICENCIA_GOEMOTIONS.txt).
+El entrenamiento combina **26.469** ejemplos (con 0 fugas verificadas contra validación):
+- `../datos de entrenamiento/preparados/train.csv` (**23.689** ejemplos): 15.381 de [GoEmotions traducido al español](https://huggingface.co/datasets/mrm8488/go_emotions-es-mt), 8.068 sintéticos generados con Claude y 240 sintéticos del corpus inicial.
+- `entrenamiento/corpus_situaciones_implicitas.csv` (**2.780** ejemplos curados y balanceados, 556 por clase, generados de forma reproducible con `python -m entrenamiento.p02b_generar_corpus_implicito`) para cubrir situaciones cotidianas implícitas y mitigar sesgos temporales.
+
+La validación de GoEmotions tiene 1.899 ejemplos y la sintética tiene 1.932. Los CSV incluyen la procedencia en la columna `origen`. Los datos derivados de GoEmotions conservan su atribución y [licencia Apache 2.0](../datos%20de%20entrenamiento/fuentes/go_emotions_es/LICENCIA_GOEMOTIONS.txt).
 
 Para respaldar las fuentes completas de la entrega, conserva por separado el CSV original de Claude y los tres Parquet de GoEmotions. El modelo base de este proyecto se puede reproducir con los CSV preparados. Las correcciones personales, el modelo activo, su estado y cualquier salida de test futuro son archivos locales excluidos por `.gitignore`.
 
@@ -88,25 +92,27 @@ El script bloquea ejecuciones repetidas por defecto para respetar la regla de us
 ## Estructura del proyecto
 
 ```text
-ChatbotGemini/
-├── app.py                              # servidor Flask (rutas / y /api/*)
+chatbotF/
+├── app.py                                      # servidor Flask (rutas / y /api/*)
 ├── templates/
-│   └── index.html                      # interfaz completa en un único archivo HTML
+│   └── index.html                              # interfaz completa en un único archivo HTML
 ├── entrenamiento/
-│   ├── p01_config.py                   # rutas, clases, semilla y umbrales
-│   ├── p02_datos.py                    # carga, conteos por origen y auditoría de fugas
-│   ├── p03_preprocesamiento.py         # limpieza de texto preservando negaciones y ñ
-│   ├── p04_seguridad.py                # capa prioritaria de crisis y Línea 113 Opción 5
-│   ├── p05_modelos.py                  # referencia simple y candidatos comparados
-│   ├── p06_metricas.py                 # macro-F1, matriz de confusión y abstención
-│   ├── p07_inferencia.py               # predicción, probabilidades y pedido de contexto
-│   ├── p08_experimentos.py             # comparación controlada y guardado del modelo base
-│   ├── p09_reentrenamiento.py          # correcciones locales, reentrenamiento y restauración
-│   └── p10_evaluar_test.py             # evaluación única del modelo congelado en test
-├── datos/                              # correcciones locales que crea la app
-├── modelos/                            # modelo base, modelo activo y métricas JSON
-├── pruebas/                            # pruebas unitarias y de integración Flask
-└── requirements.txt                    # dependencias de Python
+│   ├── p01_config.py                           # rutas, clases, semilla, umbrales e hiperparámetros
+│   ├── p02_datos.py                            # carga, conteos por origen y auditoría de fugas
+│   ├── p02b_generar_corpus_implicito.py        # generador reproducible de 2.780 ejemplos implícitos
+│   ├── corpus_situaciones_implicitas.csv       # corpus curado balanceado (556 por clase)
+│   ├── p03_preprocesamiento.py                 # limpieza preservando ñ y alcance de negaciones (neg_)
+│   ├── p04_seguridad.py                        # capa prioritaria de crisis y Línea 113 Opción 5
+│   ├── p05_modelos.py                          # catálogo de 9 modelos y ganador TF-IDF híbrido + LR
+│   ├── p06_metricas.py                         # macro-F1, matriz de confusión y abstención
+│   ├── p07_inferencia.py                       # predicción, probabilidades, contexto de 1 turno y términos
+│   ├── p08_experimentos.py                     # comparación controlada, ajuste de hiperparámetros y modelo base
+│   ├── p09_reentrenamiento.py                  # correcciones locales, reentrenamiento y restauración
+│   └── p10_evaluar_test.py                     # evaluación única del modelo congelado en test
+├── datos/                                      # correcciones locales que crea la app
+├── modelos/                                    # modelo base, modelo activo y métricas JSON
+├── pruebas/                                    # pruebas unitarias y de integración Flask
+└── requirements.txt                            # dependencias de Python
 ```
 
 ---

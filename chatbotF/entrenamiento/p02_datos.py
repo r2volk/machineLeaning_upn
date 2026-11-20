@@ -5,6 +5,7 @@ from pathlib import Path
 
 from entrenamiento.p01_config import (
     CLASES,
+    RUTA_CORPUS_IMPLICITO,
     RUTA_TRAIN,
     RUTA_VAL_GO,
     RUTA_VAL_SINTETICA,
@@ -12,23 +13,28 @@ from entrenamiento.p01_config import (
 
 
 def cargar_csv_etiquetado(ruta):
-    # lee un csv con columnas texto y etiqueta y valida que no haya filas vacias
+    # lee un csv fila por fila verificando que tenga texto y una emocion valida
+    # devuelve una lista de diccionarios listos para entrenar o evaluar
     ruta_path = Path(ruta)
     if not ruta_path.exists():
         raise FileNotFoundError(f"No se encontro el archivo: {ruta_path}")
 
     filas = []
+    # abre el csv en utf-8 para leer bien tildes y la letra enie
     with ruta_path.open("r", encoding="utf-8", newline="") as archivo:
         lector = csv.DictReader(archivo)
         columnas = set(lector.fieldnames or [])
+        # revisa que existan las dos columnas obligatorias antes de leer
         if "texto" not in columnas or "etiqueta" not in columnas:
             raise ValueError(
                 f"El archivo {ruta_path.name} debe tener columnas 'texto' y 'etiqueta'."
             )
 
+        # recorre cada fila empezando en la linea 2 porque la 1 es el encabezado
         for numero, fila in enumerate(lector, start=2):
             texto = (fila.get("texto") or "").strip()
             etiqueta = (fila.get("etiqueta") or "").strip().lower()
+            # salta filas vacias y detiene la carga si hay una etiqueta desconocida
             if not texto:
                 continue
             if etiqueta not in CLASES:
@@ -48,9 +54,10 @@ def cargar_csv_etiquetado(ruta):
 
 
 def resumir_particion(filas):
-    # calcula conteos totales, por clase, por origen y grupos unicos
+    # cuenta cuantas frases hay por emocion, por origen y cuantos grupos unicos existen
     por_clase = Counter(f["etiqueta"] for f in filas)
     por_origen = Counter(f["origen"] for f in filas)
+    # arma una tabla cruzada para ver cuantas frases de cada clase aporta cada fuente
     cruce = defaultdict(Counter)
     for fila in filas:
         cruce[fila["origen"]][fila["etiqueta"]] += 1
@@ -72,11 +79,13 @@ def resumir_particion(filas):
 
 
 def verificar_sin_fuga(train_filas, val_go_filas, val_sin_filas):
-    # comprueba que no haya textos ni grupos repetidos entre train y validacion
+    # comprueba con intersecciones de conjuntos que no haya textos ni grupos repetidos
+    # si todo da cero garantiza que validacion no se mezclo con entrenamiento
     t_textos = {f["texto"].lower() for f in train_filas}
     vg_textos = {f["texto"].lower() for f in val_go_filas}
     vs_textos = {f["texto"].lower() for f in val_sin_filas}
 
+    # extrae tambien los identificadores de grupo para evitar parafrasis partidas
     t_grupos = {f["grupo"] for f in train_filas if f["grupo"]}
     vg_grupos = {f["grupo"] for f in val_go_filas if f["grupo"]}
     vs_grupos = {f["grupo"] for f in val_sin_filas if f["grupo"]}
@@ -90,13 +99,25 @@ def verificar_sin_fuga(train_filas, val_go_filas, val_sin_filas):
     }
 
 
+def cargar_entrenamiento_completo(
+    ruta_train=RUTA_TRAIN,
+    ruta_implicito=RUTA_CORPUS_IMPLICITO,
+):
+    # junta el csv base de entrenamiento con el corpus local de situaciones implicitas
+    filas = cargar_csv_etiquetado(ruta_train)
+    if ruta_implicito and Path(ruta_implicito).exists():
+        filas.extend(cargar_csv_etiquetado(ruta_implicito))
+    return filas
+
+
 def cargar_particiones(
     ruta_train=RUTA_TRAIN,
     ruta_val_go=RUTA_VAL_GO,
     ruta_val_sintetica=RUTA_VAL_SINTETICA,
+    ruta_implicito=RUTA_CORPUS_IMPLICITO,
 ):
-    # carga las tres particiones oficiales y arma un resumen auditable
-    train_filas = cargar_csv_etiquetado(ruta_train)
+    # carga entrenamiento y las dos validaciones y devuelve tambien el resumen auditable
+    train_filas = cargar_entrenamiento_completo(ruta_train, ruta_implicito)
     val_go_filas = cargar_csv_etiquetado(ruta_val_go)
     val_sin_filas = cargar_csv_etiquetado(ruta_val_sintetica)
 

@@ -6,7 +6,10 @@ from datetime import datetime, timezone
 import joblib
 
 from entrenamiento.p01_config import (
+    C_REGRESION_LOGISTICA,
     DIR_MODELOS,
+    MAX_DF_TFIDF,
+    REJILLA_AJUSTE_LR,
     RUTA_ESTADO_MODELO,
     RUTA_MODELO_ACTIVO,
     RUTA_MODELO_BASE,
@@ -15,8 +18,8 @@ from entrenamiento.p01_config import (
     UMBRAL_PROB_MINIMA,
 )
 from entrenamiento.p02_datos import cargar_particiones
-from entrenamiento.p03_preprocesamiento import normalizar_lote, normalizar_texto
-from entrenamiento.p05_modelos import construir_catalogo_modelos
+from entrenamiento.p03_preprocesamiento import normalizar_texto, preparar_lote_modelo
+from entrenamiento.p05_modelos import construir_catalogo_modelos, construir_modelo_ganador
 from entrenamiento.p06_metricas import evaluar_modelo_en_particiones, redondear
 from entrenamiento.p07_inferencia import analizar_mensaje
 
@@ -193,18 +196,67 @@ def construir_comparacion_ngramas(resultados_por_clave):
     }
 
 
+def contar_vocabulario(vectorizador):
+    # cuenta los terminos del vectorizador simple o de una union de caracteristicas
+    if hasattr(vectorizador, "vocabulary_"):
+        return len(vectorizador.vocabulary_)
+    if hasattr(vectorizador, "transformer_list"):
+        return sum(
+            len(trans.vocabulary_)
+            for _, trans in vectorizador.transformer_list
+            if hasattr(trans, "vocabulary_")
+        )
+    return 0
+
+
+def evaluar_ajuste_hiperparametros(x_train, y_train, x_go, y_go, x_sin, y_sin):
+    # compara combinaciones de max_df y regularizacion c solo en validacion
+    pruebas = []
+    for max_df, c_reg in REJILLA_AJUSTE_LR:
+        modelo = construir_modelo_ganador(c_reg=c_reg, max_df=max_df)
+        modelo.fit(x_train, y_train)
+        metricas = evaluar_modelo_en_particiones(modelo, x_go, y_go, x_sin, y_sin)
+        pruebas.append(
+            {
+                "max_df": max_df,
+                "c_reg": c_reg,
+                "seleccionado": (
+                    max_df == MAX_DF_TFIDF and c_reg == C_REGRESION_LOGISTICA
+                ),
+                "macro_f1_go": metricas["validacion_go"]["macro_f1"],
+                "exactitud_go": metricas["validacion_go"]["exactitud"],
+                "macro_f1_sintetica": metricas["validacion_sintetica"]["macro_f1"],
+                "macro_f1_combinada": metricas["validacion_combinada"]["macro_f1"],
+                "promedio_macro_f1": metricas["promedio_macro_f1"],
+                "macro_f1_selectivo_go": metricas["abstencion"]["validacion_go"][
+                    "macro_f1_selectivo"
+                ],
+            }
+        )
+    return {
+        "criterio": (
+            "Se selecciona max_df=0.5 y C=3.0 porque equilibra el mayor macro-F1 "
+            "en GoEmotions y promedio global con mejor macro-F1 selectivo y menor "
+            "riesgo de sobreajuste frente a C=5.0."
+        ),
+        "combinaciones": pruebas,
+    }
+
+
 def ejecutar_experimentos():
-    # entrena todos los candidatos solo con train.csv y guarda el ganador como modelo base
+    # entrena los 9 modelos solo con entrenamiento y guarda el ganador como modelo base
+    # genera tambien el json de metricas que luego lee la pestana laboratorio
     DIR_MODELOS.mkdir(parents=True, exist_ok=True)
     train_filas, val_go_filas, val_sin_filas, resumen_datos = cargar_particiones()
 
-    x_train = normalizar_lote([f["texto"] for f in train_filas])
+    # limpia y marca negaciones en entrenamiento y en ambas validaciones
+    x_train = preparar_lote_modelo([f["texto"] for f in train_filas])
     y_train = [f["etiqueta"] for f in train_filas]
 
-    x_go = normalizar_lote([f["texto"] for f in val_go_filas])
+    x_go = preparar_lote_modelo([f["texto"] for f in val_go_filas])
     y_go = [f["etiqueta"] for f in val_go_filas]
 
-    x_sin = normalizar_lote([f["texto"] for f in val_sin_filas])
+    x_sin = preparar_lote_modelo([f["texto"] for f in val_sin_filas])
     y_sin = [f["etiqueta"] for f in val_sin_filas]
 
     catalogo = construir_catalogo_modelos()
@@ -212,6 +264,7 @@ def ejecutar_experimentos():
     resultados_por_clave = {}
     modelo_ganador = None
 
+    # entrena cada modelo candidato midiendo su tiempo, vocabulario y metricas
     for entrada in catalogo:
         inicio = time.perf_counter()
         pipeline = entrada["pipeline"]
@@ -219,7 +272,7 @@ def ejecutar_experimentos():
         duracion = round(time.perf_counter() - inicio, 2)
 
         metricas = evaluar_modelo_en_particiones(pipeline, x_go, y_go, x_sin, y_sin)
-        vocabulario = len(pipeline.named_steps["vectorizador"].vocabulary_)
+        vocabulario = contar_vocabulario(pipeline.named_steps["vectorizador"])
 
         registro = {
             "clave": entrada["clave"],
@@ -235,32 +288,37 @@ def ejecutar_experimentos():
         resultados_modelos.append(registro)
         resultados_por_clave[entrada["clave"]] = registro
 
-        if entrada["clave"] == "tfidf_lr_trigramas":
+        # guarda en memoria el pipeline ganador para exportarlo al disco
+        if entrada["clave"] == "tfidf_hibrido_lr":
             modelo_ganador = pipeline
 
     # guarda el modelo base congelado y una copia inicial como modelo activo
     joblib.dump(modelo_ganador, RUTA_MODELO_BASE)
     joblib.dump(modelo_ganador, RUTA_MODELO_ACTIVO)
 
-    train_set = set(x_train)
+    # corre el diagnostico exploratorio, la comparacion de n-gramas y la rejilla
+    train_set = {normalizar_texto(f["texto"]) for f in train_filas}
     diagnostico = ejecutar_diagnostico_exploratorio(modelo_ganador, train_set)
     comparacion_ngramas = construir_comparacion_ngramas(resultados_por_clave)
+    ajuste_hp = evaluar_ajuste_hiperparametros(
+        x_train, y_train, x_go, y_go, x_sin, y_sin
+    )
 
-    ganador_info = resultados_por_clave["tfidf_lr_trigramas"]
+    ganador_info = resultados_por_clave["tfidf_hibrido_lr"]
     ahora = datetime.now(timezone.utc).isoformat()
 
     reporte = {
         "fecha_generacion_utc": ahora,
-        "modelo_ganador_clave": "tfidf_lr_trigramas",
+        "modelo_ganador_clave": "tfidf_hibrido_lr",
         "modelo_ganador_nombre": ganador_info["nombre"],
         "justificacion_ganador": (
-            "Se elige TF-IDF (1,3) + Regresión Logística multinomial balanceada porque "
-            "supera de forma consistente a unigramas y bigramas en todas las particiones "
-            "de validación, se apoya directamente en el algoritmo estudiado en las semanas "
-            "11 y 12, entrega probabilidades nativas por softmax necesarias para pedir "
-            "contexto cuando la señal es débil y entrena en pocos segundos. Aunque SVM "
-            "lineal alcanza un macro-F1 ligeramente superior sin abstención, no entrega "
-            "probabilidades nativas y al calibrarlo pierde rendimiento en GoEmotions."
+            "Se elige TF-IDF hibrido (palabras 1-3 con alcance de negacion y "
+            "subpalabras de caracteres 3-5, max_df=0.5) con Regresión Logística "
+            "multinomial balanceada (C=3.0) porque logra el mayor macro-F1 en "
+            "GoEmotions y promedio global entre los nueve modelos comparados "
+            "(superando tambien a la Red Neuronal MLP y al ensamble suave), "
+            "conecta raices del español sin modelos preentrenados y entrega "
+            "probabilidades nativas e interpretabilidad directa por termino."
         ),
         "umbrales_abstencion": {
             "umbral_prob_minima": UMBRAL_PROB_MINIMA,
@@ -269,6 +327,7 @@ def ejecutar_experimentos():
         "resumen_datos": resumen_datos,
         "modelos": resultados_modelos,
         "comparacion_bigramas_vs_trigramas": comparacion_ngramas,
+        "ajuste_hiperparametros": ajuste_hp,
         "diagnostico_exploratorio": {
             "nota": (
                 "Comprobación exploratoria sobre frases cotidianas escritas a mano y "

@@ -55,18 +55,20 @@ RECURSOS_AYUDA_PERU = {
 
 
 def evaluar_riesgo(texto):
-    # evalua primero si el mensaje muestra senales de suicidio o autolesion
+    # revisa con reglas fijas si el mensaje tiene senales de suicidio o autolesion
+    # siempre corre antes del modelo de ml para priorizar la seguridad
     normalizado = normalizar_texto(texto)
     if not normalizado:
         return {"es_riesgo": False, "motivo": None}
 
+    # descarta frases figuradas inofensivas como me muero de risa si no hay otra alerta
     for patron_fp in PATRONES_FALSO_POSITIVO:
         if patron_fp.search(normalizado):
-            # si solo coincide con una expresion figurada y ningun otro patron de riesgo
             texto_sin_fp = patron_fp.sub(" ", normalizado)
             if not any(p.search(texto_sin_fp) for p in PATRONES_RIESGO):
                 return {"es_riesgo": False, "motivo": None}
 
+    # busca coincidencias reales con la lista de expresiones de riesgo
     for patron in PATRONES_RIESGO:
         coincidencia = patron.search(normalizado)
         if coincidencia:
@@ -79,7 +81,8 @@ def evaluar_riesgo(texto):
 
 
 def construir_respuesta_crisis():
-    # genera una respuesta empatica con apoyo humano y limites claros del sistema
+    # arma la respuesta empatica con los datos oficiales de la linea 113 opcion 5
+    # aclara de forma visible que el sistema es academico y no reemplaza ayuda clinica
     mensaje = (
         "Siento mucho que estés pasando por un momento tan difícil. No tienes que "
         "afrontar esto solo o sola: te recomiendo hablar ahora mismo con una persona "
