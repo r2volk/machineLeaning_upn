@@ -72,7 +72,7 @@ Centraliza rutas (`RAIZ_PROYECTO`, `RUTA_TRAIN`, `RUTA_CORPUS_IMPLICITO`, `RUTA_
 
 ### `entrenamiento/p03_preprocesamiento.py`
 - `normalizar_texto(texto)`: convierte a minúsculas, protege la letra `ñ` con un marcador temporal, quita tildes usando `unicodedata.normalize("NFD", ...)`, devuelve la `ñ`, reduce alargamientos de 3 o más letras repetidas (`"nooooo" → "no"`), sustituye signos y números por espacios y colapsa espacios múltiples. Se usa intacta para `p04_seguridad.py` y auditoría de fugas.
-- `preparar_texto_modelo(texto, ventana=2)` y `preparar_lote_modelo(textos)`: aplica limpieza por cláusulas y marca hasta 2 palabras después de una negación (`no`, `nunca`, `jamas`, `tampoco`, `ni`) con el prefijo `neg_` (cortando en signos de puntuación o conjunciones como `pero`, `solo`, `aunque`).
+- `preparar_texto_modelo(texto, ventana=2)` y `preparar_lote_modelo(textos)`: aplica limpieza por cláusulas y marca hasta 2 palabras principales después de una negación (`no`, `nunca`, `jamas`, `tampoco`, `ni`) con el prefijo `neg_` sin gastar la ventana en pronombres cortos (`me`, `te`, `se`, etc.), cortando en signos de puntuación o conjunciones como `pero`, `solo`, `aunque`.
 
 ### `entrenamiento/p04_seguridad.py`
 - `evaluar_riesgo(texto)`: normaliza el mensaje y primero verifica expresiones coloquiales inofensivas (`PATRONES_FALSO_POSITIVO`, como `"me muero de risa"`, `"me muero de sueño"`, `"matar el tiempo"`) para evitar falsos positivos; luego revisa `PATRONES_RIESGO` (ideación suicida o autolesión) y retorna `{"es_riesgo": bool, "motivo": ...}`.

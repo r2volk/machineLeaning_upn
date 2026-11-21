@@ -31,7 +31,7 @@ Antes de pasar la frase al modelo de Machine Learning, el archivo `p04_seguridad
 La computadora no entiende mayúsculas ni tildes igual que nosotros. Para ella, `"Teléfono"` y `"telefono"` serían dos palabras distintas. Por eso `p03_preprocesamiento.py` hace lo siguiente:
 - Pasa todo a minúsculas y quita tildes, **pero cuida de no perder la letra `ñ`** (porque *"año"* no es *"ano"*).
 - Quita letras estiradas exageradas (`"nooooo"` → `"no"`).
-- **No borra la palabra `"no"`** ni otras negaciones. Al contrario: cuando aparece `"no"`, `"nunca"` o `"tampoco"`, marca las 2 palabras siguientes con `neg_`. Por ejemplo, `"No estoy enojado, solo cansado"` se vuelve `"no neg_estoy neg_enojado solo cansado"`. Así el modelo no se confunde solo porque vio la palabra `"enojado"`.
+- **No borra la palabra `"no"`** ni otras negaciones. Al contrario: cuando aparece `"no"`, `"nunca"` o `"tampoco"`, marca las 2 palabras principales siguientes con `neg_` (sin gastar turno en pronombres cortos como `"me"`, `"te"` o `"se"`). Así, `"No me siento feliz"` se vuelve `"no me neg_siento neg_feliz"` y `"No estoy enojado, solo cansado"` se vuelve `"no neg_estoy neg_enojado solo cansado"`. Así el modelo no se confunde solo porque vio la palabra `"feliz"` o `"enojado"`.
 
 ### Paso 3: Convertir palabras en números y calcular probabilidades
 Un modelo matemático no puede leer letras; solo trabaja con números.

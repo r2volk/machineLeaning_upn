@@ -59,7 +59,7 @@ Todo ocurre en el archivo **`entrenamiento/p02_datos.py`**, sin trucos ocultos:
    - Revisa la intersección entre ellos. En todas las pruebas el resultado es **0 solapes** (ninguna frase ni ningún grupo de validación se coló en entrenamiento).
 4. **Limpiar el texto antes de entrenar (`entrenamiento/p03_preprocesamiento.py`):**
    - `normalizar_texto()` pasa a minúsculas, quita tildes cuidando la `ñ`, acorta letras repetidas (`"hooolaaa"` → `"hola"`) y limpia signos/números.
-   - `preparar_lote_modelo()` aplica esa limpieza a toda la lista y marca con `neg_` hasta 2 palabras después de una negación (`no`, `nunca`, `jamas`, `tampoco`, `ni`), cortando en comas o conjunciones como `pero` o `solo`.
+   - `preparar_lote_modelo()` aplica esa limpieza a toda la lista y marca con `neg_` hasta 2 palabras principales después de una negación (`no`, `nunca`, `jamas`, `tampoco`, `ni`) sin gastar turno en pronombres cortos (`me`, `te`, `se`), cortando en comas o conjunciones como `pero` o `solo`.
 5. **Convertir a números solo con entrenamiento (`fit` vs. `transform`):**
    - En `p08_experimentos.py`, el vectorizador TF-IDF aprende su vocabulario **únicamente** con `x_train` (`pipeline.fit(x_train, y_train)`).
    - Sobre las validaciones solo se transforma y predice (`pipeline.predict(x_go)`), nunca se ajusta nada con ellas.

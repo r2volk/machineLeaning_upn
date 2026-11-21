@@ -45,6 +45,8 @@ class TestPipelineML(unittest.TestCase):
         self.assertIn("no", salida.split())
         negada = preparar_texto_modelo("No estoy enojado, solo cansado")
         self.assertEqual(negada, "no neg_estoy neg_enojado solo cansado")
+        negada_pron = preparar_texto_modelo("No me siento feliz")
+        self.assertEqual(negada_pron, "no me neg_siento neg_feliz")
 
     def test_seguridad_detecta_riesgo_y_evita_falsos_positivos(self):
         # valida deteccion de crisis y tolerancia a expresiones coloquiales inofensivas

@@ -22,7 +22,7 @@ Escribe 3 o 4 frases en vivo en la pestaña **Conversación** y señala el panel
 ### Paso 3: Mostrar el «Laboratorio» y comparar los 9 algoritmos (2 minutos)
 Abre la pestaña **Laboratorio** y señala solo 3 cosas clave:
 1. **Datos y 0 fugas:** 26,469 frases de entrenamiento (GoEmotions + sintético + 2,780 situaciones implícitas) y 0 frases repetidas en validación.
-2. **Tabla de los 9 modelos:** señala cómo sube el Macro-F1 en GoEmotions desde `0.3433` (Naive Bayes simple) hasta **`0.6654`** (nuestro ganador: TF-IDF híbrido + Regresión Logística), superando también a SVM (`0.6049`), al Ensamble (`0.6363`) y a la Red Neuronal `MLPClassifier` con reducción de dimensionalidad `TruncatedSVD` (`0.4938`).
+2. **Tabla de los 9 modelos:** señala cómo sube el Macro-F1 en GoEmotions desde `0.3413` (Naive Bayes simple) hasta **`0.6654`** (nuestro ganador: TF-IDF híbrido + Regresión Logística), superando también a SVM (`0.6015`), al Ensamble (`0.6388`) y a la Red Neuronal `MLPClassifier` con reducción de dimensionalidad `TruncatedSVD` (`0.5157`).
 3. **Matrices de confusión:** explica por qué reportamos GoEmotions (`0.6654`) y validación sintética (`0.9915`) **por separado** (por honestidad, ya que el texto traducido real es mucho más difícil y 83.8 % neutral).
 
 ### Paso 4: Demostrar «Aprendizaje» en vivo (1.5 minutos)

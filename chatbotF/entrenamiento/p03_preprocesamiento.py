@@ -8,6 +8,8 @@ PATRON_TOKEN_MODELO = r"(?u)\b[a-zñ_]+\b"
 # palabras que activan el marcado de negacion y palabras donde se corta el alcance
 NEGADORES = {"no", "nunca", "jamas", "tampoco", "ni"}
 CORTES_NEGACION = {"pero", "aunque", "sino", "solo", "porque", "que", "y", "sin"}
+# pronombres cortos que no consumen la ventana para cubrir frases como no me siento feliz
+PRONOMBRES_ATONOS = {"me", "te", "se", "nos", "le", "les", "lo", "la"}
 VENTANA_NEGACION = 2
 
 
@@ -57,6 +59,9 @@ def preparar_texto_modelo(texto, ventana=VENTANA_NEGACION):
                 # detiene el alcance si aparece una conjuncion como pero o solo
                 tokens_salida.append(token)
                 pendientes = 0
+            elif pendientes > 0 and token in PRONOMBRES_ATONOS:
+                # deja pasar pronombres como me o se sin gastar el turno de negacion
+                tokens_salida.append(token)
             elif pendientes > 0:
                 # agrega neg_ para distinguir por ejemplo triste de neg_triste
                 tokens_salida.append("neg_" + token)

@@ -1,5 +1,5 @@
 {
-  "fecha_generacion_utc": "2026-11-20T11:26:00.769890+00:00",
+  "fecha_generacion_utc": "2026-11-20T13:26:59.023865+00:00",
   "modelo_ganador_clave": "tfidf_hibrido_lr",
   "modelo_ganador_nombre": "TF-IDF palabras (1,3) + subpalabras (3,5) + Regresión Logística (Ganador)",
   "justificacion_ganador": "Se elige TF-IDF hibrido (palabras 1-3 con alcance de negacion y subpalabras de caracteres 3-5, max_df=0.5) con Regresión Logística multinomial balanceada (C=3.0) porque logra el mayor macro-F1 en GoEmotions y promedio global entre los nueve modelos comparados (superando tambien a la Red Neuronal MLP y al ensamble suave), conecta raices del español sin modelos preentrenados y entrega probabilidades nativas e interpretabilidad directa por termino.",
@@ -121,20 +121,20 @@
       "ngramas": "(1, 1)",
       "probabilidades_nativas": true,
       "descripcion": "Linea base de conteo simple de palabras sueltas con clasificador MultinomialNB (Semana 11 Sec. 5.3 y Semana 12 Sec. 2.3).",
-      "tamano_vocabulario": 9591,
+      "tamano_vocabulario": 9610,
       "segundos_entrenamiento": 0.13,
       "metricas": {
         "validacion_go": {
           "total": 1899,
-          "exactitud": 0.8383,
-          "macro_precision": 0.4506,
-          "macro_recall": 0.3066,
-          "macro_f1": 0.3433,
+          "exactitud": 0.8378,
+          "macro_precision": 0.4511,
+          "macro_recall": 0.3047,
+          "macro_f1": 0.3413,
           "por_clase": {
             "alegria": {
-              "precision": 0.6042,
-              "recall": 0.2736,
-              "f1": 0.3766,
+              "precision": 0.587,
+              "recall": 0.2547,
+              "f1": 0.3553,
               "soporte": 106
             },
             "ansiedad": {
@@ -144,21 +144,21 @@
               "soporte": 8
             },
             "enojo": {
-              "precision": 0.375,
-              "recall": 0.1651,
-              "f1": 0.2293,
+              "precision": 0.38,
+              "recall": 0.1743,
+              "f1": 0.239,
               "soporte": 109
             },
             "neutral": {
-              "precision": 0.8662,
+              "precision": 0.8657,
               "recall": 0.9636,
-              "f1": 0.9123,
+              "f1": 0.912,
               "soporte": 1592
             },
             "tristeza": {
-              "precision": 0.4074,
+              "precision": 0.4231,
               "recall": 0.131,
-              "f1": 0.1982,
+              "f1": 0.2,
               "soporte": 84
             }
           },
@@ -171,10 +171,10 @@
           ],
           "matriz_confusion": [
             [
-              29,
+              27,
               0,
               3,
-              74,
+              76,
               0
             ],
             [
@@ -187,16 +187,16 @@
             [
               0,
               0,
-              18,
-              91,
+              19,
+              90,
               0
             ],
             [
               17,
               5,
-              20,
+              21,
               1534,
-              16
+              15
             ],
             [
               2,
@@ -209,39 +209,39 @@
         },
         "validacion_sintetica": {
           "total": 1932,
-          "exactitud": 0.9094,
-          "macro_precision": 0.8708,
-          "macro_recall": 0.9072,
-          "macro_f1": 0.8852,
+          "exactitud": 0.9089,
+          "macro_precision": 0.8697,
+          "macro_recall": 0.9035,
+          "macro_f1": 0.8833,
           "por_clase": {
             "alegria": {
-              "precision": 0.9425,
-              "recall": 0.8934,
-              "f1": 0.9173,
+              "precision": 0.945,
+              "recall": 0.8957,
+              "f1": 0.9197,
               "soporte": 422
             },
             "ansiedad": {
-              "precision": 0.6158,
-              "recall": 0.8015,
-              "f1": 0.6965,
+              "precision": 0.6127,
+              "recall": 0.7794,
+              "f1": 0.6861,
               "soporte": 136
             },
             "enojo": {
-              "precision": 0.9072,
+              "precision": 0.9103,
               "recall": 0.9925,
-              "f1": 0.9479,
+              "f1": 0.9496,
               "soporte": 266
             },
             "neutral": {
               "precision": 0.9603,
-              "recall": 0.8555,
-              "f1": 0.9048,
+              "recall": 0.8569,
+              "f1": 0.9057,
               "soporte": 678
             },
             "tristeza": {
-              "precision": 0.9283,
+              "precision": 0.9203,
               "recall": 0.993,
-              "f1": 0.9596,
+              "f1": 0.9553,
               "soporte": 430
             }
           },
@@ -254,18 +254,18 @@
           ],
           "matriz_confusion": [
             [
-              377,
-              12,
+              378,
+              10,
               4,
               4,
-              25
+              26
             ],
             [
               3,
-              109,
+              106,
               0,
               19,
-              5
+              8
             ],
             [
               0,
@@ -275,10 +275,10 @@
               1
             ],
             [
-              19,
-              54,
-              23,
-              580,
+              18,
+              55,
+              22,
+              581,
               2
             ],
             [
@@ -292,39 +292,39 @@
         },
         "validacion_combinada": {
           "total": 3831,
-          "exactitud": 0.8742,
-          "macro_precision": 0.8253,
-          "macro_recall": 0.8123,
-          "macro_f1": 0.8152,
+          "exactitud": 0.8737,
+          "macro_precision": 0.8239,
+          "macro_recall": 0.8083,
+          "macro_f1": 0.8129,
           "por_clase": {
             "alegria": {
-              "precision": 0.9062,
-              "recall": 0.7689,
-              "f1": 0.832,
+              "precision": 0.9081,
+              "recall": 0.767,
+              "f1": 0.8316,
               "soporte": 528
             },
             "ansiedad": {
-              "precision": 0.5989,
-              "recall": 0.7569,
-              "f1": 0.6687,
+              "precision": 0.5955,
+              "recall": 0.7361,
+              "f1": 0.6584,
               "soporte": 144
             },
             "enojo": {
-              "precision": 0.8319,
-              "recall": 0.752,
-              "f1": 0.7899,
+              "precision": 0.8324,
+              "recall": 0.7547,
+              "f1": 0.7916,
               "soporte": 375
             },
             "neutral": {
-              "precision": 0.8901,
-              "recall": 0.9313,
-              "f1": 0.9102,
+              "precision": 0.8898,
+              "recall": 0.9317,
+              "f1": 0.9103,
               "soporte": 2270
             },
             "tristeza": {
-              "precision": 0.8994,
+              "precision": 0.8939,
               "recall": 0.8521,
-              "f1": 0.8751,
+              "f1": 0.8725,
               "soporte": 514
             }
           },
@@ -337,32 +337,32 @@
           ],
           "matriz_confusion": [
             [
-              406,
-              12,
+              405,
+              10,
               7,
-              78,
-              25
+              80,
+              26
             ],
             [
               3,
-              109,
+              106,
               1,
               26,
-              5
+              8
             ],
             [
               0,
               1,
-              282,
-              91,
+              283,
+              90,
               1
             ],
             [
-              36,
-              59,
+              35,
+              60,
               43,
-              2114,
-              18
+              2115,
+              17
             ],
             [
               3,
@@ -373,40 +373,40 @@
             ]
           ]
         },
-        "promedio_macro_f1": 0.6142,
+        "promedio_macro_f1": 0.6123,
         "abstencion": {
           "validacion_go": {
             "umbral_prob": 0.45,
             "umbral_margen": 0.1,
             "total": 1899,
-            "etiquetados": 1848,
-            "abstenidos": 51,
-            "cobertura": 0.9731,
-            "aciertos_en_etiquetados": 1567,
-            "exactitud_selectiva": 0.8479,
-            "macro_f1_selectivo": 0.3304
+            "etiquetados": 1842,
+            "abstenidos": 57,
+            "cobertura": 0.97,
+            "aciertos_en_etiquetados": 1566,
+            "exactitud_selectiva": 0.8502,
+            "macro_f1_selectivo": 0.335
           },
           "validacion_sintetica": {
             "umbral_prob": 0.45,
             "umbral_margen": 0.1,
             "total": 1932,
-            "etiquetados": 1894,
-            "abstenidos": 38,
-            "cobertura": 0.9803,
-            "aciertos_en_etiquetados": 1742,
-            "exactitud_selectiva": 0.9197,
-            "macro_f1_selectivo": 0.8959
+            "etiquetados": 1888,
+            "abstenidos": 44,
+            "cobertura": 0.9772,
+            "aciertos_en_etiquetados": 1741,
+            "exactitud_selectiva": 0.9221,
+            "macro_f1_selectivo": 0.8965
           },
           "validacion_combinada": {
             "umbral_prob": 0.45,
             "umbral_margen": 0.1,
             "total": 3831,
-            "etiquetados": 3742,
-            "abstenidos": 89,
-            "cobertura": 0.9768,
-            "aciertos_en_etiquetados": 3309,
-            "exactitud_selectiva": 0.8843,
-            "macro_f1_selectivo": 0.8284
+            "etiquetados": 3730,
+            "abstenidos": 101,
+            "cobertura": 0.9736,
+            "aciertos_en_etiquetados": 3307,
+            "exactitud_selectiva": 0.8866,
+            "macro_f1_selectivo": 0.8294
           }
         }
       }
@@ -418,44 +418,44 @@
       "ngramas": "(1, 1)",
       "probabilidades_nativas": true,
       "descripcion": "Mismos parametros que bigramas y trigramas pero solo con palabras sueltas para aislar el aporte de los grupos de palabras.",
-      "tamano_vocabulario": 9591,
-      "segundos_entrenamiento": 0.57,
+      "tamano_vocabulario": 9610,
+      "segundos_entrenamiento": 0.69,
       "metricas": {
         "validacion_go": {
           "total": 1899,
-          "exactitud": 0.8494,
-          "macro_precision": 0.5652,
-          "macro_recall": 0.5766,
-          "macro_f1": 0.5694,
+          "exactitud": 0.8557,
+          "macro_precision": 0.6012,
+          "macro_recall": 0.5863,
+          "macro_f1": 0.5924,
           "por_clase": {
             "alegria": {
-              "precision": 0.6146,
-              "recall": 0.5566,
-              "f1": 0.5842,
+              "precision": 0.6495,
+              "recall": 0.5943,
+              "f1": 0.6207,
               "soporte": 106
             },
             "ansiedad": {
-              "precision": 0.3,
+              "precision": 0.4286,
               "recall": 0.375,
-              "f1": 0.3333,
+              "f1": 0.4,
               "soporte": 8
             },
             "enojo": {
-              "precision": 0.4113,
-              "recall": 0.4679,
-              "f1": 0.4378,
+              "precision": 0.4141,
+              "recall": 0.4862,
+              "f1": 0.4473,
               "soporte": 109
             },
             "neutral": {
-              "precision": 0.9149,
-              "recall": 0.9121,
-              "f1": 0.9135,
+              "precision": 0.9188,
+              "recall": 0.9165,
+              "f1": 0.9176,
               "soporte": 1592
             },
             "tristeza": {
-              "precision": 0.5854,
-              "recall": 0.5714,
-              "f1": 0.5783,
+              "precision": 0.5949,
+              "recall": 0.5595,
+              "f1": 0.5767,
               "soporte": 84
             }
           },
@@ -468,10 +468,10 @@
           ],
           "matriz_confusion": [
             [
-              59,
+              63,
               0,
               4,
-              43,
+              39,
               0
             ],
             [
@@ -484,61 +484,61 @@
             [
               1,
               0,
-              51,
-              56,
+              53,
+              54,
               1
             ],
             [
-              34,
-              7,
-              66,
-              1452,
-              33
+              30,
+              4,
+              68,
+              1459,
+              31
             ],
             [
-              1,
+              2,
               0,
               3,
               32,
-              48
+              47
             ]
           ]
         },
         "validacion_sintetica": {
           "total": 1932,
-          "exactitud": 0.9674,
-          "macro_precision": 0.9656,
-          "macro_recall": 0.9541,
-          "macro_f1": 0.959,
+          "exactitud": 0.9622,
+          "macro_precision": 0.9616,
+          "macro_recall": 0.9512,
+          "macro_f1": 0.9552,
           "por_clase": {
             "alegria": {
-              "precision": 0.9898,
-              "recall": 0.9194,
-              "f1": 0.9533,
+              "precision": 0.9894,
+              "recall": 0.8886,
+              "f1": 0.9363,
               "soporte": 422
             },
             "ansiedad": {
-              "precision": 0.9597,
-              "recall": 0.875,
-              "f1": 0.9154,
+              "precision": 0.9528,
+              "recall": 0.8897,
+              "f1": 0.9202,
               "soporte": 136
             },
             "enojo": {
-              "precision": 0.96,
+              "precision": 0.9778,
               "recall": 0.9925,
-              "f1": 0.976,
+              "f1": 0.9851,
               "soporte": 266
             },
             "neutral": {
-              "precision": 0.9738,
-              "recall": 0.9882,
-              "f1": 0.981,
+              "precision": 0.9796,
+              "recall": 0.9897,
+              "f1": 0.9846,
               "soporte": 678
             },
             "tristeza": {
-              "precision": 0.9448,
+              "precision": 0.9087,
               "recall": 0.9953,
-              "f1": 0.9694,
+              "f1": 0.9501,
               "soporte": 430
             }
           },
@@ -551,17 +551,17 @@
           ],
           "matriz_confusion": [
             [
-              388,
-              3,
-              7,
-              4,
-              20
+              375,
+              5,
+              2,
+              2,
+              38
             ],
             [
               0,
-              119,
+              121,
               0,
-              14,
+              12,
               3
             ],
             [
@@ -573,9 +573,9 @@
             ],
             [
               3,
-              2,
+              1,
               3,
-              670,
+              671,
               0
             ],
             [
@@ -589,39 +589,39 @@
         },
         "validacion_combinada": {
           "total": 3831,
-          "exactitud": 0.9089,
-          "macro_precision": 0.8877,
-          "macro_recall": 0.8789,
-          "macro_f1": 0.8826,
+          "exactitud": 0.9094,
+          "macro_precision": 0.8885,
+          "macro_recall": 0.8797,
+          "macro_f1": 0.8831,
           "por_clase": {
             "alegria": {
-              "precision": 0.916,
-              "recall": 0.8466,
-              "f1": 0.8799,
+              "precision": 0.9202,
+              "recall": 0.8295,
+              "f1": 0.8725,
               "soporte": 528
             },
             "ansiedad": {
-              "precision": 0.9104,
-              "recall": 0.8472,
-              "f1": 0.8777,
+              "precision": 0.9254,
+              "recall": 0.8611,
+              "f1": 0.8921,
               "soporte": 144
             },
             "enojo": {
-              "precision": 0.7895,
-              "recall": 0.84,
-              "f1": 0.814,
+              "precision": 0.7965,
+              "recall": 0.8453,
+              "f1": 0.8202,
               "soporte": 375
             },
             "neutral": {
-              "precision": 0.9327,
-              "recall": 0.9348,
-              "f1": 0.9338,
+              "precision": 0.9371,
+              "recall": 0.9383,
+              "f1": 0.9377,
               "soporte": 2270
             },
             "tristeza": {
-              "precision": 0.8897,
-              "recall": 0.9261,
-              "f1": 0.9075,
+              "precision": 0.8636,
+              "recall": 0.9241,
+              "f1": 0.8929,
               "soporte": 514
             }
           },
@@ -634,76 +634,76 @@
           ],
           "matriz_confusion": [
             [
-              447,
+              438,
+              5,
+              6,
+              41,
+              38
+            ],
+            [
+              1,
+              124,
+              0,
+              16,
+              3
+            ],
+            [
+              1,
+              0,
+              317,
+              54,
+              3
+            ],
+            [
+              33,
+              5,
+              71,
+              2130,
+              31
+            ],
+            [
               3,
-              11,
-              47,
-              20
-            ],
-            [
-              1,
-              122,
-              0,
-              18,
-              3
-            ],
-            [
-              1,
-              0,
-              315,
-              56,
-              3
-            ],
-            [
-              37,
-              9,
-              69,
-              2122,
-              33
-            ],
-            [
-              2,
               0,
               4,
               32,
-              476
+              475
             ]
           ]
         },
-        "promedio_macro_f1": 0.7642,
+        "promedio_macro_f1": 0.7738,
         "abstencion": {
           "validacion_go": {
             "umbral_prob": 0.45,
             "umbral_margen": 0.1,
             "total": 1899,
-            "etiquetados": 1721,
-            "abstenidos": 178,
-            "cobertura": 0.9063,
-            "aciertos_en_etiquetados": 1527,
-            "exactitud_selectiva": 0.8873,
-            "macro_f1_selectivo": 0.649
+            "etiquetados": 1709,
+            "abstenidos": 190,
+            "cobertura": 0.8999,
+            "aciertos_en_etiquetados": 1521,
+            "exactitud_selectiva": 0.89,
+            "macro_f1_selectivo": 0.6391
           },
           "validacion_sintetica": {
             "umbral_prob": 0.45,
             "umbral_margen": 0.1,
             "total": 1932,
-            "etiquetados": 1830,
-            "abstenidos": 102,
-            "cobertura": 0.9472,
-            "aciertos_en_etiquetados": 1813,
-            "exactitud_selectiva": 0.9907,
-            "macro_f1_selectivo": 0.9861
+            "etiquetados": 1833,
+            "abstenidos": 99,
+            "cobertura": 0.9488,
+            "aciertos_en_etiquetados": 1805,
+            "exactitud_selectiva": 0.9847,
+            "macro_f1_selectivo": 0.9805
           },
           "validacion_combinada": {
             "umbral_prob": 0.45,
             "umbral_margen": 0.1,
             "total": 3831,
-            "etiquetados": 3551,
-            "abstenidos": 280,
-            "cobertura": 0.9269,
-            "aciertos_en_etiquetados": 3340,
-            "exactitud_selectiva": 0.9406,
-            "macro_f1_selectivo": 0.9278
+            "etiquetados": 3542,
+            "abstenidos": 289,
+            "cobertura": 0.9246,
+            "aciertos_en_etiquetados": 3326,
+            "exactitud_selectiva": 0.939,
+            "macro_f1_selectivo": 0.924
           }
         }
       }
@@ -715,20 +715,20 @@
       "ngramas": "(1, 2)",
       "probabilidades_nativas": true,
       "descripcion": "Grupos de hasta dos palabras con parametros fijos para comparar directamente contra trigramas.",
-      "tamano_vocabulario": 31425,
-      "segundos_entrenamiento": 1.5,
+      "tamano_vocabulario": 31472,
+      "segundos_entrenamiento": 1.42,
       "metricas": {
         "validacion_go": {
           "total": 1899,
-          "exactitud": 0.871,
-          "macro_precision": 0.6706,
-          "macro_recall": 0.567,
-          "macro_f1": 0.6101,
+          "exactitud": 0.8699,
+          "macro_precision": 0.6695,
+          "macro_recall": 0.5627,
+          "macro_f1": 0.607,
           "por_clase": {
             "alegria": {
-              "precision": 0.6988,
-              "recall": 0.5472,
-              "f1": 0.6138,
+              "precision": 0.6951,
+              "recall": 0.5377,
+              "f1": 0.6064,
               "soporte": 106
             },
             "ansiedad": {
@@ -738,21 +738,21 @@
               "soporte": 8
             },
             "enojo": {
-              "precision": 0.5,
+              "precision": 0.5051,
               "recall": 0.4587,
-              "f1": 0.4785,
+              "f1": 0.4808,
               "soporte": 109
             },
             "neutral": {
-              "precision": 0.9124,
+              "precision": 0.9107,
               "recall": 0.9422,
-              "f1": 0.9271,
+              "f1": 0.9262,
               "soporte": 1592
             },
             "tristeza": {
-              "precision": 0.6418,
-              "recall": 0.5119,
-              "f1": 0.5695,
+              "precision": 0.6364,
+              "recall": 0.5,
+              "f1": 0.56,
               "soporte": 84
             }
           },
@@ -765,10 +765,10 @@
           ],
           "matriz_confusion": [
             [
-              58,
+              57,
               0,
               3,
-              44,
+              45,
               1
             ],
             [
@@ -779,16 +779,16 @@
               0
             ],
             [
-              1,
+              0,
               0,
               50,
-              58,
+              59,
               0
             ],
             [
-              22,
+              23,
               2,
-              45,
+              44,
               1500,
               23
             ],
@@ -796,46 +796,46 @@
               1,
               0,
               2,
-              38,
-              43
+              39,
+              42
             ]
           ]
         },
         "validacion_sintetica": {
           "total": 1932,
-          "exactitud": 0.9752,
-          "macro_precision": 0.969,
-          "macro_recall": 0.9737,
-          "macro_f1": 0.9709,
+          "exactitud": 0.9746,
+          "macro_precision": 0.966,
+          "macro_recall": 0.9733,
+          "macro_f1": 0.9691,
           "por_clase": {
             "alegria": {
               "precision": 0.9898,
-              "recall": 0.9242,
-              "f1": 0.9559,
+              "recall": 0.9218,
+              "f1": 0.9546,
               "soporte": 422
             },
             "ansiedad": {
-              "precision": 0.9562,
+              "precision": 0.9424,
               "recall": 0.9632,
-              "f1": 0.9597,
+              "f1": 0.9527,
               "soporte": 136
             },
             "enojo": {
-              "precision": 0.9333,
+              "precision": 0.9399,
               "recall": 1.0,
-              "f1": 0.9655,
+              "f1": 0.969,
               "soporte": 266
             },
             "neutral": {
-              "precision": 0.9838,
+              "precision": 0.9941,
               "recall": 0.9882,
-              "f1": 0.986,
+              "f1": 0.9911,
               "soporte": 678
             },
             "tristeza": {
-              "precision": 0.9816,
+              "precision": 0.9639,
               "recall": 0.993,
-              "f1": 0.9873,
+              "f1": 0.9782,
               "soporte": 430
             }
           },
@@ -848,11 +848,11 @@
           ],
           "matriz_confusion": [
             [
-              390,
-              4,
-              14,
-              9,
-              5
+              389,
+              6,
+              12,
+              2,
+              13
             ],
             [
               0,
@@ -886,39 +886,39 @@
         },
         "validacion_combinada": {
           "total": 3831,
-          "exactitud": 0.9235,
-          "macro_precision": 0.9146,
-          "macro_recall": 0.8984,
-          "macro_f1": 0.906,
+          "exactitud": 0.9227,
+          "macro_precision": 0.9106,
+          "macro_recall": 0.8973,
+          "macro_f1": 0.9034,
           "por_clase": {
             "alegria": {
-              "precision": 0.9392,
-              "recall": 0.8485,
-              "f1": 0.8915,
+              "precision": 0.9389,
+              "recall": 0.8447,
+              "f1": 0.8893,
               "soporte": 528
             },
             "ansiedad": {
-              "precision": 0.9437,
+              "precision": 0.9306,
               "recall": 0.9306,
-              "f1": 0.9371,
+              "f1": 0.9306,
               "soporte": 144
             },
             "enojo": {
-              "precision": 0.8208,
+              "precision": 0.8272,
               "recall": 0.8427,
-              "f1": 0.8316,
+              "f1": 0.8349,
               "soporte": 375
             },
             "neutral": {
-              "precision": 0.9333,
+              "precision": 0.9349,
               "recall": 0.9559,
-              "f1": 0.9445,
+              "f1": 0.9453,
               "soporte": 2270
             },
             "tristeza": {
-              "precision": 0.9363,
-              "recall": 0.9144,
-              "f1": 0.9252,
+              "precision": 0.9214,
+              "recall": 0.9125,
+              "f1": 0.9169,
               "soporte": 514
             }
           },
@@ -931,11 +931,11 @@
           ],
           "matriz_confusion": [
             [
-              448,
-              4,
-              17,
-              53,
-              6
+              446,
+              6,
+              15,
+              47,
+              14
             ],
             [
               1,
@@ -945,16 +945,16 @@
               3
             ],
             [
-              1,
+              0,
               0,
               316,
-              58,
+              59,
               0
             ],
             [
-              24,
+              25,
               4,
-              49,
+              48,
               2170,
               23
             ],
@@ -962,12 +962,12 @@
               3,
               0,
               3,
-              38,
-              470
+              39,
+              469
             ]
           ]
         },
-        "promedio_macro_f1": 0.7905,
+        "promedio_macro_f1": 0.788,
         "abstencion": {
           "validacion_go": {
             "umbral_prob": 0.45,
@@ -976,31 +976,31 @@
             "etiquetados": 1711,
             "abstenidos": 188,
             "cobertura": 0.901,
-            "aciertos_en_etiquetados": 1536,
-            "exactitud_selectiva": 0.8977,
-            "macro_f1_selectivo": 0.5493
+            "aciertos_en_etiquetados": 1537,
+            "exactitud_selectiva": 0.8983,
+            "macro_f1_selectivo": 0.5503
           },
           "validacion_sintetica": {
             "umbral_prob": 0.45,
             "umbral_margen": 0.1,
             "total": 1932,
-            "etiquetados": 1836,
-            "abstenidos": 96,
-            "cobertura": 0.9503,
-            "aciertos_en_etiquetados": 1828,
-            "exactitud_selectiva": 0.9956,
-            "macro_f1_selectivo": 0.994
+            "etiquetados": 1837,
+            "abstenidos": 95,
+            "cobertura": 0.9508,
+            "aciertos_en_etiquetados": 1827,
+            "exactitud_selectiva": 0.9946,
+            "macro_f1_selectivo": 0.9931
           },
           "validacion_combinada": {
             "umbral_prob": 0.45,
             "umbral_margen": 0.1,
             "total": 3831,
-            "etiquetados": 3547,
-            "abstenidos": 284,
-            "cobertura": 0.9259,
+            "etiquetados": 3548,
+            "abstenidos": 283,
+            "cobertura": 0.9261,
             "aciertos_en_etiquetados": 3364,
-            "exactitud_selectiva": 0.9484,
-            "macro_f1_selectivo": 0.9403
+            "exactitud_selectiva": 0.9481,
+            "macro_f1_selectivo": 0.94
           }
         }
       }
@@ -1012,20 +1012,20 @@
       "ngramas": "(1, 3)",
       "probabilidades_nativas": true,
       "descripcion": "Grupos de hasta tres palabras con exactamente los mismos parametros que bigramas y probabilidades nativas por softmax.",
-      "tamano_vocabulario": 50466,
-      "segundos_entrenamiento": 2.2,
+      "tamano_vocabulario": 50508,
+      "segundos_entrenamiento": 1.55,
       "metricas": {
         "validacion_go": {
           "total": 1899,
-          "exactitud": 0.8752,
-          "macro_precision": 0.6835,
-          "macro_recall": 0.5622,
-          "macro_f1": 0.6121,
+          "exactitud": 0.8736,
+          "macro_precision": 0.6794,
+          "macro_recall": 0.5619,
+          "macro_f1": 0.6102,
           "por_clase": {
             "alegria": {
-              "precision": 0.7179,
+              "precision": 0.7089,
               "recall": 0.5283,
-              "f1": 0.6087,
+              "f1": 0.6054,
               "soporte": 106
             },
             "ansiedad": {
@@ -1035,15 +1035,15 @@
               "soporte": 8
             },
             "enojo": {
-              "precision": 0.5319,
+              "precision": 0.5208,
               "recall": 0.4587,
-              "f1": 0.4926,
+              "f1": 0.4878,
               "soporte": 109
             },
             "neutral": {
-              "precision": 0.9113,
-              "recall": 0.9491,
-              "f1": 0.9298,
+              "precision": 0.9112,
+              "recall": 0.9472,
+              "f1": 0.9289,
               "soporte": 1592
             },
             "tristeza": {
@@ -1083,10 +1083,10 @@
               0
             ],
             [
-              19,
+              20,
               2,
-              39,
-              1511,
+              41,
+              1508,
               21
             ],
             [
@@ -1100,10 +1100,10 @@
         },
         "validacion_sintetica": {
           "total": 1932,
-          "exactitud": 0.9834,
-          "macro_precision": 0.983,
-          "macro_recall": 0.9801,
-          "macro_f1": 0.9814,
+          "exactitud": 0.9829,
+          "macro_precision": 0.9799,
+          "macro_recall": 0.9798,
+          "macro_f1": 0.9797,
           "por_clase": {
             "alegria": {
               "precision": 0.9927,
@@ -1112,27 +1112,27 @@
               "soporte": 422
             },
             "ansiedad": {
-              "precision": 0.9848,
+              "precision": 0.9701,
               "recall": 0.9559,
-              "f1": 0.9701,
+              "f1": 0.963,
               "soporte": 136
             },
             "enojo": {
-              "precision": 0.9744,
+              "precision": 0.9779,
               "recall": 1.0,
-              "f1": 0.987,
+              "f1": 0.9888,
               "soporte": 266
             },
             "neutral": {
-              "precision": 0.9839,
-              "recall": 0.9897,
-              "f1": 0.9868,
+              "precision": 0.9926,
+              "recall": 0.9882,
+              "f1": 0.9904,
               "soporte": 678
             },
             "tristeza": {
-              "precision": 0.9794,
+              "precision": 0.9661,
               "recall": 0.993,
-              "f1": 0.9861,
+              "f1": 0.9794,
               "soporte": 430
             }
           },
@@ -1146,10 +1146,10 @@
           "matriz_confusion": [
             [
               406,
-              0,
+              1,
               3,
-              8,
-              5
+              2,
+              10
             ],
             [
               0,
@@ -1167,10 +1167,10 @@
             ],
             [
               1,
-              2,
               3,
-              671,
-              1
+              2,
+              670,
+              2
             ],
             [
               2,
@@ -1183,39 +1183,39 @@
         },
         "validacion_combinada": {
           "total": 3831,
-          "exactitud": 0.9298,
-          "macro_precision": 0.9302,
-          "macro_recall": 0.903,
-          "macro_f1": 0.9161,
+          "exactitud": 0.9287,
+          "macro_precision": 0.9248,
+          "macro_recall": 0.9026,
+          "macro_f1": 0.9133,
           "por_clase": {
             "alegria": {
-              "precision": 0.9487,
+              "precision": 0.9467,
               "recall": 0.875,
-              "f1": 0.9103,
+              "f1": 0.9094,
               "soporte": 528
             },
             "ansiedad": {
-              "precision": 0.9708,
+              "precision": 0.9568,
               "recall": 0.9236,
-              "f1": 0.9466,
+              "f1": 0.9399,
               "soporte": 144
             },
             "enojo": {
-              "precision": 0.861,
+              "precision": 0.8587,
               "recall": 0.8427,
-              "f1": 0.8518,
+              "f1": 0.8506,
               "soporte": 375
             },
             "neutral": {
-              "precision": 0.9325,
-              "recall": 0.9612,
-              "f1": 0.9466,
+              "precision": 0.9348,
+              "recall": 0.9595,
+              "f1": 0.947,
               "soporte": 2270
             },
             "tristeza": {
-              "precision": 0.938,
+              "precision": 0.9269,
               "recall": 0.9125,
-              "f1": 0.925,
+              "f1": 0.9196,
               "soporte": 514
             }
           },
@@ -1229,10 +1229,10 @@
           "matriz_confusion": [
             [
               462,
-              0,
+              1,
               6,
-              54,
-              6
+              48,
+              11
             ],
             [
               1,
@@ -1249,11 +1249,11 @@
               0
             ],
             [
-              20,
-              4,
-              42,
-              2182,
-              22
+              21,
+              5,
+              43,
+              2178,
+              23
             ],
             [
               3,
@@ -1264,18 +1264,18 @@
             ]
           ]
         },
-        "promedio_macro_f1": 0.7968,
+        "promedio_macro_f1": 0.795,
         "abstencion": {
           "validacion_go": {
             "umbral_prob": 0.45,
             "umbral_margen": 0.1,
             "total": 1899,
-            "etiquetados": 1703,
-            "abstenidos": 196,
-            "cobertura": 0.8968,
-            "aciertos_en_etiquetados": 1536,
-            "exactitud_selectiva": 0.9019,
-            "macro_f1_selectivo": 0.5516
+            "etiquetados": 1702,
+            "abstenidos": 197,
+            "cobertura": 0.8963,
+            "aciertos_en_etiquetados": 1533,
+            "exactitud_selectiva": 0.9007,
+            "macro_f1_selectivo": 0.5523
           },
           "validacion_sintetica": {
             "umbral_prob": 0.45,
@@ -1284,20 +1284,20 @@
             "etiquetados": 1845,
             "abstenidos": 87,
             "cobertura": 0.955,
-            "aciertos_en_etiquetados": 1839,
-            "exactitud_selectiva": 0.9967,
-            "macro_f1_selectivo": 0.9961
+            "aciertos_en_etiquetados": 1838,
+            "exactitud_selectiva": 0.9962,
+            "macro_f1_selectivo": 0.9956
           },
           "validacion_combinada": {
             "umbral_prob": 0.45,
             "umbral_margen": 0.1,
             "total": 3831,
-            "etiquetados": 3548,
-            "abstenidos": 283,
-            "cobertura": 0.9261,
-            "aciertos_en_etiquetados": 3375,
-            "exactitud_selectiva": 0.9512,
-            "macro_f1_selectivo": 0.9452
+            "etiquetados": 3547,
+            "abstenidos": 284,
+            "cobertura": 0.9259,
+            "aciertos_en_etiquetados": 3371,
+            "exactitud_selectiva": 0.9504,
+            "macro_f1_selectivo": 0.9444
           }
         }
       }
@@ -1309,20 +1309,20 @@
       "ngramas": "(1,3) + char (3,5)",
       "probabilidades_nativas": true,
       "descripcion": "Combina trigramas de palabras con alcance de negacion y subpalabras de caracteres para conectar raices y conjugaciones en espanol.",
-      "tamano_vocabulario": 84700,
-      "segundos_entrenamiento": 7.51,
+      "tamano_vocabulario": 84826,
+      "segundos_entrenamiento": 6.1,
       "metricas": {
         "validacion_go": {
           "total": 1899,
           "exactitud": 0.8847,
-          "macro_precision": 0.6759,
-          "macro_recall": 0.6556,
+          "macro_precision": 0.6783,
+          "macro_recall": 0.6538,
           "macro_f1": 0.6654,
           "por_clase": {
             "alegria": {
-              "precision": 0.7551,
-              "recall": 0.6981,
-              "f1": 0.7255,
+              "precision": 0.7604,
+              "recall": 0.6887,
+              "f1": 0.7228,
               "soporte": 106
             },
             "ansiedad": {
@@ -1332,21 +1332,21 @@
               "soporte": 8
             },
             "enojo": {
-              "precision": 0.5377,
+              "precision": 0.5278,
               "recall": 0.5229,
-              "f1": 0.5302,
+              "f1": 0.5253,
               "soporte": 109
             },
             "neutral": {
-              "precision": 0.9285,
-              "recall": 0.9378,
-              "f1": 0.9331,
+              "precision": 0.928,
+              "recall": 0.9384,
+              "f1": 0.9332,
               "soporte": 1592
             },
             "tristeza": {
-              "precision": 0.6582,
+              "precision": 0.6753,
               "recall": 0.619,
-              "f1": 0.638,
+              "f1": 0.646,
               "soporte": 84
             }
           },
@@ -1359,10 +1359,10 @@
           ],
           "matriz_confusion": [
             [
-              74,
+              73,
               0,
               1,
-              31,
+              32,
               0
             ],
             [
@@ -1380,11 +1380,11 @@
               1
             ],
             [
-              22,
+              21,
               3,
-              48,
-              1493,
-              26
+              50,
+              1494,
+              24
             ],
             [
               2,
@@ -1397,15 +1397,15 @@
         },
         "validacion_sintetica": {
           "total": 1932,
-          "exactitud": 0.9922,
-          "macro_precision": 0.993,
-          "macro_recall": 0.9901,
-          "macro_f1": 0.9915,
+          "exactitud": 0.9902,
+          "macro_precision": 0.9909,
+          "macro_recall": 0.9882,
+          "macro_f1": 0.9895,
           "por_clase": {
             "alegria": {
               "precision": 0.9976,
-              "recall": 0.9787,
-              "f1": 0.988,
+              "recall": 0.9692,
+              "f1": 0.9832,
               "soporte": 422
             },
             "ansiedad": {
@@ -1415,9 +1415,9 @@
               "soporte": 136
             },
             "enojo": {
-              "precision": 1.0,
+              "precision": 0.9963,
               "recall": 1.0,
-              "f1": 1.0,
+              "f1": 0.9981,
               "soporte": 266
             },
             "neutral": {
@@ -1427,9 +1427,9 @@
               "soporte": 678
             },
             "tristeza": {
-              "precision": 0.9839,
+              "precision": 0.9772,
               "recall": 0.9953,
-              "f1": 0.9896,
+              "f1": 0.9862,
               "soporte": 430
             }
           },
@@ -1442,11 +1442,11 @@
           ],
           "matriz_confusion": [
             [
-              413,
+              409,
               0,
-              0,
+              1,
               3,
-              6
+              9
             ],
             [
               0,
@@ -1480,15 +1480,15 @@
         },
         "validacion_combinada": {
           "total": 3831,
-          "exactitud": 0.9389,
-          "macro_precision": 0.9331,
-          "macro_recall": 0.925,
-          "macro_f1": 0.929,
+          "exactitud": 0.9379,
+          "macro_precision": 0.9315,
+          "macro_recall": 0.9232,
+          "macro_f1": 0.9272,
           "por_clase": {
             "alegria": {
-              "precision": 0.9512,
-              "recall": 0.9223,
-              "f1": 0.9365,
+              "precision": 0.9526,
+              "recall": 0.9129,
+              "f1": 0.9323,
               "soporte": 528
             },
             "ansiedad": {
@@ -1498,21 +1498,21 @@
               "soporte": 144
             },
             "enojo": {
-              "precision": 0.8683,
+              "precision": 0.8613,
               "recall": 0.8613,
-              "f1": 0.8648,
+              "f1": 0.8613,
               "soporte": 375
             },
             "neutral": {
-              "precision": 0.9472,
-              "recall": 0.9559,
-              "f1": 0.9515,
+              "precision": 0.9468,
+              "recall": 0.9564,
+              "f1": 0.9516,
               "soporte": 2270
             },
             "tristeza": {
-              "precision": 0.9339,
+              "precision": 0.932,
               "recall": 0.9339,
-              "f1": 0.9339,
+              "f1": 0.9329,
               "soporte": 514
             }
           },
@@ -1525,11 +1525,11 @@
           ],
           "matriz_confusion": [
             [
-              487,
+              482,
               0,
-              1,
-              34,
-              6
+              2,
+              35,
+              9
             ],
             [
               0,
@@ -1546,11 +1546,11 @@
               1
             ],
             [
-              22,
+              21,
               4,
-              48,
-              2170,
-              26
+              50,
+              2171,
+              24
             ],
             [
               3,
@@ -1561,40 +1561,40 @@
             ]
           ]
         },
-        "promedio_macro_f1": 0.8285,
+        "promedio_macro_f1": 0.8275,
         "abstencion": {
           "validacion_go": {
             "umbral_prob": 0.45,
             "umbral_margen": 0.1,
             "total": 1899,
-            "etiquetados": 1822,
-            "abstenidos": 77,
-            "cobertura": 0.9595,
-            "aciertos_en_etiquetados": 1634,
-            "exactitud_selectiva": 0.8968,
-            "macro_f1_selectivo": 0.6779
+            "etiquetados": 1824,
+            "abstenidos": 75,
+            "cobertura": 0.9605,
+            "aciertos_en_etiquetados": 1632,
+            "exactitud_selectiva": 0.8947,
+            "macro_f1_selectivo": 0.6672
           },
           "validacion_sintetica": {
             "umbral_prob": 0.45,
             "umbral_margen": 0.1,
             "total": 1932,
-            "etiquetados": 1904,
-            "abstenidos": 28,
-            "cobertura": 0.9855,
-            "aciertos_en_etiquetados": 1898,
+            "etiquetados": 1897,
+            "abstenidos": 35,
+            "cobertura": 0.9819,
+            "aciertos_en_etiquetados": 1891,
             "exactitud_selectiva": 0.9968,
-            "macro_f1_selectivo": 0.9965
+            "macro_f1_selectivo": 0.9964
           },
           "validacion_combinada": {
             "umbral_prob": 0.45,
             "umbral_margen": 0.1,
             "total": 3831,
-            "etiquetados": 3726,
-            "abstenidos": 105,
-            "cobertura": 0.9726,
-            "aciertos_en_etiquetados": 3532,
-            "exactitud_selectiva": 0.9479,
-            "macro_f1_selectivo": 0.9407
+            "etiquetados": 3721,
+            "abstenidos": 110,
+            "cobertura": 0.9713,
+            "aciertos_en_etiquetados": 3523,
+            "exactitud_selectiva": 0.9468,
+            "macro_f1_selectivo": 0.939
           }
         }
       }
@@ -1606,15 +1606,15 @@
       "ngramas": "(1, 3)",
       "probabilidades_nativas": true,
       "descripcion": "Variante probabilistica de Naive Bayes adaptada a clases desbalanceadas con el mismo vocabulario de trigramas.",
-      "tamano_vocabulario": 50466,
-      "segundos_entrenamiento": 0.5,
+      "tamano_vocabulario": 50508,
+      "segundos_entrenamiento": 0.45,
       "metricas": {
         "validacion_go": {
           "total": 1899,
-          "exactitud": 0.8452,
-          "macro_precision": 0.5451,
-          "macro_recall": 0.3904,
-          "macro_f1": 0.431,
+          "exactitud": 0.8447,
+          "macro_precision": 0.5425,
+          "macro_recall": 0.3903,
+          "macro_f1": 0.4305,
           "por_clase": {
             "alegria": {
               "precision": 0.5345,
@@ -1629,15 +1629,15 @@
               "soporte": 8
             },
             "enojo": {
-              "precision": 0.5476,
+              "precision": 0.5349,
               "recall": 0.211,
-              "f1": 0.3046,
+              "f1": 0.3026,
               "soporte": 109
             },
             "neutral": {
-              "precision": 0.8717,
-              "recall": 0.9604,
-              "f1": 0.9139,
+              "precision": 0.8716,
+              "recall": 0.9598,
+              "f1": 0.9136,
               "soporte": 1592
             },
             "tristeza": {
@@ -1679,8 +1679,8 @@
             [
               24,
               8,
-              17,
-              1529,
+              18,
+              1528,
               14
             ],
             [
@@ -1777,10 +1777,10 @@
         },
         "validacion_combinada": {
           "total": 3831,
-          "exactitud": 0.9154,
-          "macro_precision": 0.921,
+          "exactitud": 0.9152,
+          "macro_precision": 0.9204,
           "macro_recall": 0.8768,
-          "macro_f1": 0.8964,
+          "macro_f1": 0.8961,
           "por_clase": {
             "alegria": {
               "precision": 0.9371,
@@ -1795,15 +1795,15 @@
               "soporte": 144
             },
             "enojo": {
-              "precision": 0.9146,
+              "precision": 0.9117,
               "recall": 0.7707,
-              "f1": 0.8365,
+              "f1": 0.8353,
               "soporte": 375
             },
             "neutral": {
               "precision": 0.9043,
-              "recall": 0.9656,
-              "f1": 0.934,
+              "recall": 0.9652,
+              "f1": 0.9337,
               "soporte": 2270
             },
             "tristeza": {
@@ -1845,8 +1845,8 @@
             [
               24,
               16,
-              22,
-              2192,
+              23,
+              2191,
               16
             ],
             [
@@ -1858,40 +1858,40 @@
             ]
           ]
         },
-        "promedio_macro_f1": 0.7059,
+        "promedio_macro_f1": 0.7057,
         "abstencion": {
           "validacion_go": {
             "umbral_prob": 0.45,
             "umbral_margen": 0.1,
             "total": 1899,
-            "etiquetados": 1492,
-            "abstenidos": 407,
-            "cobertura": 0.7857,
-            "aciertos_en_etiquetados": 1325,
-            "exactitud_selectiva": 0.8881,
-            "macro_f1_selectivo": 0.3496
+            "etiquetados": 1489,
+            "abstenidos": 410,
+            "cobertura": 0.7841,
+            "aciertos_en_etiquetados": 1321,
+            "exactitud_selectiva": 0.8872,
+            "macro_f1_selectivo": 0.3486
           },
           "validacion_sintetica": {
             "umbral_prob": 0.45,
             "umbral_margen": 0.1,
             "total": 1932,
-            "etiquetados": 1882,
-            "abstenidos": 50,
-            "cobertura": 0.9741,
-            "aciertos_en_etiquetados": 1872,
-            "exactitud_selectiva": 0.9947,
-            "macro_f1_selectivo": 0.9922
+            "etiquetados": 1884,
+            "abstenidos": 48,
+            "cobertura": 0.9752,
+            "aciertos_en_etiquetados": 1873,
+            "exactitud_selectiva": 0.9942,
+            "macro_f1_selectivo": 0.9913
           },
           "validacion_combinada": {
             "umbral_prob": 0.45,
             "umbral_margen": 0.1,
             "total": 3831,
-            "etiquetados": 3374,
-            "abstenidos": 457,
-            "cobertura": 0.8807,
-            "aciertos_en_etiquetados": 3197,
-            "exactitud_selectiva": 0.9475,
-            "macro_f1_selectivo": 0.9384
+            "etiquetados": 3373,
+            "abstenidos": 458,
+            "cobertura": 0.8804,
+            "aciertos_en_etiquetados": 3194,
+            "exactitud_selectiva": 0.9469,
+            "macro_f1_selectivo": 0.9374
           }
         }
       }
@@ -1903,15 +1903,15 @@
       "ngramas": "(1, 3)",
       "probabilidades_nativas": false,
       "descripcion": "Clasificador de margen maximo (Semana 09 Sec. 2.4 y Semana 12 Sec. 2.3); no entrega probabilidades directas para abstencion sin calibracion extra.",
-      "tamano_vocabulario": 50466,
-      "segundos_entrenamiento": 1.03,
+      "tamano_vocabulario": 50508,
+      "segundos_entrenamiento": 0.76,
       "metricas": {
         "validacion_go": {
           "total": 1899,
-          "exactitud": 0.8826,
-          "macro_precision": 0.7211,
-          "macro_recall": 0.5427,
-          "macro_f1": 0.6049,
+          "exactitud": 0.881,
+          "macro_precision": 0.7151,
+          "macro_recall": 0.5407,
+          "macro_f1": 0.6015,
           "por_clase": {
             "alegria": {
               "precision": 0.7317,
@@ -1926,21 +1926,21 @@
               "soporte": 8
             },
             "enojo": {
-              "precision": 0.5714,
-              "recall": 0.4404,
-              "f1": 0.4974,
+              "precision": 0.5663,
+              "recall": 0.4312,
+              "f1": 0.4896,
               "soporte": 109
             },
             "neutral": {
-              "precision": 0.9115,
-              "recall": 0.9573,
-              "f1": 0.9338,
+              "precision": 0.9108,
+              "recall": 0.956,
+              "f1": 0.9329,
               "soporte": 1592
             },
             "tristeza": {
-              "precision": 0.7241,
+              "precision": 0.7,
               "recall": 0.5,
-              "f1": 0.5915,
+              "f1": 0.5833,
               "soporte": 84
             }
           },
@@ -1969,37 +1969,37 @@
             [
               0,
               0,
-              48,
+              47,
               61,
-              0
+              1
             ],
             [
-              19,
+              20,
               1,
               34,
-              1524,
-              14
+              1522,
+              15
             ],
             [
-              2,
+              1,
               0,
               1,
-              39,
+              40,
               42
             ]
           ]
         },
         "validacion_sintetica": {
           "total": 1932,
-          "exactitud": 0.9814,
-          "macro_precision": 0.9888,
-          "macro_recall": 0.9784,
-          "macro_f1": 0.9833,
+          "exactitud": 0.9907,
+          "macro_precision": 0.9939,
+          "macro_recall": 0.9867,
+          "macro_f1": 0.9902,
           "por_clase": {
             "alegria": {
-              "precision": 0.9925,
-              "recall": 0.9408,
-              "f1": 0.9659,
+              "precision": 0.9928,
+              "recall": 0.9858,
+              "f1": 0.9893,
               "soporte": 422
             },
             "ansiedad": {
@@ -2010,14 +2010,14 @@
             },
             "enojo": {
               "precision": 1.0,
-              "recall": 0.9925,
-              "f1": 0.9962,
+              "recall": 0.9887,
+              "f1": 0.9943,
               "soporte": 266
             },
             "neutral": {
-              "precision": 0.9563,
+              "precision": 0.9812,
               "recall": 1.0,
-              "f1": 0.9776,
+              "f1": 0.9905,
               "soporte": 678
             },
             "tristeza": {
@@ -2036,10 +2036,10 @@
           ],
           "matriz_confusion": [
             [
-              397,
+              416,
               0,
               0,
-              24,
+              5,
               1
             ],
             [
@@ -2052,8 +2052,8 @@
             [
               0,
               0,
-              264,
-              2,
+              263,
+              3,
               0
             ],
             [
@@ -2074,15 +2074,15 @@
         },
         "validacion_combinada": {
           "total": 3831,
-          "exactitud": 0.9324,
-          "macro_precision": 0.945,
-          "macro_recall": 0.9013,
-          "macro_f1": 0.9221,
+          "exactitud": 0.9363,
+          "macro_precision": 0.9458,
+          "macro_recall": 0.9073,
+          "macro_f1": 0.9257,
           "por_clase": {
             "alegria": {
-              "precision": 0.9481,
-              "recall": 0.8655,
-              "f1": 0.905,
+              "precision": 0.9501,
+              "recall": 0.9015,
+              "f1": 0.9252,
               "soporte": 528
             },
             "ansiedad": {
@@ -2092,21 +2092,21 @@
               "soporte": 144
             },
             "enojo": {
-              "precision": 0.8966,
-              "recall": 0.832,
-              "f1": 0.8631,
+              "precision": 0.896,
+              "recall": 0.8267,
+              "f1": 0.8599,
               "soporte": 375
             },
             "neutral": {
-              "precision": 0.9248,
-              "recall": 0.97,
-              "f1": 0.9469,
+              "precision": 0.9314,
+              "recall": 0.9692,
+              "f1": 0.9499,
               "soporte": 2270
             },
             "tristeza": {
-              "precision": 0.9629,
+              "precision": 0.9589,
               "recall": 0.9086,
-              "f1": 0.9349,
+              "f1": 0.9331,
               "soporte": 514
             }
           },
@@ -2119,10 +2119,10 @@
           ],
           "matriz_confusion": [
             [
-              457,
+              476,
               0,
               1,
-              68,
+              49,
               2
             ],
             [
@@ -2135,27 +2135,27 @@
             [
               0,
               0,
-              312,
-              63,
-              0
+              310,
+              64,
+              1
             ],
             [
-              19,
+              20,
               1,
               34,
-              2202,
-              14
+              2200,
+              15
             ],
             [
-              5,
+              4,
               0,
               1,
-              41,
+              42,
               467
             ]
           ]
         },
-        "promedio_macro_f1": 0.7941
+        "promedio_macro_f1": 0.7958
       }
     },
     {
@@ -2165,44 +2165,44 @@
       "ngramas": "(1,3) + char (3,5)",
       "probabilidades_nativas": true,
       "descripcion": "Reduccion de dimensionalidad con TruncatedSVD y Perceptron Multicapa (Semana 14 Sec. 3.5 y 6.3) evaluado en las mismas particiones.",
-      "tamano_vocabulario": 84700,
-      "segundos_entrenamiento": 9.03,
+      "tamano_vocabulario": 84826,
+      "segundos_entrenamiento": 7.92,
       "metricas": {
         "validacion_go": {
           "total": 1899,
-          "exactitud": 0.8547,
-          "macro_precision": 0.5669,
-          "macro_recall": 0.4707,
-          "macro_f1": 0.4938,
+          "exactitud": 0.8583,
+          "macro_precision": 0.5884,
+          "macro_recall": 0.4831,
+          "macro_f1": 0.5157,
           "por_clase": {
             "alegria": {
-              "precision": 0.7183,
-              "recall": 0.4811,
-              "f1": 0.5763,
+              "precision": 0.7361,
+              "recall": 0.5,
+              "f1": 0.5955,
               "soporte": 106
             },
             "ansiedad": {
-              "precision": 0.2308,
+              "precision": 0.3,
               "recall": 0.375,
-              "f1": 0.2857,
+              "f1": 0.3333,
               "soporte": 8
             },
             "enojo": {
-              "precision": 0.475,
-              "recall": 0.1743,
-              "f1": 0.255,
+              "precision": 0.4773,
+              "recall": 0.1927,
+              "f1": 0.2745,
               "soporte": 109
             },
             "neutral": {
-              "precision": 0.8852,
-              "recall": 0.9541,
-              "f1": 0.9184,
+              "precision": 0.8879,
+              "recall": 0.9548,
+              "f1": 0.9201,
               "soporte": 1592
             },
             "tristeza": {
-              "precision": 0.5254,
-              "recall": 0.369,
-              "f1": 0.4336,
+              "precision": 0.541,
+              "recall": 0.3929,
+              "f1": 0.4552,
               "soporte": 84
             }
           },
@@ -2215,10 +2215,10 @@
           ],
           "matriz_confusion": [
             [
-              51,
+              53,
               0,
-              1,
-              54,
+              0,
+              53,
               0
             ],
             [
@@ -2229,63 +2229,63 @@
               0
             ],
             [
-              1,
               0,
-              19,
-              89,
-              0
+              0,
+              21,
+              87,
+              1
             ],
             [
               17,
-              8,
-              20,
-              1519,
-              28
+              5,
+              23,
+              1520,
+              27
             ],
             [
               2,
               2,
               0,
-              49,
-              31
+              47,
+              33
             ]
           ]
         },
         "validacion_sintetica": {
           "total": 1932,
-          "exactitud": 0.8929,
-          "macro_precision": 0.9017,
-          "macro_recall": 0.8695,
-          "macro_f1": 0.8816,
+          "exactitud": 0.8913,
+          "macro_precision": 0.9009,
+          "macro_recall": 0.8724,
+          "macro_f1": 0.8821,
           "por_clase": {
             "alegria": {
-              "precision": 0.9015,
-              "recall": 0.7156,
-              "f1": 0.7979,
+              "precision": 0.9097,
+              "recall": 0.6919,
+              "f1": 0.786,
               "soporte": 422
             },
             "ansiedad": {
-              "precision": 0.9145,
-              "recall": 0.7868,
-              "f1": 0.8458,
+              "precision": 0.9091,
+              "recall": 0.8088,
+              "f1": 0.856,
               "soporte": 136
             },
             "enojo": {
-              "precision": 0.9382,
-              "recall": 0.9135,
-              "f1": 0.9257,
+              "precision": 0.9389,
+              "recall": 0.9248,
+              "f1": 0.9318,
               "soporte": 266
             },
             "neutral": {
-              "precision": 0.884,
-              "recall": 0.9779,
-              "f1": 0.9286,
+              "precision": 0.8788,
+              "recall": 0.9735,
+              "f1": 0.9237,
               "soporte": 678
             },
             "tristeza": {
-              "precision": 0.8705,
-              "recall": 0.9535,
-              "f1": 0.9101,
+              "precision": 0.8679,
+              "recall": 0.9628,
+              "f1": 0.9129,
               "soporte": 430
             }
           },
@@ -2298,77 +2298,77 @@
           ],
           "matriz_confusion": [
             [
-              302,
-              7,
-              16,
-              43,
-              54
+              292,
+              6,
+              15,
+              49,
+              60
             ],
             [
-              2,
-              107,
+              1,
+              110,
               0,
-              26,
-              1
+              22,
+              3
             ],
             [
-              4,
-              0,
-              243,
-              13,
-              6
-            ],
-            [
-              12,
-              3,
-              0,
-              663,
+              5,
+              1,
+              246,
+              14,
               0
             ],
             [
-              15,
+              14,
+              3,
+              1,
+              660,
+              0
+            ],
+            [
+              9,
+              1,
               0,
-              0,
-              5,
-              410
+              6,
+              414
             ]
           ]
         },
         "validacion_combinada": {
           "total": 3831,
-          "exactitud": 0.8739,
-          "macro_precision": 0.8618,
-          "macro_recall": 0.7901,
-          "macro_f1": 0.8205,
+          "exactitud": 0.875,
+          "macro_precision": 0.8658,
+          "macro_recall": 0.796,
+          "macro_f1": 0.8252,
           "por_clase": {
             "alegria": {
-              "precision": 0.8695,
-              "recall": 0.6686,
-              "f1": 0.7559,
+              "precision": 0.8779,
+              "recall": 0.6534,
+              "f1": 0.7492,
               "soporte": 528
             },
             "ansiedad": {
-              "precision": 0.8462,
-              "recall": 0.7639,
-              "f1": 0.8029,
+              "precision": 0.8626,
+              "recall": 0.7847,
+              "f1": 0.8218,
               "soporte": 144
             },
             "enojo": {
-              "precision": 0.8763,
-              "recall": 0.6987,
-              "f1": 0.7774,
+              "precision": 0.8725,
+              "recall": 0.712,
+              "f1": 0.7841,
               "soporte": 375
             },
             "neutral": {
-              "precision": 0.8848,
-              "recall": 0.9612,
-              "f1": 0.9215,
+              "precision": 0.8851,
+              "recall": 0.9604,
+              "f1": 0.9212,
               "soporte": 2270
             },
             "tristeza": {
-              "precision": 0.8321,
-              "recall": 0.858,
-              "f1": 0.8448,
+              "precision": 0.8309,
+              "recall": 0.8696,
+              "f1": 0.8498,
               "soporte": 514
             }
           },
@@ -2381,76 +2381,76 @@
           ],
           "matriz_confusion": [
             [
-              353,
-              7,
-              17,
-              97,
-              54
+              345,
+              6,
+              15,
+              102,
+              60
             ],
             [
-              2,
-              110,
+              1,
+              113,
               0,
-              31,
-              1
+              27,
+              3
             ],
             [
               5,
-              0,
-              262,
-              102,
-              6
+              1,
+              267,
+              101,
+              1
             ],
             [
-              29,
+              31,
+              8,
+              24,
+              2180,
+              27
+            ],
+            [
               11,
-              20,
-              2182,
-              28
-            ],
-            [
-              17,
-              2,
+              3,
               0,
-              54,
-              441
+              53,
+              447
             ]
           ]
         },
-        "promedio_macro_f1": 0.6877,
+        "promedio_macro_f1": 0.6989,
         "abstencion": {
           "validacion_go": {
             "umbral_prob": 0.45,
             "umbral_margen": 0.1,
             "total": 1899,
-            "etiquetados": 1847,
-            "abstenidos": 52,
-            "cobertura": 0.9726,
-            "aciertos_en_etiquetados": 1591,
-            "exactitud_selectiva": 0.8614,
-            "macro_f1_selectivo": 0.4875
+            "etiquetados": 1860,
+            "abstenidos": 39,
+            "cobertura": 0.9795,
+            "aciertos_en_etiquetados": 1610,
+            "exactitud_selectiva": 0.8656,
+            "macro_f1_selectivo": 0.5213
           },
           "validacion_sintetica": {
             "umbral_prob": 0.45,
             "umbral_margen": 0.1,
             "total": 1932,
-            "etiquetados": 1847,
-            "abstenidos": 85,
-            "cobertura": 0.956,
-            "aciertos_en_etiquetados": 1684,
-            "exactitud_selectiva": 0.9117,
-            "macro_f1_selectivo": 0.9
+            "etiquetados": 1849,
+            "abstenidos": 83,
+            "cobertura": 0.957,
+            "aciertos_en_etiquetados": 1698,
+            "exactitud_selectiva": 0.9183,
+            "macro_f1_selectivo": 0.9106
           },
           "validacion_combinada": {
             "umbral_prob": 0.45,
             "umbral_margen": 0.1,
             "total": 3831,
-            "etiquetados": 3694,
-            "abstenidos": 137,
-            "cobertura": 0.9642,
-            "aciertos_en_etiquetados": 3275,
-            "exactitud_selectiva": 0.8866,
-            "macro_f1_selectivo": 0.8357
+            "etiquetados": 3709,
+            "abstenidos": 122,
+            "cobertura": 0.9682,
+            "aciertos_en_etiquetados": 3308,
+            "exactitud_selectiva": 0.8919,
+            "macro_f1_selectivo": 0.8488
           }
         }
       }
@@ -2462,15 +2462,15 @@
       "ngramas": "(1,3) + char (3,5)",
       "probabilidades_nativas": true,
       "descripcion": "Metodo ensamblado por votacion suave (Semana 12 Sec. 2.3) combinando Regresion Logistica balanceada y Complement Naive Bayes.",
-      "tamano_vocabulario": 84700,
-      "segundos_entrenamiento": 7.08,
+      "tamano_vocabulario": 84826,
+      "segundos_entrenamiento": 6.16,
       "metricas": {
         "validacion_go": {
           "total": 1899,
-          "exactitud": 0.8878,
-          "macro_precision": 0.7043,
-          "macro_recall": 0.5861,
-          "macro_f1": 0.6363,
+          "exactitud": 0.8894,
+          "macro_precision": 0.7085,
+          "macro_recall": 0.5876,
+          "macro_f1": 0.6388,
           "por_clase": {
             "alegria": {
               "precision": 0.8125,
@@ -2485,21 +2485,21 @@
               "soporte": 8
             },
             "enojo": {
-              "precision": 0.5556,
-              "recall": 0.4128,
-              "f1": 0.4737,
+              "precision": 0.5802,
+              "recall": 0.4312,
+              "f1": 0.4947,
               "soporte": 109
             },
             "neutral": {
-              "precision": 0.9148,
-              "recall": 0.9579,
-              "f1": 0.9359,
+              "precision": 0.9155,
+              "recall": 0.9592,
+              "f1": 0.9368,
               "soporte": 1592
             },
             "tristeza": {
-              "precision": 0.7385,
-              "recall": 0.5714,
-              "f1": 0.6443,
+              "precision": 0.7344,
+              "recall": 0.5595,
+              "f1": 0.6351,
               "soporte": 84
             }
           },
@@ -2528,37 +2528,37 @@
             [
               0,
               0,
-              45,
-              64,
+              47,
+              62,
               0
             ],
             [
               13,
               2,
-              35,
-              1525,
+              33,
+              1527,
               17
             ],
             [
               2,
               1,
               0,
-              33,
-              48
+              34,
+              47
             ]
           ]
         },
         "validacion_sintetica": {
           "total": 1932,
-          "exactitud": 0.9938,
-          "macro_precision": 0.992,
-          "macro_recall": 0.9921,
-          "macro_f1": 0.992,
+          "exactitud": 0.9933,
+          "macro_precision": 0.9915,
+          "macro_recall": 0.9916,
+          "macro_f1": 0.9915,
           "por_clase": {
             "alegria": {
               "precision": 0.9976,
-              "recall": 0.9929,
-              "f1": 0.9952,
+              "recall": 0.9905,
+              "f1": 0.9941,
               "soporte": 422
             },
             "ansiedad": {
@@ -2580,9 +2580,9 @@
               "soporte": 678
             },
             "tristeza": {
-              "precision": 0.9953,
+              "precision": 0.993,
               "recall": 0.9953,
-              "f1": 0.9953,
+              "f1": 0.9942,
               "soporte": 430
             }
           },
@@ -2595,11 +2595,11 @@
           ],
           "matriz_confusion": [
             [
-              419,
+              418,
               0,
               0,
               2,
-              1
+              2
             ],
             [
               0,
@@ -2633,15 +2633,15 @@
         },
         "validacion_combinada": {
           "total": 3831,
-          "exactitud": 0.9413,
-          "macro_precision": 0.9437,
-          "macro_recall": 0.917,
-          "macro_f1": 0.9299,
+          "exactitud": 0.9418,
+          "macro_precision": 0.9445,
+          "macro_recall": 0.9175,
+          "macro_f1": 0.9305,
           "por_clase": {
             "alegria": {
-              "precision": 0.968,
-              "recall": 0.9167,
-              "f1": 0.9416,
+              "precision": 0.9679,
+              "recall": 0.9148,
+              "f1": 0.9406,
               "soporte": 528
             },
             "ansiedad": {
@@ -2651,21 +2651,21 @@
               "soporte": 144
             },
             "enojo": {
-              "precision": 0.8937,
-              "recall": 0.8293,
-              "f1": 0.8603,
+              "precision": 0.8994,
+              "recall": 0.8347,
+              "f1": 0.8658,
               "soporte": 375
             },
             "neutral": {
-              "precision": 0.9373,
-              "recall": 0.9687,
-              "f1": 0.9528,
+              "precision": 0.9378,
+              "recall": 0.9696,
+              "f1": 0.9534,
               "soporte": 2270
             },
             "tristeza": {
-              "precision": 0.9616,
-              "recall": 0.9261,
-              "f1": 0.9435,
+              "precision": 0.9596,
+              "recall": 0.9241,
+              "f1": 0.9415,
               "soporte": 514
             }
           },
@@ -2678,11 +2678,11 @@
           ],
           "matriz_confusion": [
             [
-              484,
+              483,
               0,
               1,
               42,
-              1
+              2
             ],
             [
               0,
@@ -2694,60 +2694,60 @@
             [
               0,
               0,
-              311,
-              64,
+              313,
+              62,
               0
             ],
             [
               13,
               5,
-              36,
-              2199,
+              34,
+              2201,
               17
             ],
             [
               3,
               1,
               0,
-              34,
-              476
+              35,
+              475
             ]
           ]
         },
-        "promedio_macro_f1": 0.8141,
+        "promedio_macro_f1": 0.8152,
         "abstencion": {
           "validacion_go": {
             "umbral_prob": 0.45,
             "umbral_margen": 0.1,
             "total": 1899,
-            "etiquetados": 1833,
-            "abstenidos": 66,
-            "cobertura": 0.9652,
-            "aciertos_en_etiquetados": 1653,
-            "exactitud_selectiva": 0.9018,
-            "macro_f1_selectivo": 0.6632
+            "etiquetados": 1840,
+            "abstenidos": 59,
+            "cobertura": 0.9689,
+            "aciertos_en_etiquetados": 1660,
+            "exactitud_selectiva": 0.9022,
+            "macro_f1_selectivo": 0.6658
           },
           "validacion_sintetica": {
             "umbral_prob": 0.45,
             "umbral_margen": 0.1,
             "total": 1932,
-            "etiquetados": 1922,
-            "abstenidos": 10,
-            "cobertura": 0.9948,
-            "aciertos_en_etiquetados": 1914,
+            "etiquetados": 1917,
+            "abstenidos": 15,
+            "cobertura": 0.9922,
+            "aciertos_en_etiquetados": 1909,
             "exactitud_selectiva": 0.9958,
-            "macro_f1_selectivo": 0.9951
+            "macro_f1_selectivo": 0.995
           },
           "validacion_combinada": {
             "umbral_prob": 0.45,
             "umbral_margen": 0.1,
             "total": 3831,
-            "etiquetados": 3755,
-            "abstenidos": 76,
-            "cobertura": 0.9802,
-            "aciertos_en_etiquetados": 3567,
-            "exactitud_selectiva": 0.9499,
-            "macro_f1_selectivo": 0.9416
+            "etiquetados": 3757,
+            "abstenidos": 74,
+            "cobertura": 0.9807,
+            "aciertos_en_etiquetados": 3569,
+            "exactitud_selectiva": 0.95,
+            "macro_f1_selectivo": 0.9415
           }
         }
       }
@@ -2766,30 +2766,30 @@
     },
     "bigramas": {
       "ngram_range": "(1, 2)",
-      "vocabulario": 31425,
-      "macro_f1_go": 0.6101,
-      "exactitud_go": 0.871,
-      "macro_f1_sintetica": 0.9709,
-      "exactitud_sintetica": 0.9752,
-      "macro_f1_combinada": 0.906,
-      "promedio_macro_f1": 0.7905
+      "vocabulario": 31472,
+      "macro_f1_go": 0.607,
+      "exactitud_go": 0.8699,
+      "macro_f1_sintetica": 0.9691,
+      "exactitud_sintetica": 0.9746,
+      "macro_f1_combinada": 0.9034,
+      "promedio_macro_f1": 0.788
     },
     "trigramas": {
       "ngram_range": "(1, 3)",
-      "vocabulario": 50466,
-      "macro_f1_go": 0.6121,
-      "exactitud_go": 0.8752,
-      "macro_f1_sintetica": 0.9814,
-      "exactitud_sintetica": 0.9834,
-      "macro_f1_combinada": 0.9161,
-      "promedio_macro_f1": 0.7968
+      "vocabulario": 50508,
+      "macro_f1_go": 0.6102,
+      "exactitud_go": 0.8736,
+      "macro_f1_sintetica": 0.9797,
+      "exactitud_sintetica": 0.9829,
+      "macro_f1_combinada": 0.9133,
+      "promedio_macro_f1": 0.795
     },
     "diferencia_trigramas_menos_bigramas": {
-      "vocabulario": 19041,
-      "macro_f1_go": 0.002,
-      "macro_f1_sintetica": 0.0105,
-      "macro_f1_combinada": 0.0101,
-      "promedio_macro_f1": 0.0063
+      "vocabulario": 19036,
+      "macro_f1_go": 0.0032,
+      "macro_f1_sintetica": 0.0106,
+      "macro_f1_combinada": 0.0099,
+      "promedio_macro_f1": 0.007
     }
   },
   "ajuste_hiperparametros": {
@@ -2799,34 +2799,34 @@
         "max_df": 1.0,
         "c_reg": 1.0,
         "seleccionado": false,
-        "macro_f1_go": 0.6604,
-        "exactitud_go": 0.8852,
-        "macro_f1_sintetica": 0.989,
-        "macro_f1_combinada": 0.9263,
-        "promedio_macro_f1": 0.8247,
-        "macro_f1_selectivo_go": 0.7014
+        "macro_f1_go": 0.6585,
+        "exactitud_go": 0.8841,
+        "macro_f1_sintetica": 0.9871,
+        "macro_f1_combinada": 0.9243,
+        "promedio_macro_f1": 0.8228,
+        "macro_f1_selectivo_go": 0.7037
       },
       {
         "max_df": 0.5,
         "c_reg": 1.0,
         "seleccionado": false,
-        "macro_f1_go": 0.664,
-        "exactitud_go": 0.8836,
-        "macro_f1_sintetica": 0.99,
-        "macro_f1_combinada": 0.9267,
-        "promedio_macro_f1": 0.827,
-        "macro_f1_selectivo_go": 0.705
+        "macro_f1_go": 0.657,
+        "exactitud_go": 0.8826,
+        "macro_f1_sintetica": 0.9871,
+        "macro_f1_combinada": 0.9236,
+        "promedio_macro_f1": 0.822,
+        "macro_f1_selectivo_go": 0.7025
       },
       {
         "max_df": 0.5,
         "c_reg": 2.0,
         "seleccionado": false,
-        "macro_f1_go": 0.6671,
-        "exactitud_go": 0.8847,
-        "macro_f1_sintetica": 0.9908,
-        "macro_f1_combinada": 0.9282,
-        "promedio_macro_f1": 0.829,
-        "macro_f1_selectivo_go": 0.6692
+        "macro_f1_go": 0.6636,
+        "exactitud_go": 0.8836,
+        "macro_f1_sintetica": 0.9899,
+        "macro_f1_combinada": 0.9267,
+        "promedio_macro_f1": 0.8267,
+        "macro_f1_selectivo_go": 0.6809
       },
       {
         "max_df": 0.5,
@@ -2834,21 +2834,21 @@
         "seleccionado": true,
         "macro_f1_go": 0.6654,
         "exactitud_go": 0.8847,
-        "macro_f1_sintetica": 0.9915,
-        "macro_f1_combinada": 0.929,
-        "promedio_macro_f1": 0.8285,
-        "macro_f1_selectivo_go": 0.6779
+        "macro_f1_sintetica": 0.9895,
+        "macro_f1_combinada": 0.9272,
+        "promedio_macro_f1": 0.8275,
+        "macro_f1_selectivo_go": 0.6672
       },
       {
         "max_df": 0.5,
         "c_reg": 5.0,
         "seleccionado": false,
-        "macro_f1_go": 0.6635,
-        "exactitud_go": 0.8836,
-        "macro_f1_sintetica": 0.9902,
-        "macro_f1_combinada": 0.9274,
-        "promedio_macro_f1": 0.8268,
-        "macro_f1_selectivo_go": 0.6832
+        "macro_f1_go": 0.6601,
+        "exactitud_go": 0.8831,
+        "macro_f1_sintetica": 0.9897,
+        "macro_f1_combinada": 0.9266,
+        "promedio_macro_f1": 0.8249,
+        "macro_f1_selectivo_go": 0.6764
       }
     ]
   },
@@ -2860,24 +2860,24 @@
         "categoria": "negacion_indirecta",
         "lectura_esperada": "tristeza o pedir contexto",
         "en_entrenamiento": false,
-        "estado": "clasificado",
-        "etiqueta_final": "neutral",
-        "etiqueta_tentativa": "neutral",
-        "segunda_etiqueta": "tristeza",
-        "confianza": 0.4527,
-        "margen": 0.1461,
+        "estado": "pedir_contexto",
+        "etiqueta_final": "pedir_contexto",
+        "etiqueta_tentativa": "tristeza",
+        "segunda_etiqueta": "neutral",
+        "confianza": 0.3213,
+        "margen": 0.0137,
         "terminos_clave": [
           {
-            "termino": "todo bien",
-            "aporte": 0.357
+            "termino": "neg_fue",
+            "aporte": 0.2148
           },
           {
-            "termino": "bien",
-            "aporte": 0.1418
+            "termino": "me",
+            "aporte": 0.2078
           },
           {
-            "termino": "del",
-            "aporte": 0.1105
+            "termino": "todo",
+            "aporte": 0.2047
           }
         ]
       },
@@ -2888,22 +2888,22 @@
         "en_entrenamiento": false,
         "estado": "pedir_contexto",
         "etiqueta_final": "pedir_contexto",
-        "etiqueta_tentativa": "neutral",
+        "etiqueta_tentativa": "ansiedad",
         "segunda_etiqueta": "tristeza",
-        "confianza": 0.2875,
-        "margen": 0.0038,
+        "confianza": 0.2879,
+        "margen": 0.0341,
         "terminos_clave": [
           {
-            "termino": "todo bien",
-            "aporte": 0.2607
+            "termino": "me",
+            "aporte": 0.271
           },
           {
-            "termino": "en",
-            "aporte": 0.1581
+            "termino": "examen",
+            "aporte": 0.2186
           },
           {
-            "termino": "bien",
-            "aporte": 0.1035
+            "termino": "el examen",
+            "aporte": 0.1324
           }
         ]
       },
@@ -2916,20 +2916,20 @@
         "etiqueta_final": "alegria",
         "etiqueta_tentativa": "alegria",
         "segunda_etiqueta": "neutral",
-        "confianza": 0.9581,
-        "margen": 0.9391,
+        "confianza": 0.9577,
+        "margen": 0.9397,
         "terminos_clave": [
           {
             "termino": "feliz",
-            "aporte": 0.7336
+            "aporte": 0.7425
           },
           {
             "termino": "feliz con",
-            "aporte": 0.1599
+            "aporte": 0.1621
           },
           {
             "termino": "noticia",
-            "aporte": 0.1452
+            "aporte": 0.1475
           }
         ]
       },
@@ -2940,22 +2940,22 @@
         "en_entrenamiento": false,
         "estado": "pedir_contexto",
         "etiqueta_final": "pedir_contexto",
-        "etiqueta_tentativa": "alegria",
-        "segunda_etiqueta": "neutral",
-        "confianza": 0.407,
-        "margen": 0.2101,
+        "etiqueta_tentativa": "tristeza",
+        "segunda_etiqueta": "alegria",
+        "confianza": 0.3584,
+        "margen": 0.0746,
         "terminos_clave": [
           {
-            "termino": "aprobe el",
-            "aporte": 0.2652
+            "termino": "el curso",
+            "aporte": 0.19
           },
           {
-            "termino": "aprobe",
-            "aporte": 0.2453
+            "termino": "me",
+            "aporte": 0.1373
           },
           {
-            "termino": "fin",
-            "aporte": 0.2344
+            "termino": "curso",
+            "aporte": 0.1157
           }
         ]
       },
@@ -2968,20 +2968,20 @@
         "etiqueta_final": "neutral",
         "etiqueta_tentativa": "neutral",
         "segunda_etiqueta": "enojo",
-        "confianza": 0.8927,
-        "margen": 0.8455,
+        "confianza": 0.8893,
+        "margen": 0.8414,
         "terminos_clave": [
           {
             "termino": "y luego",
-            "aporte": 0.2738
+            "aporte": 0.2661
           },
           {
             "termino": "ire",
-            "aporte": 0.1729
+            "aporte": 0.1724
           },
           {
-            "termino": "al banco",
-            "aporte": 0.1
+            "termino": "neg_clases",
+            "aporte": 0.1088
           }
         ]
       },
@@ -2994,20 +2994,20 @@
         "etiqueta_final": "neutral",
         "etiqueta_tentativa": "neutral",
         "segunda_etiqueta": "ansiedad",
-        "confianza": 0.7974,
-        "margen": 0.6288,
+        "confianza": 0.8313,
+        "margen": 0.691,
         "terminos_clave": [
           {
             "termino": "o",
-            "aporte": 0.1645
+            "aporte": 0.1726
           },
           {
             "termino": "a las",
-            "aporte": 0.1436
+            "aporte": 0.1488
           },
           {
             "termino": "las",
-            "aporte": 0.0884
+            "aporte": 0.0988
           }
         ]
       },
@@ -3020,20 +3020,20 @@
         "etiqueta_final": "alegria",
         "etiqueta_tentativa": "alegria",
         "segunda_etiqueta": "ansiedad",
-        "confianza": 0.5501,
-        "margen": 0.295,
+        "confianza": 0.6178,
+        "margen": 0.405,
         "terminos_clave": [
           {
             "termino": "genial",
-            "aporte": 0.8104
+            "aporte": 0.7831
           },
           {
             "termino": "todo salio",
-            "aporte": 0.2786
+            "aporte": 0.2713
           },
           {
-            "termino": "neg_preocupa",
-            "aporte": 0.1999
+            "termino": "salio",
+            "aporte": 0.1888
           }
         ]
       },
@@ -3046,20 +3046,20 @@
         "etiqueta_final": "tristeza",
         "etiqueta_tentativa": "tristeza",
         "segunda_etiqueta": "neutral",
-        "confianza": 0.6323,
-        "margen": 0.3303,
+        "confianza": 0.6339,
+        "margen": 0.343,
         "terminos_clave": [
           {
             "termino": "planes",
-            "aporte": 0.1765
+            "aporte": 0.1866
           },
           {
             "termino": "mis",
-            "aporte": 0.1302
+            "aporte": 0.131
           },
           {
             "termino": "mis planes",
-            "aporte": 0.0651
+            "aporte": 0.0653
           }
         ]
       },
@@ -3072,20 +3072,20 @@
         "etiqueta_final": "neutral",
         "etiqueta_tentativa": "neutral",
         "segunda_etiqueta": "enojo",
-        "confianza": 0.7227,
-        "margen": 0.4985,
+        "confianza": 0.6871,
+        "margen": 0.4236,
         "terminos_clave": [
           {
             "termino": "neg_estoy",
-            "aporte": 0.3551
+            "aporte": 0.3932
           },
           {
             "termino": "solo",
-            "aporte": 0.2426
+            "aporte": 0.2309
           },
           {
             "termino": "no neg_estoy",
-            "aporte": 0.2234
+            "aporte": 0.2248
           }
         ]
       },
@@ -3098,20 +3098,20 @@
         "etiqueta_final": "neutral",
         "etiqueta_tentativa": "neutral",
         "segunda_etiqueta": "alegria",
-        "confianza": 0.9037,
-        "margen": 0.8545,
+        "confianza": 0.9076,
+        "margen": 0.8599,
         "terminos_clave": [
           {
             "termino": "supongo que",
-            "aporte": 0.1626
+            "aporte": 0.1663
           },
           {
             "termino": "son",
-            "aporte": 0.1176
+            "aporte": 0.117
           },
           {
             "termino": "asi",
-            "aporte": 0.1122
+            "aporte": 0.1007
           }
         ]
       },
@@ -3120,24 +3120,24 @@
         "categoria": "ansiedad_cotidiana",
         "lectura_esperada": "ansiedad",
         "en_entrenamiento": false,
-        "estado": "clasificado",
-        "etiqueta_final": "ansiedad",
-        "etiqueta_tentativa": "ansiedad",
-        "segunda_etiqueta": "neutral",
-        "confianza": 0.5198,
-        "margen": 0.2134,
+        "estado": "pedir_contexto",
+        "etiqueta_final": "pedir_contexto",
+        "etiqueta_tentativa": "neutral",
+        "segunda_etiqueta": "ansiedad",
+        "confianza": 0.3999,
+        "margen": 0.0056,
         "terminos_clave": [
           {
-            "termino": "tengo",
-            "aporte": 0.1819
+            "termino": "el",
+            "aporte": 0.0694
           },
           {
-            "termino": "tengo el",
-            "aporte": 0.1355
+            "termino": "se",
+            "aporte": 0.0678
           },
           {
-            "termino": "que va",
-            "aporte": 0.1052
+            "termino": "a",
+            "aporte": 0.0464
           }
         ]
       },
@@ -3150,20 +3150,20 @@
         "etiqueta_final": "ansiedad",
         "etiqueta_tentativa": "ansiedad",
         "segunda_etiqueta": "neutral",
-        "confianza": 0.9115,
-        "margen": 0.854,
+        "confianza": 0.9257,
+        "margen": 0.8801,
         "terminos_clave": [
           {
             "termino": "de mañana",
-            "aporte": 0.2634
+            "aporte": 0.264
           },
           {
             "termino": "pensando en",
-            "aporte": 0.1781
+            "aporte": 0.1723
           },
           {
             "termino": "pensando",
-            "aporte": 0.1365
+            "aporte": 0.1396
           }
         ]
       },
@@ -3175,21 +3175,21 @@
         "estado": "clasificado",
         "etiqueta_final": "enojo",
         "etiqueta_tentativa": "enojo",
-        "segunda_etiqueta": "neutral",
-        "confianza": 0.9606,
-        "margen": 0.9447,
+        "segunda_etiqueta": "tristeza",
+        "confianza": 0.9441,
+        "margen": 0.9142,
         "terminos_clave": [
           {
             "termino": "rabia",
-            "aporte": 0.5875
+            "aporte": 0.6416
           },
           {
-            "termino": "neg_lo",
-            "aporte": 0.2195
+            "termino": "no",
+            "aporte": 0.1574
           },
           {
             "termino": "da mucha rabia",
-            "aporte": 0.1339
+            "aporte": 0.1456
           }
         ]
       },
@@ -3202,20 +3202,20 @@
         "etiqueta_final": "tristeza",
         "etiqueta_tentativa": "tristeza",
         "segunda_etiqueta": "alegria",
-        "confianza": 0.9962,
-        "margen": 0.9943,
+        "confianza": 0.996,
+        "margen": 0.994,
         "terminos_clave": [
           {
             "termino": "siento",
-            "aporte": 0.3159
+            "aporte": 0.3191
           },
           {
             "termino": "sin ganas",
-            "aporte": 0.2408
+            "aporte": 0.2457
           },
           {
             "termino": "sin ganas de",
-            "aporte": 0.2408
+            "aporte": 0.2457
           }
         ]
       },
@@ -3229,19 +3229,19 @@
         "etiqueta_tentativa": "alegria",
         "segunda_etiqueta": "neutral",
         "confianza": 0.8756,
-        "margen": 0.7805,
+        "margen": 0.7816,
         "terminos_clave": [
           {
             "termino": "que bueno",
-            "aporte": 0.5342
+            "aporte": 0.5361
           },
           {
             "termino": "a tiempo",
-            "aporte": 0.2302
+            "aporte": 0.2316
           },
           {
             "termino": "bueno",
-            "aporte": 0.1158
+            "aporte": 0.1107
           }
         ]
       },
@@ -3253,21 +3253,21 @@
         "estado": "clasificado",
         "etiqueta_final": "neutral",
         "etiqueta_tentativa": "neutral",
-        "segunda_etiqueta": "alegria",
-        "confianza": 0.8652,
-        "margen": 0.8086,
+        "segunda_etiqueta": "enojo",
+        "confianza": 0.8639,
+        "margen": 0.8083,
         "terminos_clave": [
           {
             "termino": "pero",
-            "aporte": 0.1995
+            "aporte": 0.1973
           },
           {
             "termino": "no",
-            "aporte": 0.0519
+            "aporte": 0.0449
           },
           {
             "termino": "veinte",
-            "aporte": 0.0013
+            "aporte": 0.0026
           }
         ]
       }

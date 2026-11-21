@@ -24,15 +24,15 @@ Todos se entrenaron con los **mismos 26,469 ejemplos** y la **misma semilla (`42
 
 | # | Modelo | Qué hace en palabras simples | GoEmotions Macro-F1 | Sintética Macro-F1 | Promedio Macro-F1 | ¿Da probabilidades directas? |
 |---|---|---|---:|---:|---:|:---:|
-| 1 | **Bolsa de palabras (1,1) + Naive Bayes** | Cuenta palabras sueltas y calcula probabilidades básicas (nuestra referencia inicial). | `0.3433` | `0.8852` | `0.6142` | Sí |
-| 2 | **TF-IDF (1,1) + Regresión Logística** | Cambia el conteo simple por TF-IDF y balancea las 5 emociones, solo con palabras sueltas. | `0.5694` | `0.9590` | `0.7642` | Sí |
-| 3 | **TF-IDF (1,2) + Regresión Logística** | Agrega parejas de palabras seguidas (*bigramas*, como `"no quiero"`). | `0.6101` | `0.9709` | `0.7905` | Sí |
-| 4 | **TF-IDF (1,3) + Regresión Logística** | Agrega tríos de palabras seguidas (*trigramas*, como `"da mucha rabia"`). | `0.6121` | `0.9814` | `0.7968` | Sí |
-| **5** | **TF-IDF híbrido (palabras 1-3 + subpalabras 3-5) + Regresión Logística (GANADOR)** | **Une palabras (hasta 3 seguidas) + pedacitos de 3 a 5 letras + ajuste `max_df=0.5` y `C=3.0`.** | **`0.6654`** | **`0.9915`** | **`0.8285`** | **Sí** |
-| 6 | **TF-IDF (1,3) + Complement Naive Bayes** | Versión de Naive Bayes pensada para datos desbalanceados. | `0.4310` | `0.9809` | `0.7059` | Sí |
-| 7 | **TF-IDF (1,3) + SVM Lineal** | Busca la frontera más ancha entre clases. | `0.6049` | `0.9833` | `0.7941` | No |
-| 8 | **TF-IDF híbrido + TruncatedSVD (150) + Red Neuronal MLP** | Comprime las 84,700 columnas a 150 (reducción de dimensionalidad) y las pasa por una red neuronal. | `0.4938` | `0.8816` | `0.6877` | Sí |
-| 9 | **TF-IDF híbrido + Ensamble suave (LR + ComplementNB)** | Combina las probabilidades de Regresión Logística y Complement Naive Bayes. | `0.6363` | `0.9920` | `0.8141` | Sí |
+| 1 | **Bolsa de palabras (1,1) + Naive Bayes** | Cuenta palabras sueltas y calcula probabilidades básicas (nuestra referencia inicial). | `0.3413` | `0.8833` | `0.6123` | Sí |
+| 2 | **TF-IDF (1,1) + Regresión Logística** | Cambia el conteo simple por TF-IDF y balancea las 5 emociones, solo con palabras sueltas. | `0.5924` | `0.9552` | `0.7738` | Sí |
+| 3 | **TF-IDF (1,2) + Regresión Logística** | Agrega parejas de palabras seguidas (*bigramas*, como `"no quiero"`). | `0.6070` | `0.9691` | `0.7880` | Sí |
+| 4 | **TF-IDF (1,3) + Regresión Logística** | Agrega tríos de palabras seguidas (*trigramas*, como `"da mucha rabia"`). | `0.6102` | `0.9797` | `0.7950` | Sí |
+| **5** | **TF-IDF híbrido (palabras 1-3 + subpalabras 3-5) + Regresión Logística (GANADOR)** | **Une palabras (hasta 3 seguidas) + pedacitos de 3 a 5 letras + ajuste `max_df=0.5` y `C=3.0`.** | **`0.6654`** | **`0.9895`** | **`0.8275`** | **Sí** |
+| 6 | **TF-IDF (1,3) + Complement Naive Bayes** | Versión de Naive Bayes pensada para datos desbalanceados. | `0.4305` | `0.9809` | `0.7057` | Sí |
+| 7 | **TF-IDF (1,3) + SVM Lineal** | Busca la frontera más ancha entre clases. | `0.6015` | `0.9902` | `0.7958` | No |
+| 8 | **TF-IDF híbrido + TruncatedSVD (150) + Red Neuronal MLP** | Comprime las 84,826 columnas a 150 (reducción de dimensionalidad) y las pasa por una red neuronal. | `0.5157` | `0.8821` | `0.6989` | Sí |
+| 9 | **TF-IDF híbrido + Ensamble suave (LR + ComplementNB)** | Combina las probabilidades de Regresión Logística y Complement Naive Bayes. | `0.6388` | `0.9915` | `0.8152` | Sí |
 
 ---
 
@@ -69,7 +69,7 @@ Esta pregunta suele salir mucho en la exposición. Aquí está explicada de la f
 - **¿Qué hicimos después?**
   Esas 150 columnas resumen entraron a una **Red Neuronal Perceptrón Multicapa (`MLPClassifier`)** con una capa oculta de 64 neuronas y parada temprana (`early_stopping=True`).
 - **¿Qué pasó en la prueba real?**
-  Obtuvo `0.4938` en GoEmotions y `0.8816` en validación sintética (`0.6877` de promedio), bastante por debajo de nuestra Regresión Logística (`0.6654` y `0.9915`).
+  Obtuvo `0.5157` en GoEmotions y `0.8821` en validación sintética (`0.6989` de promedio), bastante por debajo de nuestra Regresión Logística (`0.6654` y `0.9895`).
 - **¿Por qué pasó eso? (la respuesta que impresiona a la profesora):**
   Porque en clasificación de texto, muchas palabras clave de una emoción aparecen pocas veces (por ejemplo, *"robaron"* o *"vacío"*). Al aplastar 84,700 columnas a solo 150 resúmenes, esos detalles poco frecuentes se pierden; además, `MLPClassifier` no balancea automáticamente las clases minoritarias como sí hace `LogisticRegression(class_weight="balanced")`.
   > **Idea clave para decir en clase:** *"No elegimos el algoritmo más famoso ni el más complejo por moda; probamos Reducción de Dimensionalidad con Red Neuronal, medimos con los mismos datos y nos quedamos con el que demostró mejores resultados."*

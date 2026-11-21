@@ -37,15 +37,15 @@ Se entrenaron **nueve modelos desde cero** únicamente sobre entrenamiento (`SEM
 
 | Modelo | N-gramas | Vocab. | Go Macro-F1 | Go Exact. | Sint. Macro-F1 | Sint. Exact. | Comb. Macro-F1 | Prom. Macro-F1 | Prob. nativas |
 |---|---|---:|---:|---:|---:|---:|---:|---:|:---:|
-| Referencia simple: BoW + Naive Bayes | `(1, 1)` | 9,591 | 0.3433 | 0.8383 | 0.8852 | 0.9094 | 0.8152 | 0.6142 | Sí |
-| TF-IDF + Regresión Logística balanceada | `(1, 1)` | 9,591 | 0.5694 | 0.8494 | 0.9590 | 0.9674 | 0.8826 | 0.7642 | Sí |
-| TF-IDF + Regresión Logística balanceada | `(1, 2)` | 31,425 | 0.6101 | 0.8710 | 0.9709 | 0.9752 | 0.9060 | 0.7905 | Sí |
-| TF-IDF + Regresión Logística balanceada | `(1, 3)` | 50,466 | 0.6121 | 0.8752 | 0.9814 | 0.9834 | 0.9161 | 0.7968 | Sí |
-| **TF-IDF palabras (1,3) + subpalabras (3,5) + LR (Ganador)** | **`(1,3) + char (3,5)`** | **84,700** | **0.6654** | **0.8847** | **0.9915** | **0.9922** | **0.9290** | **0.8285** | **Sí** |
-| TF-IDF + Complement Naive Bayes | `(1, 3)` | 50,466 | 0.4310 | 0.8452 | 0.9809 | 0.9845 | 0.8964 | 0.7059 | Sí |
-| TF-IDF + SVM Lineal balanceado | `(1, 3)` | 50,466 | 0.6049 | 0.8826 | 0.9833 | 0.9814 | 0.9221 | 0.7941 | No |
-| TF-IDF híbrido + SVD (150) + Red Neuronal MLP | `(1,3) + char (3,5)` | 84,700 | 0.4938 | 0.8547 | 0.8816 | 0.8929 | 0.8205 | 0.6877 | Sí |
-| TF-IDF híbrido + Ensamble suave (LR + ComplementNB) | `(1,3) + char (3,5)` | 84,700 | 0.6363 | 0.8878 | 0.9920 | 0.9938 | 0.9299 | 0.8141 | Sí |
+| Referencia simple: BoW + Naive Bayes | `(1, 1)` | 9,610 | 0.3413 | 0.8368 | 0.8833 | 0.9079 | 0.8129 | 0.6123 | Sí |
+| TF-IDF + Regresión Logística balanceada | `(1, 1)` | 9,610 | 0.5924 | 0.8557 | 0.9552 | 0.9643 | 0.8831 | 0.7738 | Sí |
+| TF-IDF + Regresión Logística balanceada | `(1, 2)` | 31,472 | 0.6070 | 0.8710 | 0.9691 | 0.9736 | 0.9034 | 0.7880 | Sí |
+| TF-IDF + Regresión Logística balanceada | `(1, 3)` | 50,508 | 0.6102 | 0.8741 | 0.9797 | 0.9819 | 0.9133 | 0.7950 | Sí |
+| **TF-IDF palabras (1,3) + subpalabras (3,5) + LR (Ganador)** | **`(1,3) + char (3,5)`** | **84,826** | **0.6654** | **0.8847** | **0.9895** | **0.9907** | **0.9272** | **0.8275** | **Sí** |
+| TF-IDF + Complement Naive Bayes | `(1, 3)` | 50,508 | 0.4305 | 0.8452 | 0.9809 | 0.9845 | 0.8961 | 0.7057 | Sí |
+| TF-IDF + SVM Lineal balanceado | `(1, 3)` | 50,508 | 0.6015 | 0.8831 | 0.9902 | 0.9902 | 0.9257 | 0.7958 | No |
+| TF-IDF híbrido + SVD (150) + Red Neuronal MLP | `(1,3) + char (3,5)` | 84,826 | 0.5157 | 0.8615 | 0.8821 | 0.8923 | 0.8252 | 0.6989 | Sí |
+| TF-IDF híbrido + Ensamble suave (LR + ComplementNB) | `(1,3) + char (3,5)` | 84,826 | 0.6388 | 0.8889 | 0.9915 | 0.9933 | 0.9305 | 0.8152 | Sí |
 
 *(Nota: "Sint." corresponde exclusivamente a `validacion_sintetica.csv` generada con Claude; "Go" corresponde a `validacion_go.csv` de GoEmotions traducido; "Comb." evalúa las 3,831 frases juntas; "Prom. Macro-F1" es el promedio simple entre el macro-F1 de GoEmotions y el macro-F1 sintético para no dejar que una sola partición domine.)*
 
