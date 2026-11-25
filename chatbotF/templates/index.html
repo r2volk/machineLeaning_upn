@@ -456,6 +456,30 @@ tr.winner { background: #eff6f0; font-weight: 600; }
 }
 .doc-links a:hover { background: #f0f5f1; }
 
+.lab-bar { display: inline-flex; align-items: center; gap: 10px; min-width: 155px; justify-content: flex-end; }
+.lab-bar-track { width: 84px; height: 8px; border-radius: 999px; background: #e8eee9; overflow: hidden; flex-shrink: 0; }
+.lab-bar-fill { height: 100%; border-radius: 999px; background: #7da089; }
+tr.winner .lab-bar-fill { background: var(--forest-strong); }
+.lab-badge {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  background: #dff2e4;
+  color: #1d5733;
+}
+.lab-highlights { display: grid; gap: 12px; margin-top: 16px; }
+.lab-highlight-row {
+  padding: 14px 16px;
+  border: 1px solid #e4ebe4;
+  border-radius: 14px;
+  background: #f8faf8;
+}
+.lab-highlight-row b { display: block; font-size: 18px; color: var(--forest); margin-bottom: 3px; }
+.lab-highlight-row span { font-size: 13px; color: var(--muted); }
+
 /* Aprendizaje */
 .learn-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.15fr); gap: 18px; align-items: start; }
 .learn-form { display: grid; gap: 12px; margin-top: 18px; }
@@ -716,22 +740,21 @@ tr.winner { background: #eff6f0; font-weight: 600; }
       <div class="intro">
         <div>
           <h1>Laboratorio del modelo</h1>
-          <p class="subtitle">Métricas medidas únicamente en validación y diagnóstico exploratorio. El conjunto test final permanece reservado.</p>
+          <p class="subtitle">Resumen claro de cómo funciona el chatbot, qué modelos probamos y por qué elegimos el ganador.</p>
         </div>
       </div>
 
       <div class="panel">
-        <h2>¿Cómo funciona el pipeline?</h2>
-        <p>Clasificador entrenado desde cero con TF-IDF híbrido (trigramas de palabras con alcance de negación + subpalabras de caracteres) y Regresión Logística Multinomial balanceada. Si pide contexto, conserva el mensaje previo un turno.</p>
+        <h2>¿Cómo analiza un mensaje en 4 pasos?</h2>
         <div class="steps">
-          <div class="step"><b>01</b><strong>Seguridad</strong><p>Reglas fijas detectan riesgo antes de usar el modelo ML.</p></div>
-          <div class="step"><b>02</b><strong>Preprocesamiento</strong><p>Limpia texto cuidando la ñ y marca negaciones (<code>neg_</code>).</p></div>
-          <div class="step"><b>03</b><strong>TF-IDF + Softmax</strong><p>Estima las 5 probabilidades y muestra los términos clave.</p></div>
-          <div class="step"><b>04</b><strong>Pedir contexto</strong><p>Se abstiene si hay duda y usa tu aclaración del turno siguiente.</p></div>
+          <div class="step"><b>01</b><strong>Seguridad</strong><p>Si detecta riesgo, deriva primero a la Línea 113 (Opción 5).</p></div>
+          <div class="step"><b>02</b><strong>Limpieza</strong><p>Ordena el texto y marca las negaciones (<code>neg_</code>).</p></div>
+          <div class="step"><b>03</b><strong>Modelo ML</strong><p>Calcula el porcentaje de cada una de las 5 emociones.</p></div>
+          <div class="step"><b>04</b><strong>Contexto</strong><p>Si duda, pide más detalles y recuerda 1 turno.</p></div>
         </div>
       </div>
 
-      <div id="lab-content"><p class="subtitle" role="status">Cargando resultados calculados…</p></div>
+      <div id="lab-content"><p class="subtitle" role="status">Cargando resultados…</p></div>
     </section>
 
     <!-- Vista 3: Aprendizaje mediante correcciones -->
@@ -1111,162 +1134,107 @@ function confusionPanel(title, metrics) {
   return panel;
 }
 
+const simpleModelNames = {
+  tfidf_hibrido_lr: 'TF-IDF Palabras + Letras + Regresión Logística',
+  tfidf_ensamble_voting: 'Ensamble (Regresión Logística + Naive Bayes)',
+  tfidf_lr_trigramas: 'TF-IDF (frases 1 a 3 palabras) + Regresión Logística',
+  tfidf_lr_bigramas: 'TF-IDF (frases 1 a 2 palabras) + Regresión Logística',
+  tfidf_svm_trigramas: 'TF-IDF + SVM Lineal',
+  tfidf_lr_unigramas: 'TF-IDF (palabras sueltas) + Regresión Logística',
+  tfidf_svd_mlp: 'Comprimido (TruncatedSVD) + Red Neuronal MLP',
+  tfidf_cnb_trigramas: 'TF-IDF + Complement Naive Bayes',
+  referencia_bow_nb: 'Modelo base (Conteo simple + Naive Bayes)',
+};
+
+function makeScoreBar(score) {
+  const wrap = el('span', 'lab-bar');
+  const track = el('span', 'lab-bar-track');
+  const fill = el('span', 'lab-bar-fill');
+  fill.style.width = Math.max(4, Math.min(100, Number(score) * 100)).toFixed(1) + '%';
+  track.append(fill);
+  wrap.append(track, el('span', '', number(score)));
+  return wrap;
+}
+
 function renderLab(box, experiment) {
   const winner = experiment.modelos.find(m => m.clave === experiment.modelo_ganador_clave);
   const metrics = winner.metricas;
   const go = metrics.validacion_go;
   const syn = metrics.validacion_sintetica;
+  const absGo = metrics.abstencion.validacion_go;
+  const absSyn = metrics.abstencion.validacion_sintetica;
   const dataInfo = experiment.resumen_datos;
   const leaks = Object.values(dataInfo.auditoria_fugas).reduce((a, b) => a + b, 0);
 
+  /* 1. Cuatro numeros grandes y faciles de explicar */
   const stats = el('div', 'stats');
   [
-    ['Entrenamiento', intFmt(dataInfo.train.total), 'Frases únicas · Fugas: ' + leaks],
-    ['Macro-F1 · GoEmotions', number(go.macro_f1), 'Exactitud: ' + percent(go.exactitud)],
-    ['Macro-F1 · Sintética', number(syn.macro_f1), 'Exactitud: ' + percent(syn.exactitud)],
-    ['Vocabulario ganador', intFmt(winner.tamano_vocabulario), 'Trigramas (1,3) solo de train'],
+    ['Textos para entrenar', intFmt(dataInfo.train.total), 'GoEmotions + sintéticos · ' + leaks + ' repetidos'],
+    ['Puntaje F1 · texto real', number(go.macro_f1), 'Aciertos: ' + percent(go.exactitud) + ' en GoEmotions'],
+    ['Puntaje F1 · equilibrado', number(syn.macro_f1), 'Aciertos: ' + percent(syn.exactitud) + ' en sintética'],
+    ['Si pide contexto', percent(absGo.exactitud_selectiva), 'Sube desde ' + percent(go.exactitud) + ' al no adivinar'],
   ].forEach(([label, value, note]) => {
     const stat = el('div', 'stat');
     stat.append(el('span', '', label), el('b', '', value), el('span', '', note));
     stats.append(stat);
   });
 
-  /* 1. Comparacion de los 6 modelos */
-  const modelsPanel = labPanel('Comparación de modelos en validación', experiment.justificacion_ganador);
+  /* 2. Comparacion simple de los 9 algoritmos (ordenada del mejor al mas simple) */
+  const sortedModels = [...experiment.modelos].sort(
+    (a, b) => b.metricas.validacion_go.macro_f1 - a.metricas.validacion_go.macro_f1
+  );
+  const modelsPanel = labPanel(
+    'Comparación de los 9 algoritmos',
+    'Todos entrenaron con los mismos textos. Ganó Regresión Logística porque dio el mejor F1 real y muestra qué palabras influyeron.'
+  );
   const modelsTable = makeTable(
-    ['Modelo', 'N-gramas', 'Vocab.', 'Go F1', 'Go Exact.', 'Sint. F1', 'Sint. Exact.', 'Comb. F1', 'Prob.'],
-    experiment.modelos.map(m => [
-      m.nombre,
-      m.ngramas,
-      intFmt(m.tamano_vocabulario),
-      number(m.metricas.validacion_go.macro_f1),
-      percent(m.metricas.validacion_go.exactitud),
-      number(m.metricas.validacion_sintetica.macro_f1),
-      percent(m.metricas.validacion_sintetica.exactitud),
-      number(m.metricas.validacion_combinada.macro_f1),
-      m.probabilidades_nativas ? 'Sí' : 'No',
-    ]),
-    [2, 3, 4, 5, 6, 7]
-  );
-  modelsTable.querySelectorAll('tbody tr')[experiment.modelos.indexOf(winner)].className = 'winner';
-  modelsPanel.append(modelsTable);
-
-  /* 2. Comparacion controlada bigramas vs trigramas */
-  const ng = experiment.comparacion_bigramas_vs_trigramas;
-  const diff = ng.diferencia_trigramas_menos_bigramas;
-  const ngPanel = labPanel(
-    'Comparación controlada: bigramas (1,2) frente a trigramas (1,3)',
-    'Mismos hiperparámetros fijos (TfidfVectorizer con min_df=2, sublinear_tf=True y LogisticRegression C=1.0 balanceada); solo cambia el tamaño máximo de n-grama.'
-  );
-  ngPanel.append(makeTable(
-    ['Indicador', 'Bigramas (1,2)', 'Trigramas (1,3)', 'Aporte de trigramas'],
-    [
-      ['Tamaño de vocabulario', intFmt(ng.bigramas.vocabulario), intFmt(ng.trigramas.vocabulario), '+' + intFmt(diff.vocabulario)],
-      ['Validación GoEmotions · Macro-F1', number(ng.bigramas.macro_f1_go), number(ng.trigramas.macro_f1_go), deltaSpan(diff.macro_f1_go)],
-      ['Validación sintética · Macro-F1', number(ng.bigramas.macro_f1_sintetica), number(ng.trigramas.macro_f1_sintetica), deltaSpan(diff.macro_f1_sintetica)],
-      ['Validación combinada · Macro-F1', number(ng.bigramas.macro_f1_combinada), number(ng.trigramas.macro_f1_combinada), deltaSpan(diff.macro_f1_combinada)],
-      ['Promedio Macro-F1 (Go + Sintética)', number(ng.bigramas.promedio_macro_f1), number(ng.trigramas.promedio_macro_f1), deltaSpan(diff.promedio_macro_f1)],
-    ],
-    [1, 2, 3]
-  ));
-
-  /* 3. Matrices de confusion separadas */
-  const cmGrid = el('div', 'report-grid');
-  cmGrid.append(
-    confusionPanel('Matriz de confusión · GoEmotions (traducción)', go),
-    confusionPanel('Matriz de confusión · Validación sintética (Claude)', syn)
-  );
-
-  /* 4. Metricas detalladas por clase separando Go y Sintetica */
-  const classPanel = labPanel('Métricas por emoción (separando datos traducidos vs. sintéticos)', dataInfo.nota_ansiedad);
-  classPanel.append(makeTable(
-    ['Emoción', 'Prec. Go', 'Rec. Go', 'F1 Go', 'Sop. Go', 'Prec. Sint.', 'Rec. Sint.', 'F1 Sint.', 'Sop. Sint.'],
-    go.clases.map(c => {
-      const mg = go.por_clase[c];
-      const ms = syn.por_clase[c];
+    ['Algoritmo probado', 'Puntaje F1 (texto real)', 'Aciertos (real)', 'Prueba sintética'],
+    sortedModels.map(m => {
+      const nameNode = el('span', '', simpleModelNames[m.clave] || m.nombre);
+      if (m.clave === winner.clave) nameNode.append(el('span', 'lab-badge', 'Ganador'));
       return [
-        fullNames[c],
-        number(mg.precision), number(mg.recall), number(mg.f1), intFmt(mg.soporte),
-        number(ms.precision), number(ms.recall), number(ms.f1), intFmt(ms.soporte),
+        nameNode,
+        makeScoreBar(m.metricas.validacion_go.macro_f1),
+        percent(m.metricas.validacion_go.exactitud),
+        percent(m.metricas.validacion_sintetica.exactitud),
       ];
     }),
-    [1, 2, 3, 4, 5, 6, 7, 8]
-  ));
-
-  /* 5. Abstencion (pedir contexto) */
-  const u = experiment.umbrales_abstencion;
-  const absPanel = labPanel(
-    'También puede pedir contexto (abstención)',
-    'Etiqueta solo si probabilidad máxima ≥ ' + u.umbral_prob_minima + ' y margen ≥ ' + u.umbral_margen_minimo + '; si no, pregunta al usuario.'
+    [1, 2, 3]
   );
-  absPanel.append(makeTable(
-    ['Partición', 'Etiquetados', 'Pide contexto', 'Cobertura', 'Aciertos', 'Exactitud selectiva', 'Macro-F1 selectivo'],
-    [
-      ['Validación GoEmotions', metrics.abstencion.validacion_go],
-      ['Validación sintética', metrics.abstencion.validacion_sintetica],
-      ['Validación combinada', metrics.abstencion.validacion_combinada],
-    ].map(([label, a]) => [
-      label,
-      intFmt(a.etiquetados) + ' / ' + intFmt(a.total),
-      intFmt(a.abstenidos),
-      percent(a.cobertura),
-      intFmt(a.aciertos_en_etiquetados),
-      percent(a.exactitud_selectiva),
-      number(a.macro_f1_selectivo),
-    ]),
-    [1, 2, 3, 4, 5, 6]
-  ));
+  modelsTable.querySelectorAll('tbody tr')[sortedModels.indexOf(winner)].className = 'winner';
+  modelsPanel.append(modelsTable);
 
-  /* 6. Comprobacion diagnostica exploratoria */
-  const diagPanel = labPanel('Comprobación diagnóstica exploratoria (distinta de evaluación final)', experiment.diagnostico_exploratorio.nota);
-  diagPanel.append(makeTable(
-    ['Frase exploratoria', 'Lectura esperada', 'Salida del modelo', 'Confianza', 'Margen', 'En train'],
-    experiment.diagnostico_exploratorio.casos.map(item => [
-      item.texto,
-      item.lectura_esperada,
-      el('span', 'pill pill-' + item.etiqueta_final, names[item.etiqueta_final] || item.etiqueta_final),
-      percent(item.confianza),
-      percent(item.margen),
-      item.en_entrenamiento ? 'Sí' : 'No',
-    ]),
-    [3, 4]
-  ));
+  /* 3. Matriz de confusion real + resumen de contexto y descargas */
+  const summaryGrid = el('div', 'report-grid');
+  const cmReal = confusionPanel('Aciertos y errores (prueba real · GoEmotions)', go);
+  cmReal.querySelector('p').textContent = 'Diagonal verde = aciertos del ganador en 1,899 mensajes reales.';
 
-  /* 7. Procedencia de datos y descarga de documentos */
-  const srcPanel = labPanel(
-    'Procedencia de los datos y documentación',
-    'Vocabulario, pesos TF-IDF y clasificador ajustados únicamente con train.csv. Solapes entre particiones: ' + leaks + '.'
+  const ctxPanel = labPanel(
+    '¿Qué pasa cuando el modelo duda?',
+    'Si el puntaje es bajo o muy parejo entre dos emociones, prefiere preguntar antes que adivinar.'
   );
-  const srcRows = [];
+  const highlights = el('div', 'lab-highlights');
   [
-    ['Entrenamiento (train.csv)', dataInfo.train],
-    ['Validación GoEmotions', dataInfo.validacion_go],
-    ['Validación sintética', dataInfo.validacion_sintetica],
-  ].forEach(([partName, part]) => {
-    Object.entries(part.por_origen_y_clase).forEach(([origin, counts]) => {
-      const total = Object.values(counts).reduce((a, b) => a + b, 0);
-      srcRows.push([
-        partName, origin,
-        intFmt(counts.alegria), intFmt(counts.ansiedad), intFmt(counts.enojo),
-        intFmt(counts.neutral), intFmt(counts.tristeza), intFmt(total),
-      ]);
-    });
+    [percent(go.exactitud) + ' → ' + percent(absGo.exactitud_selectiva), 'Aciertos en datos reales al pedir contexto (responde el ' + percent(absGo.cobertura) + ').'],
+    [percent(syn.exactitud) + ' → ' + percent(absSyn.exactitud_selectiva), 'Aciertos en frases equilibradas al pedir contexto (responde el ' + percent(absSyn.cobertura) + ').'],
+    ['Memoria de 1 turno', 'Cuando el usuario aclara su respuesta, el chatbot une ambos mensajes para clasificar mejor.'],
+  ].forEach(([big, desc]) => {
+    const row = el('div', 'lab-highlight-row');
+    row.append(el('b', '', big), el('span', '', desc));
+    highlights.append(row);
   });
-  srcPanel.append(makeTable(
-    ['Partición', 'Procedencia', 'Alegría', 'Ansiedad', 'Enojo', 'Neutral', 'Tristeza', 'Total'],
-    srcRows,
-    [2, 3, 4, 5, 6, 7]
-  ));
+  ctxPanel.append(highlights);
 
   const links = el('div', 'doc-links');
-  for (const [path, label] of [['informe', 'Descargar INFORME_RESULTADOS.md'], ['explicacion', 'Descargar Explicacion.md']]) {
+  for (const [path, label] of [['informe', 'Descargar informe completo'], ['explicacion', 'Descargar explicación']]) {
     const link = el('a', '', label);
     link.href = '/documentos/' + path;
     links.append(link);
   }
-  srcPanel.append(links);
+  ctxPanel.append(links);
+  summaryGrid.append(cmReal, ctxPanel);
 
-  box.replaceChildren(stats, modelsPanel, ngPanel, cmGrid, classPanel, absPanel, diagPanel, srcPanel);
+  box.replaceChildren(stats, modelsPanel, summaryGrid);
 }
 
 async function loadLab() {
