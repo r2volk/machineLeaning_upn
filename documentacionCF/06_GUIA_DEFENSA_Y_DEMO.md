@@ -1,57 +1,63 @@
-# 06. Guion de demostración en vivo y preguntas frecuentes
+# 06. Guion para tu exposición y preguntas frecuentes
 
-Esta guía está pensada para que hagas una presentación segura, natural y sin leer un guion rígido.
-
----
-
-## 1. Guion rápido para tu demostración en vivo (5–7 minutos)
-
-### Paso 1: Arrancar y mostrar el objetivo (1 minuto)
-- Ejecuta `python app.py` y abre `http://127.0.0.1:5000`.
-- Di en palabras simples: *"Construimos un chatbot emocional 100 % local y entrenado desde cero en Python con Flask y scikit-learn. Clasifica señales de 5 emociones en español y siempre aclara que es un proyecto académico, no una herramienta clínica."*
-
-### Paso 2: Probar frases normales, implícitas y negaciones (1.5 minutos)
-Escribe 3 o 4 frases en vivo en la pestaña **Conversación** y señala el panel derecho (probabilidades + palabras clave):
-1. **Emoción explícita con negación:** `"No puedo estar más feliz con esta noticia"` → **Alegría** (~95 %). Comenta que no quitamos la palabra `"no"` porque cambiaría el sentido.
-2. **Situación cotidiana implícita:** `"Ayer me robaron el teléfono"` → **Enojo** (~96 %). Comenta que no dice la palabra *"enojado"*, pero el modelo lo detecta gracias al corpus curado y a las subpalabras.
-3. **Pedir contexto + memoria de 1 turno:**
-   - Escribe primero: `"No me fue del todo bien en el examen"` → el bot **se abstiene y pide contexto** en vez de adivinar.
-   - Luego responde: `"reprobé el curso y me siento sin fuerzas"` → el bot combina tu mensaje anterior con la aclaración y marca **Tristeza · con contexto previo** (conecta directo con la Semana 3: secuencia de percepciones).
-4. **Capa de seguridad (siempre prioritaria):** escribe `"Ya no quiero vivir"` → muestra que **no clasifica ninguna emoción**, detiene el modelo de ML y muestra ayuda humana con la **Línea 113 Salud del MINSA, Opción 5**.
-
-### Paso 3: Mostrar el «Laboratorio» y comparar los 9 algoritmos (2 minutos)
-Abre la pestaña **Laboratorio** y señala solo 3 cosas clave:
-1. **Datos y 0 fugas:** 26,469 frases de entrenamiento (GoEmotions + sintético + 2,780 situaciones implícitas) y 0 frases repetidas en validación.
-2. **Tabla de los 9 modelos:** señala cómo sube el Macro-F1 en GoEmotions desde `0.3413` (Naive Bayes simple) hasta **`0.6654`** (nuestro ganador: TF-IDF híbrido + Regresión Logística), superando también a SVM (`0.6015`), al Ensamble (`0.6388`) y a la Red Neuronal `MLPClassifier` con reducción de dimensionalidad `TruncatedSVD` (`0.5157`).
-3. **Matrices de confusión:** explica por qué reportamos GoEmotions (`0.6654`) y validación sintética (`0.9915`) **por separado** (por honestidad, ya que el texto traducido real es mucho más difícil y 83.8 % neutral).
-
-### Paso 4: Demostrar «Aprendizaje» en vivo (1.5 minutos)
-1. En **Conversación**, escribe el modismo peruano: `"No esperaba aprobar pero saqué veinte"` → el modelo base lo marca como **Neutral** (porque `"saqué veinte"` no estaba en los datos).
-2. Pasa a **Aprendizaje**, pulsa *"Usar mi último mensaje del chat"*, elige **Alegría**, pulsa **Guardar ejemplo** y luego **Entrenar nueva versión**.
-3. Muestra que el entrenamiento tarda unos segundos, muestra la tabla de validación antes/después y al volver al chat con la misma frase ahora responde **Alegría**.
-4. Finalmente pulsa **Restaurar modelo base** para demostrar que es 100 % reversible.
+Esta guía es corta a propósito para que la leas rápido antes de exponer y te salga natural.
 
 ---
 
-## 2. Preguntas probables de la profesora (con respuestas naturales)
+## 1. Demostración en vivo paso a paso (5–7 minutos)
 
-### 1. «¿Qué algoritmos probaron y por qué eligieron ese?»
-> «Probamos 9 modelos de 5 familias que vimos en clase: Naive Bayes, Regresión Logística, SVM Lineal, una Red Neuronal Perceptrón Multicapa y un Ensamble. Elegimos **TF-IDF híbrido (palabras + subpalabras) con Regresión Logística Multinomial balanceada** porque sacó el mejor Macro-F1 en GoEmotions (`0.6654`) y el mejor promedio global (`0.8285`), nos da probabilidades directas para pedir contexto cuando hay duda y nos permite ver exactamente qué palabras influyeron en cada respuesta.»
+### Paso 1: Mostrar primero el programa en terminal (`chat_terminal.py`)
+1. Dentro de la carpeta del proyecto activa el entorno y corre:
+   ```bash
+   source .venv/bin/activate
+   python3 chat_terminal.py
+   ```
+2. Di en clase: *"Y acá tenemos nuestro chatbot funcionando directo en consola. Lee tu frase, te responde primero y abajo muestra la emoción ganadora, los porcentajes y las palabras clave."*
+3. Prueba 2 frases rápidas:
+   - `"no me siento feliz"` → sale **Tristeza** (`84.4 %`) y verás `neg_feliz`.
+   - `"ayer me robaron el telefono"` → sale **Enojo** (`98.1 %`).
+4. Escribe `salir` para cerrarlo y di: *"Y para que sea más visual para el usuario hicimos una página web que incluye lo mismo que este chat, más las pestañas Laboratorio y Aprendizaje."*
 
-### 2. «¿Usaron alguna técnica de reducción de dimensionalidad?»
-> «Sí. Como nuestro vectorizador de texto genera 84,700 columnas, para probar la **Red Neuronal (`MLPClassifier`)** de la Semana 14 aplicamos **`TruncatedSVD`** (que es la versión de PCA pensada para tablas de texto llenas de ceros) para comprimir esas 84,700 columnas a 150. Al evaluarla en validación vimos que bajó a `0.4938` en GoEmotions porque al comprimir tanto se pierden palabras poco frecuentes pero importantes para las emociones. Por eso demostramos con números que en nuestro caso conviene mantener las características completas con Regresión Logística.»
+### Paso 2: Abrir la página web y probar **Conversación** (`app.py`)
+1. Arranca la web: `python3 app.py` y abre `http://127.0.0.1:5000`.
+2. Prueba en **Conversación** (señalando el panel derecho):
+   - `"No puedo estar más feliz con esta noticia"` → **Alegría** (`~96 %`).
+   - `"No me fue del todo bien en el examen"` → el bot **pide contexto** en lugar de adivinar. Responde `"reprobé el curso y me siento sin fuerzas"` → detecta **Tristeza · con contexto previo** (`95.6 %`).
+   - `"Ya no quiero vivir"` → **no clasifica emoción**, bloquea el ML y muestra ayuda con la **Línea 113 del MINSA, Opción 5**.
 
-### 3. «¿Qué librerías usaron en el proyecto?»
-> «Cinco librerías externas principales: **scikit-learn** para todo el Machine Learning (TF-IDF, los 9 algoritmos, `TruncatedSVD` y métricas), **Flask** para la página web local, **NumPy** para cálculos con vectores y probabilidades, **SciPy** como soporte de tablas dispersas y **joblib** para guardar y cargar el modelo entrenado sin reentrenar cada vez. Además usamos módulos propios de Python como `csv`, `re`, `unicodedata`, `json` y `unittest` para las pruebas.»
+### Paso 3: Mostrar **Laboratorio** (ahora corto y visual)
+Abre **Laboratorio** y solo señala los 4 bloques de arriba abajo:
+1. **4 pasos:** Seguridad → Limpieza (`neg_`) → Modelo ML → Contexto.
+2. **4 tarjetas grandes:** `26,469` textos de entrenamiento (`0` repetidos en pruebas), `0.6654` F1 en texto real y `0.9895` en prueba sintética.
+3. **Tabla de los 9 modelos:** señala cómo sube de `0.3413` (Conteo simple) hasta **`0.6654`** (**Ganador**), superando también a **Red Neuronal MLP con TruncatedSVD** (`0.5157`), SVM (`0.6015`) y Ensamble (`0.6388`).
+4. **Matriz de confusión + "¿Qué pasa cuando duda?":** explica la diagonal verde y que al pedir contexto sube la exactitud real de `88.5 %` a **`89.5 %`**.
 
-### 4. «¿Cómo cargan el dataset y cómo evitan hacer trampa (fuga de datos)?»
-> «En `p02_datos.py` leemos los archivos CSV fila por fila con `csv.DictReader`, validamos que tengan las columnas `texto` y `etiqueta` y que la emoción sea válida. Unimos `train.csv` con nuestro corpus curado de situaciones implícitas (`26,469` filas en total) y ejecutamos `verificar_sin_fuga()`, que compara conjuntos de textos y grupos para asegurar que haya **0 coincidencias** con las particiones de validación. Además, TF-IDF y el modelo solo hacen `.fit()` sobre entrenamiento; sobre validación solo predicen.»
+### Paso 4: Mostrar **Aprendizaje** en 1 minuto
+1. Escribe en el chat: `"No esperaba aprobar pero saqué veinte"` → el modelo base dice **Neutral**.
+2. Ve a **Aprendizaje**, pulsa *"Usar mi último mensaje del chat"*, elige **Alegría**, pulsa **Guardar ejemplo** y **Entrenar nueva versión**.
+3. Al volver al chat con esa misma frase ahora responde **Alegría**. Luego pulsa **Restaurar modelo base** para mostrar que es reversible.
 
-### 5. «¿Por qué usan Macro-F1 si su exactitud ya es 88 %?»
-> «Porque en GoEmotions casi el 84 % de los mensajes son neutrales. Un modelo que dijera "neutral" a todo sacaría 84 % de exactitud sin detectar ninguna emoción. Macro-F1 promedia el F1 de las 5 clases por igual, así que obliga al modelo a hacerlo bien también en alegría, tristeza, enojo y ansiedad.»
+---
 
-### 6. «¿Por qué no borraron palabras cortas (stopwords) como hicimos en clase?»
-> «Porque en análisis de emociones palabras cortas como *"no"*, *"ni"* o *"sin"* invierten todo el significado. Si quitáramos *"no"* de *"no estoy enojado"*, el modelo solo leería *"enojado"*. En vez de borrarlas, las conservamos y en `p03_preprocesamiento.py` marcamos hasta dos palabras después de una negación con el prefijo `neg_`.»
+## 2. Respuestas fáciles a preguntas de la profesora
 
-### 7. «¿Dónde todavía se equivoca su modelo y por qué?»
-> «Somos transparentes con sus límites: como está entrenado 100 % desde cero con TF-IDF (sin modelos preentrenados grandes), si alguien cuenta una situación completamente nueva con palabras que nunca aparecieron en los datos, el modelo no tiene conocimiento del mundo para adivinarla. También le cuesta un poco el sarcasmo y algunas negaciones donde las subpalabras de una palabra muy fuerte como *"triste"* siguen pesando. Por eso incluimos la opción de pedir contexto y la pestaña de Aprendizaje para corregir frases locales.»
+### 1. «¿Qué algoritmos compararon y por qué ganó ese?»
+> «Entrenamos 9 modelos con los mismos `26,469` textos. Empezamos desde un conteo simple con Naive Bayes (`0.3413`) y fuimos probando variantes hasta llegar a **TF-IDF de palabras y subpalabras con Regresión Logística**, que sacó el mejor puntaje F1 real (`0.6654` y `0.8275` de promedio). Ganó porque entrega porcentajes directos para saber cuándo pedir contexto y nos deja ver exactamente qué palabras pesaron.»
+
+### 2. «¿Usaron reducción de dimensionalidad y red neuronal?»
+> «Sí. Como nuestro modelo genera `84,826` columnas de texto, usamos **`TruncatedSVD`** (que es el equivalente de PCA para texto con muchos ceros) para comprimirlas a `150` columnas y entrenar una **Red Neuronal MLP** de 64 neuronas. En la prueba real bajó a `0.5157` porque comprimir tanto borra palabras poco frecuentes como *"robaron"* o *"vacío"*. Así demostramos con números por qué conviene Regresión Logística.»
+
+### 3. «¿Qué librerías usaron?»
+> «**scikit-learn** para el Machine Learning (TF-IDF, los 9 algoritmos, `TruncatedSVD` y métricas), **Flask** para la web local, **NumPy** y **SciPy** para cálculos y matrices de texto, **joblib** para guardar el modelo ya entrenado, y módulos estándar de Python (`csv`, `re`, `unicodedata`, `json`, `unittest`).»
+
+### 4. «¿Cómo cargan el dataset y evitan hacer trampa?»
+> «`p02_datos.py` lee los CSV fila por fila validando columnas y etiquetas, junta `train.csv` con `2,780` frases cotidianas (`26,469` en total) y revisa que haya **0 frases ni grupos repetidos** respecto a las dos particiones de validación. El modelo solo estudia con entrenamiento.»
+
+### 5. «¿Por qué usan F1 y no solo porcentaje de aciertos (Exactitud)?»
+> «Porque en texto real casi 84 de cada 100 frases son neutrales. Un modelo que responda siempre neutral sacaría 84 % sin detectar ninguna emoción. **Macro-F1** promedia las 5 emociones por igual para que todas cuenten lo mismo.»
+
+### 6. «¿Por qué no borraron palabras cortas como "no"?»
+> «Porque en emociones el `"no"` cambia todo el sentido. En vez de borrarlo, `p03_preprocesamiento.py` pega `neg_` a las 2 palabras siguientes (por ejemplo `neg_feliz`) y corta cuando aparece una coma o `"solo"`.»
+
+### 7. «¿Qué limitaciones tiene todavía su proyecto?»
+> «Al no usar modelos gigantes preentrenados ni internet, si aparece una frase cotidiana nunca vista con palabras nuevas, TF-IDF no la adivina. También le cuesta el sarcasmo y en texto real hay muy pocos ejemplos de ansiedad (`8` casos en validación GoEmotions).»

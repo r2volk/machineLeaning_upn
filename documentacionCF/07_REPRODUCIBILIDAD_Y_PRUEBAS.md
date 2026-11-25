@@ -1,78 +1,90 @@
-# 07. Instalación, reproducibilidad y verificación
+# 07. Cómo ejecutar, probar y repetir todo paso a paso
 
-Esta guía resume los comandos exactos para correr el proyecto en cualquier computadora, repetir el entrenamiento desde cero y verificar que las 11 pruebas pasen sin errores.
+Comandos exactos para ejecutar el chatbot en terminal, abrir la web y correr las pruebas automáticas.
 
 ---
 
 ## 1. Requisitos e instalación
 
-- **Python** 3.10 o superior (entorno probado en macOS con entorno virtual `.venv`).
-- Dependencias directas en `requirements.txt`: `Flask`, `scikit-learn`, `numpy`, `scipy`, `joblib`.
+- **Python** 3.10 o superior (probado en macOS dentro del entorno `.venv`).
+- Librerías en `requirements.txt`: `Flask`, `scikit-learn`, `numpy`, `scipy`, `joblib`.
 
-Si necesitas recrear el entorno en otra computadora:
+Si mueves la carpeta del proyecto a otro lugar o cambias de computadora, recrea el entorno `.venv`:
 
 ```bash
+rm -rf .venv
 python3 -m venv .venv
 source .venv/bin/activate
-python -m pip install -r requirements.txt
+python3 -m pip install -r requirements.txt
 ```
 
 ---
 
-## 2. Arrancar la aplicación web
+## 2. Correr el demo en consola (`chat_terminal.py`)
+
+Ideal para mostrar primero en clase el chatbot puro:
 
 ```bash
 source .venv/bin/activate
-python app.py
+python3 chat_terminal.py
 ```
 
-Abre en el navegador la dirección que aparece en consola: **`http://127.0.0.1:5000`**.
+Escribe `salir` para terminar.
 
 ---
 
-## 3. Reproducir el entrenamiento completo desde cero
-
-Todo es determinista (`SEMILLA = 42`). Si quieres volver a generar el corpus curado de 2,780 frases, reentrenar los 9 modelos, ejecutar la rejilla de hiperparámetros y regenerar `modelos/modelo_base.joblib` y `modelos/resultados_experimentos.json`:
+## 3. Correr la aplicación web (`app.py`)
 
 ```bash
 source .venv/bin/activate
-python -m entrenamiento.p02b_generar_corpus_implicito
-python -m entrenamiento.p08_experimentos
+python3 app.py
+```
+
+Abre en el navegador la dirección que sale en consola: **`http://127.0.0.1:5000`**.
+
+---
+
+## 4. Repetir todo el entrenamiento desde cero
+
+Usa semilla fija (`42`), así que siempre da exactamente las mismas cifras:
+
+```bash
+source .venv/bin/activate
+python3 -m entrenamiento.p02b_generar_corpus_implicito
+python3 -m entrenamiento.p08_experimentos
 ```
 
 ---
 
-## 4. Ejecutar las 11 pruebas automáticas (`unittest`)
+## 5. Ejecutar las 11 pruebas automáticas (`unittest`)
 
 ```bash
 source .venv/bin/activate
-python -m unittest discover -s pruebas -v
+python3 -m unittest discover -s pruebas -v
 ```
 
-Qué verifican las 11 pruebas:
-1. Conteos exactos de datos (`26,469` en entrenamiento, `1,899` en GoEmotions, `1,932` en sintética) y **0 fugas** entre particiones.
-2. Limpieza de texto preservando `ñ` y marcado de negaciones (`neg_`).
-3. Detección de riesgo de suicidio/autolesión sin falsos positivos en frases figuradas (*"me muero de risa"*).
-4. Prioridad de seguridad con **Línea 113 Opción 5** y probabilidades que suman 1.
-5. Coherencia de resultados en validación (trigramas sobre bigramas y ganador híbrido sobre trigramas) y ausencia de frases diagnósticas en entrenamiento.
-6. Protección de evaluación única en el script de test final (`p10_evaluar_test.py`).
-7. Formato uniforme de comentarios en todo el código Python.
-8. Interfaz web limpia, sin degradados CSS y con rutas relativas.
-9. Funcionamiento de `/api/chat` en mensajes normales, crisis y **memoria de 1 turno con `contexto_previo`**.
-10. Ciclo completo de aprendizaje local: bloqueo de frases de riesgo, guardar ejemplo, reentrenar nueva versión, comprobar predicción, restaurar modelo base y eliminar ejemplo.
-11. Endpoint `/api/laboratorio` devolviendo los **9 modelos** y las métricas calculadas.
+Verifican:
+1. Conteos exactos (`26,469` entrenamiento, `1,899` GoEmotions, `1,932` sintética) y **0 frases repetidas** entre particiones.
+2. Limpieza cuidando la `ñ` y marcado de negaciones (`neg_`).
+3. Detección de riesgo sin falsos positivos en frases como *"me muero de risa"*.
+4. Prioridad de **Línea 113 Opción 5** y porcentajes que suman 1.
+5. Coherencia de resultados entre bigramas, trigramas y ganador híbrido.
+6. Protección de evaluación única en el archivo de prueba final.
+7. Estilo uniforme de comentarios en código Python.
+8. Interfaz web limpia y rutas `/api/...` correctas.
+9. `/api/chat` normal, crisis y memoria de 1 turno (`contexto_previo`).
+10. Ciclo completo de Aprendizaje (bloquear riesgo → guardar → entrenar → comprobar → restaurar → borrar).
+11. `/api/laboratorio` devolviendo los **9 modelos** y conteos reales.
 
 ---
 
-## 5. Evaluación única sobre el conjunto test final
+## 6. Evaluación única del examen final (`test`)
 
-Cuando la profesora entregue el archivo CSV de prueba final (con columnas `texto` y `etiqueta`), se evalúa el **modelo base congelado una sola vez**:
+Cuando la profesora entregue el CSV de prueba final (`texto` y `etiqueta`), se ejecuta una sola vez:
 
 ```bash
 source .venv/bin/activate
-python -m entrenamiento.p10_evaluar_test --test /ruta/al/test_final.csv
+python3 -m entrenamiento.p10_evaluar_test --test /ruta/al/test_final.csv
 ```
 
-El script verifica si existe solape con entrenamiento y guarda en `modelos/evaluacion_final/`:
-- `metricas_test.json` (Macro-F1, exactitud, matriz de confusión y abstención).
-- `predicciones_test.csv` (predicción fila por fila).
+Guarda `modelos/evaluacion_final/metricas_test.json` y `modelos/evaluacion_final/predicciones_test.csv`.

@@ -1,12 +1,12 @@
-# 01. Explicación sencilla del proyecto (de cero y sin tecnicismos)
+# 01. Explicación sencilla del proyecto (de cero y sin enredos)
 
-Esta guía está escrita para que entiendas **de verdad** cómo funciona tu proyecto, sin tener que memorizar palabras complicadas. Primero explicamos la idea en palabras comunes y luego ponemos el nombre técnico que usamos en clase.
+Esta guía explica **cómo funciona todo el chatbot** en palabras normales. Si alguna palabra te suena rara, revisa primero **[00_GLOSARIO_FACIL.md](00_GLOSARIO_FACIL.md)**.
 
 ---
 
 ## 1. ¿Qué hace este proyecto?
 
-Es un **chatbot local** (funciona en tu propia computadora, sin internet ni APIs pagadas) que lee una frase en español y trata de detectar señales de **5 emociones**:
+Es un **chatbot que corre 100 % en tu computadora** (no usa internet ni APIs externas). Lee una frase en español y detecta señales de **5 emociones**:
 
 1. **Alegría**
 2. **Tristeza**
@@ -14,87 +14,75 @@ Es un **chatbot local** (funciona en tu propia computadora, sin internet ni APIs
 4. **Ansiedad / nerviosismo**
 5. **Neutral** (frases informativas o sin emoción clara)
 
-**Algo muy importante que siempre debes aclarar:**
-Este sistema es un **proyecto académico de Machine Learning**. No es un psicólogo ni hace diagnósticos médicos. Si detecta palabras de posible riesgo de suicidio o autolesión, **no intenta adivinar emociones**: corta el proceso y muestra ayuda humana real (**Línea 113 Salud del MINSA en Perú, Opción 5**, gratuita y 24/7).
-
 ---
 
 ## 2. ¿Qué pasa desde que escribes un mensaje hasta que responde?
 
-Imagina que escribes: **"Ayer me robaron el teléfono"**. El programa sigue **4 pasos muy simples**:
+Imagina que escribes: **"Ayer me robaron el teléfono"**. El programa sigue **4 pasos**:
 
 ### Paso 1: Revisión de seguridad (reglas fijas)
-Antes de pasar la frase al modelo de Machine Learning, el archivo `p04_seguridad.py` revisa si hay señales de peligro (por ejemplo, *"no quiero vivir"* o *"hacerme daño"*). También sabe ignorar frases cotidianas que no son peligro real, como *"me muero de risa"* o *"me muero de hambre"*.
-- Como *"Ayer me robaron el teléfono"* no es una señal de autolesión, sigue al paso 2.
+Antes de pasar la frase al modelo de Machine Learning, `p04_seguridad.py` revisa si hay señales de peligro (como *"no quiero vivir"* o *"hacerme daño"*). También sabe ignorar chistes o expresiones comunes como *"me muero de risa"* o *"me muero de hambre"*.
+- Como *"Ayer me robaron el teléfono"* no es autolesión, sigue al paso 2.
 
-### Paso 2: Limpieza del texto y negaciones
-La computadora no entiende mayúsculas ni tildes igual que nosotros. Para ella, `"Teléfono"` y `"telefono"` serían dos palabras distintas. Por eso `p03_preprocesamiento.py` hace lo siguiente:
-- Pasa todo a minúsculas y quita tildes, **pero cuida de no perder la letra `ñ`** (porque *"año"* no es *"ano"*).
-- Quita letras estiradas exageradas (`"nooooo"` → `"no"`).
-- **No borra la palabra `"no"`** ni otras negaciones. Al contrario: cuando aparece `"no"`, `"nunca"` o `"tampoco"`, marca las 2 palabras principales siguientes con `neg_` (sin gastar turno en pronombres cortos como `"me"`, `"te"` o `"se"`). Así, `"No me siento feliz"` se vuelve `"no me neg_siento neg_feliz"` y `"No estoy enojado, solo cansado"` se vuelve `"no neg_estoy neg_enojado solo cansado"`. Así el modelo no se confunde solo porque vio la palabra `"feliz"` o `"enojado"`.
+### Paso 2: Limpiar el texto y cuidar el «no»
+Para la computadora, `"Teléfono"` y `"telefono"` serían palabras distintas. Por eso `p03_preprocesamiento.py`:
+- Pasa todo a minúsculas y quita las tildes, **pero conserva la `ñ`** (porque *"año"* no es *"ano"*).
+- Acorta letras estiradas (`"nooooo"` → `"no"`).
+- **No borra la palabra `"no"`**. Cuando ve `"no"`, `"nunca"` o `"tampoco"`, pega `neg_` a las 2 palabras principales siguientes (sin gastar turno en `"me"`, `"te"`, `"se"`).
+  - Ejemplo: `"No me siento feliz"` → `"no me neg_siento neg_feliz"` (así el modelo no lee `"feliz"` suelto).
+  - Ejemplo: `"No estoy enojado, solo cansado"` → `"no neg_estoy neg_enojado solo cansado"` (corta en `"solo"` o en una coma).
 
-### Paso 3: Convertir palabras en números y calcular probabilidades
-Un modelo matemático no puede leer letras; solo trabaja con números.
-- Primero, convertimos el mensaje en una fila de números usando **TF-IDF** (en palabras simples: le da más importancia a las palabras específicas como `"robaron"` y menos importancia a palabras repetidas en todos lados como `"el"` o `"de"`).
-- Además de mirar palabras sueltas y grupos de hasta 3 palabras (por ejemplo, `"me robaron"`), también mira **pedacitos de 3 a 5 letras** dentro de cada palabra (subpalabras). ¿Para qué? Para que si el modelo conoce `"robo"`, también reconozca `"robaron"` o `"robando"` porque comparten el pedacito `"rob"`.
-- Luego, nuestro clasificador (**Regresión Logística Multinomial**) suma los puntos que aporta cada palabra o pedacito a las 5 emociones y los convierte en **porcentajes que suman 100 %** (eso se llama función **Softmax**).
+### Paso 3: Convertir palabras en números y sacar porcentajes
+Una computadora solo hace cuentas con números:
+- Primero convertimos la frase en números usando **TF-IDF**: da **mucho peso a palabras clave** (`"robaron"`) y **poco peso a palabras comunes** (`"el"`, `"de"`).
+- Miramos dos cosas a la vez:
+  1. **Palabras sueltas y grupos de hasta 3 palabras** (por ejemplo `"me robaron"` o `"neg_feliz"`).
+  2. **Pedacitos de 3 a 5 letras** (`char_wb`). Sirve para que si el modelo vio `"robo"`, también entienda `"robaron"` porque comparten `"rob"`.
+- Luego, nuestro ganador (**Regresión Logística**) suma los puntos de cada palabra o pedazo y los transforma en **porcentajes que suman 100 %** (función **Softmax**).
 
 ### Paso 4: Responder o pedir más contexto
-El modelo no adivina a ciegas cuando tiene dudas:
-- Si la emoción ganadora tiene **al menos 45 %** de probabilidad **y** le saca **al menos 10 puntos de ventaja** a la segunda emoción, responde con esa emoción y muestra en pantalla qué palabras influyeron.
-- Si tiene dudas (menos de 45 % o muy empatadas), **se abstiene y te pide más contexto**. Y lo mejor: **recuerda tu frase anterior durante 1 turno** para combinarla con tu aclaración cuando le respondas.
+El modelo **no adivina cuando duda**:
+- Si la emoción ganadora tiene **al menos 45 %** y le gana a la segunda por **al menos 10 puntos**, responde con esa emoción y muestra qué palabras influyeron.
+- Si está inseguro (por ejemplo, `"No me fue del todo bien en el examen"`), **pide más contexto**. Cuando tú le respondes en el siguiente mensaje, **recuerda tu frase anterior durante 1 turno** y junta ambas para responder mejor.
 
 ---
 
-## 3. ¿Qué librerías de Python usamos y para qué sirve cada una?
+## 3. ¿Qué librerías de Python usamos?
 
-Si la profesora pregunta *"¿qué librerías usaron?"*, puedes responder esto de memoria y con total naturalidad:
+Si la profesora pregunta *"¿qué librerías usaron?"*:
 
-### Librerías externas (las que instalamos en `requirements.txt`)
-| Librería | Qué hace en palabras sencillas | Dónde se usa |
+| Librería | Para qué sirve en palabras simples | Dónde se usa |
 |---|---|---|
-| **scikit-learn** | Es la caja de herramientas principal de Machine Learning. De aquí salen TF-IDF, Regresión Logística, Naive Bayes, SVM, Red Neuronal (`MLPClassifier`), Reducción de Dimensionalidad (`TruncatedSVD`), Ensamble (`VotingClassifier`) y las métricas (F1, matriz de confusión). | `p05_modelos.py`, `p06_metricas.py`, `p08_experimentos.py` |
-| **Flask** | Crea el servidor web local para que puedas abrir el chatbot en tu navegador (`http://127.0.0.1:5000`) y conectar los botones de la página con Python. | `app.py` |
-| **NumPy** | Sirve para hacer cálculos rápidos con listas de números y ordenar las probabilidades de mayor a menor. | `p06_metricas.py`, `p07_inferencia.py` |
-| **SciPy** | Trabaja por detrás junto con scikit-learn para manejar tablas gigantes llenas de ceros (matrices dispersas de texto) sin gastar mucha memoria RAM. | Soporte interno de `scikit-learn` |
-| **joblib** | Guarda el modelo ya entrenado en un archivo (`.joblib`) para que no tengas que reentrenarlo cada vez que abres la página web. | `app.py`, `p08_experimentos.py`, `p09_reentrenamiento.py`, `p10_evaluar_test.py` |
+| **scikit-learn** | La caja de herramientas de Machine Learning (TF-IDF, los 9 modelos, `TruncatedSVD`, métricas). | `p05`, `p06`, `p08` |
+| **Flask** | Crea la página web local en tu navegador (`http://127.0.0.1:5000`). | `app.py` |
+| **NumPy** | Hace cuentas rápidas con listas de números y porcentajes. | `p06`, `p07` |
+| **SciPy** | Maneja por dentro las tablas gigantes llenas de ceros que genera TF-IDF. | Dentro de `scikit-learn` |
+| **joblib** | Guarda el modelo ya entrenado en disco para cargarlo en milisegundos. | `app.py`, `chat_terminal.py`, `p08`–`p10` |
 
-### Módulos que ya vienen incluidos en Python (no se instalan aparte)
-- **`csv`**: lee los archivos `.csv` del dataset fila por fila.
-- **`re`** (expresiones regulares): limpia signos, números y detecta frases de riesgo en la capa de seguridad.
-- **`unicodedata`**: quita tildes manteniendo la letra `ñ`.
-- **`json`**: guarda y lee los resultados de experimentos y las correcciones que enseña el usuario.
-- **`pathlib`**: maneja las rutas de carpetas de forma ordenada en Windows o Mac.
-- **`unittest`**: corre nuestras 11 pruebas automáticas para verificar que nada se rompa.
+Y usamos herramientas que ya trae Python por defecto: `csv` (leer tablas), `re` (buscar texto), `unicodedata` (quitar tildes), `json` (guardar reportes) y `unittest` (11 pruebas automáticas).
 
 ---
 
-## 4. ¿Qué algoritmos de Machine Learning usamos?
+## 4. Dos formas de ver el programa funcionando
 
-En el proyecto **entrenamos y comparamos 9 modelos distintos** (todos desde cero, sin usar modelos preentrenados de internet), que pertenecen a **5 familias de algoritmos vistas en clase**:
-
-1. **Naive Bayes** (`MultinomialNB` y `ComplementNB`): cuenta frecuencias de palabras y usa probabilidad clásica. Fue nuestra línea base más simple.
-2. **Regresión Logística Multinomial** (`LogisticRegression`): calcula una suma ponderada de palabras y entrega probabilidades directas con Softmax. **Fue el algoritmo ganador** al combinarlo con TF-IDF de palabras + subpalabras.
-3. **Máquinas de Vectores de Soporte — SVM Lineal** (`LinearSVC`): busca la mejor frontera para separar clases, pero no entrega probabilidades directas sin un paso extra.
-4. **Red Neuronal Perceptrón Multicapa** (`MLPClassifier`, Semana 14) junto con **Reducción de Dimensionalidad** (`TruncatedSVD`, Semana 14): comprime las miles de columnas de texto a 150 columnas y las pasa por una red neuronal de 64 neuronas ocultas.
-5. **Método Ensamblado** (`VotingClassifier`, Semana 12): junta las probabilidades de Regresión Logística y Complement Naive Bayes para decidir entre los dos.
-
-En el documento **[02_COMPARACION_ALGORITMOS.md](02_COMPARACION_ALGORITMOS.md)** tienes el detalle sencillo y los números exactos de cómo le fue a cada uno.
+1. **En consola (`chat_terminal.py`):** demo rápida para mostrar en clase el chatbot puro (escribe tu mensaje, muestra su respuesta, la emoción detectada, barras y palabras clave; escribes `salir` para terminar).
+2. **En la web (`app.py`):** página en Flask que incluye ese mismo chat más visual, junto a las pestañas **Laboratorio** (gráficos y tabla de 9 modelos) y **Aprendizaje** (enseñar frases nuevas de forma reversible).
 
 ---
 
 ## 5. Mapa rápido de los archivos del proyecto
 
-- **`app.py`**: enciende la web local y recibe los mensajes del navegador.
-- **`templates/index.html`**: es toda la página web (las 3 pestañas: *Conversación*, *Laboratorio* y *Aprendizaje*).
-- **`entrenamiento/p01_config.py`**: guarda todas las rutas, las 5 emociones, la semilla fija (`42`) y los umbrales.
-- **`entrenamiento/p02_datos.py`**: carga los CSV y verifica que no haya frases repetidas entre entrenamiento y validación.
-- **`entrenamiento/p02b_generar_corpus_implicito.py`**: crea de forma reproducible los 2,780 ejemplos de situaciones cotidianas implícitas.
-- **`entrenamiento/p03_preprocesamiento.py`**: limpia el texto y marca las negaciones (`neg_`).
-- **`entrenamiento/p04_seguridad.py`**: revisa frases de riesgo y responde con la Línea 113 Opción 5.
-- **`entrenamiento/p05_modelos.py`**: define los 9 modelos que vamos a comparar y el modelo ganador.
-- **`entrenamiento/p06_metricas.py`**: calcula Exactitud, Precisión, Recall, Macro-F1, matriz de confusión y métricas cuando el bot pide contexto.
-- **`entrenamiento/p07_inferencia.py`**: analiza un mensaje en vivo (seguridad → contexto previo si hubo → probabilidades → respuesta).
-- **`entrenamiento/p08_experimentos.py`**: entrena los 9 modelos, compara hiperparámetros y guarda el modelo ganador.
-- **`entrenamiento/p09_reentrenamiento.py`**: guarda las correcciones del usuario, reentrena una nueva versión y permite volver al modelo base.
-- **`entrenamiento/p10_evaluar_test.py`**: evalúa el modelo congelado **una sola vez** cuando llegue el archivo de prueba final.
+- **`chat_terminal.py`**: chat simple en terminal para la primera parte de tu exposición.
+- **`app.py`**: servidor web Flask que conecta el navegador con el modelo.
+- **`templates/index.html`**: toda la interfaz web (*Conversación*, *Laboratorio* y *Aprendizaje*).
+- **`entrenamiento/p01_config.py`**: rutas, las 5 emociones, semilla fija (`42`) y umbrales.
+- **`entrenamiento/p02_datos.py`**: carga los CSV y verifica que haya **0 frases repetidas** entre entrenar y probar.
+- **`entrenamiento/p02b_generar_corpus_implicito.py`**: crea las 2,780 frases de situaciones cotidianas sin emoción explícita.
+- **`entrenamiento/p03_preprocesamiento.py`**: limpia el texto y agrega `neg_` tras negaciones.
+- **`entrenamiento/p04_seguridad.py`**: filtro prioritario de crisis (Línea 113, Opción 5).
+- **`entrenamiento/p05_modelos.py`**: define los **9 modelos** que comparamos.
+- **`entrenamiento/p06_metricas.py`**: mide exactitud, Macro-F1 y matriz de confusión.
+- **`entrenamiento/p07_inferencia.py`**: lógica en vivo cuando entra un mensaje.
+- **`entrenamiento/p08_experimentos.py`**: entrena los 9 modelos, prueba ajustes y guarda el ganador.
+- **`entrenamiento/p09_reentrenamiento.py`**: guarda frases nuevas del usuario, reentrena y permite volver al modelo base.
+- **`entrenamiento/p10_evaluar_test.py`**: evalúa el archivo de prueba final **una sola vez**.
