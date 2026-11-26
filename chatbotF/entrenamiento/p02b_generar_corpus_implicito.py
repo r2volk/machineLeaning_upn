@@ -14,9 +14,11 @@ from entrenamiento.p01_config import (
 from entrenamiento.p02_datos import cargar_csv_etiquetado
 from entrenamiento.p03_preprocesamiento import normalizar_texto
 
+# genera 556 frases por cada emocion y reserva 60 cortas de chat diario
 POR_CLASE_OBJETIVO = 556
 CORTAS_OBJETIVO = 60
 
+# expresiones de tiempo variadas para equilibrar palabras como ayer u hoy
 TIEMPOS = [
     "Ayer",
     "Hoy",
@@ -28,12 +30,14 @@ TIEMPOS = [
     "El viernes",
 ]
 
+# cierres opcionales para multiplicar variantes cortas naturales
 CIERRES_CORTOS = [
     "",
     "hoy",
     "otra vez",
 ]
 
+# frases breves tipicas de chat por cada una de las cinco emociones
 FRASES_CORTAS = {
     "enojo": [
         "que rabia me da esto",
@@ -335,6 +339,7 @@ def cargar_textos_prohibidos():
     prohibidos = set(FRASES_EXCLUIDAS)
     for ruta in (RUTA_TRAIN, RUTA_VAL_GO, RUTA_VAL_SINTETICA):
         if Path(ruta).exists():
+            # normaliza cada frase existente para detectarla aunque cambien tildes o mayusculas
             for fila in cargar_csv_etiquetado(ruta):
                 prohibidos.add(normalizar_texto(fila["texto"]))
     return prohibidos
@@ -348,9 +353,11 @@ def generar_cortas_clase(clase, prohibidos, rng):
         for cierre in CIERRES_CORTOS:
             candidato = f"{base.capitalize()} {cierre}".strip()
             norm = normalizar_texto(candidato)
+            # acepta solo si no existe en train o validacion y no se repitio antes
             if norm and norm not in prohibidos and norm not in vistos:
                 vistos.add(norm)
                 pool.append(candidato)
+    # mezcla el orden usando el generador con semilla fija
     rng.shuffle(pool)
     return pool
 
@@ -363,6 +370,7 @@ def generar_largas_clase(clase, prohibidos, rng):
         for inicio in inicios:
             for contexto in contextos:
                 for cierre in cierres:
+                    # crea una version directa y otra empezando con expresion de tiempo
                     texto_a = f"{inicio.capitalize()} {contexto} {cierre}"
                     tiempo = rng.choice(TIEMPOS)
                     texto_b = f"{tiempo} {inicio} {contexto} {cierre}"
@@ -382,10 +390,12 @@ def construir_corpus_implicito(ruta_salida=RUTA_CORPUS_IMPLICITO):
     filas = []
 
     for clase in CLASES:
+        # toma primero hasta 60 frases cortas de chat para esa emocion
         cortas = generar_cortas_clase(clase, prohibidos, rng)[:CORTAS_OBJETIVO]
         for texto in cortas:
             prohibidos.add(normalizar_texto(texto))
 
+        # completa hasta llegar a 556 frases por emocion con escenarios detallados
         faltan = POR_CLASE_OBJETIVO - len(cortas)
         largas = generar_largas_clase(clase, prohibidos, rng)
         if len(largas) < faltan:
@@ -395,6 +405,7 @@ def construir_corpus_implicito(ruta_salida=RUTA_CORPUS_IMPLICITO):
         seleccion = cortas + largas[:faltan]
         for idx, texto in enumerate(seleccion, start=1):
             prohibidos.add(normalizar_texto(texto))
+            # asigna grupo unico y origen curado para mantener trazabilidad
             filas.append(
                 {
                     "texto": texto,
@@ -406,6 +417,7 @@ def construir_corpus_implicito(ruta_salida=RUTA_CORPUS_IMPLICITO):
 
     ruta_path = Path(ruta_salida)
     ruta_path.parent.mkdir(parents=True, exist_ok=True)
+    # guarda todo en un archivo csv nuevo con las cuatro columnas estandar
     with ruta_path.open("w", encoding="utf-8", newline="") as archivo:
         escritor = csv.DictWriter(
             archivo, fieldnames=["texto", "etiqueta", "grupo", "origen"]

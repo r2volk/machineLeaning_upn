@@ -49,6 +49,7 @@ def evaluar_conjunto_test(
     test_filas = cargar_csv_etiquetado(ruta_test)
     train_filas = cargar_entrenamiento_completo(RUTA_TRAIN)
 
+    # limpia textos del test y guarda las etiquetas reales esperadas
     train_set = {normalizar_texto(f["texto"]) for f in train_filas}
     test_norm = [normalizar_texto(f["texto"]) for f in test_filas]
     test_limpios = preparar_lote_modelo([f["texto"] for f in test_filas])
@@ -56,6 +57,7 @@ def evaluar_conjunto_test(
     # predice sobre todo el test sin ajustar nada en el modelo
     y_pred = list(modelo.predict(test_limpios))
 
+    # calcula las metricas directas y tambien las de abstencion si entrega porcentajes
     metricas = evaluar_predicciones(y_real, y_pred)
     abstencion = (
         evaluar_abstencion(
@@ -89,6 +91,7 @@ def evaluar_conjunto_test(
         escritor = csv.DictWriter(archivo, fieldnames=campos)
         escritor.writeheader()
         for fila, pred_dir in zip(test_filas, y_pred):
+            # evalua cada fila con el flujo completo del chatbot incluyendo seguridad
             analisis = analizar_mensaje(modelo, fila["texto"])
             escritor.writerow(
                 {
@@ -104,6 +107,7 @@ def evaluar_conjunto_test(
                 }
             )
 
+    # arma el reporte final en json y lo escribe en disco de forma permanente
     reporte = {
         "fecha_evaluacion_utc": datetime.now(timezone.utc).isoformat(),
         "ruta_modelo": str(Path(ruta_modelo).resolve()),
@@ -126,6 +130,7 @@ def main():
     parser = argparse.ArgumentParser(
         description="Evalua una sola vez el modelo congelado sobre un archivo CSV de test."
     )
+    # define las opciones obligatorias y opcionales desde terminal
     parser.add_argument(
         "--test",
         required=True,
@@ -148,6 +153,7 @@ def main():
     )
     args = parser.parse_args()
 
+    # ejecuta la evaluacion unica y muestra un resumen corto en consola
     reporte = evaluar_conjunto_test(
         ruta_test=args.test,
         ruta_modelo=args.modelo,

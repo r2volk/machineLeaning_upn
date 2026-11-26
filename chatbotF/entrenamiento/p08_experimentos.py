@@ -113,6 +113,7 @@ def ejecutar_diagnostico_exploratorio(modelo, textos_entrenamiento_set):
     resultados = []
     for item in FRASES_DIAGNOSTICO:
         texto = item["texto"]
+        # confirma que la frase no aparezca repetida dentro del conjunto de entrenamiento
         en_train = normalizar_texto(texto) in textos_entrenamiento_set
         analisis = analizar_mensaje(
             modelo,
@@ -143,6 +144,7 @@ def construir_comparacion_ngramas(resultados_por_clave):
     bi = resultados_por_clave["tfidf_lr_bigramas"]
     tri = resultados_por_clave["tfidf_lr_trigramas"]
 
+    # resta los puntajes de trigramas menos bigramas para medir cuanto aporto
     return {
         "parametros_fijos": {
             "vectorizador": "TfidfVectorizer",
@@ -213,9 +215,11 @@ def evaluar_ajuste_hiperparametros(x_train, y_train, x_go, y_go, x_sin, y_sin):
     # compara combinaciones de max_df y regularizacion c solo en validacion
     pruebas = []
     for max_df, c_reg in REJILLA_AJUSTE_LR:
+        # entrena una variante distinta con cada par de parametros de la rejilla
         modelo = construir_modelo_ganador(c_reg=c_reg, max_df=max_df)
         modelo.fit(x_train, y_train)
         metricas = evaluar_modelo_en_particiones(modelo, x_go, y_go, x_sin, y_sin)
+        # guarda las metricas para demostrar en el informe por que se eligio c en 3.0
         pruebas.append(
             {
                 "max_df": max_df,
@@ -307,6 +311,7 @@ def ejecutar_experimentos():
     ganador_info = resultados_por_clave["tfidf_hibrido_lr"]
     ahora = datetime.now(timezone.utc).isoformat()
 
+    # arma el diccionario completo con metricas y pruebas para el json de laboratorio
     reporte = {
         "fecha_generacion_utc": ahora,
         "modelo_ganador_clave": "tfidf_hibrido_lr",
@@ -337,9 +342,11 @@ def ejecutar_experimentos():
         },
     }
 
+    # guarda el reporte completo en disco para que lo consuma la web y los informes
     with RUTA_RESULTADOS.open("w", encoding="utf-8") as archivo:
         json.dump(reporte, archivo, ensure_ascii=False, indent=2)
 
+    # deja el estado del modelo en base sin reentrenamientos del usuario
     estado_inicial = {
         "version_activa": "base",
         "numero_reentrenamientos": 0,
@@ -368,6 +375,7 @@ def imprimir_resumen(reporte):
     print("\nResultados de validacion (ajustado unicamente con train.csv):")
     encabezado = f"{'Modelo':<46} {'Vocab':>7} {'Go F1':>7} {'Sin F1':>7} {'Comb F1':>8} {'Prom F1':>8}"
     print(encabezado)
+    # muestra fila por fila los 9 modelos entrenados con su vocabulario y macro-f1
     for item in reporte["modelos"]:
         m = item["metricas"]
         print(
@@ -378,6 +386,7 @@ def imprimir_resumen(reporte):
             f"{m['promedio_macro_f1']:>8.4f}"
         )
 
+    # resume al final cuanto mejoro pasar de bigramas a trigramas
     dif = reporte["comparacion_bigramas_vs_trigramas"]["diferencia_trigramas_menos_bigramas"]
     print(
         f"\nAporte de trigramas vs bigramas: Go F1 {dif['macro_f1_go']:+.4f}, "

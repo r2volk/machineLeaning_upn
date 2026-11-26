@@ -40,9 +40,11 @@ def extraer_terminos_influyentes(modelo, texto_limpio, clase_objetivo, limite=5)
     if not hasattr(modelo, "named_steps"):
         return []
 
+    # extrae las dos piezas internas del pipeline: vectorizador y clasificador
     vectorizador = modelo.named_steps.get("vectorizador")
     clasificador = modelo.named_steps.get("clasificador")
     if vectorizador is None or clasificador is None or not hasattr(clasificador, "coef_"):
+        # si el clasificador no tiene pesos lineales no puede explicarse termino a termino
         return []
 
     # transforma solo este mensaje y busca las columnas que quedaron distintas de cero
@@ -51,6 +53,7 @@ def extraer_terminos_influyentes(modelo, texto_limpio, clase_objetivo, limite=5)
     if len(indices_activos) == 0:
         return []
 
+    # obtiene los nombres de las 84826 columnas y ubica la fila de la emocion ganadora
     nombres = vectorizador.get_feature_names_out()
     clases = list(clasificador.classes_)
     if clase_objetivo not in clases:
@@ -61,10 +64,12 @@ def extraer_terminos_influyentes(modelo, texto_limpio, clase_objetivo, limite=5)
     aportes_palabras = []
     aportes_subpalabras = []
     for idx in indices_activos:
+        # multiplica que tan importante fue la palabra en el mensaje por su peso aprendido
         valor_tfidf = float(matriz[0, idx])
         peso = float(fila_pesos[idx])
         aporte = valor_tfidf * peso
         if aporte <= 0:
+            # ignora terminos que empujan en contra de esta emocion
             continue
 
         nombre = str(nombres[idx])
@@ -76,6 +81,7 @@ def extraer_terminos_influyentes(modelo, texto_limpio, clase_objetivo, limite=5)
                     {"termino": f"sub:{limpio}", "aporte": round(aporte, 4)}
                 )
         else:
+            # quita el prefijo interno palabras__ para mostrar la palabra limpia
             limpio = nombre.removeprefix("palabras__")
             aportes_palabras.append(
                 {"termino": limpio, "aporte": round(aporte, 4)}
@@ -101,6 +107,7 @@ def analizar_mensaje(
     # decide si responder con una emocion o pedir mas contexto cuando hay duda
     riesgo = evaluar_riesgo(texto_original)
     if riesgo["es_riesgo"]:
+        # si detecto peligro frena aqui mismo y devuelve ayuda humana de linea 113
         crisis = construir_respuesta_crisis()
         return {
             "es_riesgo": True,
@@ -126,6 +133,7 @@ def analizar_mensaje(
     # limpia el texto y marca negaciones antes de pasarlo al clasificador
     texto_limpio = preparar_texto_modelo(texto_entrada)
     if not texto_limpio:
+        # si no quedo ninguna palabra valida pide que escriba una frase mas completa
         return {
             "es_riesgo": False,
             "estado": "vacio",
@@ -149,12 +157,14 @@ def analizar_mensaje(
     clases = list(modelo.classes_)
     orden = np.argsort(probs)[::-1]
 
+    # toma la emocion ganadora p1, la segunda p2 y la ventaja entre ellas
     mejor_clase = str(clases[orden[0]])
     segunda_clase = str(clases[orden[1]])
     p1 = float(probs[orden[0]])
     p2 = float(probs[orden[1]])
     margen = p1 - p2
 
+    # arma el diccionario ordenado de probabilidades para dibujar las barras en pantalla
     mapa_probs = {
         str(clases[i]): round(float(probs[i]), 4)
         for i in orden
@@ -189,6 +199,7 @@ def analizar_mensaje(
             "recursos": None,
         }
 
+    # si supero ambos umbrales devuelve la emocion final con su respuesta empatica
     return {
         "es_riesgo": False,
         "estado": "clasificado",

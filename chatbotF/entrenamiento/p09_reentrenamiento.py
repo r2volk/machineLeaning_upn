@@ -58,6 +58,7 @@ def agregar_correccion(texto, etiqueta, ruta=RUTA_CORRECCIONES):
     texto_limpio = (texto or "").strip()
     etiqueta_limpia = (etiqueta or "").strip().lower()
 
+    # exige que la frase no venga vacia y que la emocion este entre las 5 permitidas
     if not texto_limpio:
         raise ValueError("Escribe o pega una frase antes de guardar.")
     if etiqueta_limpia not in CLASES:
@@ -72,6 +73,7 @@ def agregar_correccion(texto, etiqueta, ruta=RUTA_CORRECCIONES):
             "Línea 113 Salud (Opción 5) del MINSA."
         )
 
+    # normaliza el texto para comprobar palabras validas y compararlo sin tildes
     normalizado = normalizar_texto(texto_limpio)
     if not normalizado:
         raise ValueError("La frase debe contener al menos una palabra válida.")
@@ -189,6 +191,7 @@ def reentrenar_con_correcciones(
     ruta_estado=RUTA_ESTADO_MODELO,
 ):
     # reentrena desde cero combinando train.csv con las correcciones seguras
+    # filtra solo ejemplos validos que no disparen las reglas de riesgo
     correcciones = cargar_correcciones(ruta_correcciones)
     seguras = [
         item
@@ -201,6 +204,7 @@ def reentrenar_con_correcciones(
             "No hay correcciones válidas guardadas para entrenar una nueva versión."
         )
 
+    # vuelve a cargar entrenamiento completo y las dos particiones de validacion
     train_filas = cargar_entrenamiento_completo(RUTA_TRAIN)
     val_go_filas = cargar_csv_etiquetado(RUTA_VAL_GO)
     val_sin_filas = cargar_csv_etiquetado(RUTA_VAL_SINTETICA)
@@ -222,18 +226,21 @@ def reentrenar_con_correcciones(
     x_sin = preparar_lote_modelo([f["texto"] for f in val_sin_filas])
     y_sin = [f["etiqueta"] for f in val_sin_filas]
 
+    # entrena el pipeline ganador desde cero con el conjunto ampliado y evalua en validacion
     nuevo_modelo = construir_modelo_ganador()
     nuevo_modelo.fit(x_train, y_train)
     metricas_actual = evaluar_modelo_en_particiones(
         nuevo_modelo, x_go, y_go, x_sin, y_sin
     )
 
+    # guarda la nueva version aparte en modelo_activo sin tocar modelo_base
     joblib.dump(nuevo_modelo, ruta_modelo_activo)
 
     estado_previo = cargar_estado_modelo(ruta_estado)
     numero = int(estado_previo.get("numero_reentrenamientos", 0)) + 1
     metricas_base = _metricas_base_referencia() or metricas_actual
 
+    # registra version, conteo de correcciones y variacion frente al modelo base
     nuevo_estado = {
         "version_activa": f"reentrenado_v{numero}",
         "numero_reentrenamientos": numero,
@@ -261,6 +268,7 @@ def restaurar_modelo_base(
             "No se encontro el modelo base. Ejecuta entrenamiento/p08_experimentos.py."
         )
 
+    # copia el archivo del modelo base encima del activo para revertir cualquier cambio
     shutil.copy2(ruta_modelo_base, ruta_modelo_activo)
     modelo_base = joblib.load(ruta_modelo_activo)
 

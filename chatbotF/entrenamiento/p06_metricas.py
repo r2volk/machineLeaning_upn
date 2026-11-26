@@ -69,6 +69,7 @@ def evaluar_abstencion(
     # ordena las probabilidades de mayor a menor para tomar la primera y la segunda
     orden = np.argsort(probs, axis=1)[:, ::-1]
 
+    # extrae el porcentaje mas alto p1, el segundo p2 y la diferencia entre ambos
     top1_indices = orden[:, 0]
     top2_indices = orden[:, 1]
     p1 = probs[np.arange(len(probs)), top1_indices]
@@ -79,10 +80,12 @@ def evaluar_abstencion(
     # solo acepta etiquetar si cumple a la vez el umbral de probabilidad y de margen
     mascara = (p1 >= umbral_prob) & (margenes >= umbral_margen)
     total = len(y_real)
+    # cuenta cuantos mensajes si respondio y en cuantos pidio mas contexto
     etiquetados = int(np.sum(mascara))
     abstenidos = total - etiquetados
 
     if etiquetados == 0:
+        # evita dividir por cero si el modelo se abstuvo en todos los mensajes
         return {
             "umbral_prob": umbral_prob,
             "umbral_margen": umbral_margen,
@@ -101,6 +104,7 @@ def evaluar_abstencion(
     y_sel_pred = predicciones[mascara]
     aciertos = int(np.sum(y_sel_real == y_sel_pred))
 
+    # evalua macro-f1 solo sobre las emociones que quedaron dentro del subconjunto respondido
     clases_presentes = [c for c in CLASES if c in set(y_sel_real)]
     f1_sel = f1_score(
         y_sel_real,
@@ -116,8 +120,10 @@ def evaluar_abstencion(
         "total": total,
         "etiquetados": etiquetados,
         "abstenidos": abstenidos,
+        # cobertura mide que porcentaje del total decidio responder sin pedir contexto
         "cobertura": redondear(etiquetados / total),
         "aciertos_en_etiquetados": aciertos,
+        # exactitud selectiva mide cuantos aciertos logra en los que si respondio
         "exactitud_selectiva": redondear(aciertos / etiquetados),
         "macro_f1_selectivo": redondear(f1_sel),
     }

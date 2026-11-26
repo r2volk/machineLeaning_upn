@@ -17,6 +17,7 @@ def cargar_csv_etiquetado(ruta):
     # devuelve una lista de diccionarios listos para entrenar o evaluar
     ruta_path = Path(ruta)
     if not ruta_path.exists():
+        # detiene rapido si alguien borro o movio el archivo csv
         raise FileNotFoundError(f"No se encontro el archivo: {ruta_path}")
 
     filas = []
@@ -34,13 +35,15 @@ def cargar_csv_etiquetado(ruta):
         for numero, fila in enumerate(lector, start=2):
             texto = (fila.get("texto") or "").strip()
             etiqueta = (fila.get("etiqueta") or "").strip().lower()
-            # salta filas vacias y detiene la carga si hay una etiqueta desconocida
+            # salta filas vacias para no meter ruido al entrenamiento
             if not texto:
                 continue
+            # detiene la carga si hay una emocion mal escrita o desconocida
             if etiqueta not in CLASES:
                 raise ValueError(
                     f"Etiqueta invalida '{etiqueta}' en {ruta_path.name} linea {numero}."
                 )
+            # guarda los cuatro campos limpios de cada ejemplo
             filas.append(
                 {
                     "texto": texto,
@@ -62,6 +65,7 @@ def resumir_particion(filas):
     for fila in filas:
         cruce[fila["origen"]][fila["etiqueta"]] += 1
 
+    # usa conjuntos set para contar frases y grupos sin contar repetidos
     textos_unicos = {f["texto"].lower() for f in filas}
     grupos_unicos = {f["grupo"] for f in filas if f["grupo"]}
 
@@ -90,6 +94,7 @@ def verificar_sin_fuga(train_filas, val_go_filas, val_sin_filas):
     vg_grupos = {f["grupo"] for f in val_go_filas if f["grupo"]}
     vs_grupos = {f["grupo"] for f in val_sin_filas if f["grupo"]}
 
+    # el operador & calcula cuantos elementos se repiten entre ambos conjuntos
     return {
         "solape_texto_train_val_go": len(t_textos & vg_textos),
         "solape_texto_train_val_sintetica": len(t_textos & vs_textos),
@@ -106,6 +111,7 @@ def cargar_entrenamiento_completo(
     # junta el csv base de entrenamiento con el corpus local de situaciones implicitas
     filas = cargar_csv_etiquetado(ruta_train)
     if ruta_implicito and Path(ruta_implicito).exists():
+        # suma los 2780 ejemplos cotidianos si el archivo generado existe
         filas.extend(cargar_csv_etiquetado(ruta_implicito))
     return filas
 
@@ -121,6 +127,7 @@ def cargar_particiones(
     val_go_filas = cargar_csv_etiquetado(ruta_val_go)
     val_sin_filas = cargar_csv_etiquetado(ruta_val_sintetica)
 
+    # arma el reporte con conteos reales, auditoria de 0 fugas y nota sobre ansiedad
     resumen = {
         "train": resumir_particion(train_filas),
         "validacion_go": resumir_particion(val_go_filas),

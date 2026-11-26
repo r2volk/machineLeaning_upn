@@ -10,6 +10,7 @@ NEGADORES = {"no", "nunca", "jamas", "tampoco", "ni"}
 CORTES_NEGACION = {"pero", "aunque", "sino", "solo", "porque", "que", "y", "sin"}
 # pronombres cortos que no consumen la ventana para cubrir frases como no me siento feliz
 PRONOMBRES_ATONOS = {"me", "te", "se", "nos", "le", "les", "lo", "la"}
+# cuantas palabras principales marca despues de encontrar un negador
 VENTANA_NEGACION = 2
 
 
@@ -17,6 +18,7 @@ def normalizar_texto(texto):
     # limpia una frase dejandola en minusculas, sin tildes y conservando la letra enie
     # esta funcion se usa intacta para las reglas de seguridad y control de fugas
     if not isinstance(texto, str):
+        # si llega un valor nulo o distinto de texto devuelve cadena vacia
         return ""
 
     # guarda temporalmente la enie para que no pierda su virgulilla al quitar tildes
@@ -28,6 +30,7 @@ def normalizar_texto(texto):
         for caracter in unicodedata.normalize("NFD", limpio)
         if unicodedata.category(caracter) != "Mn"
     )
+    # devuelve la letra enie a su lugar ahora que ya no quedan tildes
     limpio = limpio.replace("__enie__", "ñ")
 
     # acorta letras repetidas tres o mas veces como holaaaa sin romper perro o calle
@@ -45,9 +48,11 @@ def preparar_texto_modelo(texto, ventana=VENTANA_NEGACION):
     if not isinstance(texto, str):
         return ""
 
+    # divide la frase en partes usando comas, puntos y signos de exclamacion o pregunta
     clausulas = re.split(r"[,.;:!?¡¿]+", texto)
     tokens_salida = []
     for clausula in clausulas:
+        # limpia cada parte por separado y reinicia el contador de negacion en cero
         tokens = normalizar_texto(clausula).split()
         pendientes = 0
         for token in tokens:
@@ -67,6 +72,7 @@ def preparar_texto_modelo(texto, ventana=VENTANA_NEGACION):
                 tokens_salida.append("neg_" + token)
                 pendientes -= 1
             else:
+                # palabra normal fuera del alcance de una negacion
                 tokens_salida.append(token)
     return " ".join(tokens_salida)
 

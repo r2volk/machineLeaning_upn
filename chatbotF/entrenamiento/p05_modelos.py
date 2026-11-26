@@ -24,16 +24,20 @@ def construir_vectorizador_hibrido(max_df=MAX_DF_TFIDF):
         [
             (
                 "palabras",
+                # lee palabras sueltas, parejas y trios ignorando las presentes en mas del 50 porciento
                 TfidfVectorizer(
                     ngram_range=(1, 3),
+                    # exige aparecer al menos en 2 frases para evitar errores de tipeo
                     min_df=2,
                     max_df=max_df,
+                    # usa escala logaritmica para que repetir una palabra no infle su peso
                     sublinear_tf=True,
                     token_pattern=PATRON_TOKEN_MODELO,
                 ),
             ),
             (
                 "caracteres",
+                # parte cada palabra en trozos de 3 a 5 letras dentro de sus bordes
                 TfidfVectorizer(
                     analyzer="char_wb",
                     ngram_range=(3, 5),
@@ -53,10 +57,12 @@ def construir_modelo_ganador(c_reg=C_REGRESION_LOGISTICA, max_df=MAX_DF_TFIDF):
             ("vectorizador", construir_vectorizador_hibrido(max_df=max_df)),
             (
                 "clasificador",
+                # c en 3.0 controla cuanto se ajusta al entrenamiento y max_iter da margen para converger
                 LogisticRegression(
                     C=c_reg,
                     class_weight="balanced",
                     max_iter=1000,
+                    # fija la semilla en 42 para que el entrenamiento sea siempre repetible
                     random_state=SEMILLA,
                 ),
             ),
@@ -68,6 +74,7 @@ def construir_catalogo_modelos():
     # construye los 9 modelos comparados en validacion con la misma semilla fija
     # incluye linea base, variantes de n-gramas, svm, red neuronal con svd y ensamble
     return [
+        # modelo 1: referencia mas simple con conteo basico de palabras y naive bayes
         {
             "clave": "referencia_bow_nb",
             "nombre": "Referencia simple: Bolsa de palabras (1,1) + Naive Bayes",
@@ -82,6 +89,7 @@ def construir_catalogo_modelos():
                 [
                     (
                         "vectorizador",
+                        # solo cuenta cuantas veces aparece cada palabra suelta
                         CountVectorizer(
                             ngram_range=(1, 1),
                             min_df=2,
@@ -92,6 +100,7 @@ def construir_catalogo_modelos():
                 ]
             ),
         },
+        # modelo 2: pasa a tf idf y regresion logistica solo con palabras sueltas
         {
             "clave": "tfidf_lr_unigramas",
             "nombre": "TF-IDF (1,1) + Regresión Logística balanceada",
@@ -125,6 +134,7 @@ def construir_catalogo_modelos():
                 ]
             ),
         },
+        # modelo 3: agrega parejas de palabras seguidas para captar expresiones como no quiero
         {
             "clave": "tfidf_lr_bigramas",
             "nombre": "TF-IDF (1,2) + Regresión Logística balanceada",
@@ -158,6 +168,7 @@ def construir_catalogo_modelos():
                 ]
             ),
         },
+        # modelo 4: amplia hasta trios de palabras seguidas manteniendo los mismos parametros
         {
             "clave": "tfidf_lr_trigramas",
             "nombre": "TF-IDF (1,3) + Regresión Logística balanceada",
@@ -191,6 +202,7 @@ def construir_catalogo_modelos():
                 ]
             ),
         },
+        # modelo 5 ganador: combina palabras, subpalabras de letras y regresion logistica afinada
         {
             "clave": "tfidf_hibrido_lr",
             "nombre": "TF-IDF palabras (1,3) + subpalabras (3,5) + Regresión Logística (Ganador)",
@@ -203,6 +215,7 @@ def construir_catalogo_modelos():
             ),
             "pipeline": construir_modelo_ganador(),
         },
+        # modelo 6: variante de naive bayes disenada para clases desbalanceadas
         {
             "clave": "tfidf_cnb_trigramas",
             "nombre": "TF-IDF (1,3) + Complement Naive Bayes",
@@ -228,6 +241,7 @@ def construir_catalogo_modelos():
                 ]
             ),
         },
+        # modelo 7: svm lineal que busca la frontera mas ancha pero sin porcentajes directos
         {
             "clave": "tfidf_svm_trigramas",
             "nombre": "TF-IDF (1,3) + SVM Lineal balanceado",
@@ -260,6 +274,7 @@ def construir_catalogo_modelos():
                 ]
             ),
         },
+        # modelo 8: reduccion de dimensionalidad a 150 columnas y red neuronal mlp
         {
             "clave": "tfidf_svd_mlp",
             "nombre": "TF-IDF híbrido + SVD (150) + Red Neuronal MLP",
@@ -273,10 +288,13 @@ def construir_catalogo_modelos():
             "pipeline": Pipeline(
                 [
                     ("vectorizador", construir_vectorizador_hibrido()),
+                    # comprime 84 mil columnas de texto a 150 ejes resumen para la red neuronal
                     ("reduccion", TruncatedSVD(n_components=150, random_state=SEMILLA)),
+                    # escala cada fila comprimida antes de entrar a las neuronas
                     ("normalizador", Normalizer(copy=False)),
                     (
                         "clasificador",
+                        # red con una capa oculta de 64 neuronas que frena sola si deja de mejorar
                         MLPClassifier(
                             hidden_layer_sizes=(64,),
                             max_iter=40,
@@ -287,6 +305,7 @@ def construir_catalogo_modelos():
                 ]
             ),
         },
+        # modelo 9: ensamble suave que promedia probabilidades de regresion logistica y naive bayes
         {
             "clave": "tfidf_ensamble_voting",
             "nombre": "TF-IDF híbrido + Ensamble suave (LR + ComplementNB)",
@@ -302,6 +321,7 @@ def construir_catalogo_modelos():
                     ("vectorizador", construir_vectorizador_hibrido()),
                     (
                         "clasificador",
+                        # vota por probabilidades dando triple peso a regresion logistica
                         VotingClassifier(
                             estimators=[
                                 (

@@ -62,6 +62,7 @@ def crear_app():
         # bloquea cualquier otro nombre para evitar descargas de archivos no permitidos
         if nombre not in archivos or not (DOCUMENTACION / archivos[nombre]).is_file():
             return jsonify(error="Documento no encontrado."), 404
+        # envia el archivo markdown como descarga directa al navegador
         return send_file(DOCUMENTACION / archivos[nombre], as_attachment=True)
 
     @app.route("/api/chat", methods=["POST"])
@@ -72,6 +73,7 @@ def crear_app():
         mensaje = (cuerpo.get("mensaje") or "").strip()
         contexto_previo = (cuerpo.get("contexto_previo") or "").strip() or None
         if not mensaje:
+            # devuelve error 400 si el usuario envio una cadena vacia
             return jsonify({"error": "Escribe un mensaje para analizar."}), 400
 
         # ejecuta seguridad primero y luego el modelo de machine learning
@@ -101,14 +103,17 @@ def crear_app():
     def api_guardar_correccion():
         # guarda una frase etiquetada por el usuario bloqueando riesgo o fugas de validacion
         cuerpo = request.get_json(silent=True) or {}
+        # lee texto y emocion desde el json enviado por el navegador
         texto = cuerpo.get("texto", "")
         etiqueta = cuerpo.get("etiqueta", "")
         try:
             # valida y escribe la nueva frase en el json local de correcciones
             guardado = agregar_correccion(texto, etiqueta)
         except ValueError as err:
+            # si tiene riesgo, esta vacia o pertenece a validacion responde error 400
             return jsonify({"error": str(err)}), 400
 
+        # responde 201 indicando que el ejemplo se guardo y envia la lista actualizada
         return jsonify(
             {
                 "mensaje": "Ejemplo guardado localmente.",
@@ -122,6 +127,7 @@ def crear_app():
         # borra una sola frase guardada usando su identificador unico
         eliminado = eliminar_correccion(corr_id)
         if not eliminado:
+            # avisa con 404 si ese identificador no existe en el archivo
             return jsonify({"error": "No se encontro esa correccion."}), 404
         return jsonify(
             {
@@ -147,6 +153,7 @@ def crear_app():
         try:
             nuevo_modelo, nuevo_estado = reentrenar_con_correcciones()
         except ValueError as err:
+            # si no hay correcciones guardadas avisa con error 400
             return jsonify({"error": str(err)}), 400
 
         # reemplaza el modelo en memoria para que el chat use la nueva version al instante
@@ -164,9 +171,10 @@ def crear_app():
         try:
             modelo_base, estado_base = restaurar_modelo_base()
         except FileNotFoundError as err:
+            # si falta el modelo base en disco avisa con error 500
             return jsonify({"error": str(err)}), 500
 
-        # vuelve a dejar activo el modelo base original
+        # vuelve a dejar activo el modelo base original en la app web
         contenedor["modelo"] = modelo_base
         return jsonify(
             {
@@ -179,10 +187,12 @@ def crear_app():
     def api_laboratorio():
         # lee el json de resultados de experimentos para llenar las tablas del laboratorio
         if not RUTA_RESULTADOS.exists():
+            # si aun no se corrio p08_experimentos devuelve error 404
             return jsonify(
                 {"error": "No existen resultados calculados en modelos/resultados_experimentos.json."}
             ), 404
 
+        # abre el reporte json y lo envia junto al estado activo del modelo
         with RUTA_RESULTADOS.open("r", encoding="utf-8") as archivo:
             resultados = json.load(archivo)
 
